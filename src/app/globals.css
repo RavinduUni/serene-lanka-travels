@@ -1,0 +1,89 @@
+@import "tailwindcss";
+@import "@fontsource-variable/manrope";
+
+/* ------------------------------------------------------------------
+   Seren Lanka Travels – design tokens
+   Colours are taken directly from the logo:
+   - Bright blue  #1A8CFF  (the "S", "R" and the wave mark)
+   - Deep navy    #0B1F5C  (the "E", "E", "N" and the pin)
+   ------------------------------------------------------------------ */
+@theme {
+  --font-sans: "Manrope Variable", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+
+  --color-brand-blue: #1a8cff;
+  --color-brand-blue-dark: #0f6fd6;
+  --color-brand-navy: #0b1f5c;
+  --color-brand-navy-deep: #06133b;
+  --color-brand-sky: #eaf3ff;
+  --color-brand-sky-strong: #d5e8ff;
+  --color-brand-ink: #0f172a;
+  --color-brand-muted: #5b6478;
+  --color-brand-line: #e6eaf1;
+  --color-brand-mist: #f5f7fb;
+  --color-brand-watermark: #eef1f6;
+  --color-whatsapp: #25d366;
+
+  --shadow-card: 0 10px 30px -12px rgb(11 31 92 / 0.18);
+  --shadow-lift: 0 24px 50px -20px rgb(11 31 92 / 0.28);
+
+  --radius-card: 1.25rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-brand-ink font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-brand-blue);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-blue);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Section heading device used across the whole site (reference style):
+     first line light, second line bold. */
+  .heading-split {
+    @apply font-light leading-[1.05] tracking-[-0.02em] text-brand-ink;
+  }
+  .heading-split strong {
+    @apply block font-bold;
+  }
+
+  /* Hides scrollbars on horizontal card rails while keeping scroll */
+  .rail {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Large faded watermark word behind a section (reference style) */
+  .watermark {
+    @apply pointer-events-none select-none absolute left-1/2 -translate-x-1/2 whitespace-nowrap font-bold leading-none tracking-[-0.04em] text-brand-watermark;
+    font-size: clamp(4rem, 17vw, 15rem);
+  }
+}
