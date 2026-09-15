@@ -55,7 +55,7 @@ export default function TransfersBanner() {
             </div>
           </div>
 
-          <div className="relative aspect-[4/3] overflow-hidden rounded-card sm:aspect-[5/4] lg:col-span-6 lg:aspect-[4/5]">
+          <div className="relative aspect-4/3 overflow-hidden rounded-card sm:aspect-5/4 lg:col-span-6 lg:aspect-4/5">
             <SmartImage
               src={transfers.image}
               alt="Private vehicle on an open road"

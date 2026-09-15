@@ -9,7 +9,7 @@ import { tourCategories } from "@/data/home";
 
 export default function TourCategoryGrid() {
   return (
-    <section className="bg-brand-sky py-20 lg:py-28">
+    <section className="py-20 lg:py-28">
       <Container>
         <div className="grid items-end gap-6 lg:grid-cols-12">
           <Reveal className="lg:col-span-4">

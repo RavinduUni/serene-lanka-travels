@@ -6,7 +6,7 @@ export default function WhatsAppButton({
   message,
   label = "WhatsApp Us",
   size = "md",
-  variant = "whatsapp",
+  variant = "white",
   className,
 }) {
   return (

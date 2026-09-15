@@ -6,11 +6,19 @@ import SmartImage from "@/components/ui/SmartImage";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/motion/Reveal";
 import { destinations } from "@/data/home";
+import Image from "next/image";
 
 export default function PopularDestinations() {
   return (
-    <section className="border-t border-brand-line py-20 lg:py-28">
-      <Container>
+    <section className="border-brand-line relative py-20 lg:py-28">
+      <div
+        className="pointer-events-none absolute inset-0"
+        aria-hidden="true"
+      >
+        <Image src={'/popular2.jpg'} alt="Mirissa beach at golden hour, Sri Lanka" fill sizes="100vw" className="object-cover object-right" priority={false} />
+      </div>
+
+      <Container className="relative">
         <div className="grid items-end gap-6 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
             <SectionHeading lines={destinations.heading} />

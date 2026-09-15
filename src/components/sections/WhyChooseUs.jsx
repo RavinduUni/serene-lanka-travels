@@ -40,7 +40,7 @@ function AnimatedStat({ stat }) {
 
 export default function WhyChooseUs() {
   return (
-    <section className="border-y border-brand-line bg-brand-mist py-20 lg:py-28">
+    <section className="py-20 lg:py-28">
       <Container>
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
