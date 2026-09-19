@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
@@ -7,21 +6,28 @@ import { hero } from "@/data/home";
 
 export default function HomeHero() {
   return (
-    <section className="relative flex min-h-[calc(100svh-76px)] items-center overflow-hidden bg-brand-navy-deep lg:min-h-[calc(100svh-88px)]">
-      <Image
-        src={'/sigiriya.jpg'}
-        alt="Sri Lanka's tropical coastline seen from above"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover"
-      />
+    <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-brand-navy-deep -mt-[76px] lg:-mt-[88px]">
+      {/* Background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="/sigiriya.jpg"
+        className="absolute inset-0 h-full w-full object-cover"
+        aria-hidden="true"
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+        <source src="/hero-video.webm" type="video/webm" />
+      </video>
+
+      {/* Dark gradient overlay for text legibility */}
       <div
-        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,19,59,0.35)_0%,rgba(6,19,59,0.25)_45%,rgba(6,19,59,0.7)_100%)]"
+        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,19,59,0.45)_0%,rgba(6,19,59,0.25)_45%,rgba(6,19,59,0.75)_100%)]"
         aria-hidden="true"
       />
 
-      <Container className="relative py-24 text-center text-white sm:py-28">
+      <Container className="relative py-24 text-center text-white sm:py-28 lg:py-36">
         <h1 className="mx-auto max-w-6xl text-[2.6rem] font-bold leading-[1.02] tracking-[-0.03em] sm:text-6xl lg:text-7xl">
           {hero.title}
         </h1>
@@ -37,15 +43,6 @@ export default function HomeHero() {
           ))}
         </div>
       </Container>
-
-      <a
-        href="#intro"
-        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1 text-[12px] font-medium text-white/80 hover:text-white sm:flex"
-        aria-label="Scroll to content"
-      >
-        Scroll
-        <ChevronDown className="size-4 animate-bounce" aria-hidden="true" />
-      </a>
     </section>
   );
 }

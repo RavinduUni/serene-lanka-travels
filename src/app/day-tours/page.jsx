@@ -9,6 +9,7 @@ import FinalCta from "@/components/sections/FinalCta";
 import Reveal from "@/components/motion/Reveal";
 import { buildMetadata } from "@/lib/seo";
 import { whatsappTemplates } from "@/data/site";
+import Button from "@/components/ui/Button";
 
 export const metadata = buildMetadata({
   title: "Sri Lanka Day Tours – Private One-Day Experiences",
@@ -67,7 +68,7 @@ export default function DayToursPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative h-[55vh] min-h-[380px] overflow-hidden bg-brand-navy-deep lg:h-[65vh]">
+      <section className="relative h-[55vh] min-h-[380px] overflow-hidden bg-brand-navy-deep -mt-[76px] lg:-mt-[88px]">
         <Image
           src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80"
           alt="Sri Lanka tropical beach with palm trees and colourful boats"
@@ -126,15 +127,14 @@ export default function DayToursPage() {
                 beach holiday.
               </p>
 
-              <Link
-                href="/day-tours/bentota-day-tour"
-                className="mt-7 inline-flex items-center gap-2.5 text-[14px] font-semibold text-brand-navy hover:text-brand-blue"
-              >
-                <span className="grid size-8 place-items-center rounded-full bg-brand-sky text-brand-blue transition-colors hover:bg-brand-blue hover:text-white">
-                  <ArrowRight className="size-4" aria-hidden="true" />
-                </span>
-                Explore Now
-              </Link>
+              <div>
+                <Button href="/day-tours/bentota-day-tour" variant="link" className="mt-8 text-[15px] ">
+                  <span className="grid size-9 place-items-center rounded-full bg-brand-navy text-white">
+                    <ArrowRight className="size-4" aria-hidden="true" />
+                  </span>
+                  Explore Now
+                </Button>
+              </div>
             </div>
           </div>
         </Container>
@@ -158,20 +158,26 @@ export default function DayToursPage() {
                 href={cat.href}
                 className="group relative aspect-square overflow-hidden rounded-card bg-brand-navy shadow-card sm:aspect-[4/3]"
               >
+                {/* Background image – scales up on hover */}
                 <SmartImage
                   src={cat.image}
                   alt={cat.label}
                   fill
                   sizes="(min-width:1024px) 30vw, (min-width:640px) 45vw, 50vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
-                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 p-4">
-                  <span className="text-[14px] font-bold uppercase leading-tight tracking-wide text-white sm:text-[16px]">
+
+                {/* Hover overlay – slides up from bottom */}
+                <div className="absolute inset-0 translate-y-full bg-linear-to-t from-brand-navy-deep/95 via-brand-navy/70 to-transparent transition-transform duration-500 ease-out group-hover:translate-y-0" />
+
+                {/* Content – fades + slides in on hover */}
+                <div className="absolute inset-x-0 bottom-0 flex flex-col items-start gap-3 p-5 translate-y-6 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+                  <span className="text-[13px] font-bold uppercase leading-tight tracking-widest text-white sm:text-[15px]">
                     {cat.label}
-                    <span className="ml-1 font-normal text-white/50">___</span>
                   </span>
-                  <span className="grid size-8 shrink-0 place-items-center rounded-full bg-white/15 text-white backdrop-blur transition-colors group-hover:bg-brand-blue">
-                    <ArrowUpRight className="size-4" aria-hidden="true" />
+                  <span className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-4 py-1.5 text-[12px] font-semibold text-white transition-colors duration-200 group-hover:bg-white group-hover:text-brand-navy sm:text-[13px]">
+                    Explore
+                    <ArrowUpRight className="size-3.5" aria-hidden="true" />
                   </span>
                 </div>
               </Link>

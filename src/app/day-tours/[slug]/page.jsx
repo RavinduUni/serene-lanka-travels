@@ -64,7 +64,7 @@ export default async function DayTourPage({ params }) {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex min-h-[62svh] items-end overflow-hidden bg-brand-navy-deep">
+      <section className="relative flex min-h-[62svh] -mt-[76px] lg:-mt-[88px] items-end overflow-hidden bg-brand-navy-deep">
         <Image
           src={tour.heroImage}
           alt={tour.name}

@@ -10,7 +10,7 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://serenlankatravels.com",
   founded: 2022,
   registered: 2026,
-  logo: "/logo/seren-lanka-travels.png",
+  logo: "/logo/whitelogo.png",
   // Official contact details are still pending in the content plan.
   // The number below is the Director's WhatsApp listed in the plan – replace when confirmed.
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "94774215943",

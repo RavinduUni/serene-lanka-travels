@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-4">
             <div className="inline-flex rounded-2xl bg-white p-3">
-              <Image src={site.logo} alt={site.name} width={543} height={430} className="h-14 w-auto" />
+              <Image src="/logo/seren-lanka-travels.png" alt={site.name} width={543} height={430} className="h-14 w-auto" />
             </div>
             <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-black">
               Private and tailor-made Sri Lanka tours, day trips, transfers and authentic local travel

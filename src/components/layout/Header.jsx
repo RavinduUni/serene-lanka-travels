@@ -12,7 +12,7 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
 
 /* ─── Desktop Dropdown Item ────────────────────────────────────────────── */
-function NavDropdown({ item, active }) {
+function NavDropdown({ item, active, scrolled }) {
   return (
     <li className="relative group">
       {/* Parent link */}
@@ -21,8 +21,11 @@ function NavDropdown({ item, active }) {
         aria-current={active ? "page" : undefined}
         aria-haspopup={item.children ? "true" : undefined}
         className={cn(
-          "relative inline-flex items-center gap-1 rounded-full px-3 py-2 text-[14px] font-semibold text-brand-ink/80 transition-colors hover:text-brand-blue",
-          active && "text-brand-blue"
+          "relative inline-flex items-center gap-1 rounded-full px-3 py-2 text-[14px] font-semibold transition-colors",
+          scrolled
+            ? "text-white/90 hover:text-white"
+            : "text-white/90 hover:text-white",
+          active && "text-white"
         )}
       >
         {item.label}
@@ -43,7 +46,7 @@ function NavDropdown({ item, active }) {
             // Layout
             "absolute left-0 top-full z-50 min-w-[240px] max-w-[300px]",
             // Visual
-            "rounded-b-xl rounded-t-none border-t-2 border-brand-blue bg-white shadow-[0_8px_30px_-6px_rgba(11,31,92,0.18)]",
+            "rounded-b-xl rounded-t-none border-t-2 border-brand-blue bg-white/95 backdrop-blur-sm shadow-[0_8px_30px_-6px_rgba(0,0,0,0.35)]",
             // Animation — hidden by default, revealed on group-hover
             "pointer-events-none opacity-0 translate-y-1",
             "transition-all duration-200 ease-out",
@@ -169,11 +172,21 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 bg-white transition-shadow duration-300",
-        scrolled ? "shadow-[0_1px_0_0_#e6eaf1,0_10px_30px_-20px_rgba(11,31,92,.35)]" : "shadow-[0_1px_0_0_#e6eaf1]"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        scrolled
+          ? "bg-brand-navy-deep/80 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+          : "bg-transparent"
       )}
     >
-      <Container className="flex h-[76px] items-center justify-between gap-6 lg:h-[88px]">
+      {/* Dark overlay gradient for contrast when transparent */}
+      {!scrolled && (
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-transparent pointer-events-none"
+          aria-hidden="true"
+        />
+      )}
+
+      <Container className="relative flex h-[76px] items-center justify-between gap-6 lg:h-[88px]">
         {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center" aria-label={`${site.name} home`}>
           <Image
@@ -192,7 +205,7 @@ export default function Header() {
             {mainNav.map((item) => {
               const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
               return (
-                <NavDropdown key={item.href} item={item} active={active} />
+                <NavDropdown key={item.href} item={item} active={active} scrolled={scrolled} />
               );
             })}
           </ul>
@@ -211,7 +224,7 @@ export default function Header() {
             href={buildWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="grid size-11 place-items-center rounded-full border border-brand-line text-whatsapp"
+            className="grid size-11 place-items-center rounded-full border border-white/30 text-white"
             aria-label="Chat on WhatsApp"
           >
             <MessageCircle className="size-5" aria-hidden="true" />
@@ -222,7 +235,7 @@ export default function Header() {
             aria-label="Open menu"
             aria-expanded={open}
             aria-controls="mobile-menu"
-            className="grid size-11 place-items-center rounded-full border border-brand-line text-brand-navy"
+            className="grid size-11 place-items-center rounded-full border border-white/30 text-white"
           >
             <Menu className="size-5" aria-hidden="true" />
           </button>

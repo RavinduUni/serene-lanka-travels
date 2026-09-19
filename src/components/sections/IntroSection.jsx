@@ -16,7 +16,7 @@ export default function IntroSection() {
 
         <div className="mt-12 grid items-center gap-8 lg:mt-16 lg:grid-cols-12 lg:gap-10">
           {/* Left image – slightly raised, like the reference */}
-          <div className="relative aspect-[4/3] overflow-hidden rounded-card shadow-card sm:aspect-[16/9] lg:col-span-3 lg:aspect-[4/5] lg:-mt-10">
+          <div className="relative aspect-4/3 overflow-hidden rounded-card shadow-card sm:aspect-[16/9] lg:col-span-3 lg:aspect-4/5 lg:-mt-10">
             <SmartImage
               src={intro.images[0]}
               alt="Mist over Sri Lanka's central highlands"
@@ -48,7 +48,7 @@ export default function IntroSection() {
           </div>
 
           {/* Right image – sits lower */}
-          <div className="relative aspect-[4/3] overflow-hidden rounded-card shadow-card sm:aspect-[16/9] lg:col-span-3 lg:aspect-[4/5] lg:mt-10">
+          <div className="relative aspect-4/3 overflow-hidden rounded-card shadow-card sm:aspect-[16/9] lg:col-span-3 lg:aspect-4/5 lg:mt-10">
             <SmartImage
               src={intro.images[1]}
               alt="Palm-lined beach on Sri Lanka's south coast"
