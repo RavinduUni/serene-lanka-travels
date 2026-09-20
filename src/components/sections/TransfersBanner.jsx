@@ -25,7 +25,6 @@ export default function TransfersBanner() {
                   key={s}
                   className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-[13px] font-semibold"
                 >
-                  <Plane className="size-3.5 text-brand-blue" aria-hidden="true" />
                   {s}
                 </li>
               ))}

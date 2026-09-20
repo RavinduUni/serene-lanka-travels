@@ -9,17 +9,17 @@ import Reveal from "@/components/motion/Reveal";
 import { whyChoose } from "@/data/about";
 
 export default function WhyChooseCarousel() {
+  const items = whyChoose.items;
+  const total = items.length;
+  const VISIBLE_LG = 4; // cards visible at lg breakpoint
+  // Max index so that 4 cards are always on screen
+  const maxIndex = total - VISIBLE_LG; // e.g. 9 - 4 = 5
+
   const [index, setIndex] = useState(0);
-  const total = whyChoose.items.length; // 9
 
-  // Cards visible: 4 on lg, 2 on sm, 1 on mobile
-  // We step by 1 and let CSS handle the width
-
-  const prev = () => setIndex((i) => Math.max(0, i - 1));
-  const next = () => setIndex((i) => Math.min(i + 1, total - 1));
-
-  const isPrevDisabled = index === 0;
-  const isNextDisabled = index >= total - 1;
+  // Wrap-around navigation — never stops, always shows 4 cards
+  const prev = () => setIndex((i) => (i <= 0 ? maxIndex : i - 1));
+  const next = () => setIndex((i) => (i >= maxIndex ? 0 : i + 1));
 
   return (
     <section className="border-y border-brand-line bg-brand-sky py-20 lg:py-28 overflow-hidden">
@@ -36,17 +36,15 @@ export default function WhyChooseCarousel() {
           <div className="flex items-center gap-3 lg:col-span-3 lg:justify-end">
             <button
               onClick={prev}
-              disabled={isPrevDisabled}
               aria-label="Previous cards"
-              className="grid size-11 place-items-center rounded-full border border-brand-line bg-white text-brand-navy shadow-sm transition-all duration-200 hover:bg-brand-navy hover:text-white hover:border-brand-navy disabled:cursor-not-allowed disabled:opacity-40"
+              className="grid size-11 place-items-center rounded-full border border-brand-line bg-white text-brand-navy shadow-sm transition-all duration-200 hover:bg-brand-navy hover:text-white hover:border-brand-navy"
             >
               <ChevronLeft className="size-5" />
             </button>
             <button
               onClick={next}
-              disabled={isNextDisabled}
               aria-label="Next cards"
-              className="grid size-11 place-items-center rounded-full border border-brand-navy bg-brand-navy text-white shadow-sm transition-all duration-200 hover:bg-brand-navy/80 disabled:cursor-not-allowed disabled:opacity-40"
+              className="grid size-11 place-items-center rounded-full border border-brand-navy bg-brand-navy text-white shadow-sm transition-all duration-200 hover:bg-brand-navy/80"
             >
               <ChevronRight className="size-5" />
             </button>
@@ -61,7 +59,7 @@ export default function WhyChooseCarousel() {
               transform: `translateX(calc(${-index} * (25% + 5px)))`,
             }}
           >
-            {whyChoose.items.map((item) => {
+            {items.map((item) => {
               const Icon = Icons[item.icon] || Icons.Check;
               return (
                 <li
@@ -116,18 +114,22 @@ export default function WhyChooseCarousel() {
 
         {/* Dot indicators */}
         <div className="mt-8 flex justify-center gap-2">
-          {whyChoose.items.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setIndex(i)}
-              aria-label={`Go to card ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === index
-                  ? "w-6 bg-brand-navy"
-                  : "w-1.5 bg-brand-navy/30 hover:bg-brand-navy/60"
-              }`}
-            />
-          ))}
+          {items.map((_, i) => {
+            // Only show dots up to maxIndex (each dot = one valid start position)
+            if (i > maxIndex) return null;
+            return (
+              <button
+                key={i}
+                onClick={() => setIndex(i)}
+                aria-label={`Go to card group ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  i === index
+                    ? "w-6 bg-brand-navy"
+                    : "w-1.5 bg-brand-navy/30 hover:bg-brand-navy/60"
+                }`}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

@@ -167,8 +167,19 @@ export default function DayToursPage() {
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
 
+                <div
+                  className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,19,59,0)_45%,rgba(6,19,59,0.92)_100%)]"
+                  aria-hidden="true"
+                />
+
                 {/* Hover overlay – slides up from bottom */}
                 <div className="absolute inset-0 translate-y-full bg-linear-to-t from-brand-navy-deep/95 via-brand-navy/70 to-transparent transition-transform duration-500 ease-out group-hover:translate-y-0" />
+
+                <div className="absolute inset-x-0 bottom-0 p-4 transition-all duration-500 group-hover:translate-y-2 group-hover:opacity-0 sm:p-5">
+                  <span className="text-[13px] font-bold uppercase leading-tight tracking-widest text-white sm:text-[15px]">
+                    {cat.label}
+                  </span>
+                </div>
 
                 {/* Content – fades + slides in on hover */}
                 <div className="absolute inset-x-0 bottom-0 flex flex-col items-start gap-3 p-5 translate-y-6 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100">
