@@ -9,6 +9,7 @@ export default function sitemap() {
   const now = new Date();
   return [
     { url: site.url, lastModified: now, changeFrequency: "weekly", priority: 1 },
+    { url: `${site.url}/about-us`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${site.url}/day-tours`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     ...getDayTours().map((t) => ({
       url: `${site.url}/day-tours/${t.slug}`,
