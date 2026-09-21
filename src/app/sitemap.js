@@ -1,5 +1,5 @@
 import { site } from "@/data/site";
-import { getDayTours } from "@/lib/content";
+import { getDayTours, getItineraries } from "@/lib/content";
 
 /**
  * Only routes that exist are emitted. Add dynamic routes here as each
@@ -13,6 +13,13 @@ export default function sitemap() {
     { url: `${site.url}/day-tours`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     ...getDayTours().map((t) => ({
       url: `${site.url}/day-tours/${t.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    })),
+    { url: `${site.url}/sri-lanka-itineraries`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    ...getItineraries().map((t) => ({
+      url: `${site.url}/sri-lanka-itineraries/${t.slug}`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,

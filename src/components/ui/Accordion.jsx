@@ -19,7 +19,7 @@ export default function Accordion({ items, defaultOpen = 0 }) {
         const panelId = `${baseId}-panel-${i}`;
         const buttonId = `${baseId}-button-${i}`;
         return (
-          <div key={item.q}>
+          <div key={i}>
             <h3>
               <button
                 id={buttonId}
