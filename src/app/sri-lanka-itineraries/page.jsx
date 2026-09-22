@@ -124,7 +124,7 @@ export default function ItinerariesPage() {
       </section>
 
       {/* ── Duration Filters + Category Grid ── */}
-      <section className="bg-brand-mist py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-24">
         <Container>
           <Reveal>
             <SectionHeading
@@ -133,7 +133,7 @@ export default function ItinerariesPage() {
               className="mx-auto max-w-2xl"
             />
           </Reveal>
-          <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-brand-muted sm:text-base">
+          <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-black sm:text-base">
             Choose a category below, then filter by duration to find an
             itinerary that fits your schedule and interests.
           </p>

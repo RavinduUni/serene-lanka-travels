@@ -141,7 +141,7 @@ export default function DayToursPage() {
       </section>
 
       {/* ── More Tailor-Made Tours Grid ── */}
-      <section className="bg-brand-mist py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-24">
         <Container>
           <Reveal>
             <SectionHeading

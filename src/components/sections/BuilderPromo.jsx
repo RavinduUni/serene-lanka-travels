@@ -53,16 +53,6 @@ export default function BuilderPromo() {
                 className="object-cover"
               />
             </div>
-            <div
-              className="absolute -left-2 bottom-8 hidden rounded-2xl bg-white p-5 shadow-lift lg:block"
-              aria-hidden="true"
-            >
-              <p className="text-[12px] font-semibold text-brand-muted">Estimated in seconds</p>
-              <p className="mt-1 text-2xl font-bold tracking-tight text-brand-navy">
-                from <span className="text-brand-blue">USD 35</span>
-                <span className="text-sm font-semibold text-brand-muted"> / person / day</span>
-              </p>
-            </div>
           </div>
         </div>
       </Container>

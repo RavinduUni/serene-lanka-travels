@@ -9,8 +9,16 @@ import { experiences } from "@/data/home";
 
 export default function ExperienceGrid() {
   return (
-    <section className="py-20 lg:py-28">
-      <Container>
+    <section className="relative overflow-hidden py-20 lg:py-28">
+      {/* Watercolor leopard illustration – decorative corner accent */}
+      <img
+        src="/side2.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-0 right-0 hidden w-[320px] select-none opacity-90 lg:block xl:w-[480px]"
+        style={{ transform: "translateX(12%)" }}
+      />
+      <Container className="relative">
         <Reveal>
           <SectionHeading lines={experiences.heading} align="center" className="mx-auto" />
         </Reveal>

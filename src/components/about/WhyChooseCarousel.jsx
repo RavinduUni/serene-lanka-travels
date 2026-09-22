@@ -22,7 +22,7 @@ export default function WhyChooseCarousel() {
   const next = () => setIndex((i) => (i >= maxIndex ? 0 : i + 1));
 
   return (
-    <section className="border-y border-brand-line bg-brand-sky py-20 lg:py-28 overflow-hidden">
+    <section className="bg-white py-20 lg:py-28 overflow-hidden">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         {/* Header row */}
         <div className="mb-10 grid items-end gap-6 lg:grid-cols-12">

@@ -28,6 +28,14 @@ export default function ReviewsSlider() {
 
   return (
     <section className="relative overflow-hidden py-24 lg:py-32">
+      {/* Watercolor traveller illustration – decorative corner accent */}
+      <img
+        src="/side3.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-4 -left-50 hidden w-[340px] select-none opacity-90 lg:block xl:w-[550px]"
+        style={{ transform: "translateX(33%)" }}
+      />
       <span className="watermark top-6 lg:top-4" aria-hidden="true">
         {reviews.watermark}
       </span>

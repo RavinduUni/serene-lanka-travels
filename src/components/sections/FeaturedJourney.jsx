@@ -8,7 +8,7 @@ import { featuredJourney as f } from "@/data/home";
 
 export default function FeaturedJourney() {
   return (
-    <section className="relative overflow-hidden bg-brand-mist py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-white py-24 lg:py-32">
       {/* Watermark word behind the heading (reference style) */}
       <span className="watermark top-6 lg:top-4" aria-hidden="true">
         {f.watermark}

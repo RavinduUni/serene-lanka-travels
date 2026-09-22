@@ -26,8 +26,8 @@ function AnimatedStat({ stat }) {
   const { ref, count } = useCountUp(numeric, 1800);
 
   return (
-    <div ref={ref} className="border-l-2 border-brand-blue pl-5">
-      <dd className="text-4xl font-bold tracking-[-0.03em] text-brand-navy sm:text-5xl">
+    <div ref={ref} className="pl-5">
+      <dd className="text-4xl font-bold tracking-[-0.03em] text-brand-navy sm:text-6xl">
         {count}
         {suffix}
       </dd>
@@ -40,8 +40,16 @@ function AnimatedStat({ stat }) {
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 lg:py-28">
-      <Container>
+    <section className="relative overflow-hidden py-20 lg:py-28">
+      {/* Watercolor traveller illustration – decorative corner accent */}
+      <img
+        src="/side1.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-4 -left-50 hidden w-[340px] select-none opacity-90 lg:block xl:w-[500px]"
+        style={{ transform: "translateX(33%)" }}
+      />
+      <Container className="relative">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
             <Reveal>

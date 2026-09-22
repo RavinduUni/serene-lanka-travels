@@ -18,6 +18,15 @@ export default function PopularDestinations() {
         <Image src={'/popular2.jpg'} alt="Mirissa beach at golden hour, Sri Lanka" fill sizes="100vw" className="object-cover object-right" priority={false} />
       </div>
 
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[30%]"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 45%, rgba(255,255,255,0) 100%)",
+        }}
+        aria-hidden="true"
+      />
+
       <Container className="relative">
         <div className="grid items-end gap-6 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
@@ -70,7 +79,7 @@ export default function PopularDestinations() {
 
                 {/* Hover state: centred overlay content that rises into view */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-5 text-center opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-                  
+
                   {/* Destination name */}
                   <p className="text-2xl font-bold text-white sm:text-3xl">{d.name}</p>
                   {/* Description blurb */}

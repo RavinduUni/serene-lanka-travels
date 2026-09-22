@@ -9,8 +9,9 @@ import { tourCategories } from "@/data/home";
 
 export default function TourCategoryGrid() {
   return (
-    <section className="py-20 lg:py-28">
-      <Container>
+    <section className="relative overflow-hidden py-20 lg:py-28">
+      
+      <Container className="relative">
         <div className="grid items-end gap-6 lg:grid-cols-12">
           <Reveal className="lg:col-span-4">
             <SectionHeading lines={tourCategories.heading} />
@@ -61,3 +62,4 @@ export default function TourCategoryGrid() {
     </section>
   );
 }
+

@@ -80,7 +80,7 @@ export default function AboutUsPage() {
               <Reveal>
                 <SectionHeading lines={ourStory.heading} />
               </Reveal>
-              <div className="mt-6 space-y-4 text-[15px] leading-[1.85] text-brand-muted sm:text-base">
+              <div className="mt-6 space-y-4 text-[15px] leading-[1.85] text-black sm:text-base">
                 {ourStory.paragraphs.map((p) => (
                   <p key={p.slice(0, 32)}>{p}</p>
                 ))}
@@ -129,7 +129,15 @@ export default function AboutUsPage() {
       </section>
 
       {/* §10.2 Meaning Behind Seren Lanka – image-card grid */}
-      <section className="bg-white py-20 lg:py-28 bg-[url('/footerImg.jpg')] bg-cover bg-top bg-no-repeat">
+      <section className="bg-white py-20 lg:py-28 bg-[url('/footerImg.jpg')] bg-cover bg-top bg-no-repeat relative">
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[30%]"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 45%, rgba(255,255,255,0) 100%)",
+          }}
+          aria-hidden="true"
+        />
         <Container>
           {/* Centred heading + intro copy */}
           <Reveal>
@@ -139,7 +147,7 @@ export default function AboutUsPage() {
                 align="center"
                 className="mx-auto"
               />
-              <p className="mx-auto mt-5 max-w-xl text-[15px] leading-[1.8] text-brand-muted sm:text-base">
+              <p className="mx-auto mt-5 max-w-xl text-[15px] leading-[1.8] text-black sm:text-base">
                 {brandMeaning.copy}
               </p>
             </div>
@@ -199,30 +207,79 @@ export default function AboutUsPage() {
       </section>
 
       {/* §10.3 / §10.4 Mission & Vision */}
-      <section className="py-16 lg:py-24">
-        <Container>
-          <div className="grid gap-6 lg:grid-cols-2">
-            {missionVision.map((item) => {
-              const Icon = Icons[item.icon] || Icons.Compass;
-              return (
-                <article
-                  key={item.title}
-                  className="rounded-card border border-brand-line bg-white p-7 shadow-card sm:p-10"
-                >
-                  <span className="grid size-14 place-items-center rounded-2xl bg-brand-sky text-brand-blue">
-                    <Icon className="size-7" aria-hidden="true" />
-                  </span>
-                  <h2 className="mt-6 text-2xl font-bold tracking-tight text-brand-navy sm:text-3xl">
-                    {item.title}
-                  </h2>
-                  <p className="mt-4 text-[15px] leading-[1.85] text-brand-muted sm:text-base">
+      <section className="relative w-full overflow-hidden bg-white py-16 lg:py-24">
+        {/* ── Text content ─────────────────────────────────────── */}
+        <div className="relative z-10 mx-auto max-w-2xl px-6 pb-0 pt-16 text-center lg:pt-20">
+          <Reveal>
+            <h2 className="text-[1.75rem] font-bold leading-tight tracking-tight text-brand-navy sm:text-4xl lg:text-[2.6rem]">
+              Our Mission &amp; Vision
+            </h2>
+          </Reveal>
+
+          {/* Mission + Vision stacked, centre-aligned */}
+          {missionVision.map((item, i) => {
+            return (
+              <Reveal key={item.title} delay={i * 0.15}>
+                <div className="mt-6">
+                  <p className="mx-auto mt-2 max-w-xl text-[15px] leading-[1.85] text-black sm:text-[15px]">
                     {item.copy}
                   </p>
-                </article>
-              );
-            })}
-          </div>
-        </Container>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+
+        {/* ── Wildlife landscape image with cloud-mist dissolves ── */}
+        <div className="relative mt-8 w-full">
+          {/* Top cloud-mist fade */}
+          <div
+            className="pointer-events-none absolute inset-x-0 top-0 z-10 h-[38%]"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 30%, rgba(255,255,255,0) 100%)",
+            }}
+            aria-hidden="true"
+          />
+
+          {/* Bottom cloud-mist fade */}
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[38%]"
+            style={{
+              background:
+                "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 30%, rgba(255,255,255,0) 100%)",
+            }}
+            aria-hidden="true"
+          />
+
+          {/* Left cloud-mist fade */}
+          <div
+            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-[12%]"
+            style={{
+              background:
+                "linear-gradient(to right, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
+            }}
+            aria-hidden="true"
+          />
+
+          {/* Right cloud-mist fade */}
+          <div
+            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-[12%]"
+            style={{
+              background:
+                "linear-gradient(to left, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
+            }}
+            aria-hidden="true"
+          />
+
+          {/* The panoramic wildlife image */}
+          <img
+            src="/mission-vision-wildlife.jpg"
+            alt="Sri Lanka wildlife – leopard, elephants and peacock in golden hour"
+            className="w-full object-cover"
+            style={{ maxHeight: "520px", minHeight: "280px", objectPosition: "center 40%" }}
+          />
+        </div>
       </section>
 
       {/* §10.5 Why Choose Seren Lanka Travels */}
@@ -260,7 +317,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* §10.7 Registrations & Trust */}
-      <section className="border-t border-brand-line bg-brand-mist py-16 lg:py-24">
+      <section className=" bg-white py-16 lg:py-24">
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
