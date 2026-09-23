@@ -22,18 +22,17 @@ export default function TransfersBanner() {
               looks like a rounded shape that bleeds off the left edge.
             */}
             <div
-              className="relative w-full overflow-hidden shadow-lift"
+              className="relative w-full"
               style={{
                 aspectRatio: "4 / 5",
-                borderRadius: "40% 40% 40% 50% / 40% 30% 50% 40%",
               }}
             >
               <SmartImage
-                src={transfers.image}
+                src={'/why-vehicles.jpg'}
                 alt="Private vehicle driving through scenic Sri Lanka roads"
                 fill
                 sizes="(min-width:1024px) 45vw, 90vw"
-                className="object-cover object-center scale-110"
+                className="object-cover object-center rounded-3xl"
               />
             </div>
           </Reveal>

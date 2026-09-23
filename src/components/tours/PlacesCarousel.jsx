@@ -125,7 +125,7 @@ export default function PlacesCarousel({ places }) {
                   className={cn(
                     "group/thumb relative block h-20 w-24 overflow-hidden rounded-xl border-2 transition-all sm:h-28 sm:w-32",
                     i === active
-                      ? "border-brand-blue shadow-[0_0_0_3px_rgba(26,140,255,0.35)]"
+                      ? "border-brand-blue"
                       : "border-white/25 opacity-75 hover:opacity-100"
                   )}
                 >

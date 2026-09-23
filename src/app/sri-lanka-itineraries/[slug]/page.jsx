@@ -66,6 +66,63 @@ function ListCard({ title, Icon, items }) {
   );
 }
 
+/**
+ * Google Maps embed for the "Journey Highlights" section (reference design).
+ * Tours with a confirmed route get a driving route drawn between the stops;
+ * concept tours (no route) show the island with the destinations listed beside it.
+ * The key-less legacy embed endpoint is used, so no API key is required.
+ */
+function mapEmbedUrl(tour) {
+  const place = (s) =>
+    encodeURIComponent(`${/airport/i.test(s) ? "Bandaranaike International Airport" : s}, Sri Lanka`);
+  if (Array.isArray(tour.route) && tour.route.length > 1) {
+    const [first, ...rest] = tour.route;
+    return `https://maps.google.com/maps?saddr=${place(first)}&daddr=${rest.map(place).join("+to:")}&output=embed`;
+  }
+  return "https://maps.google.com/maps?q=Sri+Lanka&z=7&output=embed";
+}
+
+/**
+ * Builds the "Destinations Covered" cards from data that already exists on the tour:
+ *  - bullets: `tour.destinationDetails[].points` if provided, else the day-by-day
+ *    points of the days that end at that destination, else a short fallback line
+ *  - images: `tour.destinationDetails[].images` if provided, else two gallery photos
+ * Adding `destinationDetails: [{ name, points: [], images: [] }]` to a tour in
+ * itineraries.js overrides both without touching this page.
+ */
+function buildDestinationCards(tour) {
+  const days = Array.isArray(tour.dayByDay) ? tour.dayByDay : [];
+  const gallery = tour.gallery || [];
+  const details = tour.destinationDetails || [];
+
+  // Assign each day to the LAST destination named in its title ("Kandy → Ella" → Ella)
+  const pointsByDestination = {};
+  days.forEach((d) => {
+    const hit = tour.destinations
+      .map((name) => ({ name, pos: d.title.lastIndexOf(name) }))
+      .filter((x) => x.pos >= 0)
+      .sort((a, b) => b.pos - a.pos)[0];
+    if (hit) pointsByDestination[hit.name] = [...(pointsByDestination[hit.name] || []), ...d.points];
+  });
+
+  return tour.destinations.map((name, i) => {
+    const custom = details.find((d) => d.name === name) || {};
+    const points =
+      custom.points?.length
+        ? custom.points
+        : pointsByDestination[name]?.length
+          ? pointsByDestination[name]
+          : [`Included in your tailor-made ${tour.name} – tell us how many nights you'd like here.`];
+    const images =
+      custom.images?.length
+        ? custom.images.slice(0, 2)
+        : gallery.length
+          ? [gallery[(i * 2) % gallery.length], gallery[(i * 2 + 1) % gallery.length]]
+          : [];
+    return { name, points, images };
+  });
+}
+
 export default async function ItineraryPage({ params }) {
   const { slug } = await params;
   const tour = getItineraryBySlug(slug);
@@ -87,11 +144,11 @@ export default async function ItineraryPage({ params }) {
     provider: { "@type": "TravelAgency", name: site.name, url: site.url },
     ...(hasRoute
       ? {
-          itinerary: {
-            "@type": "ItemList",
-            itemListElement: tour.route.map((stop, i) => ({ "@type": "ListItem", position: i + 1, name: stop })),
-          },
-        }
+        itinerary: {
+          "@type": "ItemList",
+          itemListElement: tour.route.map((stop, i) => ({ "@type": "ListItem", position: i + 1, name: stop })),
+        },
+      }
       : {}),
   };
 
@@ -133,7 +190,7 @@ export default async function ItineraryPage({ params }) {
       </section>
 
       {/* 2, 9–13. Tour at a glance */}
-      <section className="border-y border-brand-line bg-brand-mist py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-24">
         <Container>
           <SectionHeading lines={["Tour at", "a Glance"]} align="center" className="mx-auto" />
           <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-black">
@@ -145,75 +202,125 @@ export default async function ItineraryPage({ params }) {
         </Container>
       </section>
 
-      {/* 5. Route – sky band (reference route section) */}
-      {hasRoute && (
-        <section className="border-y border-brand-line bg-brand-sky py-14 lg:py-20">
+
+      {/* 7. Day-by-day – mist band like the reference (highlights moved to the map section below) */}
+      {hasDays && (
+        <section className="bg-brand-mist py-16 lg:py-24">
           <Container>
-            <SectionHeading lines={["Here is your", `${tour.name} Route`]} align="center" size="sm" className="mx-auto" />
-            <div className="mt-10">
-              <RouteStrip stops={tour.route} />
+            <SectionHeading lines={["Through the journey", "Day by Day"]} size="sm" />
+            <div className="mt-6">
+              <DayByDay items={tour.dayByDay} />
             </div>
           </Container>
         </section>
       )}
 
-      {/* 6 + 7. Highlights and day-by-day – mist band like the reference */}
-      <section className="bg-brand-mist py-16 lg:py-24">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-14">
-            <div className={hasDays ? "lg:col-span-4" : "lg:col-span-12"}>
-              <SectionHeading lines={["Tour", "Highlights"]} size="sm" />
-              <ul className={`mt-6 grid gap-3 ${hasDays ? "sm:grid-cols-2 lg:grid-cols-1" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
-                {tour.highlights.map((h) => (
-                  <li key={h} className="flex items-start gap-3 rounded-2xl bg-white px-4 py-3 text-[14px] font-semibold text-brand-ink shadow-[0_1px_0_0_#e6eaf1]">
-                    <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-brand-sky text-brand-blue">
-                      <Check className="size-3.5" aria-hidden="true" />
-                    </span>
-                    {h}
-                  </li>
-                ))}
-              </ul>
-              {tour.possibleSightings && (
-                <div className="mt-8">
-                  <h3 className="flex items-center gap-2 text-[15px] font-bold text-brand-navy">
-                    <Binoculars className="size-4 text-brand-blue" aria-hidden="true" />
-                    Possible sightings
-                  </h3>
-                  <ul className="mt-3 flex flex-wrap gap-2">
-                    {tour.possibleSightings.map((s) => (
-                      <li key={s} className="rounded-full border border-brand-line bg-white px-3 py-1 text-[13px] font-semibold text-brand-ink">{s}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-
-            {hasDays && (
-              <div className="lg:col-span-8">
-                <SectionHeading lines={["Through the journey", "Day by Day"]} size="sm" />
-                <div className="mt-6">
-                  <DayByDay items={tour.dayByDay} />
-                </div>
-              </div>
-            )}
-          </div>
-        </Container>
-      </section>
-
-      {/* 8, 11, 16. Destinations, activities, optional experiences */}
+      {/* 6, 8, 11, 16. Destinations map + highlights, activities, optional experiences */}
       <section className="py-16 lg:py-24">
         <Container>
-          <div className="mb-10">
+          {/* 6 + 8. Destinations map with the Journey Highlights card overlapping it (reference design) */}
+          <div className="mb-12 grid items-center gap-6 lg:mb-16 lg:grid-cols-12 lg:gap-0">
+            {/* Map */}
+            <div className="lg:col-span-7">
+              <div className="overflow-hidden rounded-card border border-brand-line bg-brand-sky shadow-card">
+                <iframe
+                  title={`${tour.name} – destinations map`}
+                  src={mapEmbedUrl(tour)}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                  className="block h-[320px] w-full border-0 sm:h-[420px] lg:h-[520px]"
+                />
+              </div>
+            </div>
+
+            {/* Journey Highlights card – overlaps the map on desktop */}
+            <div className="lg:col-span-5 lg:-ml-10 lg:self-start lg:pt-10">
+              <div className="rounded-card border border-brand-line bg-white p-7 shadow-lift sm:p-9">
+                <SectionHeading lines={["Journey", "Highlights"]} size="sm" />
+                <ul className="mt-6 space-y-3.5">
+                  {tour.highlights.map((h) => (
+                    <li key={h} className="flex items-start gap-3 text-[15px] leading-relaxed text-brand-ink">
+                      <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-brand-sky text-brand-blue">
+                        <Check className="size-3.5" aria-hidden="true" />
+                      </span>
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+                {tour.possibleSightings && (
+                  <div className="mt-7 border-t border-brand-line pt-6">
+                    <h3 className="flex items-center gap-2 text-[15px] font-bold text-brand-navy">
+                      <Binoculars className="size-4 text-brand-blue" aria-hidden="true" />
+                      Possible sightings
+                    </h3>
+                    <ul className="mt-3 flex flex-wrap gap-2">
+                      {tour.possibleSightings.map((s) => (
+                        <li key={s} className="rounded-full border border-brand-line bg-white px-3 py-1 text-[13px] font-semibold text-brand-ink">{s}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+          {/* 8. Destinations Covered – stacked cards (reference day-card design) */}
+          <div className="py-16 lg:py-24">
             <SectionHeading lines={["Destinations", "Covered"]} size="sm" />
-            <ul className="mt-6 flex flex-wrap gap-2.5">
-              {tour.destinations.map((d) => (
-                <li key={d} className="flex items-center gap-1.5 rounded-full bg-brand-sky px-4 py-2 text-[14px] font-semibold text-brand-navy">
-                  <MapPin className="size-4 text-brand-blue" aria-hidden="true" />
-                  {d}
+            <ol className="mt-8 space-y-8">
+              {buildDestinationCards(tour).map((d, i) => (
+                <li
+                  key={d.name}
+                  className="relative rounded-2xl border border-brand-line bg-white p-6 pt-8 shadow-card sm:p-8 sm:pl-14"
+                >
+                  {/* Numbered badge overlapping the card corner */}
+                  <span
+                    className="absolute -left-3 -top-4 flex size-14 sm:size-16 flex-col items-center justify-center rounded-full bg-brand-blue text-white shadow-[0_10px_24px_-10px_rgba(26,140,255,0.8)] sm:-left-5 sm:-top-5 sm:size-20"
+                    aria-hidden="true"
+                  >
+                    <span className="text-[10px] font-semibold uppercase leading-none tracking-wide text-white/80 sm:text-[11px]">
+                      Stop
+                    </span>
+                    <span className="mt-0.5 text-xl font-bold leading-none sm:text-2xl">{i + 1}</span>
+                  </span>
+
+                  <div className="grid gap-6 lg:grid-cols-12 lg:items-center lg:gap-8">
+                    <div className="lg:col-span-6">
+                      <h3 className="flex items-center gap-2 text-2xl font-bold tracking-tight text-brand-navy sm:text-[1.75rem]">
+                        <MapPin className="size-5 shrink-0 text-brand-blue" aria-hidden="true" />
+                        <span className="sr-only">Stop {i + 1}: </span>
+                        {d.name}
+                      </h3>
+                      <ul className="mt-4 space-y-2">
+                        {d.points.map((p) => (
+                          <li key={p} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-brand-ink">
+                            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand-blue" aria-hidden="true" />
+                            {p}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    {d.images.length > 0 && (
+                      <div className="grid grid-cols-2 gap-3 lg:col-span-6 lg:gap-4">
+                        {d.images.map((src, j) => (
+                          <div key={`${src}-${j}`} className="relative aspect-[3/4] overflow-hidden rounded-xl bg-brand-navy">
+                            <SmartImage
+                              src={src}
+                              alt={`${d.name}, Sri Lanka`}
+                              fill
+                              sizes="(min-width:1024px) 22vw, 45vw"
+                              className="object-cover transition-transform duration-700 hover:scale-105"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </li>
               ))}
-            </ul>
+            </ol>
           </div>
+
           <div className="grid gap-6 lg:grid-cols-2">
             <ListCard title="Things you will do" Icon={Sparkles} items={tour.activities} />
             <ListCard title="Optional experiences" Icon={Star} items={tour.optionalExperiences} />

@@ -143,7 +143,7 @@ export default function ItineraryFactsCarousel({ tour }) {
                   className={cn(
                     "relative flex h-16 w-20 flex-col items-center justify-center gap-1 overflow-hidden rounded-xl border-2 transition-all sm:h-20 sm:w-24",
                     i === active
-                      ? "border-brand-blue shadow-[0_0_0_3px_rgba(26,140,255,0.35)]"
+                      ? "border-brand-blue"
                       : "border-white/25 opacity-75 hover:opacity-100"
                   )}
                 >

@@ -40,13 +40,13 @@ function AnimatedStat({ stat }) {
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-28">
+    <section className="relative py-20 lg:py-28">
       {/* Watercolor traveller illustration – decorative corner accent */}
       <img
         src="/side1.png"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-4 -left-50 hidden w-[340px] select-none opacity-90 lg:block xl:w-[500px]"
+        className="pointer-events-none absolute -bottom-20 -left-50 hidden w-[340px] select-none opacity-90 lg:block xl:w-[500px]"
         style={{ transform: "translateX(33%)" }}
       />
       <Container className="relative">

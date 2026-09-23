@@ -108,7 +108,7 @@ export default async function DayTourPage({ params }) {
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
               <SectionHeading lines={["About this", "Day Tour"]} size="sm" />
-              <div className="mt-6 space-y-4 text-[15px] leading-[1.85] text-brand-muted sm:text-base">
+              <div className="mt-6 space-y-4 text-[15px] leading-[1.85] text-black sm:text-base">
                 {tour.intro.map((p) => (
                   <p key={p.slice(0, 32)}>{p}</p>
                 ))}
@@ -139,7 +139,7 @@ export default async function DayTourPage({ params }) {
       <section className="border-y border-brand-line bg-brand-mist py-16 lg:py-24">
         <Container>
           <SectionHeading lines={["Places", "You Will Visit"]} align="center" className="mx-auto" />
-          <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-brand-muted">
+          <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-black">
             The stops that shape this day. The order and timing are planned around traffic, weather
             and your interests.
           </p>
@@ -183,7 +183,7 @@ export default async function DayTourPage({ params }) {
               <h3 className="flex items-center gap-2 text-lg font-bold text-brand-navy">
                 Who it suits
               </h3>
-              <p className="mt-4 text-[14px] leading-[1.8] text-brand-muted">{tour.suitability}</p>
+              <p className="mt-4 text-[14px] leading-[1.8] text-brand-ink">{tour.suitability}</p>
             </div>
           </div>
         </Container>

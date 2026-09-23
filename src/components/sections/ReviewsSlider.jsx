@@ -30,7 +30,7 @@ export default function ReviewsSlider() {
     <section className="relative overflow-hidden py-24 lg:py-32">
       {/* Watercolor traveller illustration – decorative corner accent */}
       <img
-        src="/side3.png"
+        src="/sri lanka.png"
         alt=""
         aria-hidden="true"
         className="pointer-events-none absolute -bottom-4 -left-50 hidden w-[340px] select-none opacity-90 lg:block xl:w-[550px]"

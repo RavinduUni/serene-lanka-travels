@@ -4,12 +4,6 @@ import { useId, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-/**
- * Day-by-day itinerary accordion (Walkers Tours reference style):
- * navy day chip + destination title + chevron, expanding to the day's stops.
- * Several days can be open at once; day 1 is open by default.
- * items: [{ day, title, points: [] }]
- */
 export default function DayByDay({ items }) {
   const [open, setOpen] = useState(() => new Set([0]));
   const baseId = useId();
