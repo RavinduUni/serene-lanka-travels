@@ -6,6 +6,7 @@
 import { dayTours } from "@/data/day-tours";
 import { itineraries, itineraryCategoryLabels } from "@/data/itineraries";
 import { transferServices, vehicles } from "@/data/transfers";
+import { destinations } from "@/data/destinations";
 
 export function getDayTours() {
   return dayTours.filter((t) => t.published);
@@ -61,4 +62,28 @@ export function getRelatedTransferServices(service, limit = 3) {
 
 export function getVehicles() {
   return vehicles.filter((v) => v.active);
+}
+
+/* --------------------------------------------------------------- Destinations */
+export function getDestinations() {
+  return destinations.filter((d) => d.published);
+}
+
+export function getDestinationBySlug(slug) {
+  return getDestinations().find((d) => d.slug === slug) || null;
+}
+
+export function getNearbyDestinations(destination, limit = 3) {
+  const bySlug = new Map(getDestinations().map((d) => [d.slug, d]));
+  return (destination.nearby || []).map((s) => bySlug.get(s)).filter(Boolean).slice(0, limit);
+}
+
+/** Resolves a destination's related tour slugs into full day-tour / itinerary objects. */
+export function getDestinationTours(destination) {
+  const dayTourMap = new Map(getDayTours().map((t) => [t.slug, t]));
+  const itineraryMap = new Map(getItineraries().map((t) => [t.slug, t]));
+  return {
+    dayTours: (destination.relatedDayTours || []).map((s) => dayTourMap.get(s)).filter(Boolean),
+    itineraries: (destination.relatedItineraries || []).map((s) => itineraryMap.get(s)).filter(Boolean),
+  };
 }

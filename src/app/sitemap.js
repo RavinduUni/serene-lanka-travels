@@ -1,5 +1,5 @@
 import { site } from "@/data/site";
-import { getDayTours, getItineraries, getTransferServices } from "@/lib/content";
+import { getDayTours, getItineraries, getTransferServices, getDestinations } from "@/lib/content";
 
 /**
  * Only routes that exist are emitted. Add dynamic routes here as each
@@ -27,6 +27,13 @@ export default function sitemap() {
     { url: `${site.url}/transfers`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     ...getTransferServices().map((s) => ({
       url: `${site.url}/transfers/${s.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    })),
+    { url: `${site.url}/destinations`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    ...getDestinations().map((d) => ({
+      url: `${site.url}/destinations/${d.slug}`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,
