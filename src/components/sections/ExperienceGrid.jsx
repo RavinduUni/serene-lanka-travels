@@ -31,7 +31,7 @@ export default function ExperienceGrid() {
             <li key={item.label}>
               <Link
                 href={item.href}
-                className="group flex h-full flex-col overflow-hidden rounded-card border border-brand-line bg-white transition-shadow hover:shadow-card"
+                className="group flex h-full flex-col overflow-hidden rounded-card border border-brand-line bg-white shadow-card"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <SmartImage
