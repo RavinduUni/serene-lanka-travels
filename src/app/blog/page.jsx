@@ -38,10 +38,14 @@ function BlogCard({ post }) {
       <div className="flex flex-1 flex-col p-5 text-center sm:p-6">
         {/* Meta: date + reading time */}
         <p className="text-[12px] font-medium text-brand-muted flex justify-center gap-5">
-          <CalendarDays className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-          <time dateTime={post.date}>{formatDate(post.date)}</time>
-          <Clock className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-          {post.readingTime}
+          <span className="flex items-center gap-1">
+            <CalendarDays className="size-4 transition-transform" aria-hidden="true" />
+            <time dateTime={post.date}>{formatDate(post.date)}</time>
+          </span>
+          <span className="flex items-center gap-1">
+            <Clock className="size-4 transition-transform" aria-hidden="true" />
+            {post.readingTime}
+          </span>
         </p>
         <h2 className="mt-2 flex-1 text-[17px] font-bold leading-snug tracking-tight text-brand-navy group-hover:text-brand-blue">
           {post.title}
