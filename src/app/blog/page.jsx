@@ -70,7 +70,7 @@ export default function BlogPage() {
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="-mt-[76px] lg:-mt-[88px] relative overflow-hidden min-h-[58vh] lg:min-h-[68vh] flex items-end pb-16 lg:pb-24">
         <Image
-          src="/sigiriya.jpg"
+          src="/mirissa.jpg"
           alt="Sri Lanka travel guides – tips, planning and inspiration"
           fill
           sizes="100vw"
