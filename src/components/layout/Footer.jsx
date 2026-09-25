@@ -20,7 +20,7 @@ export default function Footer() {
               Private and tailor-made Sri Lanka tours, day trips, transfers and authentic local travel
               experiences designed around your time, interests and budget.
             </p>
-            <ul className="mt-6 space-y-3 text-[15px] text-gray-600">
+            <ul className="mt-6 space-y-3 text-[15px] text-black">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-brand-blue" aria-hidden="true" />
                 <span>Sri Lanka</span>
@@ -50,7 +50,7 @@ export default function Footer() {
                 <ul className="mt-4 space-y-2.5">
                   {col.links.map((l) => (
                     <li key={l.label}>
-                      <Link href={l.href} className="text-[14px] text-gray-600 transition-colors hover:text-black">
+                      <Link href={l.href} className="text-[14px] text-black transition-colors hover:text-brand-blue">
                         {l.label}
                       </Link>
                     </li>
