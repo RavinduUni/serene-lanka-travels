@@ -440,7 +440,7 @@ export default function DiscoverSriLankaPage() {
                 <Reveal delay={i * 0.1}>
                   <Link
                     href={exp.href}
-                    className="group flex h-full flex-col overflow-hidden rounded-card border border-brand-line bg-white transition-shadow hover:shadow-card"
+                    className="group flex h-full flex-col overflow-hidden rounded-card border border-brand-line bg-white shadow-card"
                   >
                     <div className="relative aspect-[4/3] overflow-hidden">
                       <SmartImage

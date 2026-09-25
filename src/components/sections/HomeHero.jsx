@@ -13,7 +13,6 @@ export default function HomeHero() {
         muted
         loop
         playsInline
-        poster="/sigiriya.jpg"
         className="absolute inset-0 h-full w-full object-cover"
         aria-hidden="true"
       >

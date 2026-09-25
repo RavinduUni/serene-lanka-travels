@@ -7,6 +7,7 @@ import { dayTours } from "@/data/day-tours";
 import { itineraries, itineraryCategoryLabels } from "@/data/itineraries";
 import { transferServices, vehicles } from "@/data/transfers";
 import { destinations } from "@/data/destinations";
+import { experiences } from "@/data/experiences";
 
 export function getDayTours() {
   return dayTours.filter((t) => t.published);
@@ -86,4 +87,32 @@ export function getDestinationTours(destination) {
     dayTours: (destination.relatedDayTours || []).map((s) => dayTourMap.get(s)).filter(Boolean),
     itineraries: (destination.relatedItineraries || []).map((s) => itineraryMap.get(s)).filter(Boolean),
   };
+}
+
+/* --------------------------------------------------------------- Experiences */
+export function getExperiences() {
+  return experiences.filter((e) => e.published);
+}
+
+export function getExperienceBySlug(slug) {
+  return getExperiences().find((e) => e.slug === slug) || null;
+}
+
+/** Resolves an experience's related tour slugs into full day-tour / itinerary objects. */
+export function getExperienceTours(experience) {
+  const dayTourMap = new Map(getDayTours().map((t) => [t.slug, t]));
+  const itineraryMap = new Map(getItineraries().map((t) => [t.slug, t]));
+  return {
+    dayTours: (experience.relatedDayTours || []).map((s) => dayTourMap.get(s)).filter(Boolean),
+    itineraries: (experience.relatedItineraries || []).map((s) => itineraryMap.get(s)).filter(Boolean),
+  };
+}
+
+/** Resolves an experience's related destination slugs into full destination objects. */
+export function getExperienceDestinations(experience, limit = 3) {
+  const bySlug = new Map(getDestinations().map((d) => [d.slug, d]));
+  return (experience.relatedDestinations || [])
+    .map((s) => bySlug.get(s))
+    .filter(Boolean)
+    .slice(0, limit);
 }
