@@ -167,7 +167,7 @@ export const reviews = {
     {
       name: "Guest name",
       country: "United Kingdom",
-      tour: "See the Best of Sri Lanka · 7 days",
+      tour: "See the Best of Sri Lanka",
       rating: 5,
       text:
         "Sample testimonial – replace with a real guest review. Describe the driver, the flexibility of the route and the moments that made the trip memorable.",
@@ -176,7 +176,7 @@ export const reviews = {
     {
       name: "Guest name",
       country: "Germany",
-      tour: "Honeymoon Tour · 5 days",
+      tour: "Honeymoon Tour",
       rating: 5,
       text:
         "Sample testimonial – replace with a real guest review. Guests often mention the WhatsApp support, comfortable vehicle and local recommendations.",

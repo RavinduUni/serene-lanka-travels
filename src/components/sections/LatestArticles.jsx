@@ -17,7 +17,7 @@ export default function LatestArticles() {
           <Reveal className="lg:col-span-5">
             <SectionHeading lines={inspiration.heading} />
           </Reveal>
-          <p className="max-w-md text-[15px] leading-relaxed text-brand-muted lg:col-span-4">{inspiration.copy}</p>
+          <p className="max-w-md text-[15px] leading-relaxed text-black lg:col-span-4">{inspiration.copy}</p>
           <div className="lg:col-span-3 lg:text-right">
             <Button href={inspiration.cta.href} variant="link" className="text-[15px]">
               <span className="grid size-9 place-items-center rounded-full bg-brand-navy text-white">

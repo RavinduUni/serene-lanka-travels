@@ -7,14 +7,14 @@ import { builderPromo } from "@/data/home";
 
 export default function BuilderPromo() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="pb-20 lg:pb-28">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
             <Reveal>
               <SectionHeading lines={builderPromo.heading} />
             </Reveal>
-            <p className="mt-6 text-[15px] leading-[1.8] text-brand-muted sm:text-base">{builderPromo.copy}</p>
+            <p className="mt-6 text-[15px] leading-[1.8] text-black sm:text-base">{builderPromo.copy}</p>
 
             {/* The builder is a real sequence, so numbering is meaningful here */}
             <ol className="mt-8 space-y-3">

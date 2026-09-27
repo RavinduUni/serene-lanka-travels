@@ -40,13 +40,13 @@ function AnimatedStat({ stat }) {
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative py-20 lg:py-28">
+    <section className="relative pb-20 lg:pb-28 pt-8 overflow-hidden">
       {/* Watercolor traveller illustration – decorative corner accent */}
       <img
         src="/side1.png"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-20 -left-50 hidden w-[340px] select-none opacity-90 lg:block xl:w-[500px]"
+        className="pointer-events-none absolute -bottom-10 -left-50 hidden w-[340px] select-none opacity-90 lg:block xl:w-[500px]"
         style={{ transform: "translateX(33%)" }}
       />
       <Container className="relative">
@@ -71,7 +71,7 @@ export default function WhyChooseUs() {
           </div>
 
           <div className="lg:col-span-6">
-            <p className="max-w-xl text-[15px] leading-[1.8] text-brand-muted sm:text-base">{whyUs.copy}</p>
+            <p className="max-w-xl text-[15px] leading-[1.8] text-black sm:text-base">{whyUs.copy}</p>
             <dl className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10">
               {whyUs.stats.map((s) => (
                 <AnimatedStat key={s.label} stat={s} />

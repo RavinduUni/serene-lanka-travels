@@ -10,7 +10,7 @@ import { whatsappTemplates } from "@/data/site";
 
 export default function TransfersBanner() {
   return (
-    <section className="overflow-hidden bg-white py-16 lg:py-24">
+    <section className="overflow-hidden bg-brand-navy py-20 lg:py-28">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
@@ -40,10 +40,10 @@ export default function TransfersBanner() {
           {/* ── Right: content ── */}
           <div>
             <Reveal>
-              <SectionHeading lines={transfers.heading} />
+              <SectionHeading lines={transfers.heading} light/>
             </Reveal>
 
-            <p className="mt-5 max-w-lg text-[15px] leading-[1.85] text-brand-muted sm:text-base">
+            <p className="mt-5 max-w-lg text-[15px] leading-[1.85] text-white sm:text-base">
               {transfers.copy}
             </p>
 
@@ -66,8 +66,8 @@ export default function TransfersBanner() {
                   key={v.name}
                   className="flex items-center justify-between gap-4 py-3 text-[14px]"
                 >
-                  <span className="font-semibold text-brand-navy">{v.name}</span>
-                  <span className="text-brand-muted">{v.capacity}</span>
+                  <span className="font-semibold text-white">{v.name}</span>
+                  <span className="text-white">{v.capacity}</span>
                 </li>
               ))}
             </ul>

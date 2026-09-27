@@ -6,7 +6,7 @@ import { faq } from "@/data/home";
 
 export default function FaqSection() {
   return (
-    <section id="faq" className="scroll-mt-24 py-20 lg:py-28">
+    <section id="faq" className="scroll-mt-24 py-16 lg:py-20">
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           {/* Image with heading overlaid – reference style */}

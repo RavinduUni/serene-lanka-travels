@@ -22,12 +22,12 @@ export default function HomeHero() {
 
       {/* Dark gradient overlay for text legibility */}
       <div
-        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,19,59,0.45)_0%,rgba(6,19,59,0.25)_45%,rgba(6,19,59,0.75)_100%)]"
+        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.75)_100%)]"
         aria-hidden="true"
       />
 
       <Container className="relative py-24 text-center text-white sm:py-28 lg:py-36">
-        <h1 className="mx-auto max-w-6xl text-[2.6rem] font-bold leading-[1.02] tracking-[-0.03em] sm:text-6xl lg:text-7xl">
+        <h1 className="mx-auto max-w-6xl text-[2.6rem] font-bold leading-[1.02] tracking-[-0.03em] sm:text-6xl lg:text-7xl mt-24">
           {hero.title}
         </h1>
         <p className="mx-auto mt-5 max-w-2xl text-lg font-medium text-white/95 sm:text-xl">{hero.lead}</p>

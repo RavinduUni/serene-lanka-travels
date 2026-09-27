@@ -1,14 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import SmartImage from "@/components/ui/SmartImage";
-import Button from "@/components/ui/Button";
 import Reveal from "@/components/motion/Reveal";
 import { reviews } from "@/data/home";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export default function ReviewsSlider() {
   const [index, setIndex] = useState(0);
@@ -27,94 +25,94 @@ export default function ReviewsSlider() {
   const r = reviews.items[index];
 
   return (
-    <section className="relative overflow-hidden py-24 lg:py-32">
-      {/* Watercolor traveller illustration – decorative corner accent */}
-      <img
-        src="/sri lanka.png"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-4 -left-50 hidden w-[340px] select-none opacity-90 lg:block xl:w-[550px]"
-        style={{ transform: "translateX(33%)" }}
-      />
-      <span className="watermark top-6 lg:top-4" aria-hidden="true">
-        {reviews.watermark}
-      </span>
+    <section className="relative flex min-h-[90vh] flex-col justify-between overflow-hidden lg:min-h-[95vh] py-20 lg:py-28">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={"https://images.unsplash.com/photo-1589373797397-d19670f47549?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+          alt="Reviews Background"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+          priority={false}
+        />
+        {/* White gradient overlay to blend into white at top and ensure text is readable */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-transparent" />
+      </div>
 
-      <Container className="relative">
-        <Reveal>
-          <SectionHeading lines={reviews.heading} align="center" className="mx-auto" />
-        </Reveal>
+      <Container className="relative z-10 flex h-full flex-1 flex-col py-20 lg:py-28">
+        {/* Top Content */}
+        <div className="relative mx-auto w-full max-w-4xl text-center">
+          {/* Watermark */}
+          <span
+            className="pointer-events-none absolute left-1/2 top-0 z-0 -translate-x-1/2 -translate-y-1/2 select-none text-[18vw] font-bold lowercase tracking-tighter text-gray-300 lg:text-[160px]"
+            style={{ opacity: 0.6, lineHeight: 0.8 }}
+            aria-hidden="true"
+          >
+            {reviews.watermark || "real stories"}
+          </span>
 
-        <div
-          className="mx-auto mt-12 max-w-3xl rounded-card border border-brand-line bg-white p-8 text-center shadow-card sm:p-12 lg:mt-16"
-          aria-live="polite"
-        >
-          <Quote className="mx-auto size-8 text-brand-blue" aria-hidden="true" />
-          <div className="mt-4 flex justify-center gap-1" aria-label={`${r.rating} out of 5 stars`}>
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star
-                key={i}
-                className={cn("size-4", i < r.rating ? "fill-brand-blue text-brand-blue" : "text-brand-line")}
-                aria-hidden="true"
-              />
-            ))}
+          <div className="relative z-10 mt-16 lg:mt-24">
+            <Reveal>
+              <SectionHeading lines={reviews.heading} align="center" className="mx-auto" />
+            </Reveal>
           </div>
-          <blockquote className="mt-5 text-lg leading-relaxed text-brand-ink sm:text-xl">
-            “{r.text}”
-          </blockquote>
-          <figcaption className="mt-7 flex items-center justify-center gap-4">
-            <span className="relative size-12 overflow-hidden rounded-full bg-brand-sky">
-              <SmartImage src={r.avatar} alt="" fill sizes="48px" className="object-cover" />
-            </span>
-            <span className="text-left">
-              <span className="block text-[15px] font-bold text-brand-navy">{r.name}</span>
-              <span className="block text-[13px] text-brand-muted">
-                {r.country} · {r.tour}
-              </span>
-            </span>
-          </figcaption>
         </div>
 
-        <div className="mt-8 flex items-center justify-center gap-4">
+        {/* Center Content - The Review Slider */}
+        <div className="relative mt-auto mb-auto w-full pt-16 lg:pt-24 flex items-center justify-center min-h-[300px]">
+          {/* Left Arrow */}
           <button
             type="button"
             onClick={() => go(index - 1)}
             aria-label="Previous review"
-            className="grid size-11 place-items-center rounded-full border border-brand-line text-brand-navy transition-colors hover:border-brand-blue hover:text-brand-blue"
+            className="absolute left-0 z-20 hidden md:flex h-10 w-10 lg:h-12 lg:w-12 items-center justify-center rounded-full border-2 border-black text-black transition-colors hover:bg-black/5 hover:text-black"
           >
-            <ChevronLeft className="size-5" aria-hidden="true" />
+            <ChevronLeft className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
           </button>
-          <div className="flex gap-2" role="tablist" aria-label="Choose review">
-            {reviews.items.map((item, i) => (
-              <button
-                key={item.tour}
-                type="button"
-                role="tab"
-                aria-selected={i === index}
-                aria-label={`Review ${i + 1}`}
-                onClick={() => go(i)}
-                className={cn(
-                  "h-2 rounded-full transition-all",
-                  i === index ? "w-8 bg-brand-blue" : "w-2 bg-brand-line hover:bg-brand-muted"
-                )}
-              />
-            ))}
+
+          {/* Active Review Content */}
+          <div className="max-w-4xl px-4 text-center md:px-16" aria-live="polite">
+            <h3 className="text-sm lg:text-[18px] font-bold text-black mb-6">"{r.tour}"</h3>
+            <p className="mx-auto max-w-3xl text-[14px] leading-relaxed text-black/80 sm:text-base lg:text-[17px] font-medium transition-opacity duration-300">
+              {r.text}
+            </p>
+            <p className="mt-8 text-sm font-bold text-black lg:text-[15px]">
+              - {r.name} -
+            </p>
           </div>
+
+          {/* Right Arrow */}
           <button
             type="button"
             onClick={() => go(index + 1)}
             aria-label="Next review"
-            className="grid size-11 place-items-center rounded-full border border-brand-line text-brand-navy transition-colors hover:border-brand-blue hover:text-brand-blue"
+            className="absolute right-0 z-20 hidden md:flex h-10 w-10 lg:h-12 lg:w-12 items-center justify-center rounded-full border-2 border-black text-black transition-colors hover:bg-black/5 hover:text-black"
           >
-            <ChevronRight className="size-5" aria-hidden="true" />
+            <ChevronRight className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
           </button>
         </div>
 
-        <div className="mt-10 text-center">
-          <Button href="/reviews" variant="outline">
-            Read All Reviews
-          </Button>
+        {/* Mobile Arrows (since absolute is hidden on md) */}
+        <div className="mt-8 flex items-center justify-center gap-4 md:hidden">
+          <button
+            type="button"
+            onClick={() => go(index - 1)}
+            aria-label="Previous review"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 text-black transition-colors hover:bg-black/5"
+          >
+            <ChevronLeft className="h-5 w-5" aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            onClick={() => go(index + 1)}
+            aria-label="Next review"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 text-black transition-colors hover:bg-black/5"
+          >
+            <ChevronRight className="h-5 w-5" aria-hidden="true" />
+          </button>
         </div>
+
       </Container>
     </section>
   );

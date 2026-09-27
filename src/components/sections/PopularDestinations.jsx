@@ -1,103 +1,122 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { Plus, ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
-import SectionHeading from "@/components/ui/SectionHeading";
 import SmartImage from "@/components/ui/SmartImage";
-import Button from "@/components/ui/Button";
 import Reveal from "@/components/motion/Reveal";
 import { destinations } from "@/data/home";
 import Image from "next/image";
 
 export default function PopularDestinations() {
   return (
-    <section className="border-brand-line relative py-20 lg:py-28">
-      <div
-        className="pointer-events-none absolute inset-0"
-        aria-hidden="true"
-      >
-        <Image src={'/popular2.jpg'} alt="Mirissa beach at golden hour, Sri Lanka" fill sizes="100vw" className="object-cover object-right" priority={false} />
+    <section className="relative flex min-h-[90vh] flex-col justify-between overflow-hidden lg:min-h-[95vh] py-20 lg:py-28">
+      {/* Background Image (same as original, using Image) */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={"https://images.unsplash.com/photo-1589373797397-d19670f47549?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+          alt="Popular Destinations Background"
+          fill
+          sizes="100vw"
+          className="object-cover object-right"
+          priority={false}
+        />
+        {/* Gradients to blend top into white and darken bottom for card visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
       </div>
 
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[30%]"
-        style={{
-          background:
-            "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 45%, rgba(255,255,255,0) 100%)",
-        }}
-        aria-hidden="true"
-      />
+      <Container className="relative z-10 flex h-full flex-1 flex-col pt-20 lg:pt-28">
+        {/* Top Content */}
+        <div className="relative mx-auto w-full max-w-4xl text-center">
+          {/* Watermark */}
+          <span
+            className="pointer-events-none absolute left-1/2 top-0 z-0 -translate-x-1/2 -translate-y-1/2 select-none text-[18vw] font-bold lowercase tracking-tighter text-gray-300 lg:text-[160px]"
+            style={{ opacity: 0.6, lineHeight: 0.8 }}
+            aria-hidden="true"
+          >
+            {destinations.watermark || "destinations"}
+          </span>
 
-      <Container className="relative">
-        <div className="grid items-end gap-6 lg:grid-cols-12">
-          <Reveal className="lg:col-span-5">
-            <SectionHeading lines={destinations.heading} />
-          </Reveal>
-          <p className="max-w-md text-[15px] leading-relaxed text-brand-muted lg:col-span-4">{destinations.copy}</p>
-          <div className="lg:col-span-3 lg:text-right">
-            <Button href={destinations.cta.href} variant="link" className="text-[15px]">
-              <span className="grid size-9 place-items-center rounded-full bg-brand-navy text-white">
-                <ArrowRight className="size-4" aria-hidden="true" />
-              </span>
-              {destinations.cta.label}
-            </Button>
+          <div className="relative z-10 mt-16 lg:mt-24">
+            <Reveal>
+              <h2 className="text-4xl font-bold tracking-tight text-black lg:text-5xl">
+                {destinations.heading.join(" ")}
+              </h2>
+            </Reveal>
+            <p className="mx-auto mt-6 max-w-2xl text-[15px] font-medium leading-relaxed text-black/80 sm:text-base">
+              {destinations.copy}
+            </p>
+
+            <div className="mt-10 flex justify-center">
+              <Link
+                href={destinations.cta.href}
+                className="group flex items-center gap-4 text-[13px] font-bold uppercase tracking-widest text-brand-navy transition-colors hover:text-brand-blue"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-navy text-white shadow-lg transition-colors group-hover:bg-brand-blue">
+                  <Plus className="h-5 w-5" strokeWidth={2.5} />
+                </div>
+                {destinations.cta.label}
+              </Link>
+            </div>
           </div>
         </div>
 
-        <ul className="mt-12 grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
-          {destinations.items.map((d) => (
-            <li key={d.name}>
-              <Link
-                href={d.href}
-                className="group relative block aspect-[4/5] overflow-hidden rounded-card bg-brand-navy sm:aspect-[3/4]"
-              >
-                {/* Photo — scales on hover */}
-                <SmartImage
-                  src={d.image}
-                  alt={`${d.name}, Sri Lanka`}
-                  fill
-                  sizes="(min-width:1024px) 25vw, 50vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+        {/* Bottom Content - The Original 8 Cards */}
+        <div className="mt-auto flex w-full flex-col pt-24 lg:pt-32">
+          <ul className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4 w-full">
+            {destinations.items.map((d) => (
+              <li key={d.name}>
+                <Link
+                  href={d.href}
+                  className="group relative block aspect-[4/5] overflow-hidden rounded-card bg-brand-navy shadow-xl transition-transform sm:aspect-[3/4]"
+                >
+                  {/* Photo — scales on hover */}
+                  <SmartImage
+                    src={d.image}
+                    alt={`${d.name}, Sri Lanka`}
+                    fill
+                    sizes="(min-width:1024px) 25vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
 
-                {/* Permanent bottom gradient (name + tag always visible) */}
-                <div
-                  className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,19,59,0)_45%,rgba(6,19,59,0.92)_100%)]"
-                  aria-hidden="true"
-                />
+                  {/* Permanent bottom gradient (name + tag always visible) */}
+                  <div
+                    className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_65%,rgba(0,0,0,0.92)_100%)]"
+                    aria-hidden="true"
+                  />
 
-                {/* Hover overlay — full dark tint that fades in */}
-                <div
-                  className="absolute inset-0 bg-brand-navy-deep/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                  aria-hidden="true"
-                />
+                  {/* Hover overlay — full dark tint that fades in */}
+                  <div
+                    className="absolute inset-0 bg-black/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    aria-hidden="true"
+                  />
 
-                {/* Default state: name + tag pinned to bottom */}
-                <div className="absolute inset-x-0 bottom-0 p-4 text-white transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-2 sm:p-5">
-                  <p className="text-lg font-bold leading-tight sm:text-xl">{d.name}</p>
-                  <p className="mt-1 text-[12px] font-medium text-white/75 sm:text-[13px]">{d.tag}</p>
-                </div>
+                  {/* Default state: name + tag pinned to bottom */}
+                  <div className="absolute inset-x-0 bottom-0 p-4 text-white transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-2 sm:p-5">
+                    <p className="text-lg font-bold leading-tight sm:text-xl">{d.name}</p>
+                    <p className="mt-1 text-[12px] font-medium text-white/75 sm:text-[13px]">{d.tag}</p>
+                  </div>
 
-                {/* Hover state: centred overlay content that rises into view */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-5 text-center opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-
-                  {/* Destination name */}
-                  <p className="text-2xl font-bold text-white sm:text-3xl">{d.name}</p>
-                  {/* Description blurb */}
-                  {d.blurb && (
-                    <p className="mt-3 text-[13px] leading-relaxed text-white/80 sm:text-sm">
-                      {d.blurb}
-                    </p>
-                  )}
-                  {/* Explore CTA */}
-                  <span className="mt-5 inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-brand-navy transition-transform duration-300 group-hover:scale-105">
-                    Explore
-                    <ArrowRight className="size-3.5" aria-hidden="true" />
-                  </span>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
+                  {/* Hover state: centred overlay content that rises into view */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-5 text-center opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                    {/* Destination name */}
+                    <p className="text-2xl font-bold text-white sm:text-3xl">{d.name}</p>
+                    {/* Description blurb */}
+                    {d.blurb && (
+                      <p className="mt-3 text-[13px] leading-relaxed text-white/80 sm:text-sm">
+                        {d.blurb}
+                      </p>
+                    )}
+                    {/* Explore CTA */}
+                    <span className="mt-5 inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-brand-navy transition-transform duration-300 group-hover:scale-105">
+                      Explore
+                      <ArrowRight className="size-3.5" aria-hidden="true" />
+                    </span>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Container>
     </section>
   );

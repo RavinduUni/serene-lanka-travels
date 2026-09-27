@@ -9,7 +9,7 @@ import { experiences } from "@/data/home";
 
 export default function ExperienceGrid() {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-28">
+    <section className="relative overflow-hidden pt-20 lg:pt-28">
       {/* Watercolor leopard illustration – decorative corner accent */}
       <img
         src="/side2.png"
