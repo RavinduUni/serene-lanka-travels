@@ -4,17 +4,18 @@ import SmartImage from "@/components/ui/SmartImage";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/motion/Reveal";
 import { builderPromo } from "@/data/home";
+import { ArrowRight } from "lucide-react";
 
 export default function BuilderPromo() {
   return (
-    <section className="pb-20 lg:pb-28">
+    <section className="py-20 lg:py-28">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
             <Reveal>
               <SectionHeading lines={builderPromo.heading} />
             </Reveal>
-            <p className="mt-6 text-[15px] leading-[1.8] text-black sm:text-base">{builderPromo.copy}</p>
+              <p className="mt-6 text-[15px] leading-[1.8] text-black sm:text-base">{builderPromo.copy}</p>
 
             {/* The builder is a real sequence, so numbering is meaningful here */}
             <ol className="mt-8 space-y-3">
@@ -28,9 +29,10 @@ export default function BuilderPromo() {
               ))}
             </ol>
 
-            <Button href={builderPromo.cta.href} size="lg" className="mt-10">
-              {builderPromo.cta.label}
-            </Button>
+            <Button href={builderPromo.cta.href} size="lg" variant="primary" className="mt-10">
+                {builderPromo.cta.label}
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </Button>
           </div>
 
           {/* Image collage */}

@@ -14,16 +14,14 @@ export default function LatestArticles() {
     <section className="bg-white py-20 lg:py-28">
       <Container>
         <div className="grid items-end gap-6 lg:grid-cols-12">
-          <Reveal className="lg:col-span-5">
+          <Reveal className="lg:col-span-4">
             <SectionHeading lines={inspiration.heading} />
           </Reveal>
           <p className="max-w-md text-[15px] leading-relaxed text-black lg:col-span-4">{inspiration.copy}</p>
-          <div className="lg:col-span-3 lg:text-right">
-            <Button href={inspiration.cta.href} variant="link" className="text-[15px]">
-              <span className="grid size-9 place-items-center rounded-full bg-brand-navy text-white">
-                <ArrowRight className="size-4" aria-hidden="true" />
-              </span>
+          <div className="lg:col-span-4 lg:text-right">
+            <Button href={inspiration.cta.href} size="lg" variant="primary">
               {inspiration.cta.label}
+              <ArrowRight className="size-4" aria-hidden="true" />
             </Button>
           </div>
         </div>

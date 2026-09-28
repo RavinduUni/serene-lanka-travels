@@ -4,6 +4,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import { finalCta } from "@/data/home";
+import { ArrowRight } from "lucide-react";
 
 export default function FinalCta() {
   return (
@@ -30,8 +31,9 @@ export default function FinalCta() {
             c.href === "whatsapp" ? (
               <WhatsAppButton key={c.label} label={c.label} size="lg" variant="outline" />
             ) : (
-              <Button key={c.label} href={c.href} variant="navy" size="lg">
+              <Button key={c.label} href={c.href} size="lg" variant="primary">
                 {c.label}
+                <ArrowRight className="size-4" aria-hidden="true" />
               </Button>
             )
           )}

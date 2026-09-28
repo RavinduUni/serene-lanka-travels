@@ -5,6 +5,7 @@ import SmartImage from "@/components/ui/SmartImage";
 import Reveal from "@/components/motion/Reveal";
 import { destinations } from "@/data/home";
 import Image from "next/image";
+import Button from "../ui/Button";
 
 export default function PopularDestinations() {
   return (
@@ -47,15 +48,10 @@ export default function PopularDestinations() {
             </p>
 
             <div className="mt-10 flex justify-center">
-              <Link
-                href={destinations.cta.href}
-                className="group flex items-center gap-4 text-[13px] font-bold uppercase tracking-widest text-brand-navy transition-colors hover:text-brand-blue"
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-navy text-white shadow-lg transition-colors group-hover:bg-brand-blue">
-                  <Plus className="h-5 w-5" strokeWidth={2.5} />
-                </div>
+              <Button href={destinations.cta.href} size="lg" variant="outline">
                 {destinations.cta.label}
-              </Link>
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </Button>
             </div>
           </div>
         </div>

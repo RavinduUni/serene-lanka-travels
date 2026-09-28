@@ -1,9 +1,10 @@
-import { Plus, ChevronLeft } from "lucide-react";
+import { Plus, ChevronLeft, ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SmartImage from "@/components/ui/SmartImage";
 import Link from "next/link";
 import Reveal from "@/components/motion/Reveal";
 import { featuredJourney as f } from "@/data/home";
+import Button from "../ui/Button";
 
 export default function FeaturedJourney() {
   return (
@@ -45,15 +46,10 @@ export default function FeaturedJourney() {
             </p>
 
             <div className="mt-10 flex justify-center">
-              <Link
-                href={f.ctas[0].href}
-                className="group flex items-center gap-4 text-[13px] font-bold uppercase tracking-widest text-brand-navy transition-colors hover:text-brand-blue"
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-navy text-white shadow-lg transition-colors group-hover:bg-brand-blue">
-                  <Plus className="h-5 w-5" strokeWidth={2.5} />
-                </div>
+              <Button href={f.ctas[0].href} size="lg" variant="white">
                 {f.ctas[0].label}
-              </Link>
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </Button>
             </div>
           </div>
         </div>

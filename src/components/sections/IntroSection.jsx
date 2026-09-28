@@ -39,11 +39,9 @@ export default function IntroSection() {
                 </li>
               ))}
             </ul>
-            <Button href={intro.cta.href} variant="link" className="mt-8 text-[15px]">
-              <span className="grid size-9 place-items-center rounded-full bg-brand-navy text-white">
-                <ArrowRight className="size-4" aria-hidden="true" />
-              </span>
+            <Button href={intro.cta.href} size="lg" variant="primary" className="mt-8 w-fit">
               {intro.cta.label}
+              <ArrowRight className="size-4" aria-hidden="true" />
             </Button>
           </div>
 

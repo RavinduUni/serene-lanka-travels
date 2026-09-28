@@ -9,8 +9,8 @@ import { tourCategories } from "@/data/home";
 
 export default function TourCategoryGrid() {
   return (
-    <section className="relative overflow-hidden pb-20 lg:pb-28">
-      
+    <section className="relative overflow-hidden py-20 lg:py-28 bg-brand-mist">
+
       <Container className="relative">
         <div className="grid items-end gap-6 lg:grid-cols-12">
           <Reveal className="lg:col-span-4">
@@ -18,11 +18,9 @@ export default function TourCategoryGrid() {
           </Reveal>
           <p className="max-w-md text-[15px] leading-relaxed text-black lg:col-span-5">{tourCategories.copy}</p>
           <div className="lg:col-span-3 lg:text-right">
-            <Button href={tourCategories.cta.href} variant="link" className="text-[15px]">
-              <span className="grid size-9 place-items-center rounded-full bg-brand-navy text-white">
-                <ArrowRight className="size-4" aria-hidden="true" />
-              </span>
+            <Button href={tourCategories.cta.href} size="lg" variant="primary">
               {tourCategories.cta.label}
+              <ArrowRight className="size-4" aria-hidden="true" />
             </Button>
           </div>
         </div>
