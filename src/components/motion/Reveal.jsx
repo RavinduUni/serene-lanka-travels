@@ -1,22 +1,55 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 /**
- * Single, restrained scroll reveal. Used on section headers only, so each
- * section has one orchestrated moment rather than motion on every card.
+ * Single, restrained scroll reveal using GSAP.
  */
-export default function Reveal({ children, className, delay = 0 }) {
-  const reduce = useReducedMotion();
+export default function Reveal({ children, className, delay = 0, type = "fade-up" }) {
+  const container = useRef(null);
+
+  useGSAP(() => {
+    if (!container.current) return;
+
+    let yOffset = 40;
+    let xOffset = 0;
+    let scale = 1;
+    
+    if (type === "fade-down") yOffset = -40;
+    if (type === "fade-left") xOffset = 40;
+    if (type === "fade-right") xOffset = -40;
+    if (type === "zoom-in") { yOffset = 0; scale = 0.9; }
+
+    gsap.fromTo(
+      container.current,
+      { opacity: 0, y: yOffset, x: xOffset, scale: scale },
+      {
+        opacity: 1,
+        y: 0,
+        x: 0,
+        scale: 1,
+        duration: 1.0,
+        delay: delay,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top 85%",
+          toggleActions: "play none none reverse", // Play on enter, reverse on leave back
+        }
+      }
+    );
+  }, { scope: container });
+
   return (
-    <motion.div
-      className={className}
-      initial={reduce ? false : { opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
-    >
+    <div ref={container} className={className}>
       {children}
-    </motion.div>
+    </div>
   );
 }

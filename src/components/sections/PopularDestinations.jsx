@@ -3,6 +3,7 @@ import { Plus, ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SmartImage from "@/components/ui/SmartImage";
 import Reveal from "@/components/motion/Reveal";
+import Parallax from "@/components/motion/Parallax";
 import { destinations } from "@/data/home";
 import Image from "next/image";
 import Button from "../ui/Button";
@@ -10,19 +11,23 @@ import Button from "../ui/Button";
 export default function PopularDestinations() {
   return (
     <section className="relative flex min-h-[90vh] flex-col justify-between overflow-hidden lg:min-h-[95vh] py-20 lg:py-28">
-      {/* Background Image (same as original, using Image) */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={"https://images.unsplash.com/photo-1589373797397-d19670f47549?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
-          alt="Popular Destinations Background"
-          fill
-          sizes="100vw"
-          className="object-cover object-right"
-          priority={false}
-        />
+      {/* Background Image with Parallax */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Parallax className="w-full h-full" speed={1.5}>
+          <div className="absolute -inset-[15%] h-[130%] w-[130%]">
+            <Image
+              src={"https://images.unsplash.com/photo-1589373797397-d19670f47549?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+              alt="Popular Destinations Background"
+              fill
+              sizes="100vw"
+              className="object-cover object-right"
+              priority={false}
+            />
+          </div>
+        </Parallax>
         {/* Gradients to blend top into white and darken bottom for card visibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/70 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
       </div>
 
       <Container className="relative z-10 flex h-full flex-1 flex-col pt-20 lg:pt-28">

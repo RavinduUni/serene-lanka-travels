@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/motion/Reveal";
+import Parallax from "@/components/motion/Parallax";
 import { reviews } from "@/data/home";
 import Image from "next/image";
 
@@ -26,18 +27,22 @@ export default function ReviewsSlider() {
 
   return (
     <section className="relative flex min-h-[90vh] flex-col justify-between overflow-hidden lg:min-h-[95vh] py-20 lg:py-28">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={"https://images.unsplash.com/photo-1589373797397-d19670f47549?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
-          alt="Reviews Background"
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-          priority={false}
-        />
+      {/* Background Image with Parallax */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Parallax className="w-full h-full" speed={1.5}>
+          <div className="absolute -inset-[15%] h-[130%] w-[130%]">
+            <Image
+              src={"https://images.unsplash.com/photo-1589373797397-d19670f47549?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+              alt="Reviews Background"
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+              priority={false}
+            />
+          </div>
+        </Parallax>
         {/* White gradient overlay to blend into white at top and ensure text is readable */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-transparent pointer-events-none" />
       </div>
 
       <Container className="relative z-10 flex h-full flex-1 flex-col py-20 lg:py-28">

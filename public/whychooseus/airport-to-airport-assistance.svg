@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">Airport-to-airport assistance</title>
+  <desc id="desc">Two airport points connected by a flight with assisted luggage on a soft peach organic background.</desc>
+  <path opacity=".82" fill="#FFD1A8" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 56h59M13 56V43h13v13M49 56V43h13v13M17 43v-5h5v5M53 43v-5h5v5" fill="#fff"/>
+    <path d="M17 29c7-10 15-14 24-13 7 .5 12 4 17 10" stroke-dasharray="3 4"/>
+    <path d="m45 13 6 8 9 2-2.5 4-10-1-8 6-3-2 5-7-8-5 2.5-3Z" fill="#fff"/>
+    <rect x="29" y="42" width="17" height="17" rx="3" fill="#fff"/>
+    <path d="M34 42v-4h7v4M34 49h7M37.5 46v6"/>
+  </g>
+</svg>

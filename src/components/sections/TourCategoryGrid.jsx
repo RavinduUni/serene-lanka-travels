@@ -39,11 +39,10 @@ export default function TourCategoryGrid() {
                   src={item.image}
                   alt=""
                   fill
-                  sizes="290px"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div
-                  className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,19,59,0)_45%,rgba(6,19,59,0.85)_100%)]"
+                  className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_45%,rgba(0,0,0,0.85)_100%)]"
                   aria-hidden="true"
                 />
                 <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5 text-white">

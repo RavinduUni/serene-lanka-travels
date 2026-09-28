@@ -46,8 +46,8 @@ export default function WhyChooseUs() {
         src="/side1.png"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-10 -left-50 hidden w-[340px] select-none opacity-90 lg:block xl:w-[500px]"
-        style={{ transform: "translateX(33%)" }}
+        className="pointer-events-none absolute -bottom-10 -left-50 hidden w-[340px] select-none opacity-90 lg:block xl:w-[400px]"
+        style={{ transform: "translateX(43%)" }}
       />
       <Container className="relative">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -57,11 +57,10 @@ export default function WhyChooseUs() {
             </Reveal>
             <ul className="mt-10 grid gap-x-8 gap-y-5 sm:grid-cols-2">
               {whyUs.values.map((v) => {
-                const Icon = Icons[v.icon] || Icons.Check;
                 return (
                   <li key={v.label} className="flex items-center gap-4">
-                    <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-white text-brand-blue shadow-[0_1px_0_0_#e6eaf1]">
-                      <Icon className="size-5" aria-hidden="true" />
+                    <span className="grid size-11 shrink-0 place-items-center">
+                      <img src={v.url} alt={v.label} className="w-full h-full object-cover" />
                     </span>
                     <span className="text-[15px] font-semibold text-brand-ink">{v.label}</span>
                   </li>

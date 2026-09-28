@@ -3,24 +3,29 @@ import Container from "@/components/ui/Container";
 import SmartImage from "@/components/ui/SmartImage";
 import Link from "next/link";
 import Reveal from "@/components/motion/Reveal";
+import Parallax from "@/components/motion/Parallax";
 import { featuredJourney as f } from "@/data/home";
 import Button from "../ui/Button";
 
 export default function FeaturedJourney() {
   return (
     <section className="relative flex min-h-[90vh] flex-col justify-between overflow-hidden lg:min-h-[95vh]">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <SmartImage
-          src={f.image}
-          alt="Featured Journey Background"
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-        />
+      {/* Background Image with Parallax */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Parallax className="w-full h-full" speed={1.5}>
+          <div className="absolute -inset-[15%] h-[130%] w-[130%]">
+            <SmartImage
+              src={f.image}
+              alt="Featured Journey Background"
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+          </div>
+        </Parallax>
         {/* Gradients to blend top into white and darken bottom for card visibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/70 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
       </div>
 
       <Container className="relative z-10 flex h-full flex-1 flex-col pb-12 pt-20 lg:pt-28">
@@ -28,7 +33,7 @@ export default function FeaturedJourney() {
         <div className="relative mx-auto w-full max-w-4xl text-center">
           {/* Watermark */}
           <span
-            className="pointer-events-none absolute left-1/2 top-0 z-0 -translate-x-1/2 -translate-y-1/2 select-none text-[18vw] font-bold lowercase tracking-tighter text-gray-200 lg:text-[160px]"
+            className="pointer-events-none absolute left-1/2 top-0 z-0 -translate-x-1/2 -translate-y-1/2 select-none text-[18vw] font-bold lowercase tracking-tighter text-gray-300 lg:text-[160px]"
             style={{ opacity: 0.6, lineHeight: 0.8 }}
             aria-hidden="true"
           >
