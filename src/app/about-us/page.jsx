@@ -5,10 +5,13 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import SmartImage from "@/components/ui/SmartImage";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/motion/Reveal";
+import Parallax from "@/components/motion/Parallax";
+import Image from "next/image";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import TeamCard from "@/components/about/TeamCard";
+import BrandMeaningCarousel from "@/components/about/BrandMeaningCarousel";
 import WhyChooseCarousel from "@/components/about/WhyChooseCarousel";
 import JsonLd from "@/components/seo/JsonLd";
 import {
@@ -54,10 +57,8 @@ export default function AboutUsPage() {
         className="-mt-[76px] lg:-mt-[88px] relative overflow-hidden py-24 lg:py-32"
         style={{ backgroundImage: "url('/about-hero-bg.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
       >
-        {/* Dark gradient overlay for text legibility */}
         <div
-          className="pointer-events-none absolute inset-0"
-          style={{ background: "linear-gradient(to right, rgba(10,26,60,0.78) 0%, rgba(10,26,60,0.55) 60%, rgba(10,26,60,0.25) 100%)" }}
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.75)_100%)]"
           aria-hidden="true"
         />
         <Container className="relative">
@@ -73,7 +74,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* §10.1 Our Story – offset images like the home intro */}
-      <section className="py-16 lg:py-24">
+      <section className="pt-16 lg:pt-24">
         <Container>
           <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-6">
@@ -129,87 +130,59 @@ export default function AboutUsPage() {
       </section>
 
       {/* §10.2 Meaning Behind Seren Lanka – image-card grid */}
-      <section className="bg-white py-20 lg:py-28 bg-[url('/footerImg.jpg')] bg-cover bg-top bg-no-repeat relative">
-        <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[30%]"
-          style={{
-            background:
-              "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 45%, rgba(255,255,255,0) 100%)",
-          }}
-          aria-hidden="true"
-        />
-        <Container>
-          {/* Centred heading + intro copy */}
-          <Reveal>
-            <div className="mx-auto max-w-2xl text-center">
-              <SectionHeading
-                lines={brandMeaning.heading}
-                align="center"
-                className="mx-auto"
+      <section className="relative flex min-h-[90vh] flex-col justify-between overflow-hidden lg:min-h-[95vh] py-20 lg:py-28">
+        {/* Background Image with Parallax */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <Parallax className="w-full h-full" speed={1.5}>
+            <div className="absolute -inset-[15%] h-[130%] w-[130%]">
+              <Image
+                src={"https://images.pexels.com/photos/27669335/pexels-photo-27669335.jpeg"}
+                alt="Meaning Behind Seren Lanka Background"
+                fill
+                sizes="100vw"
+                className="object-cover object-top"
+                priority={false}
               />
-              <p className="mx-auto mt-5 max-w-xl text-[15px] leading-[1.8] text-black sm:text-base">
+            </div>
+          </Parallax>
+          {/* Gradients to blend top into white and darken bottom for card visibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/70 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+        </div>
+
+        <Container className="relative z-10 flex h-full flex-1 flex-col pt-20 lg:pt-28">
+          {/* Top Content */}
+          <div className="relative mx-auto w-full max-w-4xl text-center">
+            {/* Watermark */}
+            <span
+              className="pointer-events-none absolute left-1/2 top-0 z-0 -translate-x-1/2 -translate-y-1/2 select-none text-[18vw] font-bold lowercase tracking-tighter text-gray-300 lg:text-[160px]"
+              style={{ opacity: 0.6, lineHeight: 0.8 }}
+              aria-hidden="true"
+            >
+              meaning
+            </span>
+
+            <div className="relative z-10 mt-16 lg:mt-24">
+              <Reveal>
+                <h2 className="text-4xl font-bold tracking-tight text-black lg:text-5xl">
+                  {brandMeaning.heading.join(" ")}
+                </h2>
+              </Reveal>
+              <p className="mx-auto mt-6 max-w-2xl text-[15px] font-medium leading-relaxed text-black/80 sm:text-base">
                 {brandMeaning.copy}
               </p>
             </div>
-          </Reveal>
+          </div>
 
-          {/* Four image cards – PopularDestinations style */}
-          <ul className="mt-12 grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
-            {brandMeaning.cards.map((card, i) => {
-              const Icon = Icons[card.icon] || Icons.Sparkles;
-              return (
-                <Reveal key={card.label} delay={i * 0.1}>
-                  <li
-                    className="group relative aspect-[4/5] overflow-hidden rounded-card bg-brand-navy sm:aspect-[3/4]"
-                  >
-                    {/* Photo — scales on hover */}
-                    <SmartImage
-                      src={card.image}
-                      alt={card.label}
-                      fill
-                      sizes="(min-width:1024px) 25vw, 50vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-
-                    {/* Permanent bottom gradient (name + tag always visible) */}
-                    <div
-                      className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,19,59,0)_45%,rgba(6,19,59,0.92)_100%)]"
-                      aria-hidden="true"
-                    />
-
-                    {/* Hover overlay — full dark tint that fades in */}
-                    <div
-                      className="absolute inset-0 bg-brand-navy/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                      aria-hidden="true"
-                    />
-
-                    {/* Default state: name + tag pinned to bottom */}
-                    <div className="absolute inset-x-0 bottom-0 p-4 text-white transition-all duration-500 group-hover:translate-y-2 group-hover:opacity-0 sm:p-5">
-                      <p className="text-lg font-bold leading-tight sm:text-xl">{card.label}</p>
-                      <p className="mt-1 text-[12px] font-medium text-white/75 sm:text-[13px]">{card.tag}</p>
-                    </div>
-
-                    {/* Hover state: centred content that rises into view */}
-                    <div className="absolute inset-0 flex translate-y-4 flex-col items-center justify-center p-5 text-center opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                      {/* Name */}
-                      <p className="text-2xl font-bold text-white sm:text-3xl">{card.label}</p>
-                      {/* Blurb */}
-                      <p className="mt-3 text-[13px] leading-relaxed text-white/80 sm:text-sm">
-                        {card.subtitle}
-                      </p>
-                    </div>
-                  </li>
-                </Reveal>
-              );
-            })}
-          </ul>
+          {/* Three image cards carousel – PopularDestinations style */}
+          <BrandMeaningCarousel cards={brandMeaning.cards} />
         </Container>
       </section>
 
       {/* §10.3 / §10.4 Mission & Vision */}
-      <section className="relative w-full overflow-hidden bg-white py-16 lg:py-24">
+      <section className="relative w-full overflow-hidden bg-white pt-16 lg:pt-24">
         {/* ── Text content ─────────────────────────────────────── */}
-        <div className="relative z-10 mx-auto max-w-2xl px-6 pb-0 pt-16 text-center lg:pt-20">
+        <div className="relative z-10 mx-auto max-w-2xl px-6 pb-0 text-center ">
           <Reveal>
             <h2 className="text-[1.75rem] font-bold leading-tight tracking-tight text-brand-navy sm:text-4xl lg:text-[2.6rem]">
               Our Mission &amp; Vision
@@ -274,7 +247,7 @@ export default function AboutUsPage() {
 
           {/* The panoramic wildlife image */}
           <img
-            src="/mission-vision-wildlife.jpg"
+            src="https://images.pexels.com/photos/39339592/pexels-photo-39339592.jpeg"
             alt="Sri Lanka wildlife – leopard, elephants and peacock in golden hour"
             className="w-full object-cover"
             style={{ maxHeight: "520px", minHeight: "280px", objectPosition: "center 40%" }}
@@ -286,7 +259,7 @@ export default function AboutUsPage() {
       <WhyChooseCarousel />
 
       {/* §10.6 Our Team – watermark device like the home reviews section */}
-      <section className="relative overflow-hidden py-20 lg:py-28">
+      <section className="relative overflow-hidden pt-20 lg:pt-28">
         <span className="watermark top-6 lg:top-4" aria-hidden="true">
           {team.watermark}
         </span>
@@ -303,76 +276,17 @@ export default function AboutUsPage() {
             </div>
             <div className="lg:col-span-6">
               <h3 className="text-xl font-bold text-brand-navy">Our Founders</h3>
-              <div className="mt-5 space-y-4 text-[15px] leading-[1.85] text-brand-muted sm:text-base">
+              <div className="mt-5 space-y-4 text-[15px] leading-[1.85] text-black">
                 {team.story.map((p) => (
                   <p key={p.slice(0, 32)}>{p}</p>
                 ))}
               </div>
-              <p className="mt-8 inline-block rounded-full bg-brand-navy px-6 py-3 text-[15px] font-bold text-white">
-                {team.signoff}
-              </p>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* §10.7 Registrations & Trust */}
-      <section className=" bg-white py-16 lg:py-24">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-5">
-              <Reveal>
-                <SectionHeading lines={trust.heading} />
-              </Reveal>
-              <p className="mt-6 text-[15px] leading-[1.85] text-brand-muted sm:text-base">
-                {trust.copy}
-              </p>
-            </div>
-            <div className="lg:col-span-7">
-              <ul className="grid gap-4 sm:grid-cols-1">
-                {trust.facts.map((f) => {
-                  const Icon = Icons[f.icon] || Icons.BadgeCheck;
-                  return (
-                    <li
-                      key={f.title}
-                      className="flex items-start gap-4 rounded-card border border-brand-line bg-white p-5 shadow-card sm:p-6"
-                    >
-                      <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-brand-sky text-brand-blue">
-                        <Icon className="size-6" aria-hidden="true" />
-                      </span>
-                      <div>
-                        <h3 className="text-[16px] font-bold text-brand-navy">{f.title}</h3>
-                        <p className="mt-1 text-[14px] leading-relaxed text-brand-muted">{f.detail}</p>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
-              {trust.certifications.length > 0 && (
-                <ul className="mt-4 grid gap-4 sm:grid-cols-2">
-                  {trust.certifications.map((c) => {
-                    const Icon = Icons[c.icon] || Icons.BadgeCheck;
-                    return (
-                      <li
-                        key={c.title}
-                        className="flex items-start gap-4 rounded-card border border-brand-line bg-white p-5 shadow-card"
-                      >
-                        <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-brand-sky text-brand-blue">
-                          <Icon className="size-6" aria-hidden="true" />
-                        </span>
-                        <div>
-                          <h3 className="text-[16px] font-bold text-brand-navy">{c.title}</h3>
-                          <p className="mt-1 text-[14px] leading-relaxed text-brand-muted">{c.detail}</p>
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              )}
-            </div>
-          </div>
-        </Container>
-      </section>
+      
 
       {/* §10.8 CTA – blue band like the home final CTA */}
       <FinalCta />

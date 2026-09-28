@@ -29,7 +29,7 @@ export default function WhyChooseCarousel() {
           <Reveal className="lg:col-span-5">
             <SectionHeading lines={whyChoose.heading} />
           </Reveal>
-          <p className="max-w-md text-[15px] leading-relaxed text-brand-muted lg:col-span-4">
+          <p className="max-w-md text-[15px] leading-relaxed text-black lg:col-span-4">
             {whyChoose.copy}
           </p>
           {/* Prev / Next buttons */}
@@ -80,13 +80,13 @@ export default function WhyChooseCarousel() {
 
                   {/* Permanent bottom gradient */}
                   <div
-                    className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,19,59,0)_40%,rgba(6,19,59,0.93)_100%)]"
+                    className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_40%,rgba(0,0,0,0.93)_100%)]"
                     aria-hidden="true"
                   />
 
                   {/* Hover dark tint */}
                   <div
-                    className="absolute inset-0 bg-brand-navy/65 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    className="absolute inset-0 bg-black/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                     aria-hidden="true"
                   />
 
