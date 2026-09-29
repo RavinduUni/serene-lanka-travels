@@ -28,10 +28,10 @@ export default function IntroSection() {
 
           {/* Copy */}
           <div className="lg:col-span-6 lg:px-6">
-            <p className="text-[15px] leading-[1.8] text-brand-muted sm:text-base">{intro.copy}</p>
+            <p className="text-[15px] leading-[1.8] text-black sm:text-base">{intro.copy}</p>
             <ul className="mt-7 space-y-3">
               {intro.points.map((p) => (
-                <li key={p} className="flex items-start gap-3 text-[15px] font-medium text-brand-ink">
+                <li key={p} className="flex items-start gap-3 text-[15px] font-medium text-black">
                   <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-brand-sky text-brand-blue">
                     <Check className="size-3.5" aria-hidden="true" />
                   </span>
@@ -48,7 +48,7 @@ export default function IntroSection() {
           {/* Right image – sits lower */}
           <div className="relative aspect-4/3 overflow-hidden rounded-card shadow-card sm:aspect-[16/9] lg:col-span-3 lg:aspect-4/5 lg:mt-10">
             <SmartImage
-              src={'/whychooseus/discover.jpg'}
+              src={'/about/story1.jpg'}
               alt="Palm-lined beach on Sri Lanka's south coast"
               fill
               sizes="(min-width:1024px) 25vw, 100vw"

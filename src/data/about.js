@@ -22,7 +22,7 @@ export const ourStory = {
   ],
   promise:
     "We don't just take you around Sri Lanka. We help you experience Sri Lanka like a friend.",
-  images: ["/about/story1.jpg", "/about/story2.jpg"],
+  images: ["/about/story5.jpg", "/about/story2.jpg"],
   milestones: [
     { value: "2022", label: "Began operations helping international travellers" },
     { value: "2026", label: "Registered as a professional tourism company" },
