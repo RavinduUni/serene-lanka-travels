@@ -26,7 +26,7 @@ export default function Parallax({ children, className, speed = 1, type = "y" })
         trigger: container.current,
         start: "top bottom", 
         end: "bottom top",
-        scrub: true
+        scrub: 1
       }
     });
   }, { scope: container });

@@ -51,6 +51,7 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -63,11 +64,13 @@
 }
 
 @layer components {
+
   /* Section heading device used across the whole site (reference style):
      first line light, second line bold. */
   .heading-split {
     @apply font-light leading-[1.05] tracking-[-0.02em] text-brand-ink;
   }
+
   .heading-split strong {
     @apply block font-bold;
   }
@@ -77,6 +80,7 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
+
   .rail::-webkit-scrollbar {
     display: none;
   }

@@ -84,7 +84,7 @@ export default function DayToursPage() {
       </section>
 
       {/* ── Intro ── */}
-      <section className="py-16 lg:py-24">
+      <section className="pt-16 lg:pt-24">
         <Container>
           <Reveal>
             <SectionHeading
@@ -99,58 +99,12 @@ export default function DayToursPage() {
             flexible timing and insights you can&apos;t find in a guidebook.
           </p>
 
-          {/* Featured beach-tour card */}
-          <div className="mt-12 grid overflow-hidden rounded-card bg-white shadow-lift lg:mt-16 lg:grid-cols-12">
-            {/* Image */}
-            <div className="relative min-h-[260px] lg:col-span-7 lg:min-h-[440px]">
-              <SmartImage
-                src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1400&q=80"
-                alt="Surfers on a Sri Lanka beach"
-                fill
-                sizes="(min-width:1024px) 58vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-
-            {/* Details */}
-            <div className="flex flex-col justify-center p-7 sm:p-10 lg:col-span-5">
-              <span className="inline-flex w-fit items-center rounded-full bg-brand-blue px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white">
-                Best Travel
-              </span>
-
-              <h2 className="mt-4 text-2xl font-bold tracking-tight text-brand-navy sm:text-3xl">
-                Beach Tours
-              </h2>
-              <p className="mt-3 text-[14px] leading-relaxed text-black sm:text-[15px]">
-                Enjoy the most beautiful, tropical bays and secret coves for swimming and
-                snorkelling, sun, sand and stunning scenery, to award you with an unforgettable
-                beach holiday.
-              </p>
-
-              <div>
-                <Button href="/day-tours/bentota-day-tour" variant="link" className="mt-8 text-[15px] ">
-                  <span className="grid size-9 place-items-center rounded-full bg-brand-navy text-white">
-                    <ArrowRight className="size-4" aria-hidden="true" />
-                  </span>
-                  Explore Now
-                </Button>
-              </div>
-            </div>
-          </div>
         </Container>
       </section>
 
       {/* ── More Tailor-Made Tours Grid ── */}
-      <section className="bg-white py-16 lg:py-24">
+      <section className="bg-white pb-16 lg:pb-24">
         <Container>
-          <Reveal>
-            <SectionHeading
-              lines={["More Tailor-Made Tours", "to Match Your Travel Style"]}
-              align="center"
-              className="mx-auto max-w-2xl"
-            />
-          </Reveal>
-
           <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-14 lg:gap-5">
             {tourCategories.map((cat) => (
               <Link
@@ -168,12 +122,12 @@ export default function DayToursPage() {
                 />
 
                 <div
-                  className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,19,59,0)_45%,rgba(6,19,59,0.92)_100%)]"
+                  className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_45%,rgba(0,0,0,0.92)_100%)]"
                   aria-hidden="true"
                 />
 
                 {/* Hover overlay – slides up from bottom */}
-                <div className="absolute inset-0 translate-y-full bg-linear-to-t from-brand-navy-deep/95 via-brand-navy/70 to-transparent transition-transform duration-500 ease-out group-hover:translate-y-0" />
+                <div className="absolute inset-0 translate-y-full bg-linear-to-t from-black/95 via-black/70 to-transparent transition-transform duration-500 ease-out group-hover:translate-y-0" />
 
                 <div className="absolute inset-x-0 bottom-0 p-4 transition-all duration-500 group-hover:translate-y-2 group-hover:opacity-0 sm:p-5">
                   <span className="text-[13px] font-bold uppercase leading-tight tracking-widest text-white sm:text-[15px]">

@@ -41,7 +41,7 @@ export default function Reveal({ children, className, delay = 0, type = "fade-up
         scrollTrigger: {
           trigger: container.current,
           start: "top 85%",
-          toggleActions: "play none none reverse", // Play on enter, reverse on leave back
+          toggleActions: "play none none none",
         }
       }
     );
