@@ -42,13 +42,13 @@ const tourCategories = [
     label: "Galle & Unawatuna Day Tour",
     href: "/day-tours/galle-unawatuna-day-tour",
     image:
-      "https://images.unsplash.com/photo-1580889240912-c39ecefd3d95?auto=format&fit=crop&w=900&q=75",
+      "/day-tours/galle.jpg",
   },
   {
     label: "Bentota Day Tour",
     href: "/day-tours/bentota-day-tour",
     image:
-      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=900&q=75",
+      "/day-tours/bentota2.jpg",
   },
   {
     label: "Ella Day Tour",
@@ -60,7 +60,7 @@ const tourCategories = [
     label: "Nuwara Eliya Day Tour",
     href: "/day-tours/nuwara-eliya-day-tour",
     image:
-      "https://images.unsplash.com/photo-1576675784201-0e142b423952?auto=format&fit=crop&w=900&q=75",
+      "/day-tours/nuwaraeliya.jpg",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function DayToursPage() {
       {/* ── Hero ── */}
       <section className="relative h-[55vh] min-h-[380px] overflow-hidden bg-brand-navy-deep -mt-[76px] lg:-mt-[88px]">
         <Image
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80"
+          src="https://images.unsplash.com/photo-1690221170374-b8374851f5a0?q=80&w=1889&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Sri Lanka tropical beach with palm trees and colourful boats"
           fill
           priority
