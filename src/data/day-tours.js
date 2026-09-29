@@ -41,7 +41,7 @@ export const dayTours = [
     group: "city",
     shortDescription:
       "Sri Lanka's commercial capital in one comfortable private day – colonial heritage, sacred temples, busy markets and the modern waterfront.",
-    heroImage: "https://images.unsplash.com/photo-1740812517101-fee71e001ebc?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    heroImage: "https://images.pexels.com/photos/34927539/pexels-photo-34927539.jpeg",
     intro: [
       "Colombo is where Sri Lanka's past and present meet. Colonial-era buildings and century-old temples sit beside a fast-changing modern skyline, and the best way to see it all is with a local who knows which streets, stories and stops are worth your time.",
       "On this private city tour you travel at your own pace in a comfortable vehicle, stepping out for the landmarks, markets and viewpoints that interest you most – with your driver handling the traffic, parking and timing.",
@@ -63,7 +63,7 @@ export const dayTours = [
     places: [
       {
         name: "Galle Face Green",
-        image: u("photo-1546708973-b339540b5162", 1600),
+        image: '/day-tours/colombo/galle-face.jpg',
         blurb:
           "Colombo's famous ocean-side promenade – street food, kite flyers and Indian Ocean sunsets in the middle of the city.",
       },

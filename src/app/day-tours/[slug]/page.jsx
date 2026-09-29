@@ -74,7 +74,7 @@ export default async function DayTourPage({ params }) {
           className="object-cover"
         />
         <div
-          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,19,59,0.45)_0%,rgba(6,19,59,0.15)_40%,rgba(6,19,59,0.85)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.75)_100%)]"
           aria-hidden="true"
         />
         <Container className="relative pb-24 pt-36 text-white lg:pb-28">

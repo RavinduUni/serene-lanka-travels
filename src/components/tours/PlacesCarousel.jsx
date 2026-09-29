@@ -68,10 +68,7 @@ export default function PlacesCarousel({ places }) {
             />
           </motion.div>
         ))}
-        <div
-          className="absolute inset-0 bg-[linear-gradient(75deg,rgba(6,19,59,0.82)_0%,rgba(6,19,59,0.35)_45%,rgba(6,19,59,0.15)_70%,rgba(6,19,59,0.55)_100%)]"
-          aria-hidden="true"
-        />
+
 
         {/* Caption */}
         <div className="absolute inset-x-0 top-0 p-6 sm:max-w-md sm:p-9 lg:max-w-lg lg:p-12" aria-live="polite" ref={liveRef}>
@@ -125,28 +122,18 @@ export default function PlacesCarousel({ places }) {
                   className={cn(
                     "group/thumb relative block h-20 w-24 overflow-hidden rounded-xl border-2 transition-all sm:h-28 sm:w-32",
                     i === active
-                      ? "border-brand-blue"
-                      : "border-white/25 opacity-75 hover:opacity-100"
+                      ? "border-white"
+                      : "border-white/25"
                   )}
                 >
                   <SmartImage src={p.image} alt="" fill sizes="128px" className="object-cover" />
-                  <span
-                    className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,19,59,0)_35%,rgba(6,19,59,0.8)_100%)]"
+                  <div
+                    className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.75)_100%)]"
                     aria-hidden="true"
                   />
                   <span className="absolute inset-x-0 bottom-0 p-1.5 text-left text-[11px] font-bold leading-tight text-white sm:p-2 sm:text-[12px]">
                     {p.name}
                   </span>
-                  {i === active && !reduce && (
-                    <motion.span
-                      key={`bar-${active}-${paused}`}
-                      className="absolute inset-x-0 top-0 h-1 origin-left bg-brand-blue"
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: paused ? 0 : 1 }}
-                      transition={{ duration: paused ? 0 : AUTO_ADVANCE_MS / 1000, ease: "linear" }}
-                      aria-hidden="true"
-                    />
-                  )}
                 </button>
               </li>
             ))}
