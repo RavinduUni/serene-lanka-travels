@@ -136,7 +136,7 @@ export default function AboutUsPage() {
           <Parallax className="w-full h-full" speed={1.5}>
             <div className="absolute -inset-[15%] h-[130%] w-[130%]">
               <Image
-                src={"https://images.pexels.com/photos/27669335/pexels-photo-27669335.jpeg"}
+                src={"https://images.pexels.com/photos/30725275/pexels-photo-30725275.jpeg"}
                 alt="Meaning Behind Seren Lanka Background"
                 fill
                 sizes="100vw"

@@ -48,7 +48,7 @@ export default function IntroSection() {
           {/* Right image – sits lower */}
           <div className="relative aspect-4/3 overflow-hidden rounded-card shadow-card sm:aspect-[16/9] lg:col-span-3 lg:aspect-4/5 lg:mt-10">
             <SmartImage
-              src={'/whychooseus/whychooseus2.webp'}
+              src={'/whychooseus/discover.jpg'}
               alt="Palm-lined beach on Sri Lanka's south coast"
               fill
               sizes="(min-width:1024px) 25vw, 100vw"

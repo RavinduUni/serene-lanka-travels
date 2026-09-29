@@ -65,10 +65,10 @@ export const tourCategories = {
     { label: "Multi-Day Sri Lanka Tours", href: "/sri-lanka-itineraries", image: '/TourCategory/multi-day-tour.webp' },
     { label: "Tailor-Made Tours", href: "/tailor-made-tours", image: '/TourCategory/tailor-made-tours.webp' },
     { label: "Honeymoon Tours", href: "/sri-lanka-tours/honeymoon", image: '/TourCategory/honeymoon-tours.webp' },
-    { label: "Wildlife & Safari Tours", href: "/sri-lanka-tours/wildlife-safari", image: '/TourCategory/wildlife-tours.webp' },
+    { label: "Wildlife & Safari Tours", href: "/sri-lanka-tours/wildlife-safari", image: '/TourCategory/wildlife-tour.jpg' },
     { label: "Cultural Tours", href: "/sri-lanka-tours/cultural-heritage", image: '/TourCategory/cultural-tours.webp' },
     { label: "Luxury Tours", href: "/sri-lanka-tours/luxury", image: '/TourCategory/luxury-tours.webp' },
-    { label: "Budget Tours", href: "/sri-lanka-tours/budget", image: '/TourCategory/budget-tours.webp' },
+    { label: "Budget Tours", href: "/sri-lanka-tours/budget", image: '/TourCategory/budget-tour.webp' },
   ],
 };
 
@@ -128,14 +128,14 @@ export const destinations = {
   copy: "The places our guests ask for most – and where every great Sri Lanka itinerary begins.",
   cta: { label: "Discover Sri Lanka", href: "/discover-sri-lanka" },
   items: [
-    { name: "Kandy", tag: "Hill country & culture", blurb: "Home to the sacred Temple of the Tooth, misty hills, spice gardens and vibrant Kandyan dance a must on every Sri Lanka journey.", href: "/destinations/kandy", image: images.destinations.kandy },
-    { name: "Sigiriya", tag: "Cultural Triangle", blurb: "Climb the legendary Lion Rock fortress rising 200m from the jungle floor, and explore the nearby cave temples of Dambulla.", href: "/destinations/sigiriya", image: images.destinations.sigiriya },
-    { name: "Nuwara Eliya", tag: "Tea country", blurb: "Sri Lanka's 'Little England' rolling tea estates, colonial bungalows and crisp mountain air at 1,800m above sea level.", href: "/destinations/nuwara-eliya", image: images.destinations.nuwaraEliya },
-    { name: "Ella", tag: "Mountains & waterfalls", blurb: "A laid-back mountain village with breathtaking ridge-top views, cascading waterfalls and the iconic Nine Arch Bridge.", href: "/destinations/ella", image: images.destinations.ella },
-    { name: "Yala", tag: "Wildlife safari", blurb: "Sri Lanka's most famous national park home to the world's highest density of leopards, plus elephants, sloth bears and crocodiles.", href: "/destinations/yala", image: images.destinations.yala },
-    { name: "Mirissa", tag: "Whales & beaches", blurb: "A crescent bay on the south coast known for blue whale watching, golden sand, fresh seafood and spectacular sunsets.", href: "/destinations/mirissa", image: images.destinations.mirissa },
-    { name: "Galle", tag: "Colonial fort", blurb: "A UNESCO World Heritage fortress where Dutch colonial ramparts meet boutique cafés, art galleries and the sparkling Indian Ocean.", href: "/destinations/galle", image: images.destinations.galle },
-    { name: "Bentota", tag: "Beach escape", blurb: "Sri Lanka's premier beach resort town calm lagoon waters for watersports, luxury spa retreats and palm-fringed shores.", href: "/destinations/bentota", image: images.destinations.bentota },
+    { name: "Kandy", tag: "Hill country & culture", blurb: "Home to the sacred Temple of the Tooth, misty hills, spice gardens and vibrant Kandyan dance a must on every Sri Lanka journey.", href: "/destinations/kandy", image: '/PopularDestinations/kandy.jpg' },
+    { name: "Sigiriya", tag: "Cultural Triangle", blurb: "Climb the legendary Lion Rock fortress rising 200m from the jungle floor, and explore the nearby cave temples of Dambulla.", href: "/destinations/sigiriya", image: '/PopularDestinations/sigiriya.jpg' },
+    { name: "Nuwara Eliya", tag: "Tea country", blurb: "Sri Lanka's 'Little England' rolling tea estates, colonial bungalows and crisp mountain air at 1,800m above sea level.", href: "/destinations/nuwara-eliya", image: '/PopularDestinations/nuwaraeliya.jpg' },
+    { name: "Ella", tag: "Mountains & waterfalls", blurb: "A laid-back mountain village with breathtaking ridge-top views, cascading waterfalls and the iconic Nine Arch Bridge.", href: "/destinations/ella", image: '/PopularDestinations/ella.jpg' },
+    { name: "Yala", tag: "Wildlife safari", blurb: "Sri Lanka's most famous national park home to the world's highest density of leopards, plus elephants, sloth bears and crocodiles.", href: "/destinations/yala", image: '/PopularDestinations/yala.jpg' },
+    { name: "Mirissa", tag: "Whales & beaches", blurb: "A crescent bay on the south coast known for blue whale watching, golden sand, fresh seafood and spectacular sunsets.", href: "/destinations/mirissa", image: '/PopularDestinations/mirissa.jpg' },
+    { name: "Galle", tag: "Colonial fort", blurb: "A UNESCO World Heritage fortress where Dutch colonial ramparts meet boutique cafés, art galleries and the sparkling Indian Ocean.", href: "/destinations/galle", image: '/PopularDestinations/galle.jpg' },
+    { name: "Bentota", tag: "Beach escape", blurb: "Sri Lanka's premier beach resort town calm lagoon waters for watersports, luxury spa retreats and palm-fringed shores.", href: "/destinations/bentota", image: '/PopularDestinations/bentota.jpg' },
   ],
 };
 

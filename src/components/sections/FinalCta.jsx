@@ -8,19 +8,16 @@ import { ArrowRight } from "lucide-react";
 
 export default function FinalCta() {
   return (
-    <section className="relative overflow-hidden py-20 text-white lg:py-40">
+    <section className="relative overflow-hidden pb-20 text-white lg:pb-60 pt-10 lg:pt-20">
       {/* Background photo */}
       <Image
-        src={'/whychooseus2.jpeg.png'}
+        src={'/finalCTA2.png'}
         alt="Mirissa beach at golden hour, Sri Lanka"
         fill
         sizes="100vw"
         className="object-cover object-bottom"
         priority={false}
       />
-
-      
-
       
 
       <Container className="relative text-center mb-50">

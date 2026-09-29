@@ -39,7 +39,7 @@ export default function BuilderPromo() {
           <div className="relative grid grid-cols-12 gap-4 lg:col-span-7 lg:pl-8">
             <div className="relative col-span-7 aspect-[4/5] overflow-hidden rounded-card shadow-card">
               <SmartImage
-                src={builderPromo.images[0]}
+                src={'/TourCategory/builder-promo-2.webp'}
                 alt="Waterfall in Sri Lanka's hill country"
                 fill
                 sizes="(min-width:1024px) 35vw, 60vw"
@@ -48,7 +48,7 @@ export default function BuilderPromo() {
             </div>
             <div className="relative col-span-5 mt-16 aspect-[4/5] overflow-hidden rounded-card shadow-card">
               <SmartImage
-                src={builderPromo.images[1]}
+                src={'/TourCategory/builder-promo.webp'}
                 alt="Surfer on a Sri Lankan wave"
                 fill
                 sizes="(min-width:1024px) 25vw, 40vw"
