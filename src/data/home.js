@@ -61,14 +61,14 @@ export const tourCategories = {
     "Ready-made Sri Lanka journeys for every travel style, all fully private and all customizable.",
   cta: { label: "View All Tours", href: "/sri-lanka-itineraries" },
   items: [
-    { label: "Day Tours", href: "/day-tours", image: '/TourCategory/day-tours.webp' },
+    { label: "Day Tours", href: "/day-tours", image: '/TourCategory/day.jpg' },
     { label: "Multi-Day Sri Lanka Tours", href: "/sri-lanka-itineraries", image: '/TourCategory/multi-day-tour.webp' },
     { label: "Tailor-Made Tours", href: "/tailor-made-tours", image: '/TourCategory/tailor-made-tours.webp' },
     { label: "Honeymoon Tours", href: "/sri-lanka-tours/honeymoon", image: '/TourCategory/honeymoon-tours.webp' },
     { label: "Wildlife & Safari Tours", href: "/sri-lanka-tours/wildlife-safari", image: '/TourCategory/wildlife-tour.jpg' },
     { label: "Cultural Tours", href: "/sri-lanka-tours/cultural-heritage", image: '/TourCategory/cultural-tours.webp' },
-    { label: "Luxury Tours", href: "/sri-lanka-tours/luxury", image: '/TourCategory/luxury-tours.webp' },
-    { label: "Budget Tours", href: "/sri-lanka-tours/budget", image: '/TourCategory/budget-tour.webp' },
+    { label: "Luxury Tours", href: "/sri-lanka-tours/luxury", image: '/TourCategory/luxury.jpg' },
+    { label: "Budget Tours", href: "/sri-lanka-tours/budget", image: '/TourCategory/budget.jpg' },
   ],
 };
 
@@ -98,7 +98,7 @@ export const featuredJourney = {
     "A balanced introduction to Sri Lanka combining culture, tea country, mountains, wildlife and beaches – all at your own pace in a private vehicle.",
   route: ["Colombo", "Kandy", "Nuwara Eliya", "Ella", "Yala", "Mirissa", "Galle"],
   highlights: ["Tea country", "Waterfalls", "Mountains", "Wildlife", "Beaches", "Galle Fort"],
-  image: images.featured,
+  image: '/journey.jpg',
   ctas: [
     { label: "Explore This Tour", href: "/sri-lanka-itineraries/see-the-best-of-sri-lanka", variant: "primary" },
     { label: "Customize This Tour", href: "/tailor-made-tours/build", variant: "outline" },

@@ -176,7 +176,7 @@ export default function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-brand-navy-deep/80 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+          ? "bg-black/70 backdrop-blur-md shadow-[0_4px_10px_rgba(0,0,0,0.3)]"
           : "bg-transparent"
       )}
     >

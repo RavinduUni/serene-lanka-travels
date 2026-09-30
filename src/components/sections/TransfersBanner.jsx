@@ -28,7 +28,7 @@ export default function TransfersBanner() {
               }}
             >
               <SmartImage
-                src={'/why-vehicles.jpg'}
+                src={'/transfer2.jpg'}
                 alt="Private vehicle driving through scenic Sri Lanka roads"
                 fill
                 sizes="(min-width:1024px) 45vw, 90vw"
