@@ -155,7 +155,7 @@ export default function AboutUsPage() {
           <div className="relative mx-auto w-full max-w-4xl text-center">
             {/* Watermark */}
             <span
-              className="pointer-events-none absolute left-1/2 top-0 z-0 -translate-x-1/2 -translate-y-1/2 select-none text-[18vw] font-bold lowercase tracking-tighter text-gray-300 lg:text-[160px]"
+              className="pointer-events-none absolute left-1/2 top-0 z-0 -translate-x-1/2 -translate-y-1/2 select-none text-[18vw] font-bold lowercase tracking-tighter text-brand-blue/50 lg:text-[160px]"
               style={{ opacity: 0.6, lineHeight: 0.8 }}
               aria-hidden="true"
             >
@@ -259,8 +259,8 @@ export default function AboutUsPage() {
       <WhyChooseCarousel />
 
       {/* §10.6 Our Team – watermark device like the home reviews section */}
-      <section className="relative overflow-hidden pt-20 lg:pt-28">
-        <span className="watermark top-6 lg:top-4" aria-hidden="true">
+      <section className="relative overflow-hidden py-20 lg:py-28">
+        <span className="text-brand-blue/20 watermark top-6 lg:top-4" aria-hidden="true">
           {team.watermark}
         </span>
         <Container className="relative">

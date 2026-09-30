@@ -121,7 +121,7 @@ export default async function DayTourPage({ params }) {
                 </h3>
                 <ul className="mt-5 space-y-3">
                   {tour.highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-3 text-[14px] font-medium leading-relaxed text-brand-ink">
+                    <li key={h} className="flex items-start gap-3 text-[14px] sm:text-base font-medium leading-relaxed text-brand-ink">
                       <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-white text-brand-blue">
                         <Check className="size-3.5" aria-hidden="true" />
                       </span>
@@ -135,11 +135,13 @@ export default async function DayTourPage({ params }) {
         </Container>
       </section>
 
+      
+
       {/* Places you will visit – animated showcase */}
       <section className="border-y border-brand-line bg-brand-mist py-16 lg:py-24">
         <Container>
           <SectionHeading lines={["Places", "You Will Visit"]} align="center" className="mx-auto" />
-          <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-black">
+          <p className="mx-auto mt-4 max-w-xl text-center text-[15px] sm:text-base leading-relaxed text-black">
             The stops that shape this day. The order and timing are planned around traffic, weather
             and your interests.
           </p>
@@ -159,7 +161,7 @@ export default async function DayTourPage({ params }) {
               </h3>
               <ul className="mt-4 space-y-2.5">
                 {tour.activities.map((a) => (
-                  <li key={a} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-brand-ink">
+                  <li key={a} className="flex items-start gap-2.5 text-[14px] sm:text-base leading-relaxed text-brand-ink">
                     <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand-blue" aria-hidden="true" />
                     {a}
                   </li>
@@ -172,7 +174,7 @@ export default async function DayTourPage({ params }) {
               </h3>
               <ul className="mt-4 space-y-2.5">
                 {tour.whatToBring.map((w) => (
-                  <li key={w} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-brand-ink">
+                  <li key={w} className="flex items-start gap-2.5 text-[14px] sm:text-base leading-relaxed text-brand-ink">
                     <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand-blue" aria-hidden="true" />
                     {w}
                   </li>
@@ -183,7 +185,7 @@ export default async function DayTourPage({ params }) {
               <h3 className="flex items-center gap-2 text-lg font-bold text-brand-navy">
                 Who it suits
               </h3>
-              <p className="mt-4 text-[14px] leading-[1.8] text-brand-ink">{tour.suitability}</p>
+              <p className="mt-4 text-[14px] sm:text-base leading-[1.8] text-brand-ink">{tour.suitability}</p>
             </div>
           </div>
         </Container>
@@ -195,6 +197,41 @@ export default async function DayTourPage({ params }) {
           <SectionHeading lines={["Inclusions &", "Exclusions"]} size="sm" />
           <div className="mt-8">
             <InclusionsExclusions inclusions={standardInclusions} exclusions={standardExclusions} />
+          </div>
+        </Container>
+      </section>
+
+      {/* Map Showcase Section */}
+      <section className="bg-white py-6 lg:py-8 pb-24 lg:pb-24 overflow-hidden relative">
+        <Container className="relative z-10">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+            {/* Left: Map Image */}
+            <div className="relative w-full aspect-square lg:aspect-auto lg:h-[600px] flex justify-center items-center">
+              {tour.mapImage && tour.mapImage !== "/map-placeholder.jpg" ? (
+                <Image
+                  src={tour.mapImage}
+                  alt={tour.mapTitle}
+                  fill
+                  className="object-contain"
+                />
+              ) : (
+                <div className="w-[80%] h-[80%] border-2 border-dashed border-brand-blue/30 rounded-3xl flex items-center justify-center bg-white/50 backdrop-blur-sm">
+                  <span className="text-brand-blue/60 font-semibold text-lg px-4 text-center">
+                    Map Image Placeholder<br />(Add {tour.slug}-map.png)
+                  </span>
+                </div>
+              )}
+            </div>
+            
+            {/* Right: Map Content */}
+            <div className="max-w-xl">
+              <h2 className="text-[2rem] font-bold leading-[1.15] tracking-tight text-brand-navy sm:text-[2.5rem]">
+                {tour.mapTitle}
+              </h2>
+              <p className="mt-6 text-[15px] leading-[1.8] text-brand-ink sm:text-base">
+                {tour.mapDescription}
+              </p>
+            </div>
           </div>
         </Container>
       </section>

@@ -123,14 +123,14 @@ export const whyChoose = {
       label: "Experienced Local Drivers",
       tag: "Safe & knowledgeable",
       blurb: "Licensed, experienced drivers who know every road, shortcut and scenic stop.",
-      image: "/why-drivers.jpg",
+      image: "/about/local-drivers.jpg",
     },
     {
       icon: "Armchair",
       label: "Comfortable Vehicles",
       tag: "Travel in comfort",
       blurb: "Air-conditioned, well-maintained vehicles so every mile feels effortless.",
-      image: "/why-vehicles.jpg",
+      image: "/about/vehicles.jpg",
     },
     {
       icon: "MapPinned",

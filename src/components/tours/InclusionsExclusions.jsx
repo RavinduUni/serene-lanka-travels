@@ -4,7 +4,7 @@ function List({ items, positive }) {
   return (
     <ul className="space-y-3">
       {items.map((item) => (
-        <li key={item} className="flex items-start gap-3 text-[14px] leading-relaxed text-brand-ink">
+        <li key={item} className="flex items-start gap-3 text-[14px] sm:text-base leading-relaxed text-brand-ink">
           <span
             className={`mt-0.5 grid size-6 shrink-0 place-items-center rounded-full ${
               positive ? "bg-brand-sky text-brand-blue" : "bg-brand-mist text-brand-muted"

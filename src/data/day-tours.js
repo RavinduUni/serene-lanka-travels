@@ -46,6 +46,9 @@ export const dayTours = [
       "Colombo is where Sri Lanka's past and present meet. Colonial-era buildings and century-old temples sit beside a fast-changing modern skyline, and the best way to see it all is with a local who knows which streets, stories and stops are worth your time.",
       "On this private city tour you travel at your own pace in a comfortable vehicle, stepping out for the landmarks, markets and viewpoints that interest you most – with your driver handling the traffic, parking and timing.",
     ],
+    mapTitle: "Colombo: Heritage Meets Modernity",
+    mapDescription: "Explore the island's commercial capital, where colonial architecture and sacred sites blend with bustling markets and a vibrant waterfront. An overview of our Colombo Day Tour highlighting key locations such as Galle Face Green, Gangaramaya Temple, Independence Square, Colombo Fort & Old Dutch Hospital, and Pettah Market.",
+    mapImage: "/day-tours/maps/Colombo Tour.webp",
     quickFacts: {
       duration: "Full-day private tour",
       pickup: "Your hotel or an agreed location",
@@ -137,6 +140,9 @@ export const dayTours = [
       "Kandy is the spiritual heart of Sri Lanka. Ringed by hills and centred on its lake, the last royal capital of the island is home to the Temple of the Sacred Tooth Relic – one of Buddhism's most revered sites – and a living culture of drummers, dancers and festivals.",
       "This private day tour takes you up into the hill country in comfort, combining the sacred city itself with the gardens, viewpoints and tea-country scenery that surround it.",
     ],
+    mapTitle: "Kandy: The Sacred Hill Capital",
+    mapDescription: "Journey into the misty hills to discover the spiritual heart of the island, home to the sacred Temple of the Tooth and rich Kandyan heritage. An overview of our Kandy Day Tour highlighting key locations such as Temple of the Sacred Tooth Relic, Kandy Lake, Royal Botanical Gardens, Peradeniya, Kandy Viewpoint, and Bahirawakanda Buddha.",
+    mapImage: "/day-tours/maps/Kandy Tour.webp",
     quickFacts: {
       duration: "Full-day private tour",
       pickup: "Your hotel or an agreed location",
@@ -228,6 +234,9 @@ export const dayTours = [
       "Two of Sri Lanka's most extraordinary UNESCO World Heritage Sites sit within easy reach of each other in the island's Cultural Triangle. Sigiriya, the 5th-century rock fortress, rises two hundred metres out of the plains; Dambulla's cave temples shelter centuries of Buddhist art beneath a single granite overhang.",
       "This private day tour pairs them into one unforgettable journey – an early climb up Sigiriya while the air is cool, then the calm, painted caves of Dambulla, with your driver managing the timing so you see both at their best.",
     ],
+    mapTitle: "Cultural Triangle: Rock Fortresses and Cave Temples",
+    mapDescription: "Explore ancient kingdoms in the Cultural Triangle, from the towering Sigiriya rock fortress to the vividly painted caves of Dambulla. An overview of our Sigiriya & Dambulla Day Tour highlighting key locations such as Sigiriya Rock Fortress, Dambulla Cave Temples, Pidurangala Rock, Ancient Ruins, and Scenic Viewpoints.",
+    mapImage: "/day-tours/maps/Sigiriya.webp",
     quickFacts: {
       duration: "Full-day private tour",
       pickup: "Your hotel or an agreed location",
@@ -313,6 +322,9 @@ export const dayTours = [
       "The south coast is where Sri Lanka's colonial story meets its most beautiful shoreline. Galle Fort – built by the Portuguese and completed by the Dutch – is a living town of ramparts, lighthouses, cafés and galleries, and just around the headland lies Unawatuna, one of the island's best-loved beaches.",
       "On this private day tour you follow the coast south in comfort, wander the fort's historic lanes at your own pace, and finish with time to swim or simply relax on golden sand.",
     ],
+    mapTitle: "Southern Coast: Forts and Golden Shores",
+    mapDescription: "Experience the best of the south coast, combining the colonial charm of Galle Fort's ramparts with the pristine sands of Unawatuna Beach. An overview of our Galle & Unawatuna Day Tour highlighting key locations such as Galle Fort, Unawatuna Beach, Japanese Peace Pagoda, Galle Lighthouse, and Historic Ramparts.",
+    mapImage: "/day-tours/maps/galle.webp",
     quickFacts: {
       duration: "Full-day private tour",
       pickup: "Your hotel or an agreed location",
@@ -398,6 +410,9 @@ export const dayTours = [
       "Bentota is the classic Sri Lankan beach escape – close enough to Colombo for an easy day trip, yet a world away once you are on its long golden sand. Beyond the beach, the Madu River spreads into a maze of mangrove islands alive with birds and monitor lizards.",
       "This private day tour combines beach relaxation with a gentle river safari and the coast's famous turtle-conservation projects, all at whatever pace suits you.",
     ],
+    mapTitle: "Bentota: Beaches and Mangrove Rivers",
+    mapDescription: "Discover the relaxed west coast, where golden beaches meet the wildlife-rich mangrove islands of the Madu River ecosystem. An overview of our Bentota Day Tour highlighting key locations such as Bentota Beach, Madu River Mangrove Safari, Sea Turtle Hatchery, Local Fishing Village, and Scenic Coastal Views.",
+    mapImage: "/day-tours/maps/Bentota.webp",
     quickFacts: {
       duration: "Full-day private tour",
       pickup: "Your hotel or an agreed location",
@@ -483,6 +498,9 @@ export const dayTours = [
       "Ella is the hill country distilled: a small town wrapped in tea gardens, cloud forest and some of the most photographed scenery in Sri Lanka. Trains curve across the Nine Arches Bridge, waterfalls tumble beside the road, and short walks lead to enormous views.",
       "On this private day tour your driver handles the mountain roads while you collect Ella's icons one by one – with time built in to simply stand still and take in the green.",
     ],
+    mapTitle: "Ella: Tea Country and Mountain Views",
+    mapDescription: "Venture deep into the tea country to witness iconic sights like the Nine Arches Bridge and sweeping mountain vistas from Little Adam's Peak. An overview of our Ella Day Tour highlighting key locations such as Nine Arches Bridge, Little Adam's Peak, Ravana Falls, Tea Plantations, and Scenic Viewpoints.",
+    mapImage: "/day-tours/maps/Ella.webp",
     quickFacts: {
       duration: "Full-day private tour",
       pickup: "Your hotel or an agreed location",
@@ -568,6 +586,9 @@ export const dayTours = [
       "At nearly 1,900 metres, Nuwara Eliya is Sri Lanka's coolest town – a place of tea estates, rose gardens, misty mornings and colonial-era architecture that earned it the nickname 'Little England'.",
       "This private day tour climbs through some of the island's most beautiful road scenery, pausing at waterfalls and plantations on the way, and gives you time in town for the lake, the gardens and a proper cup of high-grown Ceylon tea at its source.",
     ],
+    mapTitle: "Nuwara Eliya: Little England in the Hills",
+    mapDescription: "Ascend to Sri Lanka's coolest town, surrounded by working tea estates, cascading waterfalls, and colonial-era architecture. An overview of our Nuwara Eliya Day Tour highlighting key locations such as Tea Plantations, Ramboda Falls, Gregory Lake, Tea Factory, and Colonial Architecture.",
+    mapImage: "/day-tours/maps/nuwara eliya.webp",
     quickFacts: {
       duration: "Full-day private tour",
       pickup: "Your hotel or an agreed location",
