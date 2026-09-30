@@ -28,7 +28,9 @@ function NavDropdown({ item, active, scrolled }) {
           active && "text-white"
         )}
       >
-        {item.label}
+        <span className={cn(active && "underline underline-offset-2 decoration-1 decoration-white")}>
+          {item.label}
+        </span>
         {item.children && (
           <ChevronDown
             className="size-[14px] transition-transform duration-200 group-hover:rotate-180"
