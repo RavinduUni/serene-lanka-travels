@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">No commitment</title>
+  <desc id="desc">An open padlock showing freedom from commitment on a soft coral organic background.</desc>
+  <path opacity=".82" fill="#FFC7BD" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="14" y="34" width="47" height="31" rx="6" fill="#fff"/>
+    <path d="M25 34V23c0-9 6-15 14-15s14 6 14 15"/>
+    <path d="M53 23v6"/>
+    <circle cx="37.5" cy="48" r="5"/>
+    <path d="M37.5 53v6"/>
+    <path d="m58 11 1.8 4.2L64 17l-4.2 1.8L58 23l-1.8-4.2L52 17l4.2-1.8Z" fill="#fff"/>
+  </g>
+</svg>

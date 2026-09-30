@@ -46,22 +46,22 @@ const contactJsonLd = {
 /* ── Trust signal cards shown alongside the form ─────────────────── */
 const trustPoints = [
   {
-    icon: MessageCircle,
+    img: "/contact/whatsapp-first.svg",
     title: "WhatsApp First",
     body: "Send your enquiry and we will reply on WhatsApp – the fastest way to reach our team, wherever you are in the world.",
   },
   {
-    icon: Clock,
+    img: "/contact/quick-response.svg",
     title: "Quick Response",
     body: "We aim to reply within a few hours. For urgent requests, WhatsApp is the fastest channel.",
   },
   {
-    icon: ShieldCheck,
+    img: "/contact/no-commitment.svg",
     title: "No Commitment",
     body: "Getting in touch is completely free. We will share ideas and a personalised quote before you commit to anything.",
   },
   {
-    icon: Globe2,
+    img: "/contact/private-flexible.svg",
     title: "Private & Flexible",
     body: "Every enquiry is handled personally. Your trip is planned around your schedule, budget and interests – not a fixed group itinerary.",
   },
@@ -83,7 +83,7 @@ export default function ContactUsPage() {
       {/* ── Hero ──────────────────────────────────────────────────────── */}
       <section className="-mt-[76px] lg:-mt-[88px] relative overflow-hidden min-h-[58vh] lg:min-h-[68vh] flex items-end pb-16 lg:pb-24">
         <Image
-          src="/sigiriya.jpg"
+          src="/contact-hero.jpg"
           alt="Plan your Sri Lanka journey with Seren Lanka Travels"
           fill
           sizes="100vw"
@@ -91,11 +91,7 @@ export default function ContactUsPage() {
           priority
         />
         <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(6,19,59,0.5) 0%, rgba(6,19,59,0.28) 35%, rgba(6,19,59,0.72) 68%, rgba(6,19,59,0.97) 100%)",
-          }}
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.75)_100%)]"
           aria-hidden="true"
         />
         <Container className="relative z-10">
@@ -141,9 +137,7 @@ export default function ContactUsPage() {
                     key={tp.title}
                     className="flex items-start gap-4 rounded-card border border-brand-line bg-white p-5 shadow-card"
                   >
-                    <span className="mt-0.5 grid shrink-0 place-items-center rounded-full bg-brand-sky p-2.5">
-                      <tp.icon className="size-5 text-brand-blue" aria-hidden="true" />
-                    </span>
+                    <img src={tp.img} alt={tp.title} className="w-10 h-10 object-cover" />
                     <div>
                       <p className="font-semibold text-brand-navy">{tp.title}</p>
                       <p className="mt-1 text-[13px] leading-relaxed text-brand-muted">{tp.body}</p>

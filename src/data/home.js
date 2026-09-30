@@ -58,7 +58,7 @@ export const whyUs = {
 export const tourCategories = {
   heading: ["Explore", "Our Tours"],
   copy:
-    "Ready-made Sri Lanka journeys for every travel style, all fully private and all customizable.",
+    "Discover the best of Sri Lanka with our private and fully customizable tours. Choose from day tours, multi-day journeys, tailor-made experiences, and more.",
   cta: { label: "View All Tours", href: "/sri-lanka-itineraries" },
   items: [
     { label: "Day Tours", href: "/day-tours", image: '/TourCategory/day.jpg' },
@@ -95,7 +95,7 @@ export const featuredJourney = {
   cardTitle: "Culture, tea country, wildlife and beaches in one private journey",
   duration: "7 Days / 6 Nights",
   copy:
-    "A balanced introduction to Sri Lanka combining culture, tea country, mountains, wildlife and beaches – all at your own pace in a private vehicle.",
+    "Explore Sri Lanka’s most iconic landscapes and experiences in one balanced private tour. From ancient cities and spice gardens to tea plantations and golden beaches, this itinerary is perfect for first-time visitors who want to see the highlights without rushing.",
   route: ["Colombo", "Kandy", "Nuwara Eliya", "Ella", "Yala", "Mirissa", "Galle"],
   highlights: ["Tea country", "Waterfalls", "Mountains", "Wildlife", "Beaches", "Galle Fort"],
   image: '/journey.jpg',
@@ -108,7 +108,7 @@ export const featuredJourney = {
 /** §9 Section 6 – Experiences */
 export const experiences = {
   heading: ["Find Your Kind of", "Sri Lanka"],
-  copy: "Every traveller wants something different from the island. Start with what you love.",
+  copy: "From wild encounters to quiet mornings in the tea hills, Sri Lanka can feel different depending on what you’re looking for. Choose your interests and we’ll help you build a trip that matches your pace and priorities.",
   cta: { label: "Explore Experiences", href: "/experiences" },
   items: [
     { label: "Wildlife", blurb: "Leopards, elephants and birdlife on private safaris.", href: "/experiences/wildlife", image: images.experiences.wildlife },
@@ -125,7 +125,7 @@ export const experiences = {
 /** §9 Section 7 – Popular Destinations */
 export const destinations = {
   heading: ["Popular", "Destinations"],
-  copy: "The places our guests ask for most – and where every great Sri Lanka itinerary begins.",
+  copy: "Whether it's the tea plantations, the sacred sites, the beaches, the wildlife or the quiet village life, every traveller wants something different from the island. Start with what you love.",
   cta: { label: "Discover Sri Lanka", href: "/discover-sri-lanka" },
   items: [
     { name: "Kandy", tag: "Hill country & culture", blurb: "Home to the sacred Temple of the Tooth, misty hills, spice gardens and vibrant Kandyan dance a must on every Sri Lanka journey.", href: "/destinations/kandy", image: '/PopularDestinations/kandy.jpg' },
@@ -240,27 +240,27 @@ export const faq = {
   items: [
     {
       q: "Can I customize a Sri Lanka tour?",
-      a: "Yes. Seren Lanka Travels offers flexible tailor-made journeys where travellers can select destinations, accommodation, activities, vehicle type and number of travel days.",
+      a: "Yes. All Seren Lanka Travels tours are private and fully customizable. You can select destinations, travel dates, accommodation style, vehicle type, pace, activities and more – and receive a detailed itinerary and price before you book.",
     },
     {
       q: "Do you provide private transportation?",
-      a: "Yes. Private transport is available for Day Tours, multi-day journeys, airport transfers, hotel transfers and custom travel across Sri Lanka.",
+      a: "Yes. Private transportation is included in all our day tours, multi-day itineraries and tailor-made journeys. You choose the vehicle type that matches your group size and travel style.",
     },
     {
       q: "Can you arrange airport pickup?",
-      a: "Yes. Airport pickup and drop-off services are part of Seren Lanka Travels' transport offering.",
+      a: "Yes. We will meet you at Bandaranaike International Airport (CMB), assist with your luggage and take you directly to your hotel or first destination – all arranged in advance as part of your tour.",
     },
     {
       q: "Can I travel with children?",
-      a: "Yes. Family tours and child-friendly travel arrangements are available. Child pricing may vary depending on age, hotel, transport and activity providers.",
+      a: "Yes. We regularly arrange family holidays, tours for multi-generational groups and travel with children. We can provide child seats, family-friendly hotels and activity suggestions depending on the age of your children.",
     },
     {
       q: "Can I change a ready-made itinerary?",
-      a: "Yes. Every itinerary includes a Customize This Tour option that connects to the Tailor-Made Tour flow.",
+      a: "Yes. Every Seren Lanka Travels itinerary includes a Customize This Tour option that lets you request changes, additions or adjustments before booking.",
     },
     {
       q: "Are prices fixed?",
-      a: "Some prices may change according to travel dates, hotels, vehicle category, activities, availability and seasonal conditions. Final prices are confirmed before booking.",
+      a: "Prices may vary depending on travel dates, vehicle category, accommodation style, number of travellers, activities, seasonal demand and availability. We provide a detailed price breakdown before you book.",
     },
     {
       q: "How can I contact Seren Lanka Travels quickly?",

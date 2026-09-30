@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">WhatsApp first</title>
+  <desc id="desc">A phone conversation bubble with a number one badge on a soft green organic background.</desc>
+  <path opacity=".82" fill="#AEEBCB" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M37 12c-15.5 0-28 10.5-28 23.5 0 7.5 4.2 14 11.2 18l-3 10.5 11.7-5.7c2.6.7 5.3 1 8.1 1 15.5 0 28-10.5 28-23.5S52.5 12 37 12Z" fill="#fff"/>
+    <path d="M28 25c2-2 4-1 5 1l2 5c.6 1.4.2 2.5-1 3.5L32 36c2 4 5 7 9 9l2-2.5c1-1.2 2-1.4 3.5-.7l5 2.5c2 1 2.5 3 1 5-2 3-5 4.5-8.5 4-10-1.5-20.5-12-22-22-.5-3 1-5 3-6.3 1.3-.8 2.7-.8 4 0Z"/>
+    <circle cx="59" cy="18" r="9" fill="#fff"/>
+  </g>
+  <text x="59" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#111">1</text>
+</svg>

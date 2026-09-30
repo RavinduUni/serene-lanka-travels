@@ -22,7 +22,7 @@ export default function ExperienceGrid() {
         <Reveal>
           <SectionHeading lines={experiences.heading} align="center" className="mx-auto" />
         </Reveal>
-        <p className="mx-auto mt-5 max-w-xl text-center text-[15px] leading-relaxed text-brand-muted sm:text-base">
+        <p className="mx-auto mt-5 max-w-xl text-center text-[15px] leading-relaxed text-black sm:text-base">
           {experiences.copy}
         </p>
 
