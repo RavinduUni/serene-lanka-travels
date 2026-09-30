@@ -16,11 +16,11 @@ export default function PopularDestinations() {
         <Parallax className="w-full h-full" speed={1.5}>
           <div className="absolute -inset-[15%] h-[130%] w-[130%]">
             <Image
-              src={"https://images.unsplash.com/photo-1589373797397-d19670f47549?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+              src={"/destinations-bg.jpg"}
               alt="Popular Destinations Background"
               fill
               sizes="100vw"
-              className="object-cover object-right"
+              className="object-cover object-center"
               priority={false}
             />
           </div>
