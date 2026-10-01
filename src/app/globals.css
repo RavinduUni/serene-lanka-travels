@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@fontsource-variable/manrope";
+@import "@fontsource-variable/fraunces";
 
 /* ------------------------------------------------------------------
    Seren Lanka Travels – design tokens
@@ -8,8 +9,9 @@
    - Deep navy    #0B1F5C  (the "E", "E", "N" and the pin)
    ------------------------------------------------------------------ */
 @theme {
-  --font-sans: "Manrope Variable", ui-sans-serif, system-ui, -apple-system,
+  --font-sans: "Fraunces Variable", ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Fraunces Variable", ui-serif, Georgia, serif;
 
   --color-brand-blue: #1a8cff;
   --color-brand-blue-dark: #0f6fd6;
@@ -33,6 +35,10 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6, .heading-split {
+    font-family: var(--font-serif);
   }
 
   body {
