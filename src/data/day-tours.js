@@ -317,7 +317,7 @@ export const dayTours = [
     group: "coastal",
     shortDescription:
       "Southern coastal culture in a day – the ramparts and lanes of UNESCO-listed Galle Fort, then the palm-fringed curve of Unawatuna Beach.",
-    heroImage: u("photo-1580889240912-c39ecefd3d95", 2000),
+    heroImage: '/day-tours/galle/galle-hero.webp',
     intro: [
       "The south coast is where Sri Lanka's colonial story meets its most beautiful shoreline. Galle Fort – built by the Portuguese and completed by the Dutch – is a living town of ramparts, lighthouses, cafés and galleries, and just around the headland lies Unawatuna, one of the island's best-loved beaches.",
       "On this private day tour you follow the coast south in comfort, wander the fort's historic lanes at your own pace, and finish with time to swim or simply relax on golden sand.",
@@ -342,25 +342,25 @@ export const dayTours = [
     places: [
       {
         name: "Galle Fort",
-        image: u("photo-1580889240912-c39ecefd3d95", 1600),
+        image: '/day-tours/galle/galle-fort.webp',
         blurb:
           "A UNESCO World Heritage city within walls – colonial streets, ocean ramparts and a lively café culture.",
       },
       {
         name: "Galle Lighthouse",
-        image: u("photo-1552055568-f8c4fefefec5", 1600),
+        image: '/day-tours/galle/lighthouse.webp',
         blurb:
           "The much-photographed white lighthouse standing over the fort's south-east bastion and palm-lined shore.",
       },
       {
         name: "Unawatuna Beach",
-        image: u("photo-1507525428034-b723cf961d3e", 1600),
+        image: '/day-tours/galle/unawatuna.webp',
         blurb:
           "A sheltered crescent of golden sand and calm water – one of Sri Lanka's most famous swimming beaches.",
       },
       {
         name: "Japanese Peace Pagoda",
-        image: u("photo-1546708973-b339540b5162", 1600),
+        image: '/day-tours/galle/japanease-peace.webp',
         blurb:
           "A hilltop stupa above Unawatuna's jungle beach, with sweeping views back along the coast to Galle.",
       },
@@ -405,14 +405,14 @@ export const dayTours = [
     group: "coastal",
     shortDescription:
       "A convenient south-coast escape – Bentota's golden beach, a boat safari through the Madu River mangroves and a visit to a sea-turtle hatchery.",
-    heroImage: u("photo-1506929562872-bb421503ef21", 2000),
+    heroImage: '/day-tours/bentota/bentota.webp',
     intro: [
       "Bentota is the classic Sri Lankan beach escape – close enough to Colombo for an easy day trip, yet a world away once you are on its long golden sand. Beyond the beach, the Madu River spreads into a maze of mangrove islands alive with birds and monitor lizards.",
       "This private day tour combines beach relaxation with a gentle river safari and the coast's famous turtle-conservation projects, all at whatever pace suits you.",
     ],
     mapTitle: "Bentota: Beaches and Mangrove Rivers",
     mapDescription: "Discover the relaxed west coast, where golden beaches meet the wildlife-rich mangrove islands of the Madu River ecosystem. An overview of our Bentota Day Tour highlighting key locations such as Bentota Beach, Madu River Mangrove Safari, Sea Turtle Hatchery, Local Fishing Village, and Scenic Coastal Views.",
-    mapImage: "/day-tours/maps/Bentota.webp",
+    mapImage: "/day-tours/maps/Benthota.webp",
     quickFacts: {
       duration: "Full-day private tour",
       pickup: "Your hotel or an agreed location",
@@ -430,25 +430,25 @@ export const dayTours = [
     places: [
       {
         name: "Bentota Beach",
-        image: u("photo-1506929562872-bb421503ef21", 1600),
+        image: '/day-tours/bentota/beach.webp',
         blurb:
           "A broad sweep of golden sand between the ocean and the river mouth – made for slow afternoons.",
       },
       {
         name: "Madu River",
-        image: u("photo-1544551763-46a013bb70d5", 1600),
+        image: '/day-tours/bentota/madu-river.webp',
         blurb:
           "A boat safari through mangrove tunnels and island temples on one of Sri Lanka's richest wetland ecosystems.",
       },
       {
         name: "Sea Turtle Hatchery",
-        image: u("photo-1591025207163-942350e47db2", 1600),
+        image: '/day-tours/bentota/sea-turtle.webp',
         blurb:
           "Conservation projects along this coast protect eggs and release hatchlings back into the ocean.",
       },
       {
         name: "Bentota Lagoon",
-        image: u("photo-1530053969600-caed2596d242", 1600),
+        image: '/day-tours/bentota/lagoon.webp',
         blurb:
           "Calm water behind the beach – the west coast's favourite spot for jet skis, boat rides and water sports.",
       },
@@ -493,7 +493,7 @@ export const dayTours = [
     group: "hill",
     shortDescription:
       "Mountain scenery at its best – the Nine Arches Bridge, Little Adam's Peak, Ravana Falls and the tea-country landscapes that made Ella famous.",
-    heroImage: u("photo-1566296314736-6eaac1ca0cb9", 2000),
+    heroImage: '/day-tours/ella/ella.webp',
     intro: [
       "Ella is the hill country distilled: a small town wrapped in tea gardens, cloud forest and some of the most photographed scenery in Sri Lanka. Trains curve across the Nine Arches Bridge, waterfalls tumble beside the road, and short walks lead to enormous views.",
       "On this private day tour your driver handles the mountain roads while you collect Ella's icons one by one – with time built in to simply stand still and take in the green.",
@@ -518,25 +518,25 @@ export const dayTours = [
     places: [
       {
         name: "Nine Arches Bridge",
-        image: u("photo-1566296314736-6eaac1ca0cb9", 1600),
+        image: '/day-tours/ella/nine-arch.webp',
         blurb:
           "The colonial-era viaduct curving through tea and jungle – Sri Lanka's most famous railway photograph.",
       },
       {
         name: "Little Adam's Peak",
-        image: u("photo-1546975490-e8b92a360b24", 1600),
+        image: '/day-tours/ella/little-adams-peak.webp',
         blurb:
           "An easy 45-minute walk to a summit with panoramic views over Ella Gap and the southern plains.",
       },
       {
         name: "Ravana Falls",
-        image: u("photo-1432405972618-c60b0225b8f9", 1600),
+        image: '/day-tours/ella/ravana-falls.webp',
         blurb:
           "A dramatic roadside waterfall tied to the Ramayana legend, at its thundering best after rain.",
       },
       {
         name: "Ella Tea Country",
-        image: u("photo-1576675784201-0e142b423952", 1600),
+        image: '/day-tours/ella/tea-country.webp',
         blurb:
           "Terraced tea gardens climb every slope around town – stop wherever the light and the view are best.",
       },
@@ -581,7 +581,7 @@ export const dayTours = [
     group: "hill",
     shortDescription:
       "Cool-climate tea country – working plantations and factories, waterfalls, Gregory Lake and the colonial charm of 'Little England'.",
-    heroImage: u("photo-1576675784201-0e142b423952", 2000),
+    heroImage: '/day-tours/nuwaraeliya/nuwaraeliya.webp',
     intro: [
       "At nearly 1,900 metres, Nuwara Eliya is Sri Lanka's coolest town – a place of tea estates, rose gardens, misty mornings and colonial-era architecture that earned it the nickname 'Little England'.",
       "This private day tour climbs through some of the island's most beautiful road scenery, pausing at waterfalls and plantations on the way, and gives you time in town for the lake, the gardens and a proper cup of high-grown Ceylon tea at its source.",
@@ -606,25 +606,25 @@ export const dayTours = [
     places: [
       {
         name: "Tea Plantation & Factory",
-        image: u("photo-1576675784201-0e142b423952", 1600),
+        image: '/day-tours/nuwaraeliya/tea-plantation.webp',
         blurb:
           "Walk the emerald rows with the pluckers, then follow the leaf through the factory to a fresh tasting.",
       },
       {
         name: "Ramboda Falls",
-        image: u("photo-1432405972618-c60b0225b8f9", 1600),
+        image: '/day-tours/nuwaraeliya/ramboada-falls.webp',
         blurb:
           "A towering twin cascade beside the A5 mountain road – one of the most impressive falls in the country.",
       },
       {
         name: "Gregory Lake",
-        image: u("photo-1544750040-4ea9b8a27d38", 1600),
+        image: '/day-tours/nuwaraeliya/gregory-lake.webp',
         blurb:
           "The town's centrepiece since the British era – swan boats, lakeside lawns and cool-climate air.",
       },
       {
         name: "Hakgala Botanical Gardens",
-        image: u("photo-1585320806297-9794b3e4eeae", 1600),
+        image: '/day-tours/nuwaraeliya/hakgala.webp',
         blurb:
           "A high-altitude garden of roses, ferns and montane forest on the slopes below Hakgala Rock.",
       },
