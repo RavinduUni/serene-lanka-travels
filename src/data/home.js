@@ -111,14 +111,14 @@ export const experiences = {
   copy: "From wild encounters to quiet mornings in the tea hills, Sri Lanka can feel different depending on what you’re looking for. Choose your interests and we’ll help you build a trip that matches your pace and priorities.",
   cta: { label: "Explore Experiences", href: "/experiences" },
   items: [
-    { label: "Wildlife", blurb: "Leopards, elephants and birdlife on private safaris.", href: "/experiences/wildlife", image: images.experiences.wildlife },
-    { label: "Culture & Heritage", blurb: "Sacred temples, ancient cities and living traditions.", href: "/experiences/culture", image: images.experiences.culture },
-    { label: "Beaches", blurb: "Golden south-coast sands and quiet east-coast bays.", href: "/experiences/beaches", image: images.experiences.beaches },
-    { label: "Adventure", blurb: "Rafting, surfing, hiking and zip-lining.", href: "/experiences/adventure", image: images.experiences.adventure },
-    { label: "Nature", blurb: "Tea plantations, waterfalls and rainforest.", href: "/experiences/nature", image: images.experiences.nature },
-    { label: "Food & Local Experiences", blurb: "Home cooking, spice gardens and village life.", href: "/experiences/food", image: images.experiences.food },
-    { label: "Luxury", blurb: "Premium hotels, private chauffeurs and exclusive excursions.", href: "/experiences/luxury", image: images.experiences.luxury },
-    { label: "Wellness", blurb: "Slow mornings, yoga and Ayurvedic calm.", href: "/experiences/wellness", image: images.experiences.wellness },
+    { label: "Wildlife", blurb: "Leopards, elephants and birdlife on private safaris.", href: "/experiences/wildlife", image: '/experience/wildlife.webp' },
+    { label: "Culture & Heritage", blurb: "Sacred temples, ancient cities and living traditions.", href: "/experiences/culture", image: '/experience/culture.webp' },
+    { label: "Beaches", blurb: "Golden south-coast sands and quiet east-coast bays.", href: "/experiences/beaches", image: '/why-authentic.jpg' },
+    { label: "Adventure", blurb: "Rafting, surfing, hiking and zip-lining.", href: "/experiences/adventure", image: '/destinations/Kitulgala.webp' },
+    { label: "Nature", blurb: "Tea plantations, waterfalls and rainforest.", href: "/experiences/nature", image: '/day-tours/nuwaraeliya/tea-plantation.webp' },
+    { label: "Food & Local Experiences", blurb: "Home cooking, spice gardens and village life.", href: "/experiences/food", image: '/experience/village.webp' },
+    { label: "Luxury", blurb: "Premium hotels, private chauffeurs and exclusive excursions.", href: "/experiences/luxury", image: '/experience/luxury.webp' },
+    { label: "Wellness", blurb: "Slow mornings, yoga and Ayurvedic calm.", href: "/experiences/wellness", image: '/experience/ayurwedic.webp' },
   ],
 };
 
