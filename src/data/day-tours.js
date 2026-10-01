@@ -66,31 +66,31 @@ export const dayTours = [
     places: [
       {
         name: "Galle Face Green",
-        image: '/day-tours/colombo/galle-face.jpg',
+        image: '/day-tours/colombo/galleface.webp',
         blurb:
           "Colombo's famous ocean-side promenade – street food, kite flyers and Indian Ocean sunsets in the middle of the city.",
       },
       {
         name: "Gangaramaya Temple",
-        image: u("photo-1602216056096-3b40cc0c9944", 1600),
+        image: '/day-tours/colombo/gangarama.webp',
         blurb:
           "One of Colombo's most important Buddhist temples, known for its eclectic architecture and museum-like collection.",
       },
       {
         name: "Independence Square",
-        image: u("photo-1526481280693-3bfa7568e0f3", 1600),
+        image: '/day-tours/colombo/independence square.webp',
         blurb:
           "The monument marking Sri Lanka's independence, surrounded by lawns and one of the city's favourite walking spots.",
       },
       {
         name: "Colombo Fort & Old Dutch Hospital",
-        image: u("photo-1449824913935-59a10b8d2000", 1600),
+        image: '/day-tours/colombo/old dutch hospital.webp',
         blurb:
           "The colonial heart of the city – restored heritage buildings, cafés and boutiques inside the old hospital precinct.",
       },
       {
         name: "Pettah Market",
-        image: u("photo-1555529669-e69e7aa0ba9a", 1600),
+        image: "/day-tours/colombo/pettah.webp",
         blurb:
           "Colombo at full volume: a maze of bazaar streets where each lane trades in something different.",
       },
@@ -135,7 +135,7 @@ export const dayTours = [
     group: "culture",
     shortDescription:
       "The cultural capital of the hill country – the Temple of the Sacred Tooth Relic, Kandy Lake and the gardens and viewpoints around the city.",
-    heroImage: "https://images.unsplash.com/photo-1665849050332-8d5d7e59afb6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    heroImage: "/day-tours/kandy.webp",
     intro: [
       "Kandy is the spiritual heart of Sri Lanka. Ringed by hills and centred on its lake, the last royal capital of the island is home to the Temple of the Sacred Tooth Relic – one of Buddhism's most revered sites – and a living culture of drummers, dancers and festivals.",
       "This private day tour takes you up into the hill country in comfort, combining the sacred city itself with the gardens, viewpoints and tea-country scenery that surround it.",
@@ -160,31 +160,31 @@ export const dayTours = [
     places: [
       {
         name: "Temple of the Sacred Tooth Relic",
-        image: u("photo-1586185618855-dc4f2f4e1a45", 1600),
+        image: '/day-tours/kandy/templeofthetooth.webp',
         blurb:
           "Sri Lanka's most sacred Buddhist temple, housing the relic of the Buddha's tooth within the old royal palace complex.",
       },
       {
         name: "Kandy Lake",
-        image: u("photo-1544750040-4ea9b8a27d38", 1600),
+        image: '/day-tours/kandy/kandy-lake.webp',
         blurb:
           "The calm centrepiece of the city, created by Kandy's last king – a gentle walk with temple and hill views.",
       },
       {
         name: "Royal Botanical Gardens, Peradeniya",
-        image: u("photo-1585320806297-9794b3e4eeae", 1600),
+        image: '/day-tours/kandy/peradeniya.webp',
         blurb:
           "One of Asia's finest botanical gardens: giant avenues of palms, an orchid house and a river-wrapped setting.",
       },
       {
         name: "Kandy Viewpoint",
-        image: u("photo-1506905925346-21bda4d32df4", 1600),
+        image: "/day-tours/kandy/viewpoint.webp",
         blurb:
           "The classic postcard panorama over the lake, the temple roofs and the hills that encircle the city.",
       },
       {
         name: "Bahirawakanda Buddha",
-        image: u("photo-1571415060716-baff5f717c37", 1600),
+        image: "/day-tours/kandy/bahirawakanda.webp",
         blurb:
           "The white hilltop Buddha statue visible from almost everywhere in Kandy, with sweeping views from its terrace.",
       },
@@ -236,7 +236,7 @@ export const dayTours = [
     ],
     mapTitle: "Cultural Triangle: Rock Fortresses and Cave Temples",
     mapDescription: "Explore ancient kingdoms in the Cultural Triangle, from the towering Sigiriya rock fortress to the vividly painted caves of Dambulla. An overview of our Sigiriya & Dambulla Day Tour highlighting key locations such as Sigiriya Rock Fortress, Dambulla Cave Temples, Pidurangala Rock, Ancient Ruins, and Scenic Viewpoints.",
-    mapImage: "/day-tours/maps/Sigiriya.webp",
+    mapImage: "/day-tours/maps/Sigirya.webp",
     quickFacts: {
       duration: "Full-day private tour",
       pickup: "Your hotel or an agreed location",
@@ -254,25 +254,25 @@ export const dayTours = [
     places: [
       {
         name: "Sigiriya Rock Fortress",
-        image: u("photo-1612862862126-865765df2ded", 1600),
+        image: "/day-tours/sigiriya/sigiriya.webp",
         blurb:
           "King Kashyapa's sky palace – a sheer 200-metre rock crowned by the ruins of a 5th-century royal citadel.",
       },
       {
         name: "Sigiriya Water Gardens",
-        image: u("photo-1590123047622-71b8b26e1ea5", 1600),
+        image: "/day-tours/sigiriya/waterpark.webp",
         blurb:
           "Among the oldest landscaped gardens in the world, laid out symmetrically at the foot of the rock.",
       },
       {
         name: "Dambulla Golden Cave Temple",
-        image: u("photo-1602602516934-224b56a29dde", 1600),
+        image: "/day-tours/sigiriya/goldencave.webp",
         blurb:
           "Five caves of Buddha statues and vivid ceiling murals, a place of worship for more than two thousand years.",
       },
       {
         name: "Pidurangala Rock",
-        image: u("photo-1552465011-b4e21bf6e79a", 1600),
+        image: "/day-tours/sigiriya/pidurangala_enhanced.webp",
         blurb:
           "The neighbouring rock with the best view of Sigiriya itself – a shorter, wilder climb loved by photographers.",
       },
