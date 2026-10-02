@@ -258,7 +258,7 @@ export const destinations = [
     name: "Ella",
     region: "hill",
     tag: "Mountains & waterfalls",
-    heroImage: '/destinations/Ella.webp',
+    heroImage: '/destinations/ella.webp',
     blurb:
       "A small mountain town wrapped in tea gardens and cloud forest – the Nine Arches Bridge, Little Adam's Peak and some of the island's most photographed scenery.",
     intro: [
@@ -580,7 +580,7 @@ export const destinations = [
     name: "Kitulgala",
     region: "wildlife",
     tag: "Adventure & rafting",
-    heroImage: '/destinations/kitulgala.webp',
+    heroImage: '/destinations/Kitulgala.webp',
     blurb:
       "Sri Lanka's adventure playground on the Kelani River – white-water rafting, canyoning, jungle trails and the filming location of The Bridge on the River Kwai.",
     intro: [
@@ -650,7 +650,7 @@ export const destinations = [
     name: "Minneriya",
     region: "wildlife",
     tag: "The Gathering",
-    heroImage: '/destinations/minneriya.webp',
+    heroImage: '/destinations/Minneriya.webp',
     blurb:
       "Home of 'The Gathering' – hundreds of wild elephants converging on the shrinking reservoir each dry season, minutes from Sigiriya.",
     intro: [
@@ -720,7 +720,7 @@ export const destinations = [
     name: "Polonnaruwa",
     region: "cultural",
     tag: "Medieval capital",
-    heroImage: '/destinations/polonnaruwa.webp',
+    heroImage: '/destinations/Polonnaruwa.webp',
     blurb:
       "The island's medieval capital – a compact, beautifully preserved royal city of palaces, temples and the serene rock-cut Buddhas of Gal Vihara.",
     intro: [
