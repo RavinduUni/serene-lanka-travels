@@ -77,7 +77,7 @@ export const experiences = [
     slug: "wildlife",
     name: "Wildlife & Safari",
     category: "wildlife",
-    heroImage: img.leopard,
+    heroImage: '/experience/wildlife.webp',
     blurb:
       "Sri Lanka has one of the world's highest densities of leopards. Add elephants, sloth bears and whale watching and it becomes a wildlife destination without equal.",
     intro: [
@@ -128,7 +128,7 @@ export const experiences = [
     slug: "culture",
     name: "Culture & Heritage",
     category: "culture",
-    heroImage: img.templeKandy,
+    heroImage: "/experience/culture.webp",
     blurb:
       "Sacred temples, ancient cities and living traditions Sri Lanka's 2,500-year history unfolds across UNESCO World Heritage Sites and vibrant cultural festivals.",
     intro: [
@@ -179,7 +179,7 @@ export const experiences = [
     slug: "beaches",
     name: "Beaches",
     category: "beaches",
-    heroImage: img.mirissaBeach,
+    heroImage: "/PopularDestinations/bentota.jpg",
     blurb:
       "Golden south-coast sands and quiet east-coast bays Sri Lanka's coastline offers year-round swimming, whale watching, surf and some of Asia's most unspoilt beaches.",
     intro: [
@@ -230,7 +230,7 @@ export const experiences = [
     slug: "adventure",
     name: "Adventure",
     category: "adventure",
-    heroImage: img.hiking,
+    heroImage: "/destinations/Kitulgala.webp",
     blurb:
       "Rafting, surfing, rock climbing, zip-lining and hikes through misty mountain tea estates Sri Lanka rewards the adventurous traveller with a surprisingly varied menu.",
     intro: [
@@ -281,7 +281,7 @@ export const experiences = [
     slug: "nature",
     name: "Nature",
     category: "wildlife",
-    heroImage: img.rainforest,
+    heroImage: "/day-tours/nuwaraeliya/tea-plantation.webp",
     blurb:
       "Tea plantations, cascading waterfalls, misty rainforests and rolling hill country Sri Lanka's natural beauty is on a different scale for an island this size.",
     intro: [
@@ -332,7 +332,7 @@ export const experiences = [
     slug: "food",
     name: "Food & Local Experiences",
     category: "food",
-    heroImage: img.food,
+    heroImage: "/experience/village.webp",
     blurb:
       "Home cooking, spice garden tours, coconut-shell bonfires and village life - Sri Lanka's food and local experiences are some of the most genuine on any island itinerary.",
     intro: [
@@ -383,7 +383,7 @@ export const experiences = [
     slug: "luxury",
     name: "Luxury",
     category: "luxury",
-    heroImage: img.resortPool,
+    heroImage: "/experience/luxury.webp",
     blurb:
       "Premium hotels with infinity pools overlooking the jungle, private chauffeurs, candlelit dinners on the beach and exclusive excursions - Sri Lanka has a luxury offering that surprises.",
     intro: [

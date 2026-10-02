@@ -61,14 +61,14 @@ export const tourCategories = {
     "Discover the best of Sri Lanka with our private and fully customizable tours. Choose from day tours, multi-day journeys, tailor-made experiences, and more.",
   cta: { label: "View All Tours", href: "/sri-lanka-itineraries" },
   items: [
-    { label: "Day Tours", href: "/day-tours", image: '/TourCategory/day.jpg' },
-    { label: "Multi-Day Sri Lanka Tours", href: "/sri-lanka-itineraries", image: '/TourCategory/multi-day-tour.webp' },
-    { label: "Tailor-Made Tours", href: "/tailor-made-tours", image: '/TourCategory/tailor-made-tours.webp' },
-    { label: "Honeymoon Tours", href: "/sri-lanka-tours/honeymoon", image: '/TourCategory/honeymoon-tours.webp' },
-    { label: "Wildlife & Safari Tours", href: "/sri-lanka-tours/wildlife-safari", image: '/TourCategory/wildlife-tour.jpg' },
-    { label: "Cultural Tours", href: "/sri-lanka-tours/cultural-heritage", image: '/TourCategory/cultural-tours.webp' },
-    { label: "Luxury Tours", href: "/sri-lanka-tours/luxury", image: '/TourCategory/luxury.jpg' },
-    { label: "Budget Tours", href: "/sri-lanka-tours/budget", image: '/TourCategory/budget.jpg' },
+    { label: "Day Tours", href: "/day-tours", image: '/TourCategory/day_new.webp' },
+    { label: "Multi-Day Sri Lanka Tours", href: "/sri-lanka-itineraries", image: '/TourCategory/multi-day-tours_new.webp' },
+    { label: "Tailor-Made Tours", href: "/tailor-made-tours", image: '/TourCategory/tailor_made-tours_new.webp' },
+    { label: "Honeymoon Tours", href: "/sri-lanka-tours/honeymoon", image: '/TourCategory/honeymoon-tours_new.webp' },
+    { label: "Wildlife & Safari Tours", href: "/sri-lanka-tours/wildlife-safari", image: '/TourCategory/wildlife_tour_new.webp' },
+    { label: "Cultural Tours", href: "/sri-lanka-tours/cultural-heritage", image: '/TourCategory/cultural-tours_new.webp' },
+    { label: "Luxury Tours", href: "/sri-lanka-tours/luxury", image: '/TourCategory/luxury_new.webp' },
+    { label: "Budget Tours", href: "/sri-lanka-tours/budget", image: '/TourCategory/budget_new.webp' },
   ],
 };
 
