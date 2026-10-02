@@ -88,7 +88,7 @@ export default async function DestinationPage({ params }) {
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="-mt-[76px] lg:-mt-[88px] relative overflow-hidden min-h-[58vh] lg:min-h-[68vh] flex items-end pb-16 lg:pb-24">
         <Image
-          src="/sigiriya.jpg"
+          src="/destinations/destination-hero.webp"
           alt="Sigiriya rock fortress and lush Sri Lanka landscape"
           fill
           sizes="100vw"

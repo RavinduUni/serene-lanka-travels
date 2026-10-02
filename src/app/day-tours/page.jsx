@@ -69,12 +69,15 @@ export default function DayToursPage() {
     <>
       {/* ── Hero ── */}
       <section className="relative h-[55vh] min-h-[380px] overflow-hidden bg-brand-navy-deep -mt-[76px] lg:-mt-[88px]">
+         <div
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,19,59,0.12)_0%,rgba(6,19,59,0.18)_60%,rgba(6,19,59,0.55)_100%)]"
+          aria-hidden="true"
+        />
         <Image
-          src="https://images.unsplash.com/photo-1690221170374-b8374851f5a0?q=80&w=1889&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="/day-tours-hero.webp"
           alt="Sri Lanka tropical beach with palm trees and colourful boats"
           fill
           priority
-          sizes="100vw"
           className="object-cover object-center"
         />
         <div

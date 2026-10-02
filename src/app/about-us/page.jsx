@@ -55,7 +55,7 @@ export default function AboutUsPage() {
       {/* Page header – full-bleed background image hero */}
       <section
         className="-mt-[76px] lg:-mt-[88px] relative overflow-hidden py-24 lg:py-32"
-        style={{ backgroundImage: "url('/about-hero-bg.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+        style={{ backgroundImage: "url('/destinations/trincomalee 2.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div
           className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.75)_100%)]"
