@@ -27,7 +27,7 @@ export default function DestinationsPage() {
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="-mt-[76px] lg:-mt-[88px] relative overflow-hidden min-h-[58vh] lg:min-h-[68vh] flex items-end pb-16 lg:pb-24">
         <Image
-          src="/sigiriya.jpg"
+          src="/destinations/sigiriya2.webp"
           alt="Sigiriya rock fortress and lush Sri Lanka landscape"
           fill
           sizes="100vw"
@@ -36,11 +36,7 @@ export default function DestinationsPage() {
         />
         {/* Dark gradient overlay — same as discover page */}
         <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(6,19,59,0.5) 0%, rgba(6,19,59,0.28) 35%, rgba(6,19,59,0.72) 68%, rgba(6,19,59,0.97) 100%)",
-          }}
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.75)_100%)]"
           aria-hidden="true"
         />
         <Container className="relative z-10">

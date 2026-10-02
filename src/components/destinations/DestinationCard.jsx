@@ -17,7 +17,6 @@ export default function DestinationCard({ destination }) {
           src={destination.heroImage}
           alt={`${destination.name}, Sri Lanka`}
           fill
-          sizes="(min-width:1024px) 30vw, (min-width:640px) 50vw, 100vw"
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
 

@@ -97,11 +97,7 @@ export default async function DestinationPage({ params }) {
         />
         {/* Dark gradient overlay — same as discover page */}
         <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(6,19,59,0.5) 0%, rgba(6,19,59,0.28) 35%, rgba(6,19,59,0.72) 68%, rgba(6,19,59,0.97) 100%)",
-          }}
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.75)_100%)]"
           aria-hidden="true"
         />
         <Container className="relative z-10">
@@ -209,20 +205,6 @@ export default async function DestinationPage({ params }) {
         </Container>
       </section>
 
-      {/* 3. Top attractions – animated showcase */}
-      <section className="py-16 lg:py-24">
-        <Container>
-          <Reveal>
-            <SectionHeading lines={["Top", "Attractions"]} align="center" className="mx-auto" />
-          </Reveal>
-          <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-brand-muted">
-            The places that define {d.name} – all can be built into a private day or a longer journey.
-          </p>
-          <div className="mt-10 lg:mt-12">
-            <PlacesCarousel places={d.attractions} />
-          </div>
-        </Container>
-      </section>
 
       {/* 8. Nearby destination cards */}
       {nearby.length > 0 && (

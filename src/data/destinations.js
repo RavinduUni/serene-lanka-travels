@@ -78,7 +78,7 @@ export const destinations = [
     name: "Colombo",
     region: "city",
     tag: "Commercial capital",
-    heroImage: img.colombo,
+    heroImage: '/destinations/Colombo.webp',
     blurb:
       "Sri Lanka's energetic commercial capital – colonial heritage, sacred temples, busy markets and a fast-changing waterfront skyline.",
     intro: [
@@ -114,7 +114,7 @@ export const destinations = [
     name: "Kandy",
     region: "hill",
     tag: "Hill country & culture",
-    heroImage: img.kandy,
+    heroImage: '/destinations/Kandy 2.webp',
     blurb:
       "The last royal capital and spiritual heart of the island – home to the Temple of the Sacred Tooth Relic, a serene lake and encircling green hills.",
     intro: [
@@ -150,7 +150,7 @@ export const destinations = [
     name: "Sigiriya",
     region: "cultural",
     tag: "Cultural Triangle",
-    heroImage: img.sigiriya,
+    heroImage: '/destinations/Sigiriya.webp',
     blurb:
       "The 5th-century Lion Rock – a sheer 200-metre fortress rising from the plains, crowned by the ruins of a royal citadel and ringed by ancient gardens.",
     intro: [
@@ -186,7 +186,7 @@ export const destinations = [
     name: "Dambulla",
     region: "cultural",
     tag: "Cave temples",
-    heroImage: img.dambulla,
+    heroImage: '/destinations/Dambulla.webp',
     blurb:
       "The Golden Cave Temple – five caves of Buddha statues and vivid ceiling murals beneath a single granite overhang, a place of worship for over two thousand years.",
     intro: [
@@ -222,7 +222,7 @@ export const destinations = [
     name: "Nuwara Eliya",
     region: "hill",
     tag: "Tea country",
-    heroImage: img.tea,
+    heroImage: '/destinations/Nuwara Eliya.webp',
     blurb:
       "'Little England' – a cool-climate hill station of tea estates, colonial architecture, rose gardens and misty mornings at nearly 1,900 metres.",
     intro: [
@@ -258,7 +258,7 @@ export const destinations = [
     name: "Ella",
     region: "hill",
     tag: "Mountains & waterfalls",
-    heroImage: img.ella,
+    heroImage: '/destinations/Ella.webp',
     blurb:
       "A small mountain town wrapped in tea gardens and cloud forest – the Nine Arches Bridge, Little Adam's Peak and some of the island's most photographed scenery.",
     intro: [
@@ -294,7 +294,7 @@ export const destinations = [
     name: "Yala",
     region: "wildlife",
     tag: "Wildlife safari",
-    heroImage: img.leopard,
+    heroImage: '/destinations/Yala.webp',
     blurb:
       "Sri Lanka's most famous national park – leopards, elephants, sloth bears and crocodiles across a landscape of scrub, lagoons and beach.",
     intro: [
@@ -330,7 +330,7 @@ export const destinations = [
     name: "Mirissa",
     region: "south",
     tag: "Whales & beaches",
-    heroImage: img.whale,
+    heroImage: '/destinations/mirissa.webp',
     blurb:
       "The south coast's whale-watching capital – blue whales and dolphins offshore, a crescent of golden sand and palm-topped Coconut Tree Hill.",
     intro: [
@@ -366,7 +366,7 @@ export const destinations = [
     name: "Galle",
     region: "south",
     tag: "Colonial fort",
-    heroImage: img.galle,
+    heroImage: '/destinations/galle.webp',
     blurb:
       "A UNESCO-listed walled city of ramparts, lighthouse and colonial lanes – Sri Lanka's best-preserved fort, alive with cafés, galleries and boutiques.",
     intro: [
@@ -402,7 +402,7 @@ export const destinations = [
     name: "Bentota",
     region: "west",
     tag: "Beach escape",
-    heroImage: img.aerialBeach,
+    heroImage: '/destinations/benthota.webp',
     blurb:
       "The classic west-coast beach escape – a long golden strand, the Madu River mangroves, turtle hatcheries and water sports on the lagoon.",
     intro: [
@@ -438,7 +438,7 @@ export const destinations = [
     name: "Trincomalee",
     region: "east",
     tag: "East coast & temples",
-    heroImage: img.coast,
+    heroImage: '/destinations/trincomalee 1.webp',
     blurb:
       "The east coast's natural harbour town – Koneswaram Temple on its clifftop, the white sands of Nilaveli and Uppuveli, and Pigeon Island's reef.",
     intro: [
@@ -474,7 +474,7 @@ export const destinations = [
     name: "Weligama",
     region: "south",
     tag: "Surf bay",
-    heroImage: img.surf,
+    heroImage: '/destinations/weligama.webp',
     blurb:
       "A wide, gentle bay that is Sri Lanka's best place to learn to surf – with the famous stilt fishermen and Taprobane Island just offshore.",
     intro: [
@@ -505,46 +505,11 @@ export const destinations = [
   },
   {
     published: true,
-    slug: "unawatuna",
-    name: "Unawatuna",
-    region: "south",
-    tag: "Sheltered beach",
-    heroImage: img.beach,
-    blurb:
-      "A sheltered crescent of golden sand and calm water minutes from Galle Fort – one of Sri Lanka's most famous swimming beaches.",
-    intro: [
-      "Unawatuna's reef-protected bay makes it one of the safest swimming beaches on the coast, with a lively strip of restaurants behind the sand and jungle-covered headlands at either end.",
-      "Walk over the hill to Jungle Beach and the Japanese Peace Pagoda, or head into Galle Fort ten minutes away for the evening.",
-    ],
-    whyVisit: ["Calm, swimmable bay", "Jungle Beach and the Peace Pagoda", "Beach restaurants", "Ten minutes from Galle Fort"],
-    attractions: [
-      { name: "Unawatuna Beach", image: img.beach, blurb: "Golden sand and calm, reef-sheltered water." },
-      { name: "Japanese Peace Pagoda", image: img.temple, blurb: "A hilltop stupa with views along the coast." },
-      { name: "Jungle Beach", image: img.coast, blurb: "A small cove reached by a short jungle path." },
-      { name: "Galle Fort", image: img.galle, blurb: "The UNESCO fort is a short tuk-tuk ride away." },
-    ],
-    experiences: ["Swimming and snorkelling", "Galle Fort evenings", "Cooking class", "Diving trips"],
-    bestTime: "November to April.",
-    suggestedStay: "2 nights",
-    gettingThere: "About 2 hours from Colombo; 10 minutes from Galle.",
-    whoItSuits: "Families with children, swimmers and anyone wanting beach and fort together.",
-    nearby: ["galle", "mirissa", "weligama"],
-    relatedDayTours: ["galle-unawatuna-day-tour"],
-    relatedItineraries: ["beach-tour", "family-tour", "see-the-best-of-sri-lanka"],
-    faqs: [
-      { q: "Is Unawatuna safe for swimming?", a: "Yes – the bay is sheltered by a reef and is one of the calmest beaches on the south coast in season." },
-    ],
-    gallery: [img.beach, img.temple, img.coast, img.galle, img.aerialBeach],
-    seoTitle: "Unawatuna – Sheltered Beach near Galle",
-    metaDescription: "Visit Unawatuna: a calm golden bay, Jungle Beach and the Peace Pagoda minutes from Galle Fort – beach tours with Seren Lanka Travels.",
-  },
-  {
-    published: true,
     slug: "hikkaduwa",
     name: "Hikkaduwa",
     region: "west",
     tag: "Reef & surf",
-    heroImage: img.aerialBeach,
+    heroImage: '/destinations/hikkaduwa.webp',
     blurb:
       "A coral-reef marine sanctuary, sea turtles on the beach and a long-running surf and beach-bar scene on the south-west coast.",
     intro: [
@@ -579,7 +544,7 @@ export const destinations = [
     name: "Sinharaja",
     region: "wildlife",
     tag: "Rainforest",
-    heroImage: img.forest,
+    heroImage: '/destinations/sinharaja.webp',
     blurb:
       "Sri Lanka's last great lowland rainforest – a UNESCO World Heritage Site of endemic birds, giant trees, waterfalls and guided jungle treks.",
     intro: [
@@ -615,7 +580,7 @@ export const destinations = [
     name: "Kitulgala",
     region: "wildlife",
     tag: "Adventure & rafting",
-    heroImage: img.rafting,
+    heroImage: '/destinations/kitulgala.webp',
     blurb:
       "Sri Lanka's adventure playground on the Kelani River – white-water rafting, canyoning, jungle trails and the filming location of The Bridge on the River Kwai.",
     intro: [
@@ -650,7 +615,7 @@ export const destinations = [
     name: "Udawalawe",
     region: "wildlife",
     tag: "Elephant country",
-    heroImage: img.elephant,
+    heroImage: '/destinations/udawalawe.webp',
     blurb:
       "The surest place on the island to see wild elephants – open grassland around a great reservoir, plus the Elephant Transit Home for orphaned calves.",
     intro: [
@@ -685,7 +650,7 @@ export const destinations = [
     name: "Minneriya",
     region: "wildlife",
     tag: "The Gathering",
-    heroImage: img.elephant,
+    heroImage: '/destinations/minneriya.webp',
     blurb:
       "Home of 'The Gathering' – hundreds of wild elephants converging on the shrinking reservoir each dry season, minutes from Sigiriya.",
     intro: [
@@ -720,7 +685,7 @@ export const destinations = [
     name: "Anuradhapura",
     region: "cultural",
     tag: "Ancient capital",
-    heroImage: img.temple,
+    heroImage: '/destinations/anuradhapura.webp',
     blurb:
       "Sri Lanka's first capital and one of the world's oldest continuously inhabited cities – colossal stupas, monastic ruins and the sacred Sri Maha Bodhi tree.",
     intro: [
@@ -755,7 +720,7 @@ export const destinations = [
     name: "Polonnaruwa",
     region: "cultural",
     tag: "Medieval capital",
-    heroImage: img.dambulla,
+    heroImage: '/destinations/polonnaruwa.webp',
     blurb:
       "The island's medieval capital – a compact, beautifully preserved royal city of palaces, temples and the serene rock-cut Buddhas of Gal Vihara.",
     intro: [
@@ -790,12 +755,12 @@ export const destinations = [
     name: "Arugam Bay",
     region: "east",
     tag: "Surf & lagoons",
-    heroImage: img.surf,
+    heroImage: '/destinations/arugam bay.webp',
     blurb:
       "The east coast's world-class surf town – long right-hand point breaks, lagoon safaris, Elephant Rock and a laid-back beach scene from May to September.",
     intro: [
       "Arugam Bay is on the surf world's map for Main Point, a long right-hander that peels across the bay in the east-coast season, with gentler breaks at Whiskey Point and Peanut Farm for learners. Off the board there are lagoon boat trips at dawn, sunset climbs of Elephant Rock and the wild Kumana National Park to the south.",
-      "It is remote – around seven hours from Colombo – which is exactly why it stays relaxed.",
+      "It is remote – around seven hours from Colombo – which is exactly why it stays relaxed. Arugam Bay is best visited between May and September when the east-coast swells are at their best.",
     ],
     whyVisit: ["World-class right-hand point breaks", "Learner waves at Whiskey Point", "Elephant Rock sunsets", "Kumana National Park and lagoons"],
     attractions: [
@@ -825,12 +790,12 @@ export const destinations = [
     name: "Wilpattu National Park",
     region: "wildlife",
     tag: "Wildlife safari",
-    heroImage: img.leopard,
+    heroImage: '/destinations/wilpattu.webp',
     blurb:
       "Sri Lanka's largest and oldest national park – leopards, sloth bears and elephants around a wilderness of natural lakes called villus.",
     intro: [
       "Wilpattu takes its name from its villus – dozens of natural, rain-fed lakes scattered through dense forest that draw wildlife into the open. It is the island's largest park, far quieter than Yala, and one of the best places to see leopards and sloth bears without a queue of jeeps.",
-      "It pairs naturally with Anuradhapura and the Cultural Triangle, or with the west-coast beaches around Kalpitiya.",
+      "It pairs naturally with Anuradhapura and the Cultural Triangle, or with the west-coast beaches around Kalpitiya. The best time to visit is during the dry season from May to September.",
     ],
     whyVisit: ["Leopards and sloth bears", "Quiet, uncrowded safaris", "Natural villu lakes", "Close to Anuradhapura"],
     attractions: [
