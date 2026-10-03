@@ -365,7 +365,7 @@ export default async function ItineraryPage({ params }) {
 
      
       {/* 18. Gallery */}
-      <section className="border-t border-brand-line bg-brand-mist py-16 lg:py-24">
+      <section className="bg-brand-mist py-16 lg:py-24">
         <Container>
           <SectionHeading lines={["Visual", "Journeys"]} align="center" size="sm" className="mx-auto" />
           <div className="mt-10">
@@ -395,7 +395,7 @@ export default async function ItineraryPage({ params }) {
       </section>
 
       {/* 20. Related tours */}
-      <section className="border-t border-brand-line py-16 lg:py-24">
+      <section className="pb-16 lg:pb-24">
         <Container>
           <RelatedItineraries tours={related} />
         </Container>

@@ -63,65 +63,6 @@ export default function ItinerariesPage() {
         </div> */}
       </section>
 
-      {/* ── Intro + Featured Card ── */}
-      <section className="py-16 lg:py-24">
-        <Container>
-          {/* Intro copy */}
-          <Reveal>
-            <SectionHeading
-              lines={["Handcrafted Journeys", "Made for You"]}
-              align="center"
-              className="mx-auto max-w-2xl"
-            />
-          </Reveal>
-          <p className="mx-auto mt-5 max-w-2xl text-center text-[15px] leading-[1.8] text-black sm:text-base">
-            Start with one of our planned itineraries and customise it to make
-            the journey your own. Every tour is private – only your group, your
-            pace, your Sri Lanka.
-          </p>
-
-          
-
-          {/* Featured itinerary card */}
-          <div className="mt-12 grid overflow-hidden rounded-card bg-white shadow-lift lg:mt-16 lg:grid-cols-12">
-            {/* Image */}
-            <div className="relative min-h-[260px] lg:col-span-7 lg:min-h-[460px]">
-              <SmartImage
-                src={featuredItinerary.image}
-                alt={featuredItinerary.imageAlt}
-                fill
-                sizes="(min-width:1024px) 58vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-
-            {/* Details */}
-            <div className="flex flex-col justify-center p-7 sm:p-10 lg:col-span-5">
-              <span className="inline-flex w-fit items-center rounded-full bg-brand-blue px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white">
-                {featuredItinerary.badge}
-              </span>
-              <h2 className="mt-4 text-2xl font-bold tracking-tight text-brand-navy sm:text-3xl">
-                {featuredItinerary.heading}
-              </h2>
-              <p className="mt-3 text-[14px] leading-relaxed text-black sm:text-[15px]">
-                {featuredItinerary.copy}
-              </p>
-              <div>
-                <Button
-                  href={featuredItinerary.href}
-                  variant="link"
-                  className="mt-8 text-[15px]"
-                >
-                  <span className="grid size-9 place-items-center rounded-full bg-brand-navy text-white">
-                    <ArrowRight className="size-4" aria-hidden="true" />
-                  </span>
-                  Explore Now
-                </Button>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
 
       {/* ── Duration Filters + Category Grid ── */}
       <section className="bg-white py-16 lg:py-24">
@@ -134,23 +75,8 @@ export default function ItinerariesPage() {
             />
           </Reveal>
           <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-black sm:text-base">
-            Choose a category below, then filter by duration to find an
-            itinerary that fits your schedule and interests.
+            Explore our Sri Lanka itineraries below, or get in touch to customize your perfect holiday.
           </p>
-
-          {/* Duration filter chips */}
-          <div className="mt-10 flex flex-wrap justify-center gap-2 sm:gap-3">
-            {durationFilters.map((d) => (
-              <Link
-                key={d.id}
-                href={`/sri-lanka-itineraries?duration=${d.id}`}
-                className="inline-flex items-center gap-2 rounded-full border border-brand-line bg-white px-4 py-2.5 text-[13px] font-semibold text-brand-navy shadow-sm transition-all duration-200 hover:border-brand-navy hover:bg-brand-navy hover:text-white sm:text-[14px]"
-              >
-                
-                {d.label}
-              </Link>
-            ))}
-          </div>
 
           {/* Category grid */}
           <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-14 lg:gap-5">
