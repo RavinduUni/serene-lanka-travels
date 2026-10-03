@@ -69,6 +69,11 @@ export default function PlacesCarousel({ places }) {
           </motion.div>
         ))}
 
+        {/* Top gradient overlay for text readability */}
+        <div
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.3)_40%,rgba(0,0,0,0)_100%)]"
+          aria-hidden="true"
+        />
 
         {/* Caption */}
         <div className="absolute inset-x-0 top-0 p-6 sm:max-w-md sm:p-9 lg:max-w-lg lg:p-12" aria-live="polite" ref={liveRef}>
