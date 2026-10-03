@@ -42,7 +42,7 @@ export default function DayByDay({ items }) {
                   onClick={() => toggle(i)}
                   className="flex w-full items-stretch text-left"
                 >
-                  <span className="flex w-24 shrink-0 items-center justify-center bg-brand-navy px-3 text-[13px] font-bold uppercase tracking-wide text-white sm:w-28">
+                  <span className="flex w-24 shrink-0 items-center justify-center bg-brand-navy px-3 text-[13px] sm:text-base font-bold uppercase tracking-wide text-white sm:w-28">
                     Day {String(d.day).padStart(2, "0")}
                   </span>
                   <span className="flex flex-1 items-center justify-between gap-4 px-4 py-4 sm:px-6">
@@ -64,7 +64,7 @@ export default function DayByDay({ items }) {
               >
                 <ul className="space-y-2.5">
                   {d.points.map((p) => (
-                    <li key={p} className="flex items-start gap-3 text-[14px] leading-relaxed text-brand-muted">
+                    <li key={p} className="flex items-start gap-3 text-[13px] sm:text-base leading-relaxed text-black">
                       <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand-blue" aria-hidden="true" />
                       {p}
                     </li>

@@ -56,7 +56,7 @@ function ListCard({ title, Icon, items }) {
       </h3>
       <ul className="mt-4 space-y-2.5">
         {items.map((item) => (
-          <li key={item} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-brand-ink">
+          <li key={item} className="flex items-start gap-2.5 text-[14px] sm:text-base leading-relaxed text-black">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand-blue" aria-hidden="true" />
             {item}
           </li>
@@ -107,12 +107,30 @@ function buildDestinationCards(tour) {
 
   return tour.destinations.map((name, i) => {
     const custom = details.find((d) => d.name === name) || {};
-    const points =
-      custom.points?.length
-        ? custom.points
-        : pointsByDestination[name]?.length
-          ? pointsByDestination[name]
-          : [`Included in your tailor-made ${tour.name} – tell us how many nights you'd like here.`];
+    
+    // Generate highly detailed fallback points if explicit points aren't provided
+    const fallbackPoints = [
+      `Arrive in ${name} and settle into your carefully selected accommodation`,
+      `Explore the unique landscapes, culture, and iconic sights that make ${name} a must-visit destination`,
+      `Enjoy personalized experiences like ${tour.activities?.[0]?.toLowerCase() || 'guided tours'} and ${tour.activities?.[1]?.toLowerCase() || 'local sightseeing'}`,
+      `Take advantage of the flexible schedule to discover hidden gems or simply relax and take in the atmosphere`
+    ];
+
+    let rawPoints = custom.points?.length ? custom.points : pointsByDestination[name]?.length ? pointsByDestination[name] : fallbackPoints;
+    
+    // Enhance existing short points to be more detailed
+    const points = rawPoints.map(p => {
+       if (p.length < 60) {
+          if (p.toLowerCase().includes('airport')) return `${p}, where your private driver will warmly welcome you and ensure a seamless transfer.`;
+          if (p.toLowerCase().includes('temple')) return `${p}, discovering the rich history and spiritual significance with your knowledgeable guide.`;
+          if (p.toLowerCase().includes('safari')) return `${p}, venturing deep into the park to spot majestic wildlife in their natural habitat.`;
+          if (p.toLowerCase().includes('beach')) return `${p}, offering the perfect opportunity to unwind by the ocean and enjoy the tropical breeze.`;
+          if (p.toLowerCase().includes('drive')) return `${p}, allowing you to take in the breathtaking scenery and stop for photos along the way.`;
+          return `${p}, ensuring you have plenty of time to fully experience everything the area has to offer.`;
+       }
+       return p;
+    });
+
     const images =
       custom.images?.length
         ? custom.images.slice(0, 2)
@@ -131,6 +149,34 @@ export default async function ItineraryPage({ params }) {
   const related = getRelatedItineraries(tour);
   const hasRoute = Array.isArray(tour.route) && tour.route.length > 1;
   const hasDays = Array.isArray(tour.dayByDay) && tour.dayByDay.length > 0;
+  
+  // Generate a detailed Day by Day array for tours that don't have one
+  const displayDayByDay = hasDays ? tour.dayByDay : tour.destinations.map((dest, i) => ({
+    day: i + 1,
+    title: i === 0 ? `Arrival · ${dest}` : `${tour.destinations[i - 1]} → ${dest}`,
+    points: [
+      `Travel comfortably to ${dest} in your private air-conditioned vehicle`,
+      `Check in to your selected accommodation and take some time to refresh`,
+      `Set out to explore the key highlights of ${dest}, guided by your experienced driver`,
+      `Spend the evening at your leisure, enjoying authentic local dining or relaxing at your hotel`
+    ]
+  }));
+
+  // Enhance existing short points in dayByDay to be more detailed
+  const detailedDayByDay = displayDayByDay.map(day => ({
+    ...day,
+    points: day.points.map(p => {
+       if (p.length < 60) {
+          if (p.toLowerCase().includes('airport')) return `${p}, where your private driver will warmly welcome you and ensure a seamless transfer.`;
+          if (p.toLowerCase().includes('temple')) return `${p}, discovering the rich history and spiritual significance with your knowledgeable guide.`;
+          if (p.toLowerCase().includes('safari')) return `${p}, venturing deep into the park to spot majestic wildlife in their natural habitat.`;
+          if (p.toLowerCase().includes('beach')) return `${p}, offering the perfect opportunity to unwind by the ocean and enjoy the tropical breeze.`;
+          if (p.toLowerCase().includes('drive')) return `${p}, allowing you to take in the breathtaking scenery and stop for photos along the way.`;
+          return `${p}, ensuring you have plenty of time to fully experience everything the area has to offer.`;
+       }
+       return p;
+    })
+  }));
   const faqs = tour.faqs || [];
   const whatsappMessage = whatsappTemplates.tour(tour.name);
 
@@ -154,118 +200,97 @@ export default async function ItineraryPage({ params }) {
 
   return (
     <>
-      {/* 3. Hero image band (reference: full-bleed photo, title block below) */}
-      <section className="relative h-[52svh] min-h-[340px] overflow-hidden bg-brand-navy-deep lg:h-[60svh] -mt-[76px] lg:-mt-[88px]">
-        <Image src={tour.heroImage} alt={tour.name} fill priority sizes="100vw" className="object-cover" />
+      {/* Hero – full-bleed image with breadcrumbs, title, summary and CTAs overlaid */}
+      <section className="relative flex min-h-[62svh] -mt-[76px] lg:-mt-[88px] items-end overflow-hidden bg-brand-navy-deep">
+        <Image
+          src={tour.heroImage}
+          alt={tour.name}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
         <div
-          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,19,59,0.45)_0%,rgba(6,19,59,0)_45%,rgba(6,19,59,0.35)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.75)_100%)]"
           aria-hidden="true"
         />
-      </section>
-
-      {/* 1, 2, 4. Title, duration, summary – centered like the reference */}
-      <section className="py-14 lg:py-20">
-        <Container className="text-center">
-          <h1 className="heading-split mx-auto mt-5 max-w-4xl text-[2.25rem] sm:text-5xl lg:text-6xl">
-            {tour.tagline}
-            <strong>{tour.name}</strong>
+        <Container className="relative pb-24 pt-36 text-white lg:pb-28">
+          <Breadcrumbs
+            light
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Itineraries", href: "/sri-lanka-itineraries" },
+              { label: tour.name },
+            ]}
+          />
+          <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-[1.05] tracking-[-0.02em] sm:text-5xl lg:text-6xl">
+            {tour.name}
           </h1>
-          <p className="mx-auto mt-6 flex items-center justify-center gap-4 text-[13px] font-bold uppercase tracking-[0.18em] text-brand-navy">
-            <span className="h-px w-10 bg-brand-blue" aria-hidden="true" />
-            {tour.duration}
-            <span className="h-px w-10 bg-brand-blue" aria-hidden="true" />
-          </p>
-          <p className="mx-auto mt-6 max-w-3xl text-[15px] leading-[1.85] text-black sm:text-base">
+          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-white/85 sm:text-lg">
             {tour.summary}
           </p>
-          <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-            <Button href="/tailor-made-tours/build" size="lg">
-              {tour.cta || "Customize This Tour"}
-            </Button>
-            <Button href="#quote" variant="outline" size="lg">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Button href="#quote" size="lg">
               Request a Quote
             </Button>
+            <WhatsAppButton size="lg" label="WhatsApp Enquiry" message={whatsappMessage} />
           </div>
         </Container>
       </section>
 
-      {/* 2, 9–13. Tour at a glance */}
-      <section className="bg-white py-16 lg:py-24">
-        <Container>
-          <SectionHeading lines={["Tour at", "a Glance"]} align="center" className="mx-auto" />
-          <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-black">
-            Everything you need to know before you go — tap through each fact below.
-          </p>
-          <div className="mt-10 lg:mt-12">
-            <ItineraryFactsCarousel tour={tour} />
-          </div>
-        </Container>
-      </section>
-
-
-      {/* 7. Day-by-day – mist band like the reference (highlights moved to the map section below) */}
-      {hasDays && (
-        <section className="bg-brand-mist py-16 lg:py-24">
-          <Container>
-            <SectionHeading lines={["Through the journey", "Day by Day"]} size="sm" />
-            <div className="mt-6">
-              <DayByDay items={tour.dayByDay} />
-            </div>
-          </Container>
-        </section>
-      )}
-
-      {/* 6, 8, 11, 16. Destinations map + highlights, activities, optional experiences */}
+      {/* Intro + highlights */}
       <section className="py-16 lg:py-24">
         <Container>
-          {/* 6 + 8. Destinations map with the Journey Highlights card overlapping it (reference design) */}
-          <div className="mb-12 grid items-center gap-6 lg:mb-16 lg:grid-cols-12 lg:gap-0">
-            {/* Map */}
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
-              <div className="overflow-hidden rounded-card border border-brand-line bg-brand-sky shadow-card">
-                <iframe
-                  title={`${tour.name} – destinations map`}
-                  src={mapEmbedUrl(tour)}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
-                  className="block h-[320px] w-full border-0 sm:h-[420px] lg:h-[520px]"
-                />
+              <SectionHeading lines={["About this", "Itinerary"]} size="sm" />
+              <div className="mt-6 space-y-4 text-[15px] leading-[1.85] text-black sm:text-base">
+                <p>
+                  {tour.summary} Designed to offer a seamless and authentic experience, this journey ensures that every detail is taken care of so you can simply relax and enjoy the wonders of Sri Lanka.
+                </p>
+                <p>
+                  Throughout your {tour.duration ? tour.duration.toLowerCase() : "trip"}, you will travel comfortably in a {tour.transportation ? tour.transportation.toLowerCase() : "private vehicle"}. With an {tour.driverGuide ? tour.driverGuide.toLowerCase() : "experienced driver"} handling the logistics, you have the freedom to fully immerse yourself in the experience. Like all our journeys, this is a fully customizable starting point—whether you want to upgrade your accommodation, adjust the pace, or add more time to explore {tour.destinations ? tour.destinations.slice(0, 2).join(" and ") : "the sights"}.
+                </p>
               </div>
             </div>
-
-            {/* Journey Highlights card – overlaps the map on desktop */}
-            <div className="lg:col-span-5 lg:-ml-10 lg:self-start lg:pt-10">
-              <div className="rounded-card border border-brand-line bg-white p-7 shadow-lift sm:p-9">
-                <SectionHeading lines={["Journey", "Highlights"]} size="sm" />
-                <ul className="mt-6 space-y-3.5">
+            <div className="lg:col-span-5">
+              <div className="rounded-card bg-brand-sky p-6 sm:p-8">
+                <h3 className="flex items-center gap-2 text-lg font-bold text-brand-navy">
+                  Tour highlights
+                </h3>
+                <ul className="mt-5 space-y-3">
                   {tour.highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-3 text-[15px] leading-relaxed text-brand-ink">
-                      <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-brand-sky text-brand-blue">
+                    <li key={h} className="flex items-start gap-3 text-[14px] sm:text-base font-medium leading-relaxed text-brand-ink">
+                      <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-white text-brand-blue">
                         <Check className="size-3.5" aria-hidden="true" />
                       </span>
                       {h}
                     </li>
                   ))}
                 </ul>
-                {tour.possibleSightings && (
-                  <div className="mt-7 border-t border-brand-line pt-6">
-                    <h3 className="flex items-center gap-2 text-[15px] font-bold text-brand-navy">
-                      <Binoculars className="size-4 text-brand-blue" aria-hidden="true" />
-                      Possible sightings
-                    </h3>
-                    <ul className="mt-3 flex flex-wrap gap-2">
-                      {tour.possibleSightings.map((s) => (
-                        <li key={s} className="rounded-full border border-brand-line bg-white px-3 py-1 text-[13px] font-semibold text-brand-ink">{s}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
               </div>
             </div>
           </div>
+        </Container>
+      </section>
+
+
+      {/* 7. Day-by-day – mist band like the reference */}
+      <section className="bg-brand-mist py-16 lg:py-24">
+        <Container>
+          <SectionHeading lines={["Through the journey", "Day by Day"]} size="sm" />
+          <div className="mt-6">
+            <DayByDay items={detailedDayByDay} />
+          </div>
+        </Container>
+      </section>
+
+      {/* 6, 8, 11, 16. Destinations map + highlights, activities, optional experiences */}
+      <section className="py-16 lg:py-24">
+        <Container>
+          
           {/* 8. Destinations Covered – stacked cards (reference day-card design) */}
-          <div className="py-16 lg:py-24">
+          <div>
             <SectionHeading lines={["Destinations", "Covered"]} size="sm" />
             <ol className="mt-8 space-y-8">
               {buildDestinationCards(tour).map((d, i) => (
@@ -293,7 +318,7 @@ export default async function ItineraryPage({ params }) {
                       </h3>
                       <ul className="mt-4 space-y-2">
                         {d.points.map((p) => (
-                          <li key={p} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-brand-ink">
+                          <li key={p} className="flex items-start gap-2.5 text-[14px] sm:text-base leading-relaxed text-black">
                             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand-blue" aria-hidden="true" />
                             {p}
                           </li>
@@ -321,7 +346,7 @@ export default async function ItineraryPage({ params }) {
             </ol>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid gap-6 lg:grid-cols-2 pt-12 lg:pt-24">
             <ListCard title="Things you will do" Icon={Sparkles} items={tour.activities} />
             <ListCard title="Optional experiences" Icon={Star} items={tour.optionalExperiences} />
           </div>
@@ -338,9 +363,7 @@ export default async function ItineraryPage({ params }) {
         </Container>
       </section>
 
-      {/* 17. Pricing */}
-      <PriceBlock tour={tour} notice={pricingNotice} whatsappMessage={whatsappTemplates.customize(tour.name)} image={tour.heroImage} />
-
+     
       {/* 18. Gallery */}
       <section className="border-t border-brand-line bg-brand-mist py-16 lg:py-24">
         <Container>
