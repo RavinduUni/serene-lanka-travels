@@ -95,8 +95,8 @@ export const experiences = [
     bestLocations: [
       { name: "Yala National Park", image: '/destinations/Yala.webp',   blurb: "The world's most accessible big-cat park, with leopard sightings on nearly every game drive." },
       { name: "Minneriya",          image: '/destinations/Minneriya.webp',  blurb: "The Gathering August to October sees hundreds of elephants at the ancient reservoir." },
-      { name: "Udawalawe",          image: '/destinations/Udawalawe.webp',  blurb: "Reliable elephant herds in an open-grassland setting sometimes called Sri Lanka's Masai Mara." },
-      { name: "Wilpattu National Park",    image: '/destinations/Wilpattu 2.webp',     blurb: "Sri Lanka's premier whale-watching port blue whales from November to April." },
+      { name: "Udawalawe",          image: '/destinations/udawalawe.webp',  blurb: "Reliable elephant herds in an open-grassland setting sometimes called Sri Lanka's Masai Mara." },
+      { name: "Wilpattu National Park",    image: '/destinations/wilpattu 2.webp',     blurb: "Sri Lanka's premier whale-watching port blue whales from November to April." },
     ],
     activities: [
       { icon: "Binoculars", label: "Game drives",         blurb: "Jeep safaris in Yala, Udawalawe or Wilpattu with an experienced tracker." },
