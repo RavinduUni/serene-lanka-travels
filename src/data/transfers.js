@@ -183,7 +183,7 @@ export const transferServices = [
     routes: ["Hotel → Hotel", "Hotel → Attraction → Hotel"],
     shortDescription:
       "Move between hotels, or from your hotel to a day's activities and back, with a private driver who works around your check-in and check-out times.",
-    heroImage: u("photo-1520250497591-112f2f40a3f4", 2000),
+    heroImage: '/transport/hotel-pickup.png',
     intro: [
       "Changing hotels is the least enjoyable part of any trip. A private hotel-to-hotel transfer turns it into a comfortable drive: your driver collects you and your luggage at check-out and delivers you to your next hotel's door, wherever on the island it is.",
       "The same service works for a single day out – hotel to a beach, a temple or a national park and back again – with your driver waiting while you explore.",
@@ -224,7 +224,7 @@ export const transferServices = [
     routes: ["City → City", "Long-distance travel"],
     shortDescription:
       "Colombo to Kandy, Ella to Mirissa, Sigiriya to Galle – long-distance private transfers between any two points on the island, with scenic stops on the way if you want them.",
-    heroImage: u("photo-1469474968028-56623f02e42e", 2000),
+    heroImage: '/transport/city-to-city.png',
     intro: [
       "Sri Lanka's distances look short on the map but the roads wind through hills, tea country and busy towns. A private city-to-city transfer lets you enjoy the drive – air-conditioned comfort, your own pace and a driver who knows the best viewpoints and lunch stops.",
       "Book a single leg or link several transfers together across your itinerary. If you would rather have one driver for the whole trip, see Private Vehicle Hire.",
@@ -265,7 +265,7 @@ export const transferServices = [
     routes: ["Custom Pickup → Custom Drop-off", "Short-distance trips"],
     shortDescription:
       "Any pickup point to any drop-off point – short hops across town, a ride to a railway station, a restaurant run or a one-way trip that fits no standard category.",
-    heroImage: u("photo-1500530855697-b586d89ba3ee", 2000),
+    heroImage: '/transport/custom-transfer.png',
     intro: [
       "Not every journey is airport-to-hotel. Sometimes you need a ride from a railway station to a guesthouse, a lift to a wedding venue, or a short trip across town at a set time. Custom transfers cover exactly that – you tell us the two points and the time, and we arrange the right vehicle.",
       "Short-distance trips are priced simply and confirmed in advance, so there are no surprises on the day.",
@@ -306,7 +306,7 @@ export const transferServices = [
     routes: ["Full-tour transportation", "Multi-day vehicle hire"],
     shortDescription:
       "One vehicle and one driver for your whole Sri Lanka trip – full-tour transportation with daily flexibility, so the route follows your plans rather than a timetable.",
-    heroImage: u("photo-1506905925346-21bda4d32df4", 2000),
+    heroImage: '/transport/vehicle-hire.png',
     intro: [
       "The best way to see Sri Lanka is with your own vehicle and driver for the length of your stay. You decide each day's route and pace; your driver handles the roads, parking, timing and local knowledge, and stays with you from arrival to departure.",
       "Vehicle hire with driver is priced per day and by distance, with the vehicle sized to your group. Combine it with your own hotel bookings, or ask us to build a complete tailor-made tour around it.",
