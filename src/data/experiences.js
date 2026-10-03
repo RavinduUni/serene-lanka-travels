@@ -93,10 +93,10 @@ export const experiences = [
       "Year-round safari opportunities across multiple national parks",
     ],
     bestLocations: [
-      { name: "Yala National Park", image: img.leopard,   blurb: "The world's most accessible big-cat park, with leopard sightings on nearly every game drive." },
-      { name: "Minneriya",          image: img.elephant,  blurb: "The Gathering August to October sees hundreds of elephants at the ancient reservoir." },
-      { name: "Udawalawe",          image: img.elephant,  blurb: "Reliable elephant herds in an open-grassland setting sometimes called Sri Lanka's Masai Mara." },
-      { name: "Mirissa (Ocean)",    image: img.whale,     blurb: "Sri Lanka's premier whale-watching port blue whales from November to April." },
+      { name: "Yala National Park", image: '/destinations/Yala.webp',   blurb: "The world's most accessible big-cat park, with leopard sightings on nearly every game drive." },
+      { name: "Minneriya",          image: '/destinations/Minneriya.webp',  blurb: "The Gathering August to October sees hundreds of elephants at the ancient reservoir." },
+      { name: "Udawalawe",          image: '/destinations/Udawalawe.webp',  blurb: "Reliable elephant herds in an open-grassland setting sometimes called Sri Lanka's Masai Mara." },
+      { name: "Wilpattu National Park",    image: '/destinations/Wilpattu 2.webp',     blurb: "Sri Lanka's premier whale-watching port blue whales from November to April." },
     ],
     activities: [
       { icon: "Binoculars", label: "Game drives",         blurb: "Jeep safaris in Yala, Udawalawe or Wilpattu with an experienced tracker." },
@@ -144,10 +144,10 @@ export const experiences = [
       "Accessible, well-preserved ruins that are rarely crowded",
     ],
     bestLocations: [
-      { name: "Sigiriya",       image: img.sigiriya,     blurb: "The ancient lion-rock palace fortress one of the world's great archaeological sites." },
-      { name: "Kandy Temple",   image: img.templeKandy,  blurb: "The Temple of the Tooth Relic, the most sacred Buddhist site in Sri Lanka." },
-      { name: "Dambulla Caves", image: img.dambulla,     blurb: "Five cave temples with 157 Buddha statues and ancient murals spanning the ceiling." },
-      { name: "Polonnaruwa",    image: img.polonnaruwa,  blurb: "The medieval capital with remarkably preserved royal palaces, stupas and Buddha sculptures." },
+      { name: "Sigiriya",       image: '/destinations/sigiriya2.webp',     blurb: "The ancient lion-rock palace fortress one of the world's great archaeological sites." },
+      { name: "Kandy Temple",   image: '/destinations/Kandy 1.webp',  blurb: "The Temple of the Tooth Relic, the most sacred Buddhist site in Sri Lanka." },
+      { name: "Dambulla Caves", image: '/destinations/Dambulla.webp',     blurb: "Five cave temples with 157 Buddha statues and ancient murals spanning the ceiling." },
+      { name: "Anuradhapura",    image: '/destinations/Anuradhapura.webp',  blurb: "The first capital of Sri Lanka, the vast ancient city with massive stupas and ruins" },
     ],
     activities: [
       { icon: "Mountain",   label: "Sigiriya climb",       blurb: "Ascend the iconic 200m rock fortress at sunrise for jungle panoramas." },
@@ -195,10 +195,10 @@ export const experiences = [
       "Uncrowded east-coast bays at Nilaveli and Pasikudah",
     ],
     bestLocations: [
-      { name: "Mirissa",     image: img.mirissaBeach, blurb: "Crescent bay, golden sand and the island's top spot for whale watching." },
-      { name: "Galle",       image: img.galleBeach,   blurb: "UNESCO fort, boutique hotels, surf breaks and a colonial-era lighthouse." },
-      { name: "Trincomalee", image: img.trincoBeach,  blurb: "Natural deep-water harbour with pristine, crystal-clear east-coast bays." },
-      { name: "Nilaveli",    image: img.nilaveli,     blurb: "A long, largely deserted strip of white sand north of Trincomalee." },
+      { name: "Mirissa",     image: '/destinations/mirissa.webp', blurb: "Crescent bay, golden sand and the island's top spot for whale watching." },
+      { name: "Galle",       image: '/destinations/galle.webp',   blurb: "UNESCO fort, boutique hotels, surf breaks and a colonial-era lighthouse." },
+      { name: "Trincomalee", image: '/destinations/trincomalee 2.webp',  blurb: "Natural deep-water harbour with pristine, crystal-clear east-coast bays." },
+      { name: "Bentota",    image: '/destinations/benthota.webp',     blurb: "The most popular beach resort, dotted with high-end hotels, restaurants and a lively atmosphere." },
     ],
     activities: [
       { icon: "Waves",    label: "Whale watching",       blurb: "Boat trips from Mirissa to see blue whales, sperm whales and spinner dolphins." },
@@ -246,10 +246,10 @@ export const experiences = [
       "Cycling and mountain biking through rural villages and paddy fields",
     ],
     bestLocations: [
-      { name: "Kitulgala",   image: img.rafting,  blurb: "Sri Lanka's premier white-water rafting destination on the Kelani River." },
-      { name: "Ella",        image: img.hiking,   blurb: "Mountain hikes, zip-lining and the iconic Nine Arch Bridge viewpoint trail." },
-      { name: "Arugam Bay",  image: img.surfing,  blurb: "One of Asia's top surf spots world-class right-hand point breaks." },
-      { name: "Adam's Peak", image: img.sunrise,  blurb: "The island's most challenging and spiritual climb 5,200 steps to the sacred footprint." },
+      { name: "Kitulgala",   image: '/destinations/Kitulgala.webp',  blurb: "Sri Lanka's premier white-water rafting destination on the Kelani River." },
+      { name: "Ella",        image: '/destinations/ella.webp',   blurb: "Mountain hikes, zip-lining and the iconic Nine Arch Bridge viewpoint trail." },
+      { name: "Arugam Bay",  image: '/destinations/arugam bay.webp',  blurb: "One of Asia's top surf spots world-class right-hand point breaks." },
+      { name: "Adam's Peak", image: '/destinations/adamspeak.png',  blurb: "The island's most challenging and spiritual climb 5,200 steps to the sacred footprint." },
     ],
     activities: [
       { icon: "Waves",      label: "White-water rafting",  blurb: "Grade III–IV rapids on the Kelani River at Kitulgala – half and full-day sessions." },
@@ -297,10 +297,10 @@ export const experiences = [
       "Knuckles Mountain Range a separate World Heritage wilderness area",
     ],
     bestLocations: [
-      { name: "Tea Country (Nuwara Eliya)", image: img.teaPlant,   blurb: "Rolling tea estates, colonial bungalows and Sri Lanka's highest-altitude destinations." },
-      { name: "Ella",                       image: img.ella,        blurb: "Viewpoints, waterfalls and the iconic Nine Arch Bridge in a dramatic mountain setting." },
-      { name: "Sinharaja",                  image: img.rainforest,  blurb: "Sri Lanka's last lowland rainforest a UNESCO Biosphere Reserve of extraordinary biodiversity." },
-      { name: "Diyaluma Falls",             image: img.waterfall,   blurb: "Sri Lanka's second-highest waterfall, with natural rock pools at the top." },
+      { name: "Tea Country (Nuwara Eliya)", image: '/destinations/Nuwara Eliya.webp',   blurb: "Rolling tea estates, colonial bungalows and Sri Lanka's highest-altitude destinations." },
+      { name: "Ella",                       image: '/destinations/ella.webp',        blurb: "Viewpoints, waterfalls and the iconic Nine Arch Bridge in a dramatic mountain setting." },
+      { name: "Sinharaja",                  image: '/destinations/sinharaja.webp',  blurb: "Sri Lanka's last lowland rainforest a UNESCO Biosphere Reserve of extraordinary biodiversity." },
+      { name: "Diyaluma Falls",             image: '/destinations/diyaluma.png',   blurb: "Sri Lanka's second-highest waterfall, with natural rock pools at the top." },
     ],
     activities: [
       { icon: "Coffee",   label: "Tea estate tour",     blurb: "Guided walk through working tea estates and a visit to a colonial-era tea factory." },
@@ -348,10 +348,10 @@ export const experiences = [
       "Coconut is in everything - toddy tapping, pol sambol and kiri bath",
     ],
     bestLocations: [
-      { name: "Colombo Food Scene",      image: img.food,    blurb: "Modern restaurants, street food on Galle Face Green and the vibrant Pettah market." },
-      { name: "Spice Gardens, Matale",   image: img.spice,   blurb: "Traditional spice plantations where cinnamon, cardamom and cloves are still harvested by hand." },
-      { name: "Cooking Classes, Kandy",  image: img.cooking, blurb: "Learn to cook authentic rice-and-curry with a local family in a traditional kitchen." },
-      { name: "Village Experiences",     image: img.market,  blurb: "Paddy-field walks, pottery making and toddy-tapping demonstrations in rural Sri Lanka." },
+      { name: "Colombo Food Scene",      image: '/experience/food-scene.png',    blurb: "Modern restaurants, street food on Galle Face Green and the vibrant Pettah market." },
+      { name: "Spice Gardens, Matale",   image: '/experience/spice-gardens.png',   blurb: "Traditional spice plantations where cinnamon, cardamom and cloves are still harvested by hand." },
+      { name: "Cooking Classes, Kandy",  image: '/experience/cooking-class.png', blurb: "Learn to cook authentic rice-and-curry with a local family in a traditional kitchen." },
+      { name: "Village Experiences",     image: '/experience/village-exp.png',  blurb: "Paddy-field walks, pottery making and toddy-tapping demonstrations in rural Sri Lanka." },
     ],
     activities: [
       { icon: "UtensilsCrossed", label: "Cooking class",        blurb: "Hands-on Sri Lankan cooking lesson with a local host market visit included." },
@@ -399,10 +399,10 @@ export const experiences = [
       "Heritage boutique hotels inside Galle Fort's UNESCO walls",
     ],
     bestLocations: [
-      { name: "Yala Jungle Lodges",   image: img.leopard,    blurb: "Luxury tented camps with private game-drive access to Yala's leopard country." },
-      { name: "Mirissa Beach Villas", image: img.mirissaBeach, blurb: "Cliff-top and beachfront villas with infinity pools and exclusive whale-watching." },
-      { name: "Nuwara Eliya Estates", image: img.teaPlant,   blurb: "Colonial-era tea-plantation bungalows with fireside evenings and private tea tastings." },
-      { name: "Galle Fort Boutiques", image: img.galleBeach, blurb: "Restored Dutch colonial mansions inside the UNESCO fort, with candlelit courtyards." },
+      { name: "Yala Jungle Lodges",   image: '/experience/yala.png',    blurb: "Luxury tented camps with private game-drive access to Yala's leopard country." },
+      { name: "Mirissa Beach Villas", image: '/experience/mirissa.png', blurb: "Cliff-top and beachfront villas with infinity pools and exclusive whale-watching." },
+      { name: "Nuwara Eliya Estates", image: '/experience/nuwaraeliya.png',   blurb: "Colonial-era tea-plantation bungalows with fireside evenings and private tea tastings." },
+      { name: "Galle Fort Boutiques", image: '/experience/galle.png', blurb: "Restored Dutch colonial mansions inside the UNESCO fort, with candlelit courtyards." },
     ],
     activities: [
       { icon: "Car",    label: "Private chauffeur",       blurb: "Dedicated English-speaking driver-guide for your entire journey, with comfortable luxury vehicle." },
@@ -450,10 +450,10 @@ export const experiences = [
       "Slow-travel hill country mornings with mountain views and fresh air at 1,800m",
     ],
     bestLocations: [
-      { name: "Bentota / Beruwela",  image: img.spa,        blurb: "Sri Lanka's original wellness strip - dedicated Ayurveda resorts on the west coast." },
-      { name: "Mirissa / Tangalle",  image: img.yoga,       blurb: "Yoga retreat centres with ocean-facing practice spaces and plant-based dining." },
-      { name: "Nuwara Eliya",        image: img.meditation, blurb: "Cool mountain air, forest meditation walks and colonial-era tea-estate tranquillity." },
-      { name: "Trincomalee Springs", image: img.sunrise,    blurb: "Natural thermal springs at Kanniya - a unique bathing experience in a sacred setting." },
+      { name: "Bentota / Beruwela",  image: '/experience/bentota-yoga.png',        blurb: "Sri Lanka's original wellness strip - dedicated Ayurveda resorts on the west coast." },
+      { name: "Mirissa / Tangalle",  image: '/experience/mirissa-yoga.png',       blurb: "Yoga retreat centres with ocean-facing practice spaces and plant-based dining." },
+      { name: "Nuwara Eliya",        image: '/experience/nuwaraeliya-yoga.png', blurb: "Cool mountain air, forest meditation walks and colonial-era tea-estate tranquillity." },
+      { name: "Trincomalee Springs", image: '/experience/trincomalee-yoga.png',    blurb: "Natural thermal springs at Kanniya - a unique bathing experience in a sacred setting." },
     ],
     activities: [
       { icon: "PersonStanding", label: "Yoga retreat",          blurb: "Multi-day yoga programmes at ocean-facing retreat centres on the south coast." },
