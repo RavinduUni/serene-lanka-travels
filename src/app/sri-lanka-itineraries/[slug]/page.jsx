@@ -83,13 +83,183 @@ function mapEmbedUrl(tour) {
 }
 
 /**
- * Builds the "Destinations Covered" cards from data that already exists on the tour:
- *  - bullets: `tour.destinationDetails[].points` if provided, else the day-by-day
- *    points of the days that end at that destination, else a short fallback line
- *  - images: `tour.destinationDetails[].images` if provided, else two gallery photos
- * Adding `destinationDetails: [{ name, points: [], images: [] }]` to a tour in
- * itineraries.js overrides both without touching this page.
+ * Builds the "Destinations Covered" cards from data that already exists on the tour.
+ *
+ * Per-stop customisation is driven by `tour.destinationDetails` in itineraries.js:
+ *
+ *   destinationDetails: [
+ *     {
+ *       name:   "Kandy",                        // must match a value in destinations[]
+ *       images: [url1, url2],                   // exactly 2 image URLs for the card pair
+ *       points: ["Point A", "Point B", ...],    // optional – overrides auto-generated bullets
+ *     },
+ *     ...
+ *   ]
+ *
+ * If `destinationDetails` is omitted for a stop the component falls back to:
+ *  - bullets: day-by-day points for that stop (or generated fallback text)
+ *  - images:  two photos pulled from the tour's gallery[] array
  */
+
+const DESTINATION_DESCRIPTIONS = {
+  "Colombo": [
+    "Discover the vibrant capital city, blending colonial architecture with modern skyscrapers",
+    "Stroll along Galle Face Green for a scenic sunset over the Indian Ocean",
+    "Explore bustling markets in Pettah and historic sites like Gangaramaya Temple",
+    "Enjoy authentic Sri Lankan street food or fine dining experiences"
+  ],
+  "Kandy": [
+    "Visit the sacred Temple of the Tooth Relic, a UNESCO World Heritage site",
+    "Enjoy a scenic walk around the tranquil Kandy Lake",
+    "Experience a traditional Kandyan cultural dance performance",
+    "Explore the lush Royal Botanical Gardens in Peradeniya"
+  ],
+  "Nuwara Eliya": [
+    "Experience the cool climate and colonial charm of 'Little England'",
+    "Visit working tea estates and learn about world-famous Ceylon tea production",
+    "Admire the scenic beauty of Gregory Lake and lush botanical gardens",
+    "Play a round of golf at the historic Nuwara Eliya Golf Club or stroll through Victoria Park"
+  ],
+  "Ella": [
+    "Hike to the iconic Nine Arches Bridge and watch the scenic train pass by",
+    "Climb Little Adam's Peak for panoramic views of the rolling tea-covered hills",
+    "Cool off at the stunning Ravana Falls located just outside the town",
+    "Discover hidden caves and zip-line across the lush green valleys"
+  ],
+  "Yala": [
+    "Embark on a thrilling jeep safari in Yala National Park",
+    "Look out for the elusive Sri Lankan leopard, as Yala boasts one of the highest densities in the world",
+    "Spot elephants, crocodiles, sloth bears, and diverse birdlife in their natural habitat",
+    "Enjoy a magical evening relaxing at your wilderness lodge or luxury campsite"
+  ],
+  "Mirissa": [
+    "Relax on the golden crescent beaches backed by palm trees",
+    "Set sail on an early morning whale and dolphin watching excursion",
+    "Enjoy vibrant sunset viewpoints and fresh coastal seafood",
+    "Hike up to the iconic Coconut Tree Hill for a picture-perfect coastal view"
+  ],
+  "Galle": [
+    "Wander the cobbled streets of the historic Galle Fort, a UNESCO World Heritage site",
+    "Admire the iconic Galle Lighthouse and Dutch colonial architecture",
+    "Explore boutique shops, art galleries, and quaint cafes hidden within the fort walls",
+    "Walk along the ancient ramparts while watching a stunning Indian Ocean sunset"
+  ],
+  "Udawalawe": [
+    "Take a safari through Udawalawe National Park, renowned for its large elephant population",
+    "Watch herds of elephants feeding and bathing in the wild",
+    "Spot diverse bird species, water buffalo, and crocodiles around the reservoir",
+    "Visit the Udawalawe Elephant Transit Home to see orphaned elephant calves being fed"
+  ],
+  "Minneriya": [
+    "Witness the famous 'Elephant Gathering' (seasonal) on the banks of the Minneriya reservoir",
+    "Enjoy a jeep safari through the scrub jungles and wetlands",
+    "Observe a variety of endemic birds and mammals in this wildlife haven",
+    "Witness spectacular views of the sunset reflecting off the vast ancient reservoir"
+  ],
+  "Kaudulla": [
+    "Experience a quieter but equally spectacular elephant safari at Kaudulla National Park",
+    "Enjoy a scenic boat ride or jeep drive through the lush parklands",
+    "Spot pelicans, painted storks, and other aquatic birds",
+    "Immerse yourself in the tranquil, untouched beauty of the surrounding dry zone forests"
+  ],
+  "Chilaw": [
+    "Visit the sacred Munneswaram and Manavari Temples, steeped in Ramayana legends",
+    "Experience the vibrant local culture of this coastal fishing town",
+    "Relax by the scenic lagoon and coastal stretches",
+    "Take a tranquil boat ride through the Munneswaram lagoon and its mangrove ecosystems"
+  ],
+  "Trincomalee": [
+    "Visit the magnificent Koneswaram Temple perched high on Swami Rock",
+    "Enjoy the pristine white sands and calm waters of the east coast",
+    "Spot deer wandering the town and explore the historic Fort Frederick",
+    "Snorkel in the crystal-clear waters of Pigeon Island National Park"
+  ],
+  "Sigiriya": [
+    "Climb the iconic Sigiriya Lion Rock, an ancient palace and fortress complex",
+    "Marvel at the ancient frescoes and the mirrored wall",
+    "Enjoy breathtaking 360-degree views of the surrounding jungle from the summit",
+    "Explore the ancient water gardens and boulder gardens at the base of the rock"
+  ],
+  "Dambulla": [
+    "Explore the Dambulla Cave Temple, a vast complex of ancient Buddhist shrines",
+    "Admire the intricate cave paintings and hundreds of Buddha statues",
+    "Take in panoramic views of the surrounding plains from the temple entrance",
+    "Shop for local produce at the bustling Dambulla Dedicated Economic Centre, the island's largest vegetable market"
+  ],
+  "Anuradhapura": [
+    "Wander through the ancient ruins of Sri Lanka's first capital city",
+    "Visit the sacred Sri Maha Bodhi tree, the oldest historically documented tree in the world",
+    "Marvel at the massive brick stupas like Ruwanwelisaya and Jetavanaramaya",
+    "Admire the intricate ancient stone carvings like the Moonstones and Guardstones"
+  ],
+  "Polonnaruwa": [
+    "Explore the well-preserved ruins of the ancient Kingdom of Polonnaruwa",
+    "See the magnificent rock carvings of the Gal Vihara",
+    "Cycle through the ancient city to discover palaces, temples, and statues",
+    "Wander past the vast Parakrama Samudra, a massive 12th-century man-made reservoir"
+  ],
+  "Unawatuna": [
+    "Swim in the calm, horseshoe-shaped bay perfect for relaxation",
+    "Visit the Japanese Peace Pagoda for stunning views of the coastline",
+    "Enjoy a vibrant evening atmosphere with beachfront dining and cafes",
+    "Enjoy a refreshing drink at one of the laid-back beachfront restaurants"
+  ],
+  "Hikkaduwa": [
+    "Snorkel in the shallow coral sanctuary to see colorful fish and sea turtles",
+    "Catch some waves at one of the popular local surf breaks",
+    "Experience the lively beach culture and sunset ocean views",
+    "Take a glass-bottom boat ride to see the marine life without getting wet"
+  ],
+  "Bentota": [
+    "Relax on the broad, golden sands of Bentota beach",
+    "Take a scenic boat safari along the Madu River through mangrove forests",
+    "Visit a local turtle hatchery dedicated to marine conservation",
+    "Try exciting water sports like jet skiing, wakeboarding, or windsurfing on the river"
+  ],
+  "Weligama": [
+    "Learn to surf in the gentle, rolling waves of Weligama Bay",
+    "Spot the iconic stilt fishermen along the southern coastline",
+    "Enjoy the relaxed, surf-town vibe and beachfront cafes",
+    "Discover the vibrant local fish markets and sample freshly caught seafood"
+  ],
+  "Nilaveli": [
+    "Relax on the untouched, powdery white sands of the east coast",
+    "Take a short boat trip to Pigeon Island for world-class snorkeling",
+    "Swim in the crystal-clear, calm waters ideal for families",
+    "Experience the laid-back, serene atmosphere away from the busy southern beaches"
+  ],
+  "Sinharaja": [
+    "Trek through the Sinharaja Forest Reserve, a UNESCO World Heritage tropical rainforest",
+    "Spot endemic bird species, rare insects, and exotic reptiles",
+    "Immerse yourself in the dense, lush greenery and cascading jungle streams",
+    "Listen to the incredible chorus of tropical birds and insects in the dense canopy"
+  ],
+  "Kitulgala": [
+    "Experience the thrill of white-water rafting on the Kelani River",
+    "Trek through the jungle to discover hidden waterfalls and rock pools",
+    "Enjoy adventure activities like canyoning, zip-lining, and bird watching",
+    "Visit the scenic location where the classic movie 'The Bridge on the River Kwai' was filmed"
+  ],
+  "Pasikuda": [
+    "Walk far out into the shallow, calm, reef-protected waters of the bay",
+    "Relax in luxury on one of Sri Lanka's most beautiful east-coast beaches",
+    "Enjoy water sports like snorkeling, windsurfing, and sailing",
+    "Take a leisurely walk along the long, sweeping crescent of white sand"
+  ],
+  "Arugam Bay": [
+    "Ride the world-renowned surf breaks on the east coast",
+    "Experience the laid-back, bohemian surf culture of the town",
+    "Take a lagoon safari to spot crocodiles, elephants, and abundant birdlife",
+    "Enjoy the lively evening atmosphere with reggae bars and delicious local cafes"
+  ],
+  "Jaffna": [
+    "Experience the unique Tamil culture, cuisine, and heritage of the northern peninsula",
+    "Visit the colorful Nallur Kandaswamy Kovil and the historic Jaffna Fort",
+    "Take a boat to the surrounding islands like Delft and Nagadeepa",
+    "Taste unique local delicacies like fiery Jaffna crab curry and sweet Rio ice cream"
+  ]
+};
+
 function buildDestinationCards(tour) {
   const days = Array.isArray(tour.dayByDay) ? tour.dayByDay : [];
   const gallery = tour.gallery || [];
@@ -108,28 +278,14 @@ function buildDestinationCards(tour) {
   return tour.destinations.map((name, i) => {
     const custom = details.find((d) => d.name === name) || {};
     
-    // Generate highly detailed fallback points if explicit points aren't provided
-    const fallbackPoints = [
+    // Generate unique points if explicit points aren't provided
+    const uniqueFallback = DESTINATION_DESCRIPTIONS[name] || [
       `Arrive in ${name} and settle into your carefully selected accommodation`,
       `Explore the unique landscapes, culture, and iconic sights that make ${name} a must-visit destination`,
-      `Enjoy personalized experiences like ${tour.activities?.[0]?.toLowerCase() || 'guided tours'} and ${tour.activities?.[1]?.toLowerCase() || 'local sightseeing'}`,
       `Take advantage of the flexible schedule to discover hidden gems or simply relax and take in the atmosphere`
     ];
 
-    let rawPoints = custom.points?.length ? custom.points : pointsByDestination[name]?.length ? pointsByDestination[name] : fallbackPoints;
-    
-    // Enhance existing short points to be more detailed
-    const points = rawPoints.map(p => {
-       if (p.length < 60) {
-          if (p.toLowerCase().includes('airport')) return `${p}, where your private driver will warmly welcome you and ensure a seamless transfer.`;
-          if (p.toLowerCase().includes('temple')) return `${p}, discovering the rich history and spiritual significance with your knowledgeable guide.`;
-          if (p.toLowerCase().includes('safari')) return `${p}, venturing deep into the park to spot majestic wildlife in their natural habitat.`;
-          if (p.toLowerCase().includes('beach')) return `${p}, offering the perfect opportunity to unwind by the ocean and enjoy the tropical breeze.`;
-          if (p.toLowerCase().includes('drive')) return `${p}, allowing you to take in the breathtaking scenery and stop for photos along the way.`;
-          return `${p}, ensuring you have plenty of time to fully experience everything the area has to offer.`;
-       }
-       return p;
-    });
+    const points = custom.points?.length ? custom.points : pointsByDestination[name]?.length ? pointsByDestination[name] : uniqueFallback;
 
     const images =
       custom.images?.length
@@ -151,32 +307,20 @@ export default async function ItineraryPage({ params }) {
   const hasDays = Array.isArray(tour.dayByDay) && tour.dayByDay.length > 0;
   
   // Generate a detailed Day by Day array for tours that don't have one
-  const displayDayByDay = hasDays ? tour.dayByDay : tour.destinations.map((dest, i) => ({
-    day: i + 1,
-    title: i === 0 ? `Arrival · ${dest}` : `${tour.destinations[i - 1]} → ${dest}`,
-    points: [
-      `Travel comfortably to ${dest} in your private air-conditioned vehicle`,
-      `Check in to your selected accommodation and take some time to refresh`,
-      `Set out to explore the key highlights of ${dest}, guided by your experienced driver`,
-      `Spend the evening at your leisure, enjoying authentic local dining or relaxing at your hotel`
-    ]
-  }));
-
-  // Enhance existing short points in dayByDay to be more detailed
-  const detailedDayByDay = displayDayByDay.map(day => ({
-    ...day,
-    points: day.points.map(p => {
-       if (p.length < 60) {
-          if (p.toLowerCase().includes('airport')) return `${p}, where your private driver will warmly welcome you and ensure a seamless transfer.`;
-          if (p.toLowerCase().includes('temple')) return `${p}, discovering the rich history and spiritual significance with your knowledgeable guide.`;
-          if (p.toLowerCase().includes('safari')) return `${p}, venturing deep into the park to spot majestic wildlife in their natural habitat.`;
-          if (p.toLowerCase().includes('beach')) return `${p}, offering the perfect opportunity to unwind by the ocean and enjoy the tropical breeze.`;
-          if (p.toLowerCase().includes('drive')) return `${p}, allowing you to take in the breathtaking scenery and stop for photos along the way.`;
-          return `${p}, ensuring you have plenty of time to fully experience everything the area has to offer.`;
-       }
-       return p;
-    })
-  }));
+  const detailedDayByDay = hasDays ? tour.dayByDay : tour.destinations.map((dest, i) => {
+    const uniquePoints = DESTINATION_DESCRIPTIONS[dest] || [
+      `Set out to explore the key highlights of ${dest} with your experienced driver`
+    ];
+    return {
+      day: i + 1,
+      title: i === 0 ? `Arrival · ${dest}` : `${tour.destinations[i - 1]} → ${dest}`,
+      points: [
+        i === 0 ? `Arrive in ${dest} and settle into your selected accommodation` : `Travel comfortably to ${dest} in your private air-conditioned vehicle`,
+        ...uniquePoints,
+        `Spend the evening at your leisure, enjoying authentic local dining or relaxing at your hotel`
+      ]
+    };
+  });
   const faqs = tour.faqs || [];
   const whatsappMessage = whatsappTemplates.tour(tour.name);
 
@@ -333,7 +477,6 @@ export default async function ItineraryPage({ params }) {
                               src={src}
                               alt={`${d.name}, Sri Lanka`}
                               fill
-                              sizes="(min-width:1024px) 22vw, 45vw"
                               className="object-cover transition-transform duration-700 hover:scale-105"
                             />
                           </div>
@@ -365,17 +508,17 @@ export default async function ItineraryPage({ params }) {
 
      
       {/* 18. Gallery */}
-      <section className="bg-brand-mist py-16 lg:py-24">
+      {/* <section className="bg-brand-mist py-16 lg:py-24">
         <Container>
           <SectionHeading lines={["Visual", "Journeys"]} align="center" size="sm" className="mx-auto" />
           <div className="mt-10">
             <GalleryGrid images={tour.gallery} alt={`${tour.name} – Sri Lanka`} />
           </div>
         </Container>
-      </section>
+      </section> */}
 
       {/* 19. FAQ + quote form (reference "Everything you need to know") */}
-      <section id="quote" className="scroll-mt-24 py-16 lg:py-24">
+      <section id="quote" className="scroll-mt-24 py-16 lg:py-24 bg-brand-mist">
         <Container>
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-6">
@@ -395,7 +538,7 @@ export default async function ItineraryPage({ params }) {
       </section>
 
       {/* 20. Related tours */}
-      <section className="pb-16 lg:pb-24">
+      <section className="py-16 lg:py-24">
         <Container>
           <RelatedItineraries tours={related} />
         </Container>

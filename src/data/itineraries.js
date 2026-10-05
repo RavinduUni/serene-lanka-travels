@@ -28,6 +28,9 @@
 const c = (id, w = 900) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=75`;
 
+/** Helper: returns a destination-sized image URL (portrait, 800 px wide). */
+const d = (id) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=800&q=75`;
+
 /* ========================================================================
    PART A – LANDING PAGE (/sri-lanka-itineraries)
    ======================================================================== */
@@ -151,12 +154,6 @@ export const featuredItinerary = {
   imageAlt: "Sigiriya Rock Fortress rising above the Sri Lanka jungle",
 };
 
-/** USP chips shown in the intro section */
-export const itineraryUsps = [
-  { icon: "🛡️", text: "100% Private – only your group" },
-  { icon: "✏️", text: "Fully customisable itineraries" },
-  { icon: "🗣️", text: "Expert English-speaking drivers" },
-];
 
 /* ========================================================================
    PART B – INDIVIDUAL ITINERARIES (/sri-lanka-itineraries/[slug])
@@ -264,15 +261,80 @@ export const itineraries = [
     route: ["Colombo", "Kandy", "Nuwara Eliya", "Ella", "Yala", "Mirissa", "Galle"],
     highlights: ["Tea plantations", "Waterfalls", "Mountains", "Wildlife", "Beaches", "Galle Fort"],
     dayByDay: [
-      { day: 1, title: "Arrival · Colombo", points: ["Airport pickup and transfer to your hotel", "Time to rest, or an evening walk along Galle Face Green"] },
-      { day: 2, title: "Colombo → Kandy", points: ["Scenic drive into the hill country", "Temple of the Sacred Tooth Relic", "Evening by Kandy Lake"] },
-      { day: 3, title: "Kandy → Nuwara Eliya", points: ["Tea plantation and factory visit with tasting", "Ramboda Falls stop en route", "Cool-climate evening in 'Little England'"] },
-      { day: 4, title: "Nuwara Eliya → Ella", points: ["Mountain road through tea country", "Nine Arches Bridge", "Optional Little Adam's Peak walk"] },
-      { day: 5, title: "Ella → Yala", points: ["Ravana Falls stop", "Afternoon private safari in Yala National Park"] },
-      { day: 6, title: "Yala → Mirissa", points: ["Drive to the south coast", "Beach time at Mirissa", "Optional sunset viewpoint"] },
-      { day: 7, title: "Mirissa → Galle · Departure", points: ["Galle Fort ramparts and lanes", "Transfer to the airport or your next destination"] },
+      {
+        day: 1, title: "Arrival · Colombo",
+        points: [
+          "Meet your private driver at the airport and transfer comfortably to your Colombo hotel",
+          "Stroll along Galle Face Green and watch the sun set over the Indian Ocean",
+          "Explore the vibrant neighbourhood of Pettah or visit the atmospheric Gangaramaya Temple",
+          "Enjoy your first taste of authentic Sri Lankan cuisine at a local restaurant"
+        ]
+      },
+      {
+        day: 2, title: "Colombo → Kandy",
+        points: [
+          "Scenic drive up into the lush green hill country, with stops along the way",
+          "Visit the sacred Temple of the Tooth Relic, enshrining Buddha's tooth relic",
+          "Enjoy an evening walk around the tranquil Kandy Lake as the city lights reflect on the water",
+          "Optional: experience a vibrant traditional Kandyan cultural dance performance"
+        ]
+      },
+      {
+        day: 3, title: "Kandy → Nuwara Eliya",
+        points: [
+          "Visit a working tea plantation and factory and sample freshly brewed Ceylon tea",
+          "Stop at the spectacular Ramboda Falls cascading through the misty mountain landscape",
+          "Arrive in Nuwara Eliya, known as 'Little England' for its cool climate and colonial charm",
+          "Explore the colourful local markets and relax in the cool highland evening air"
+        ]
+      },
+      {
+        day: 4, title: "Nuwara Eliya → Ella",
+        points: [
+          "Wind through breathtaking mountain roads draped in lush tea gardens",
+          "Stop to photograph the iconic Nine Arches Bridge as a scenic train passes overhead",
+          "Hike up Little Adam's Peak for sweeping panoramic views of the surrounding valleys",
+          "Settle into the relaxed, bohemian atmosphere of Ella town for the evening"
+        ]
+      },
+      {
+        day: 5, title: "Ella → Yala",
+        points: [
+          "Stop at the impressive Ravana Falls – one of the widest waterfalls in Sri Lanka",
+          "Depart for Yala National Park through the scenic southern countryside",
+          "Embark on an afternoon private jeep safari through Yala's diverse ecosystems",
+          "Look out for Sri Lankan leopards, elephants, sloth bears, and abundant birdlife"
+        ]
+      },
+      {
+        day: 6, title: "Yala → Mirissa",
+        points: [
+          "Optional early-morning safari for the best wildlife activity before the drive south",
+          "Arrive on the golden crescent beach of Mirissa – one of Sri Lanka's most beautiful",
+          "Enjoy a leisurely afternoon swimming, relaxing, and soaking up the tropical sun",
+          "Watch the sunset from Coconut Tree Hill or a beachfront restaurant"
+        ]
+      },
+      {
+        day: 7, title: "Mirissa → Galle · Departure",
+        points: [
+          "Optional early-morning whale and dolphin watching cruise from Mirissa harbour (seasonal)",
+          "Drive along the stunning southern coastline to the historic city of Galle",
+          "Wander the cobbled streets and ramparts of the UNESCO-listed Galle Fort",
+          "Explore Dutch colonial architecture, boutique shops, and quaint cafes before your departure transfer"
+        ]
+      },
     ],
     destinations: ["Colombo", "Kandy", "Nuwara Eliya", "Ella", "Yala", "Mirissa", "Galle"],
+    destinationDetails: [
+      { name: "Colombo",      images: ['/day-tours/colombo/galleface.webp', '/day-tours/colombo/independence square.webp'] },
+      { name: "Kandy",        images: ['/day-tours/kandy/viewpoint.webp', '/day-tours/kandy/templeofthetooth.webp'] },
+      { name: "Nuwara Eliya", images: ['/day-tours/nuwaraeliya/little-england.png', '/day-tours/nuwaraeliya/ramboada-falls.webp'] },
+      { name: "Ella",         images: ['/day-tours/ella/nine-arch.webp', '/day-tours/ella/little-adams-peak.webp'] },
+      { name: "Yala",         images: ['/destinations/Yala.webp', '/destinations/yala2.png'] },
+      { name: "Mirissa",      images: ['/destinations/Mirissa.webp', '/destinations/mirissa2.webp'] },
+      { name: "Galle",        images: ['/day-tours/galle/lighthouse.webp', '/day-tours/galle/unawatuna.webp'] },
+    ],
     accommodation: "Your choice – Budget to Luxury",
     mealPlan: "As selected in your quotation",
     transportation: "Private air-conditioned vehicle",
@@ -306,6 +368,12 @@ export const itineraries = [
     highlights: ["Yala National Park", "Udawalawe National Park", "Minneriya National Park", "Kaudulla National Park"],
     possibleSightings: ["Elephants", "Leopards", "Crocodiles", "Deer", "Birdlife"],
     destinations: ["Yala", "Udawalawe", "Minneriya", "Kaudulla"],
+    destinationDetails: [
+      { name: "Yala",       images: [d("photo-1456926631375-92c8ce872def"), d("photo-1516426122078-c23e76319801")] },
+      { name: "Udawalawe", images: [d("photo-1564760055775-d63b17a55c44"), d("photo-1441974231531-c6227db76b6e")] },
+      { name: "Minneriya", images: [d("photo-1516426122078-c23e76319801"), d("photo-1469474968028-56623f02e42e")] },
+      { name: "Kaudulla",  images: [d("photo-1441974231531-c6227db76b6e"), d("photo-1564760055775-d63b17a55c44")] },
+    ],
     accommodation: "Your choice – Budget to Luxury, including eco lodges",
     mealPlan: "As selected in your quotation",
     transportation: "Private air-conditioned vehicle between parks",
@@ -348,16 +416,87 @@ export const itineraries = [
       "Ravana Ella Falls", "Ravana Caves", "Panchamuga Anjaneyar Hanuman Temple", "Colombo city tour",
     ],
     dayByDay: [
-      { day: 1, title: "Airport → Chilaw", points: ["Airport pickup", "Munneswaram Temple", "Manavari Temple"] },
-      { day: 2, title: "Chilaw → Trincomalee", points: ["Drive to the east coast", "Koneswaram Temple on Swami Rock"] },
-      { day: 3, title: "Trincomalee → Sigiriya", points: ["Cobra Hood Cave at Sigiriya", "Optional Sigiriya Rock climb"] },
-      { day: 4, title: "Sigiriya → Kandy", points: ["Spice garden visit en route", "Temple of the Tooth Relic"] },
-      { day: 5, title: "Kandy → Nuwara Eliya", points: ["Sri Bhaktha Hanuman Temple, Ramboda", "Tea estate visit", "Sita Amman Temple – Ashoka Vatika tradition", "Hakgala Gardens"] },
-      { day: 6, title: "Nuwara Eliya → Ella", points: ["Divurumpola Temple", "Ravana Ella Falls", "Ravana Caves"] },
-      { day: 7, title: "Ella → Colombo", points: ["Drive to the capital", "Panchamuga Anjaneyar Hanuman Temple", "Colombo city tour"] },
-      { day: 8, title: "Colombo → Airport", points: ["Departure transfer"] },
+      {
+        day: 1, title: "Airport → Chilaw",
+        points: [
+          "Warm welcome at the airport by your private driver and transfer to the west coast",
+          "Visit the ancient Munneswaram Temple, one of the five sacred Shiva temples linked to the Ramayana epic",
+          "Proceed to the nearby Manavari Temple – the oldest Shiva temple in Sri Lanka and a key Ramayana site",
+          "Settle into your accommodation and reflect on the spiritual significance of the day's journey"
+        ]
+      },
+      {
+        day: 2, title: "Chilaw → Trincomalee",
+        points: [
+          "Drive across the island to the ancient port city of Trincomalee on the east coast",
+          "Visit the magnificent Koneswaram Temple perched dramatically on Swami Rock above the ocean",
+          "Explore the historic Fort Frederick, where deer roam freely within the colonial-era walls",
+          "Relax at the calm, pristine beaches of Trincomalee as the day draws to a close"
+        ]
+      },
+      {
+        day: 3, title: "Trincomalee → Sigiriya",
+        points: [
+          "Drive inland through the dry-zone forests and ancient tanks to the Cultural Triangle",
+          "Visit the mysterious Cobra Hood Cave at Sigiriya, inscribed with early-medieval graffiti poems",
+          "Optionally, climb the iconic Sigiriya Lion Rock and marvel at the ancient frescoes and water gardens",
+          "Enjoy panoramic views of the surrounding jungle from the top of the 5th-century rock fortress"
+        ]
+      },
+      {
+        day: 4, title: "Sigiriya → Kandy",
+        points: [
+          "Stop at a traditional spice garden en route and learn about Sri Lanka's centuries-old spice trade",
+          "Visit the sacred Temple of the Tooth Relic in Kandy – an important Buddhist site on the Ramayana trail",
+          "Stroll along the tranquil Kandy Lake and soak in the serene atmosphere of the hill capital",
+          "Optional: attend an evening Kandyan cultural dance performance"
+        ]
+      },
+      {
+        day: 5, title: "Kandy → Nuwara Eliya",
+        points: [
+          "Visit the Sri Bhaktha Hanuman Temple at Ramboda, perched overlooking the spectacular Ramboda Falls",
+          "Explore a working Ceylon tea estate and learn the story of Sri Lanka's most famous export",
+          "Pay respects at the Sita Amman Temple, built at the site believed to be Ashoka Vatika from the Ramayana",
+          "Stroll through the beautiful Hakgala Botanical Gardens, traditionally identified as Ashoka Vatika"
+        ]
+      },
+      {
+        day: 6, title: "Nuwara Eliya → Ella",
+        points: [
+          "Visit the Divurumpola Temple, the site traditionally associated with Sita's fire ordeal (Agni Pareeksha)",
+          "Marvel at the mighty Ravana Ella Falls – one of the widest waterfalls in Sri Lanka",
+          "Explore the dramatic Ravana Caves, said to be where Ravana held Sita captive",
+          "Arrive in the scenic hill town of Ella and enjoy the cool mountain air for the evening"
+        ]
+      },
+      {
+        day: 7, title: "Ella → Colombo",
+        points: [
+          "Drive westward through the scenic southern highlands toward the capital",
+          "Visit the Panchamuga Anjaneyar Hanuman Temple in Colombo, an important stop on the Ramayana trail",
+          "Enjoy a Colombo city tour taking in colonial landmarks, local markets, and modern highlights",
+          "Relax at your Colombo hotel or explore the city's vibrant restaurant and café scene in the evening"
+        ]
+      },
+      {
+        day: 8, title: "Colombo → Airport · Departure",
+        points: [
+          "Enjoy a leisurely breakfast and some final souvenir shopping",
+          "Private transfer to Bandaranaike International Airport in time for your departure flight"
+        ]
+      },
     ],
     destinations: ["Chilaw", "Trincomalee", "Sigiriya", "Kandy", "Nuwara Eliya", "Ella", "Colombo"],
+    destinationDetails: [
+      { name: "Chilaw",      images: [d("photo-1528181304800-259b08848526"), d("photo-1588253921378-9c5dde739e88")] },
+      { name: "Trincomalee", images: [d("photo-1502680390469-be75c86b636f"), d("photo-1507525428034-b723cf961d3e")] },
+      { name: "Sigiriya",    images: [d("photo-1612862862126-865765df2ded"), d("photo-1552465011-b4e21bf6e79a")] },
+      { name: "Kandy",       images: [d("photo-1586185618855-dc4f2f4e1a45"), d("photo-1528181304800-259b08848526")] },
+      { name: "Nuwara Eliya",images: [d("photo-1576675784201-0e142b423952"), d("photo-1432405972618-c60b0225b8f9")] },
+      { name: "Ella",        images: [d("photo-1566296314736-6eaac1ca0cb9"), d("photo-1469474968028-56623f02e42e")] },
+      { name: "Colombo",     images: [d("photo-1588253921378-9c5dde739e88"), d("photo-1580889240912-c39ecefd3d95")] },
+    ],
     accommodation: "Your choice – Budget to Luxury",
     mealPlan: "As selected in your quotation (vegetarian options available)",
     transportation: "Private air-conditioned vehicle",
@@ -390,6 +529,9 @@ export const itineraries = [
       "An early-morning Indian Ocean experience from Mirissa with opportunities to encounter blue whales, sperm whales, dolphins and other marine life – arranged as a simple package of hotel pickup, private transfer and the whale-watching boat trip.",
     highlights: ["Blue whales", "Sperm whales", "Dolphins", "Other marine life"],
     destinations: ["Mirissa"],
+    destinationDetails: [
+      { name: "Mirissa", images: [d("photo-1568430328012-21ed450453ea"), d("photo-1507525428034-b723cf961d3e")] },
+    ],
     accommodation: "Not included – add south-coast nights on request",
     mealPlan: "Light breakfast on the boat (operator-dependent)",
     transportation: "Private hotel pickup and transfer to Mirissa harbour",
@@ -422,6 +564,14 @@ export const itineraries = [
       "Temples, ancient cities, cultural landmarks and local traditions – a journey through the sacred and historic heart of the island, from the Cultural Triangle to the colonial south.",
     highlights: ["Temple of the Sacred Tooth Relic", "Dambulla Cave Temple", "Ancient cities", "Traditional villages", "Galle Fort", "Local cultural experiences"],
     destinations: ["Sigiriya", "Dambulla", "Anuradhapura", "Polonnaruwa", "Kandy", "Galle"],
+    destinationDetails: [
+      { name: "Sigiriya",    images: [d("photo-1612862862126-865765df2ded"), d("photo-1552465011-b4e21bf6e79a")] },
+      { name: "Dambulla",   images: [d("photo-1528181304800-259b08848526"), d("photo-1586185618855-dc4f2f4e1a45")] },
+      { name: "Anuradhapura",images: [d("photo-1598970605070-a38a6ccd3a2d"), d("photo-1469474968028-56623f02e42e")] },
+      { name: "Polonnaruwa",images: [d("photo-1588253921378-9c5dde739e88"), d("photo-1528181304800-259b08848526")] },
+      { name: "Kandy",      images: [d("photo-1586185618855-dc4f2f4e1a45"), d("photo-1612862862126-865765df2ded")] },
+      { name: "Galle",      images: [d("photo-1580889240912-c39ecefd3d95"), d("photo-1533130061792-64b345e4a833")] },
+    ],
     accommodation: "Your choice – Budget to Luxury, including boutique heritage stays",
     mealPlan: "As selected in your quotation",
     transportation: "Private air-conditioned vehicle",
@@ -452,6 +602,14 @@ export const itineraries = [
     highlights: ["Mirissa", "Unawatuna", "Hikkaduwa", "Bentota", "Weligama", "Nilaveli"],
     bestFor: ["Relaxation", "Swimming", "Snorkelling", "Sunsets", "Beach activities"],
     destinations: ["Mirissa", "Unawatuna", "Hikkaduwa", "Bentota", "Weligama", "Nilaveli"],
+    destinationDetails: [
+      { name: "Mirissa",    images: [d("photo-1507525428034-b723cf961d3e"), d("photo-1568430328012-21ed450453ea")] },
+      { name: "Unawatuna", images: [d("photo-1506929562872-bb421503ef21"), d("photo-1502680390469-be75c86b636f")] },
+      { name: "Hikkaduwa", images: [d("photo-1502680390469-be75c86b636f"), d("photo-1530866495561-507c9faab2ed")] },
+      { name: "Bentota",   images: [d("photo-1476673160081-cf065607f449"), d("photo-1506929562872-bb421503ef21")] },
+      { name: "Weligama",  images: [d("photo-1533130061792-64b345e4a833"), d("photo-1507525428034-b723cf961d3e")] },
+      { name: "Nilaveli",  images: [d("photo-1506929562872-bb421503ef21"), d("photo-1502680390469-be75c86b636f")] },
+    ],
     accommodation: "Your choice – beach hotels, boutique stays and villas",
     mealPlan: "As selected in your quotation",
     transportation: "Private air-conditioned vehicle",
@@ -483,6 +641,13 @@ export const itineraries = [
       "Tea plantations, waterfalls, mountains, tropical forests, rivers, lakes and countryside – an itinerary for travellers who want the island's landscapes above all else.",
     highlights: ["Tea plantations", "Waterfalls", "Mountains", "Tropical forests", "Rivers and lakes", "Countryside"],
     destinations: ["Ella", "Nuwara Eliya", "Kandy", "Sinharaja", "Kitulgala"],
+    destinationDetails: [
+      { name: "Ella",        images: [d("photo-1566296314736-6eaac1ca0cb9"), d("photo-1552465011-b4e21bf6e79a")] },
+      { name: "Nuwara Eliya",images: [d("photo-1576675784201-0e142b423952"), d("photo-1432405972618-c60b0225b8f9")] },
+      { name: "Kandy",       images: [d("photo-1586185618855-dc4f2f4e1a45"), d("photo-1612862862126-865765df2ded")] },
+      { name: "Sinharaja",   images: [d("photo-1441974231531-c6227db76b6e"), d("photo-1469474968028-56623f02e42e")] },
+      { name: "Kitulgala",   images: [d("photo-1530866495561-507c9faab2ed"), d("photo-1441974231531-c6227db76b6e")] },
+    ],
     accommodation: "Your choice – including eco lodges and plantation bungalows",
     mealPlan: "As selected in your quotation",
     transportation: "Private air-conditioned vehicle",
@@ -512,6 +677,14 @@ export const itineraries = [
       "Rafting, safari, snorkelling, diving, surfing, zip-lining, cycling and boat rides – build an active Sri Lanka itinerary around the experiences you want, with private transport between every adventure.",
     highlights: ["White-water rafting", "Safari", "Snorkelling", "Diving", "Surfing", "Zip-lining", "Cycling", "Boat rides"],
     destinations: ["Kitulgala", "Ella", "Yala", "Weligama", "Hikkaduwa", "Trincomalee"],
+    destinationDetails: [
+      { name: "Kitulgala",   images: [d("photo-1530866495561-507c9faab2ed"), d("photo-1441974231531-c6227db76b6e")] },
+      { name: "Ella",        images: [d("photo-1566296314736-6eaac1ca0cb9"), d("photo-1551632811-561732d1e306")] },
+      { name: "Yala",        images: [d("photo-1456926631375-92c8ce872def"), d("photo-1516426122078-c23e76319801")] },
+      { name: "Weligama",    images: [d("photo-1533130061792-64b345e4a833"), d("photo-1507525428034-b723cf961d3e")] },
+      { name: "Hikkaduwa",   images: [d("photo-1502680390469-be75c86b636f"), d("photo-1530866495561-507c9faab2ed")] },
+      { name: "Trincomalee", images: [d("photo-1502680390469-be75c86b636f"), d("photo-1588253921378-9c5dde739e88")] },
+    ],
     accommodation: "Your choice – Budget to Luxury",
     mealPlan: "As selected in your quotation",
     transportation: "Private air-conditioned vehicle",
@@ -548,13 +721,94 @@ export const itineraries = [
     route: ["Kandy", "Nuwara Eliya", "Ella", "Mirissa"],
     highlights: ["Romantic stays", "Sunset experiences", "Tea country", "Scenic mountain views", "Beach relaxation", "Optional whale watching"],
     dayByDay: [
-      { day: 1, title: "Arrival · Kandy", points: ["Airport pickup and scenic drive to Kandy", "Evening stroll by Kandy Lake"] },
-      { day: 2, title: "Kandy → Nuwara Eliya", points: ["Tea plantation and factory visit", "Waterfall stops on the mountain road", "Romantic cool-climate evening"] },
-      { day: 3, title: "Nuwara Eliya → Ella", points: ["Nine Arches Bridge", "Sunset viewpoint", "Dinner with a mountain view"] },
-      { day: 4, title: "Ella → Mirissa", points: ["Drive to the south coast", "Beach relaxation", "Sunset by the ocean"] },
-      { day: 5, title: "Mirissa · Departure", points: ["Optional early-morning whale watching", "Transfer to the airport"] },
+      {
+        day: 1, title: "Arrival · Kandy",
+        points: [
+          "Your private driver meets you at the airport and whisks you on a scenic drive up into the cool hill country",
+          "Check into your romantic boutique hotel and freshen up after your journey",
+          "Take a leisurely evening stroll hand-in-hand around the beautiful Kandy Lake",
+          "Enjoy a candlelit dinner at a restaurant overlooking the water, the perfect start to your escape"
+        ]
+      },
+      {
+        day: 2, title: "Kandy → Nuwara Eliya",
+        points: [
+          "Wind through breathtaking mountain roads to a working tea plantation for a private tasting experience",
+          "Stop to admire the spectacular Ramboda Falls tumbling through the misty highland scenery",
+          "Arrive in the cool, colonial-charmed 'Little England' of Nuwara Eliya",
+          "Enjoy a romantic evening walk around Gregory Lake or a cozy dinner by the fireplace"
+        ]
+      },
+      {
+        day: 3, title: "Nuwara Eliya → Ella",
+        points: [
+          "Drive through rolling tea-green mountains to the scenic hill town of Ella",
+          "Photograph the iconic Nine Arches Bridge as a vintage train passes through the lush landscape",
+          "Watch the sunset together from Little Adam's Peak with sweeping panoramic valley views",
+          "Savour a romantic dinner with a mountain backdrop at a clifftop restaurant"
+        ]
+      },
+      {
+        day: 4, title: "Ella → Mirissa",
+        points: [
+          "Drive from the highlands down to the warm, golden beaches of Sri Lanka's south coast",
+          "Arrive at Mirissa – one of the island's most beautiful and intimate beach destinations",
+          "Spend a blissful afternoon swimming and relaxing on the sun-kissed crescent beach",
+          "Watch the sun sink into the Indian Ocean from Coconut Tree Hill or a beachfront table"
+        ]
+      },
+      {
+        day: 5, title: "Mirissa · Departure",
+        points: [
+          "Optional: set sail together at dawn on an early-morning whale and dolphin watching cruise (seasonal)",
+          "Enjoy a leisurely final breakfast at your resort listening to the sound of the ocean",
+          "Your private driver collects you for a comfortable transfer to the airport"
+        ]
+      },
     ],
     destinations: ["Kandy", "Nuwara Eliya", "Ella", "Mirissa"],
+    destinationDetails: [
+      {
+        name: "Kandy",
+        images: ['/destinations/Kandy 1.webp', '/day-tours/kandy/kandy-lake.webp'],
+        points: [
+          "Arrive in the cultural heart of Sri Lanka and settle into your romantic hillside boutique hotel",
+          "Stroll hand-in-hand around the serene Kandy Lake as the evening lights reflect on the water",
+          "Visit the sacred Temple of the Tooth Relic and experience the spiritual soul of the city",
+          "Enjoy an intimate candlelit dinner overlooking the lake to begin your romantic escape"
+        ]
+      },
+      {
+        name: "Nuwara Eliya",
+        images: ['/day-tours/nuwaraeliya/little-england.png', '/day-tours/nuwaraeliya/gregory-lake.webp'],
+        points: [
+          "Escape to the misty highlands of 'Little England', where the cool air and colonial charm set a perfect romantic scene",
+          "Explore a working tea plantation together and share a private tasting of world-famous Ceylon tea",
+          "Stroll through the beautifully landscaped Victoria Park or along the shores of Gregory Lake",
+          "Curl up together for a cozy evening in your chic highland hotel, warmed by the cool mountain air"
+        ]
+      },
+      {
+        name: "Ella",
+        images: ['/day-tours/ella/nine-arch.webp', '/day-tours/ella/little-adams-peak.webp'],
+        points: [
+          "Discover the breathtaking Nine Arches Bridge – a truly cinematic experience as a train emerges from the green hills",
+          "Hike up to Little Adam's Peak at sunset and share the sweeping view of the valleys below",
+          "Cool off together at the dramatic Ravana Falls just outside the town",
+          "Dine at a clifftop restaurant as the mountain panorama turns golden in the evening light"
+        ]
+      },
+      {
+        name: "Mirissa",
+        images: ['/destinations/mirissa3.jpg', '/destinations/mirissa2.webp'],
+        points: [
+          "Arrive at the golden crescent of Mirissa beach – the perfect romantic finale to your Sri Lanka escape",
+          "Spend blissful afternoons swimming and unwinding on the soft white sand beneath swaying palms",
+          "Watch one of Sri Lanka's most spectacular sunsets together from Coconut Tree Hill",
+          "Set sail at dawn on a whale-watching cruise (seasonal) for an unforgettable shared adventure"
+        ]
+      },
+    ],
     accommodation: "Romantic stays – boutique, luxury and villa options",
     mealPlan: "As selected in your quotation",
     transportation: "Private air-conditioned vehicle",
@@ -587,6 +841,14 @@ export const itineraries = [
       "Family-friendly Sri Lanka packages with comfortable transportation and flexible itineraries – child-friendly activities, sensible driving days and time to relax between them.",
     highlights: ["Child-friendly activities", "Flexible travel schedules", "Comfortable vehicles", "Elephants and safari", "Beaches", "Gardens and trains"],
     destinations: ["Kandy", "Nuwara Eliya", "Ella", "Yala", "Bentota", "Galle"],
+    destinationDetails: [
+      { name: "Kandy",        images: [d("photo-1586185618855-dc4f2f4e1a45"), d("photo-1612862862126-865765df2ded")] },
+      { name: "Nuwara Eliya", images: [d("photo-1576675784201-0e142b423952"), d("photo-1432405972618-c60b0225b8f9")] },
+      { name: "Ella",         images: [d("photo-1566296314736-6eaac1ca0cb9"), d("photo-1551632811-561732d1e306")] },
+      { name: "Yala",         images: [d("photo-1516426122078-c23e76319801"), d("photo-1456926631375-92c8ce872def")] },
+      { name: "Bentota",      images: [d("photo-1476673160081-cf065607f449"), d("photo-1506929562872-bb421503ef21")] },
+      { name: "Galle",        images: [d("photo-1580889240912-c39ecefd3d95"), d("photo-1533130061792-64b345e4a833")] },
+    ],
     accommodation: "Family rooms and villas – Budget to Luxury",
     mealPlan: "As selected in your quotation",
     transportation: "Spacious private vehicle; child seats on request",
@@ -618,6 +880,14 @@ export const itineraries = [
       "Luxury vehicles, premium hotels, a private chauffeur, private experiences, fine dining and exclusive excursions – a fully customized itinerary where every detail is arranged for you.",
     highlights: ["Luxury vehicles", "Premium hotels", "Private chauffeur", "Private experiences", "Fine dining", "Exclusive excursions", "Fully customized itinerary"],
     destinations: ["Colombo", "Sigiriya", "Kandy", "Nuwara Eliya", "Yala", "Galle"],
+    destinationDetails: [
+      { name: "Colombo",      images: ['/destinations/cityofdreams.jpg', '/destinations/colombo-dining.png'] },
+      { name: "Sigiriya",     images: ['/destinations/sigiriya.webp', '/destinations/sigiriya-hotel.webp'] },
+      { name: "Kandy",        images: ['/destinations/Kandy 2.webp', '/destinations/kandy 3.png'] },
+      { name: "Nuwara Eliya", images: ['/destinations/Nuwara Eliya.webp', '/day-tours/nuwaraeliya/tea-plantation.webp'] },
+      { name: "Yala",         images: ['/destinations/Yala.webp', '/destinations/yala2.png'] },
+      { name: "Galle",        images: ['/day-tours/galle/lighthouse.webp', '/day-tours/galle/galle-fort.webp'] },
+    ],
     accommodation: "5-star, boutique and luxury villas",
     mealPlan: "As selected in your quotation",
     transportation: "Luxury vehicle with private chauffeur",
@@ -647,6 +917,13 @@ export const itineraries = [
       "The quieter side of the island – Trincomalee's sacred rock and calm bays, the white sands of Nilaveli and Pasikuda, the surf of Arugam Bay and the distinct culture of Jaffna in the far north.",
     highlights: ["Koneswaram Temple, Trincomalee", "Nilaveli beach", "Pasikuda bay", "Arugam Bay surf", "Jaffna culture", "Quiet east-coast beaches"],
     destinations: ["Trincomalee", "Nilaveli", "Pasikuda", "Arugam Bay", "Jaffna"],
+    destinationDetails: [
+      { name: "Trincomalee", images: [d("photo-1502680390469-be75c86b636f"), d("photo-1528181304800-259b08848526")] },
+      { name: "Nilaveli",    images: [d("photo-1506929562872-bb421503ef21"), d("photo-1507525428034-b723cf961d3e")] },
+      { name: "Pasikuda",    images: [d("photo-1476673160081-cf065607f449"), d("photo-1506929562872-bb421503ef21")] },
+      { name: "Arugam Bay",  images: [d("photo-1533130061792-64b345e4a833"), d("photo-1502680390469-be75c86b636f")] },
+      { name: "Jaffna",      images: [d("photo-1588253921378-9c5dde739e88"), d("photo-1598970605070-a38a6ccd3a2d")] },
+    ],
     accommodation: "Your choice – Budget to Luxury",
     mealPlan: "As selected in your quotation",
     transportation: "Private air-conditioned vehicle",
@@ -679,6 +956,13 @@ export const itineraries = [
     highlights: ["Comfortable transport", "Experienced driver", "Airport transfers", "Flexible itinerary"],
     bestFor: ["Solo travellers", "Couples", "Friends", "Backpackers", "Small groups"],
     destinations: ["Colombo", "Kandy", "Ella", "Mirissa", "Galle"],
+    destinationDetails: [
+      { name: "Colombo", images: [d("photo-1588253921378-9c5dde739e88"), d("photo-1576675784201-0e142b423952")] },
+      { name: "Kandy",   images: [d("photo-1586185618855-dc4f2f4e1a45"), d("photo-1612862862126-865765df2ded")] },
+      { name: "Ella",    images: [d("photo-1566296314736-6eaac1ca0cb9"), d("photo-1551632811-561732d1e306")] },
+      { name: "Mirissa", images: [d("photo-1507525428034-b723cf961d3e"), d("photo-1568430328012-21ed450453ea")] },
+      { name: "Galle",   images: [d("photo-1580889240912-c39ecefd3d95"), d("photo-1533130061792-64b345e4a833")] },
+    ],
     accommodation: "Budget and 3-star stays",
     mealPlan: "As selected in your quotation",
     transportation: "Private air-conditioned vehicle",

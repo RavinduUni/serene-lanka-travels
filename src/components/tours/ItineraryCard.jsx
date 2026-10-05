@@ -27,7 +27,7 @@ export default function ItineraryCard({ tour }) {
           {tour.name}
         </h3>
         {tour.route ? (
-          <p className="mt-2 flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[13px] text-brand-muted">
+          <p className="mt-2 flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[13px] text-black">
             {tour.route.map((stop, i) => (
               <span key={`${stop}-${i}`} className="flex items-center gap-1.5">
                 {stop}
@@ -36,7 +36,7 @@ export default function ItineraryCard({ tour }) {
             ))}
           </p>
         ) : (
-          <p className="mt-2 text-[14px] leading-relaxed text-brand-muted">{tour.tagline}</p>
+          <p className="mt-2 text-[14px] leading-relaxed text-black">{tour.tagline}</p>
         )}
         <span className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-brand-navy">
           View itinerary

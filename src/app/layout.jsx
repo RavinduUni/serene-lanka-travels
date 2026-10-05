@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full">
       <body className="flex min-h-full flex-col">
-        <SmoothScroll>
+        <>
           <a
             href="#main"
             className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-brand-navy focus:px-4 focus:py-2 focus:text-white"
@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
           </main>
           <Footer />
           <JsonLd data={travelAgencyJsonLd()} />
-        </SmoothScroll>
+        </>
       </body>
     </html>
   );
