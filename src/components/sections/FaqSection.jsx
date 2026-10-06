@@ -12,7 +12,7 @@ export default function FaqSection() {
           {/* Image with heading overlaid – reference style */}
           <div className="relative min-h-[320px] overflow-hidden rounded-card bg-brand-navy lg:col-span-5 lg:min-h-0">
             <SmartImage
-              src={'/whychooseus/faq.jpg'}
+              src={'/destinations/anuradhapura2.png'}
               alt="Couple watching the sunset on a Sri Lankan beach"
               fill
               sizes="(min-width:1024px) 40vw, 100vw"

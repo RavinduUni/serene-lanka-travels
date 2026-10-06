@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 const variants = {
   primary:
-    "bg-brand-blue text-white hover:bg-brand-blue-dark shadow-[0_10px_24px_-10px_rgba(26,140,255,0.7)]",
+    "bg-brand-blue text-white hover:bg-brand-blue-dark",
   navy: "bg-brand-navy text-white hover:bg-brand-navy-deep",
   outline:
     "border border-brand-navy/20 text-brand-navy bg-white hover:border-brand-navy hover:bg-brand-mist",

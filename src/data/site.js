@@ -63,10 +63,6 @@ export const mainNav = [
   {
     label: "Tailor-Made",
     href: "/tailor-made-tours",
-    children: [
-      { label: "Build Your Sri Lanka Tour", href: "/tailor-made-tours/build" },
-      { label: "Estimated Tour Calculator", href: "/tailor-made-tours/calculator" },
-    ],
   },
   {
     label: "Transfers",
