@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">Refine it with our team</title>
+  <desc id="desc">Two travel specialists refining a plan together on a soft coral organic background.</desc>
+  <path opacity=".82" fill="#FFC7BD" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="23" y="16" width="31" height="35" rx="3" fill="#fff"/>
+    <path d="M30 25h17M30 32h13M30 39h9"/>
+    <path fill="#fff" d="m42 45 13.5-13.5 5 5L47 50l-7 2Z"/>
+    <path d="m52.5 34.5 5 5M42 45l5 5"/>
+    <circle cx="19" cy="49" r="6" fill="#fff"/>
+    <circle cx="56" cy="53" r="6" fill="#fff"/>
+    <path fill="#fff" d="M8 65c1.2-7.2 5-10.5 11-10.5S28.8 57.8 30 65M45 65c1.2-5 5-7.5 11-7.5S65.8 60 67 65"/>
+  </g>
+</svg>

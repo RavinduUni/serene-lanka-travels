@@ -27,7 +27,7 @@ export default function FormSection({ section, status, open, onToggle, children 
     <div
       className={cn(
         "overflow-hidden rounded-card border bg-white shadow-card transition-colors",
-        status === "attention" ? "border-red-300" : open ? "border-brand-blue/40" : "border-brand-line"
+        status === "attention" ? "border-red-300" : open ? "border-brand-blue/10" : "border-brand-line"
       )}
     >
       <h2 className="m-0">
@@ -53,7 +53,7 @@ export default function FormSection({ section, status, open, onToggle, children 
               <span className="sr-only">Section {section.number}: </span>
               {section.title}
             </span>
-            <span className="mt-0.5 block text-[13px] leading-snug text-brand-muted sm:text-[14px]">{section.subtitle}</span>
+            <span className="mt-0.5 block text-[13px] leading-snug text-black sm:text-[14px]">{section.subtitle}</span>
           </span>
           <span
             className={cn(
@@ -61,12 +61,10 @@ export default function FormSection({ section, status, open, onToggle, children 
               badge.className
             )}
           >
-            <BadgeIcon className="size-3.5" aria-hidden="true" />
             {badge.label}
           </span>
           {/* compact badge on phones – still text, not colour alone */}
           <span className={cn("inline-flex shrink-0 items-center rounded-full border p-1.5 sm:hidden", badge.className)}>
-            <BadgeIcon className="size-3.5" aria-hidden="true" />
             <span className="sr-only">{badge.label}</span>
           </span>
           <ChevronDown

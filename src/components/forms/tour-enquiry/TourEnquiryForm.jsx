@@ -45,6 +45,7 @@ import {
 } from "@/lib/tour-enquiry";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
+import Button from "@/components/ui/Button";
 
 /* Human-readable field names for the error summary. */
 const FIELD_LABELS = {
@@ -409,23 +410,19 @@ export default function TourEnquiryForm({ countries, prefill, privacyHref = "/le
       <div
         id="tef-intro-status"
         className={cn(
-          "mb-5 flex items-start gap-3 rounded-2xl border px-4 py-3.5 text-[14px] leading-relaxed sm:px-5",
-          requiredValid ? "border-brand-blue/30 bg-brand-sky text-brand-navy" : "border-brand-line bg-white text-brand-ink"
+          "mb-5 flex items-start gap-3 rounded-2xl px-4 py-3.5 text-[14px] leading-relaxed sm:px-5",
+          "border-brand-line bg-white text-brand-ink"
         )}
       >
-        {requiredValid ? (
+        {requiredValid && (
           <CircleCheck className="mt-0.5 size-5 shrink-0 text-brand-blue" aria-hidden="true" />
-        ) : (
-          <Info className="mt-0.5 size-5 shrink-0 text-brand-blue" aria-hidden="true" />
         )}
         <div>
-          {requiredValid ? (
+          {requiredValid && (
             <>
               <p className="font-bold">{COPY.statusReady}</p>
               <p className="text-brand-muted">{COPY.statusInvite}</p>
             </>
-          ) : (
-            <p>{COPY.statusInitial}</p>
           )}
         </div>
       </div>
@@ -1005,11 +1002,11 @@ export default function TourEnquiryForm({ countries, prefill, privacyHref = "/le
             {phase === "rate" ? COPY.rateLimited : COPY.failure}
           </p>
         )}
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <button
+        <div className="flex flex-col gap-3">
+          {/* <button
             type="submit"
             disabled={phase === "sending"}
-            className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-full bg-brand-blue px-8 text-base font-semibold text-white shadow-[0_10px_24px_-10px_rgba(26,140,255,0.7)] transition-colors hover:bg-brand-blue-dark disabled:cursor-wait disabled:opacity-80 sm:w-auto sm:flex-1"
+            className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-full bg-brand-blue px-8 py-4 text-base font-semibold text-white shadow-[0_10px_24px_-10px_rgba(26,140,255,0.7)] transition-colors hover:bg-brand-blue-dark disabled:cursor-wait disabled:opacity-80 sm:w-auto sm:flex-1"
           >
             {phase === "sending" ? (
               <LoaderCircle className="size-5 animate-spin motion-reduce:animate-none" aria-hidden="true" />
@@ -1017,25 +1014,20 @@ export default function TourEnquiryForm({ countries, prefill, privacyHref = "/le
               <Send className="size-5" aria-hidden="true" />
             )}
             {phase === "sending" ? COPY.submitting : COPY.cta}
-          </button>
-          <button
+          </button> */}
+          <Button
             type="button"
             onClick={onWhatsApp}
             disabled={phase === "sending"}
-            className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-full bg-whatsapp px-6 text-base font-semibold text-white transition hover:brightness-95 disabled:opacity-60 sm:w-auto"
+            variant="primary"
+            size="md"
           >
             <MessageCircle className="size-5" aria-hidden="true" />
             Send on WhatsApp
-          </button>
+          </Button>
         </div>
-        <p className="mt-4 text-[14px] leading-relaxed text-brand-ink">{COPY.belowCta}</p>
-        <p className="mt-2 text-[13px] leading-relaxed text-brand-muted">
-          {COPY.contactNotice}{" "}
-          <Link href={privacyHref} className="font-semibold text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark">
-            Read our Privacy Policy
-          </Link>
-          .
-        </p>
+        <p className="mt-4 text-[14px] text-center leading-relaxed text-brand-ink">{COPY.belowCta}</p>
+
       </div>
     </form>
   );
