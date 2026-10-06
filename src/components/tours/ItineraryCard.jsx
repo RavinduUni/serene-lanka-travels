@@ -20,9 +20,6 @@ export default function ItineraryCard({ tour }) {
         />
       </div>
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <p className="flex items-center gap-1.5 text-[13px] font-semibold text-brand-blue">
-          {tour.duration}
-        </p>
         <h3 className="mt-2 text-xl font-bold tracking-tight text-brand-navy group-hover:text-brand-blue">
           {tour.name}
         </h3>

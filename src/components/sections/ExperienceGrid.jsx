@@ -26,7 +26,7 @@ export default function ExperienceGrid() {
           {experiences.copy}
         </p>
 
-        <ul className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
+        <ul className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
           {experiences.items.map((item) => (
             <li key={item.label}>
               <Link
@@ -44,7 +44,7 @@ export default function ExperienceGrid() {
                 </div>
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className="text-lg font-bold text-brand-navy">{item.label}</h3>
-                  <p className="mt-1.5 flex-1 text-[14px] leading-relaxed text-brand-muted">{item.blurb}</p>
+                  <p className="mt-1.5 flex-1 text-[14px] leading-relaxed text-black">{item.blurb}</p>
                   <span className="mt-4 inline-flex items-center gap-2 text-[14px] font-semibold text-brand-blue">
                     Explore
                     <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />

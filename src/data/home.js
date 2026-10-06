@@ -111,14 +111,12 @@ export const experiences = {
   copy: "From wild encounters to quiet mornings in the tea hills, Sri Lanka can feel different depending on what you’re looking for. Choose your interests and we’ll help you build a trip that matches your pace and priorities.",
   cta: { label: "Explore Experiences", href: "/experiences" },
   items: [
-    { label: "Wildlife", blurb: "Leopards, elephants and birdlife on private safaris.", href: "/experiences/wildlife", image: '/experience/wildlife.webp' },
-    { label: "Culture & Heritage", blurb: "Sacred temples, ancient cities and living traditions.", href: "/experiences/culture", image: '/experience/culture.webp' },
-    { label: "Beaches", blurb: "Golden south-coast sands and quiet east-coast bays.", href: "/experiences/beaches", image: '/why-authentic.jpg' },
-    { label: "Adventure", blurb: "Rafting, surfing, hiking and zip-lining.", href: "/experiences/adventure", image: '/destinations/Kitulgala.webp' },
-    { label: "Nature", blurb: "Tea plantations, waterfalls and rainforest.", href: "/experiences/nature", image: '/day-tours/nuwaraeliya/tea-plantation.webp' },
-    { label: "Food & Local Experiences", blurb: "Home cooking, spice gardens and village life.", href: "/experiences/food", image: '/experience/village.webp' },
-    { label: "Luxury", blurb: "Premium hotels, private chauffeurs and exclusive excursions.", href: "/experiences/luxury", image: '/experience/luxury.webp' },
-    { label: "Wellness", blurb: "Slow mornings, yoga and Ayurvedic calm.", href: "/experiences/wellness", image: '/experience/ayurwedic.webp' },
+    { label: "Wildlife", blurb: "Leopards, elephants, whales and birdlife across national parks, jeep safaris and coastal waters.", href: "/experiences/wildlife", image: '/experience/wildlife.webp' },
+    { label: "Culture & Heritage", blurb: "Ancient cities, sacred temples, colonial heritage and vibrant local traditions.", href: "/experiences/culture", image: '/experience/culture.webp' },
+    { label: "Beaches", blurb: "Secluded beaches and popular coastlines for swimming, surfing and coastal relaxation.", href: "/experiences/beaches", image: '/why-authentic.jpg' },
+    { label: "Adventure", blurb: "From whitewater rafting in Kitulgala to surfing in Arugam Bay and hiking through misty hills.", href: "/experiences/adventure", image: '/destinations/Kitulgala.webp' },
+    { label: "Food & Local Experiences", blurb: "From home cooking classes in Kandy to spice gardens and village walks.", href: "/experiences/food", image: '/experience/village.webp' },
+    { label: "Luxury", blurb: "Premium hotels, private chauffeurs and exclusive excursions in luxury style.", href: "/experiences/luxury", image: '/experience/luxury.webp' },
   ],
 };
 
