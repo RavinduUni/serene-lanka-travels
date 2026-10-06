@@ -55,7 +55,7 @@ export const itineraryCategories = [
     slug: "see-the-best-of-sri-lanka",
     href: "/sri-lanka-itineraries/see-the-best-of-sri-lanka",
     tag: "Most Booked",
-    image: '/itineraries/hero/popular.png',
+    image: '/itineraries/hero/popular2.png',
   },
   {
     label: "Luxury Tours",
@@ -104,7 +104,7 @@ export const itineraryCategories = [
     slug: "beach-tour",
     href: "/sri-lanka-itineraries/beach-tour",
     tag: "Sun, Sand & Sea",
-    image: '/itineraries/hero/beachholidays.png',
+    image: '/itineraries/hero/beach.png',
   },
   {
     label: "Nature Tours",

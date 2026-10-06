@@ -31,36 +31,17 @@ export default function ItinerariesPage() {
       {/* ── Hero ── */}
       <section className="relative h-[60vh] min-h-[400px] overflow-hidden bg-brand-navy-deep -mt-[76px] lg:-mt-[88px]">
         <Image
-          src="https://images.unsplash.com/photo-1619531065298-1a34dce6d4c9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="/itineraries/hero/popular.png"
           alt="Aerial view of Sri Lanka coastline with turquoise ocean and palm trees"
           fill
           priority
-          sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-bottom"
         />
         {/* Gradient overlay – lighter at top, darker toward bottom for text legibility */}
         <div
           className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,19,59,0.18)_0%,rgba(6,19,59,0.22)_55%,rgba(6,19,59,0.62)_100%)]"
           aria-hidden="true"
         />
-
-        {/* Hero text – pinned to bottom left */}
-        {/* <div className="absolute inset-x-0 bottom-0 pb-10 lg:pb-14">
-          <Container>
-            <Breadcrumbs
-              items={[{ label: "Home", href: "/" }, { label: "Sri Lanka Itineraries" }]}
-              light
-            />
-            <h1 className="mt-4 max-w-3xl text-[2.1rem] font-bold tracking-tight text-white sm:text-5xl lg:text-[3.5rem] lg:leading-[1.08]">
-              Sri Lanka Tours &amp;{" "}
-              <span className="text-brand-blue">Itineraries</span>
-            </h1>
-            <p className="mt-4 max-w-xl text-[15px] leading-[1.8] text-white/80 sm:text-base">
-              Discover private Sri Lanka holidays for different travel styles,
-              interests, durations and budgets.
-            </p>
-          </Container>
-        </div> */}
       </section>
 
 
