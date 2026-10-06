@@ -506,7 +506,44 @@ export default async function ItineraryPage({ params }) {
         </Container>
       </section>
 
-     
+      {/* Map Showcase Section */}
+      <section className="bg-white py-6 lg:py-8 pb-24 lg:pb-24 overflow-hidden relative">
+        <Container className="relative z-10">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+            {/* Left: Map Image */}
+            <div className="relative w-full aspect-square lg:aspect-auto lg:h-[600px] flex justify-center items-center">
+              {tour.mapImage && tour.mapImage !== "/map-placeholder.jpg" ? (
+                <Image
+                  src={tour.mapImage}
+                  alt={tour.mapTitle}
+                  fill
+                  className="object-contain"
+                />
+              ) : (
+                <div className="w-[80%] h-[80%] border-2 border-dashed border-brand-blue/30 rounded-3xl flex items-center justify-center bg-white/50 backdrop-blur-sm">
+                  <span className="text-brand-blue/60 font-semibold text-lg px-4 text-center">
+                    Map Image Placeholder<br />(Add {tour.slug}-map.png)
+                  </span>
+                </div>
+              )}
+            </div>
+
+            {/* Right: Map Content */}
+            <div className="max-w-xl">
+              <h2 className="text-[2rem] font-bold leading-[1.15] tracking-tight text-brand-navy sm:text-[2.5rem]">
+                {tour.mapTitle}
+              </h2>
+              <p className="mt-6 text-[15px] leading-[1.8] text-brand-ink sm:text-base">
+                {tour.mapDescription?.[0]}
+              </p>
+              <p className="mt-4 text-[15px] leading-[1.8] text-brand-ink sm:text-base">
+                {tour.mapDescription?.[1]}
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* 18. Gallery */}
       {/* <section className="bg-brand-mist py-16 lg:py-24">
         <Container>

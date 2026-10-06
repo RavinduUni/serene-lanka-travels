@@ -93,10 +93,11 @@ export default async function TailorMadeToursPage({ searchParams }) {
 
               {/* Image */}
               <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-[16px]">
-                <img
+                <Image
                   src="/whychooseus/tailor-made-hero.png"
                   alt="Sigiriya Rock Fortress"
-                  className="absolute inset-0 h-full w-full object-cover"
+                  fill
+                  className="object-cover object-center"
                 />
               </div>
 
