@@ -40,7 +40,7 @@ export default function HomePage() {
       <ExperienceGrid />
       <PopularDestinations />
       <TransfersBanner />
-      <ReviewsSlider />
+      {/* <ReviewsSlider /> */}
       <LatestArticles />
       <FaqSection />
       <FinalCta />
