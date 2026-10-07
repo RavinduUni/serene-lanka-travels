@@ -11,16 +11,36 @@ export default function FinalCta() {
     <section className="relative overflow-hidden pb-20 text-white lg:pb-60 pt-10 lg:pt-20">
       {/* Background photo */}
       <Image
-        src={'/finalCTA2.png'}
+        src={'/footer.jpeg'}
         alt="Mirissa beach at golden hour, Sri Lanka"
         fill
         sizes="100vw"
         className="object-cover object-bottom"
         priority={false}
       />
-      
 
-      <Container className="relative text-center mb-50">
+      {/* Top cloud-mist fade */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 z-10 h-[38%]"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 30%, rgba(255,255,255,0) 100%)",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Bottom cloud-mist fade */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[38%]"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 30%, rgba(255,255,255,0) 100%)",
+        }}
+        aria-hidden="true"
+      />
+
+
+      <Container className="relative text-center mb-50 z-20">
         <SectionHeading lines={finalCta.heading} align="center" size="lg" className="mx-auto" />
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-black sm:text-lg">{finalCta.copy}</p>
         <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
