@@ -15,7 +15,7 @@ export default function FinalCta() {
         alt="Mirissa beach at golden hour, Sri Lanka"
         fill
         sizes="100vw"
-        className="object-cover object-bottom"
+        className="object-cover object-top"
         priority={false}
       />
 
@@ -24,7 +24,7 @@ export default function FinalCta() {
         className="pointer-events-none absolute inset-x-0 top-0 z-10 h-[38%]"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 30%, rgba(255,255,255,0) 100%)",
+            "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 70%, rgba(255,255,255,0) 100%)",
         }}
         aria-hidden="true"
       />
@@ -34,7 +34,7 @@ export default function FinalCta() {
         className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[38%]"
         style={{
           background:
-            "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 30%, rgba(255,255,255,0) 100%)",
+            "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 30%, rgba(255,255,255,0) 80%)",
         }}
         aria-hidden="true"
       />

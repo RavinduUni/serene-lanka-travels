@@ -15,9 +15,10 @@ export default function HomeHero() {
         playsInline
         className="absolute inset-0 h-full w-full object-cover"
         aria-hidden="true"
+        poster="/popular2.jpg"
       >
-        <source src="/hero-video.mp4" type="video/mp4" />
-        <source src="/hero-video.webm" type="video/webm" />
+        <source src="/hero.mp4" type="video/mp4" />
+        <source src="/hero.webm" type="video/webm" />
       </video>
 
       {/* Dark gradient overlay for text legibility */}

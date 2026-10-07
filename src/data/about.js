@@ -163,13 +163,13 @@ export const team = {
       name: "Rachitha Bandara",
       position: "Director",
       phone: "+94 77 421 5943",
-      photo: null, // TODO: replace with real photograph, e.g. "/images/team/rachitha-bandara.jpg"
+      photo: '/rachitha.jpeg', // TODO: replace with real photograph, e.g. "/images/team/rachitha-bandara.jpg"
     },
     {
       name: "Sithum Dulanjana",
       position: "Director",
       phone: "+94 70 285 3374",
-      photo: null, // TODO: replace with real photograph, e.g. "/images/team/sithum-dulanjana.jpg"
+      photo: '/sithum.jpeg', // TODO: replace with real photograph, e.g. "/images/team/sithum-dulanjana.jpg"
     },
   ],
   story: [
