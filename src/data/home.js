@@ -204,7 +204,7 @@ export const inspiration = {
     category: "Planning",
     date: "2026-09-01",
     href: "/blog/best-time-to-visit-sri-lanka",
-    image: images.articles.bestTime,
+    image: '/blog/best-time.png',
   },
   items: [
     {
@@ -212,21 +212,21 @@ export const inspiration = {
       category: "Travel guide",
       date: "2026-08-24",
       href: "/blog/sri-lanka-travel-guide-first-time-visitors",
-      image: images.articles.firstTime,
+      image: '/blog/travel-guide.png',
     },
     {
       title: "How Many Days Do You Need in Sri Lanka?",
       category: "Planning",
       date: "2026-08-12",
       href: "/blog/how-many-days-in-sri-lanka",
-      image: images.articles.howManyDays,
+      image: '/blog/planning.png',
     },
     {
       title: "Best Beaches in Sri Lanka",
       category: "Beaches",
       date: "2026-07-30",
       href: "/blog/best-beaches-in-sri-lanka",
-      image: images.articles.beaches,
+      image: '/blog/beaches.png',
     },
   ],
 };
