@@ -28,7 +28,7 @@ export const blogPosts = [
     category: "Planning",
     date: "2026-09-01",
     readingTime: "8 min read",
-    image: articleImages.bestTime,
+    image: '/blog/best-time.png',
     featured: true,
     relatedDestinations: [
       { name: "Mirissa",  href: "/destinations/mirissa",      tag: "Whales & beaches" },
@@ -134,7 +134,7 @@ export const blogPosts = [
     category: "Travel guide",
     date: "2026-08-24",
     readingTime: "12 min read",
-    image: articleImages.firstTime,
+    image: '/blog/travel-guide.png',
     featured: false,
     relatedDestinations: [
       { name: "Sigiriya",     href: "/destinations/sigiriya",     tag: "Cultural Triangle" },
@@ -253,7 +253,7 @@ export const blogPosts = [
     category: "Planning",
     date: "2026-08-12",
     readingTime: "7 min read",
-    image: articleImages.howManyDays,
+    image: '/blog/planning.png',
     featured: false,
     relatedDestinations: [
       { name: "Kandy",   href: "/destinations/kandy",   tag: "Hill country & culture" },
@@ -361,7 +361,7 @@ export const blogPosts = [
     category: "Beaches",
     date: "2026-07-30",
     readingTime: "9 min read",
-    image: articleImages.beaches,
+    image: '/blog/beaches.png',
     featured: false,
     relatedDestinations: [
       { name: "Mirissa",  href: "/destinations/mirissa",  tag: "Whales & beaches" },
