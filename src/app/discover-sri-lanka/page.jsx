@@ -222,7 +222,8 @@ export default function DiscoverSriLankaPage() {
           src="/destinations/wilpattu.webp"
           alt="Lush tea plantations in Sri Lanka's central highlands"
           fill
-          sizes="100vw"
+          quality={90}
+          sizes="(max-width: 768px) 200vw, 100vw"
           className="object-cover object-center"
           priority
         />
@@ -235,10 +236,10 @@ export default function DiscoverSriLankaPage() {
             items={[{ label: "Home", href: "/" }, { label: "Discover Sri Lanka" }]}
             light
           />
-          <h1 className="mt-4 max-w-4xl text-[2.5rem] font-bold leading-[1.07] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.5rem]">
+          <h1 className="mt-4 max-w-4xl text-[2rem] font-bold leading-[1.07] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.5rem]">
             {pageHero.heading}
           </h1>
-          <p className="mt-6 max-w-2xl text-[15px] leading-[1.85] text-white/80 sm:text-base">
+          <p className="mt-2 sm:mt-6 max-w-2xl text-[13px] leading-[1.85] text-white/80 sm:text-base">
             {pageHero.copy}
           </p>
         </Container>

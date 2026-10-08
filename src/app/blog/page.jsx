@@ -91,13 +91,13 @@ export default function BlogPage() {
             light
           />
           <Reveal>
-            <h1 className="mt-4 max-w-4xl text-[2.5rem] font-bold leading-[1.07] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.5rem]">
-              Travel{" "}
+            <h1 className="mt-4 max-w-4xl text-[2rem] font-bold leading-[1.07] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.5rem]">
+              Travel Destinations <br />
               <span className="font-light">Journal</span>
             </h1>
           </Reveal>
-          <p className="mt-6 max-w-2xl text-[15px] leading-[1.85] text-white/80 sm:text-base">
-            Guides written by the people who drive these roads every week – honest, practical and built around how real travellers explore Sri Lanka.
+          <p className="mt-6 max-w-2xl text-[14px] leading-[1.85] text-white/80 sm:text-base">
+            Read honest, practical and inspiration-packed guides written by the people who drive these roads every week.  
           </p>
         </Container>
       </section>

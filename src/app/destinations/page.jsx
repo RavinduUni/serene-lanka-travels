@@ -30,7 +30,8 @@ export default function DestinationsPage() {
           src="/destinations/sigiriya2.webp"
           alt="Sigiriya rock fortress and lush Sri Lanka landscape"
           fill
-          sizes="100vw"
+          quality={90}
+          sizes="(max-width: 768px) 200vw, 100vw"
           className="object-cover object-center"
           priority
         />
@@ -49,12 +50,12 @@ export default function DestinationsPage() {
             light
           />
           <Reveal>
-            <h1 className="mt-4 max-w-4xl text-[2.5rem] font-bold leading-[1.07] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.5rem]">
-              {destinationsLanding.heading[0]}{" "}
+            <h1 className="mt-2 sm:mt-4 max-w-4xl text-[1.5rem] sm:text-[2rem] font-bold leading-[1.07] tracking-[-0.03em] text-white lg:text-[4.5rem]">
+              {destinationsLanding.heading[0]}{" "} <br />
               <span className="font-light">{destinationsLanding.heading[1]}</span>
             </h1>
           </Reveal>
-          <p className="mt-6 max-w-2xl text-[15px] leading-[1.85] text-white/80 sm:text-base">
+          <p className="mt-4 sm:mt-6 max-w-2xl text-[13px] leading-[1.85] text-white/80 sm:text-base">
             {destinationsLanding.intro}
           </p>
         </Container>

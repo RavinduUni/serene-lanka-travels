@@ -679,7 +679,7 @@ export const itineraries = [
     destinations: ["Ella", "Nuwara Eliya", "Kandy", "Sinharaja", "Kitulgala"],
     destinationDetails: [
       { name: "Ella",        images: ['/day-tours/ella/nine-arch.webp', '/day-tours/ella/little-adams-peak.webp'] },
-      { name: "Nuwara Eliya",images: ['/destinations/Nuwara eliya.webp', '/day-tours/nuwaraeliya/little-england.png'] },
+      { name: "Nuwara Eliya",images: ['/destinations/Nuwara Eliya.webp', '/day-tours/nuwaraeliya/little-england.png'] },
       { name: "Kandy",       images: ['/day-tours/kandy/templeofthetooth.webp', '/day-tours/kandy/peradeniya.webp'] },
       { name: "Sinharaja",   images: ['/destinations/sinharaja.webp', '/destinations/sinharaja2.png'] },
       { name: "Kitulgala",   images: ['/destinations/Kitulgala.webp', '/destinations/kitulgala2.png'] },

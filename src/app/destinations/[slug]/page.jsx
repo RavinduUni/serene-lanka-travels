@@ -91,7 +91,8 @@ export default async function DestinationPage({ params }) {
           src="/destinations/destination-hero.webp"
           alt="Sigiriya rock fortress and lush Sri Lanka landscape"
           fill
-          sizes="100vw"
+          quality={90}
+          sizes="(max-width: 768px) 200vw, 100vw"
           className="object-cover object-center"
           priority
         />
@@ -110,18 +111,18 @@ export default async function DestinationPage({ params }) {
             light
           />
           <Reveal>
-            <h1 className="mt-4 max-w-4xl text-[2.5rem] font-bold leading-[1.07] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.5rem]">
-              Sri Lanka {" "}
+            <h1 className="mt-2 sm:mt-4 max-w-4xl text-[1.5rem] sm:text-[2rem] font-bold leading-[1.07] tracking-[-0.03em] text-white lg:text-[4.5rem]">
+              Sri Lanka {" "} <br />
               <span className="font-light">Destinations</span>
             </h1>
           </Reveal>
-          <p className="mt-6 max-w-2xl text-[15px] leading-[1.85] text-white/80 sm:text-base">
+          <p className="mt-4 sm:mt-6 max-w-2xl text-[13px] leading-[1.85] text-white/80 sm:text-base">
             From ancient cities and sacred temples to tea-covered mountains, national parks and tropical beaches, Sri Lanka offers a remarkable variety of experiences within one island. Explore the places our guests ask for most and where every great itinerary begins.
           </p>
         </Container>
       </section>
       {/* 1. Hero – image left (reference), title + intro right */}
-      <section className="py-12 lg:py-20">
+      <section className="py-20 lg:py-28">
         <Container>
           <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-6">
@@ -131,7 +132,8 @@ export default async function DestinationPage({ params }) {
                   alt={`${d.name}, Sri Lanka`}
                   fill
                   priority
-                  sizes="(min-width:1024px) 50vw, 100vw"
+                  quality={90}
+                  sizes="(max-width: 768px) 200vw, 100vw"
                   className="object-cover"
                 />
               </div>
@@ -208,7 +210,7 @@ export default async function DestinationPage({ params }) {
 
       {/* 8. Nearby destination cards */}
       {nearby.length > 0 && (
-        <section className="py-16 lg:py-24">
+        <section className="py-20 lg:py-28">
           <Container>
             <SectionHeading lines={["Explore", "Nearby"]} size="sm" />
             <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

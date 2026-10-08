@@ -98,7 +98,15 @@ export default async function TransferServicePage({ params }) {
     <>
       {/* Hero – matches Day Tour detail exactly */}
       <section className="relative flex min-h-[62svh] -mt-[76px] lg:-mt-[88px] items-end overflow-hidden bg-brand-navy-deep">
-        <Image src={service.heroImage} alt={service.name} fill priority sizes="100vw" className="object-cover" />
+        <Image
+          src={service.heroImage}
+          alt={service.name}
+          fill
+          priority
+          quality={90}
+          sizes="(max-width: 768px) 200vw, 100vw"
+          className="object-cover" 
+        />
         <div
           className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.75)_100%)]"
           aria-hidden="true"
@@ -115,7 +123,7 @@ export default async function TransferServicePage({ params }) {
           <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-[1.05] tracking-[-0.02em] sm:text-5xl lg:text-6xl">
             {service.name}
           </h1>
-          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-white/85 sm:text-lg">
+          <p className="mt-4 max-w-2xl text-[14px] leading-relaxed text-white/85 sm:text-lg">
             {service.shortDescription}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">

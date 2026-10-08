@@ -65,12 +65,12 @@ export default async function TailorMadeToursPage({ searchParams }) {
         <Container className="relative z-10">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Tailor-Made Tours" }]} light />
           <Reveal>
-            <h1 className="mt-4 max-w-3xl text-[2.5rem] font-bold leading-[1.07] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.5rem]">
+            <h1 className="mt-4 max-w-3xl text-[2rem] font-bold leading-[1.07] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.5rem]">
               {COPY.h1[0]}{" "}
               <span className="font-light">{COPY.h1[1]}</span>
             </h1>
           </Reveal>
-          <p className="mt-6 max-w-2xl text-[15px] leading-[1.85] text-white/80 sm:text-base">
+          <p className="mt-6 max-w-2xl text-[14px] leading-[1.85] text-white/80 sm:text-base">
             {COPY.intro}
           </p>
         </Container>

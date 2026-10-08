@@ -86,7 +86,8 @@ export default async function ExperiencePage({ params }) {
           src="/experience/experience-hero.png"
           alt="Sri Lanka experiences"
           fill
-          sizes="100vw"
+          quality={90}
+          sizes="(max-width: 768px) 200vw, 100vw"
           className="object-cover object-center"
           priority
         />
@@ -105,11 +106,11 @@ export default async function ExperiencePage({ params }) {
           />
           <Reveal>
             <h1 className="mt-4 max-w-4xl text-[2.5rem] font-bold leading-[1.07] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.5rem]">
-              Sri Lanka{" "}
+              Sri Lanka{" "} <br />
               <span className="font-light">Experiences</span>
             </h1>
           </Reveal>
-          <p className="mt-6 max-w-2xl text-[15px] leading-[1.85] text-white/80 sm:text-base">
+          <p className="mt-2 sm:mt-6 max-w-2xl text-[12px] leading-[1.85] text-white/80 sm:text-base">
             From leopard safaris and ancient temples to beach escapes, hill-country hikes and Ayurvedic
             retreats – build your journey around what you love most.
           </p>
@@ -117,7 +118,7 @@ export default async function ExperiencePage({ params }) {
       </section>
 
       {/* ── 1. EXPERIENCE OVERVIEW ──────────────────────────────────── */}
-      <section className="py-12 lg:py-20">
+      <section className="py-20 lg:py-28">
         <Container>
           <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-6">
@@ -127,7 +128,8 @@ export default async function ExperiencePage({ params }) {
                   alt={`${e.name} in Sri Lanka`}
                   fill
                   priority
-                  sizes="(min-width:1024px) 50vw, 100vw"
+                  quality={90}
+                  sizes="(max-width: 768px) 200vw, 100vw"
                   className="object-cover"
                 />
               </div>
@@ -162,7 +164,7 @@ export default async function ExperiencePage({ params }) {
       </section>
 
       {/* ── 3. BEST LOCATIONS – PlacesCarousel ──────────────────────── */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-28 bg-brand-mist">
         <Container>
           <Reveal>
             <SectionHeading lines={["Best", "Locations"]} align="center" className="mx-auto" />

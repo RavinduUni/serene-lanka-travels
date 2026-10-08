@@ -63,7 +63,8 @@ export default function PlacesCarousel({ places }) {
               src={p.image}
               alt={i === active ? p.name : ""}
               fill
-              sizes="(min-width:1024px) 90vw, 100vw"
+              quality={90}
+              sizes="(max-width: 768px) 200vw, 100vw"
               className="object-cover"
             />
           </motion.div>
@@ -131,7 +132,8 @@ export default function PlacesCarousel({ places }) {
                       : "border-white/25"
                   )}
                 >
-                  <SmartImage src={p.image} alt="" fill sizes="128px" className="object-cover" />
+                  <SmartImage src={p.image} alt="" fill quality={90}
+                    sizes="(max-width: 768px) 200vw, 100vw" className="object-cover" />
                   <div
                     className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.75)_100%)]"
                     aria-hidden="true"

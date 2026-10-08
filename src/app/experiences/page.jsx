@@ -30,7 +30,8 @@ export default function ExperiencesPage() {
           src="/experience/experience-hero.png"
           alt="Sri Lanka experiences – wildlife, culture, beaches and adventure"
           fill
-          sizes="100vw"
+          quality={90}
+          sizes="(max-width: 768px) 200vw, 100vw"
           className="object-cover object-center"
           priority
         />
@@ -49,12 +50,12 @@ export default function ExperiencesPage() {
             light
           />
           <Reveal>
-            <h1 className="mt-4 max-w-4xl text-[2.5rem] font-bold leading-[1.07] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.5rem]">
-              {experiencesLanding.heading[0]}{" "}
+            <h1 className="mt-2 sm:mt-4 max-w-4xl text-[1.5rem] sm:text-[2rem] font-bold leading-[1.07] tracking-[-0.03em] text-white lg:text-[4.5rem]">
+              {experiencesLanding.heading[0]}{" "} <br />
               <span className="font-light">{experiencesLanding.heading[1]}</span>
             </h1>
           </Reveal>
-          <p className="mt-6 max-w-2xl text-[15px] leading-[1.85] text-white/80 sm:text-base">
+          <p className="mt-2 sm:mt-6 max-w-2xl text-[12px] leading-[1.85] text-white/80 sm:text-base">
             {experiencesLanding.intro}
           </p>
         </Container>

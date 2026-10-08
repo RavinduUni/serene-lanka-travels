@@ -39,7 +39,7 @@ export default function ItinerariesPage() {
         />
         {/* Gradient overlay – lighter at top, darker toward bottom for text legibility */}
         <div
-          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,19,59,0.18)_0%,rgba(6,19,59,0.22)_55%,rgba(6,19,59,0.62)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.75)_100%)]"
           aria-hidden="true"
         />
       </section>

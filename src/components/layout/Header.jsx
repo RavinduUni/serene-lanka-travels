@@ -135,17 +135,23 @@ function MobileNavItem({ item, onClose }) {
             View All {item.label}
           </Link>
         </li>
-        {item.children.map((child) => (
-          <li key={child.href}>
-            <Link
-              href={child.href}
-              onClick={onClose}
-              className="block rounded-xl px-6 py-2.5 text-sm font-medium text-brand-ink/80 hover:bg-brand-sky hover:text-brand-blue"
-            >
-              {child.label}
-            </Link>
-          </li>
-        ))}
+        {item.children.map((child) => {
+          const isChildActive = pathname === child.href;
+          return (
+            <li key={child.href}>
+              <Link
+                href={child.href}
+                onClick={onClose}
+                className={cn(
+                  "block rounded-xl px-6 py-2.5 text-sm hover:bg-brand-sky hover:text-brand-blue",
+                  isChildActive ? "text-brand-blue font-semibold bg-brand-sky/50" : "font-medium text-brand-ink/80"
+                )}
+              >
+                {child.label}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </li>
   );
