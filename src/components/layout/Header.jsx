@@ -172,79 +172,81 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled
-          ? "bg-black/70 backdrop-blur-md shadow-[0_4px_10px_rgba(0,0,0,0.3)]"
-          : "bg-transparent"
-      )}
-    >
-      {/* Dark overlay gradient for contrast when transparent */}
-      {!scrolled && (
-        <div
-          className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-transparent pointer-events-none"
-          aria-hidden="true"
-        />
-      )}
-
-      <Container className="relative flex h-[76px] items-center justify-between gap-6 lg:h-[88px]">
-        {/* Logo */}
-        <Link href="/" className="flex shrink-0 items-center" aria-label={`${site.name} home`}>
-          <Image
-            src={site.logo}
-            alt={site.name}
-            width={543}
-            height={430}
-            priority
-            className="h-12 w-auto lg:h-14"
+    <>
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          scrolled
+            ? "bg-black/60 backdrop-blur-md shadow-[0_4px_10px_rgba(0,0,0,0.3)]"
+            : "bg-transparent"
+        )}
+      >
+        {/* Dark overlay gradient for contrast when transparent */}
+        {!scrolled && (
+          <div
+            className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-transparent pointer-events-none"
+            aria-hidden="true"
           />
-        </Link>
+        )}
 
-        {/* Desktop nav */}
-        <nav aria-label="Primary" className="hidden xl:block">
-          <ul className="flex items-center gap-1">
-            {mainNav.map((item) => {
-              const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
-              return (
-                <NavDropdown key={item.href} item={item} active={active} scrolled={scrolled} />
-              );
-            })}
-          </ul>
-        </nav>
+        <Container className="relative flex h-[76px] items-center justify-between gap-6 lg:h-[88px]">
+          {/* Logo */}
+          <Link href="/" className="flex shrink-0 items-center" aria-label={`${site.name} home`}>
+            <Image
+              src={site.logo}
+              alt={site.name}
+              width={543}
+              height={430}
+              priority
+              className="h-12 w-auto lg:h-14"
+            />
+          </Link>
 
-        {/* Desktop CTAs */}
-        <div className="hidden items-center gap-3 lg:flex">
-          <Button href="/tailor-made-tours" size="sm" className="h-11 px-5">
-            Plan My Trip
-          </Button>
-        </div>
+          {/* Desktop nav */}
+          <nav aria-label="Primary" className="hidden xl:block">
+            <ul className="flex items-center gap-1">
+              {mainNav.map((item) => {
+                const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+                return (
+                  <NavDropdown key={item.href} item={item} active={active} scrolled={scrolled} />
+                );
+              })}
+            </ul>
+          </nav>
 
-        {/* Mobile controls */}
-        <div className="flex items-center gap-2 lg:hidden">
-          <a
-            href={buildWhatsAppLink()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="grid size-11 place-items-center rounded-full border border-white/30 text-white"
-            aria-label="Chat on WhatsApp"
-          >
-            <MessageCircle className="size-5" aria-hidden="true" />
-          </a>
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            aria-label="Open menu"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            className="grid size-11 place-items-center rounded-full border border-white/30 text-white"
-          >
-            <Menu className="size-5" aria-hidden="true" />
-          </button>
-        </div>
-      </Container>
+          {/* Desktop CTAs */}
+          <div className="hidden items-center gap-3 lg:flex">
+            <Button href="/tailor-made-tours" size="sm" className="h-11 px-5">
+              Plan My Trip
+            </Button>
+          </div>
 
-      {/* Mobile drawer */}
+          {/* Mobile controls */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <a
+              href={buildWhatsAppLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="grid size-11 place-items-center rounded-full border border-white/30 text-white"
+              aria-label="Chat on WhatsApp"
+            >
+              <MessageCircle className="size-5" aria-hidden="true" />
+            </a>
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              aria-label="Open menu"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              className="grid size-11 place-items-center rounded-full border border-white/30 text-white"
+            >
+              <Menu className="size-5" aria-hidden="true" />
+            </button>
+          </div>
+        </Container>
+      </header>
+
+      {/* Mobile drawer — rendered outside <header> to avoid its stacking context */}
       <div
         id="mobile-menu"
         role="dialog"
@@ -306,6 +308,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }

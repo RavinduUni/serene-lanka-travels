@@ -1,50 +1,118 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import * as Icons from "lucide-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import SmartImage from "@/components/ui/SmartImage";
-import Reveal from "@/components/motion/Reveal";
 
 export default function BrandMeaningCarousel({ cards }) {
-  const total = cards.length;
-  const VISIBLE_LG = 3;
-  const maxIndex = total - VISIBLE_LG;
+  if (!cards || cards.length === 0) return null;
 
+  const total = cards.length;
+  const [visibleCount, setVisibleCount] = useState(3);
   const [index, setIndex] = useState(0);
+
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
+  useEffect(() => {
+    const updateVisible = () => {
+      const w = window.innerWidth;
+      if (w < 640) {
+        setVisibleCount(1);
+      } else if (w < 1024) {
+        setVisibleCount(2);
+      } else {
+        setVisibleCount(3);
+      }
+    };
+
+    updateVisible();
+    window.addEventListener("resize", updateVisible);
+    return () => window.removeEventListener("resize", updateVisible);
+  }, []);
+
+  const maxIndex = Math.max(0, total - visibleCount);
+
+  // Clamp index if viewport resize decreases maxIndex
+  useEffect(() => {
+    setIndex((prev) => Math.min(prev, maxIndex));
+  }, [maxIndex]);
 
   const prev = () => setIndex((i) => (i <= 0 ? maxIndex : i - 1));
   const next = () => setIndex((i) => (i >= maxIndex ? 0 : i + 1));
 
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const diff = touchStartX.current - touchEndX.current;
+    if (diff > 45) {
+      next();
+    } else if (diff < -45) {
+      prev();
+    }
+  };
+
+  const getTransform = () => {
+    if (visibleCount === 1) {
+      return `translateX(calc(${-index} * (100% + 20px)))`;
+    }
+    if (visibleCount === 2) {
+      return `translateX(calc(${-index} * (50% + 10px)))`;
+    }
+    return `translateX(calc(${-index} * (100% / 3 + 20px / 3)))`;
+  };
+
   return (
     <div className="mt-auto flex w-full flex-col pt-8 lg:pt-12 relative pb-8">
-      {/* Navigation Buttons */}
-      <div className="absolute right-0 -top-16 flex items-center gap-3 pr-4 z-20">
-        <button
-          onClick={prev}
-          aria-label="Previous cards"
-          className="grid size-11 place-items-center rounded-full border border-gray-300 bg-white/90 text-brand-navy shadow-sm transition-all duration-200 hover:bg-brand-navy hover:text-white hover:border-brand-navy backdrop-blur-sm"
-        >
-          <ChevronLeft className="size-5" />
-        </button>
-        <button
-          onClick={next}
-          aria-label="Next cards"
-          className="grid size-11 place-items-center rounded-full border border-gray-300 bg-white/90 text-brand-navy shadow-sm transition-all duration-200 hover:bg-brand-navy hover:text-white hover:border-brand-navy backdrop-blur-sm"
-        >
-          <ChevronRight className="size-5" />
-        </button>
+      {/* Navigation Controls */}
+      <div className="flex items-center justify-between sm:justify-end gap-3 mb-4 lg:absolute lg:right-0 lg:-top-16 lg:mb-0 pr-1 lg:pr-4 z-20">
+        <div className="flex items-center gap-1.5 text-xs font-semibold tracking-wider text-brand-navy/80 sm:hidden">
+          <span className="font-bold text-brand-blue">{index + 1}</span>
+          <span>/</span>
+          <span>{total}</span>
+        </div>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <button
+            type="button"
+            onClick={prev}
+            aria-label="Previous card"
+            className="grid size-10 sm:size-11 place-items-center rounded-full border border-gray-300 bg-white/90 text-brand-navy shadow-sm transition-all duration-200 hover:bg-brand-navy hover:text-white hover:border-brand-navy backdrop-blur-sm active:scale-95"
+          >
+            <ChevronLeft className="size-5" />
+          </button>
+          <button
+            type="button"
+            onClick={next}
+            aria-label="Next card"
+            className="grid size-10 sm:size-11 place-items-center rounded-full border border-gray-300 bg-white/90 text-brand-navy shadow-sm transition-all duration-200 hover:bg-brand-navy hover:text-white hover:border-brand-navy backdrop-blur-sm active:scale-95"
+          >
+            <ChevronRight className="size-5" />
+          </button>
+        </div>
       </div>
 
-      <div className="overflow-hidden w-full">
+      <div
+        className="overflow-hidden w-full touch-pan-y"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <ul
-          className="flex transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+          className="flex transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] w-full"
           style={{
             gap: "20px",
-            transform: `translateX(calc(${-index} * (100% / 3 + 20px / 3)))`,
+            transform: getTransform(),
           }}
         >
-          {cards.map((card, i) => {
+          {cards.map((card) => {
             const Icon = Icons[card.icon] || Icons.Sparkles;
             return (
               <li

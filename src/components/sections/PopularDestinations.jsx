@@ -35,7 +35,7 @@ export default function PopularDestinations() {
         <div className="relative mx-auto w-full max-w-4xl text-center">
           {/* Watermark */}
           <span
-            className="pointer-events-none absolute left-1/2 top-0 z-0 -translate-x-1/2 -translate-y-1/2 select-none text-[18vw] font-bold lowercase tracking-tighter text-brand-blue/50 lg:text-[160px]"
+            className="pointer-events-none absolute left-1/2 top-0 z-0 -translate-x-1/2 -translate-y-1/2 select-none text-[15vw] font-bold lowercase tracking-tighter text-brand-blue/50 lg:text-[160px]"
             style={{ opacity: 0.6, lineHeight: 0.8 }}
             aria-hidden="true"
           >

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import * as Icons from "lucide-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import SmartImage from "@/components/ui/SmartImage";
@@ -11,15 +11,67 @@ import { whyChoose } from "@/data/about";
 export default function WhyChooseCarousel() {
   const items = whyChoose.items;
   const total = items.length;
-  const VISIBLE_LG = 4; // cards visible at lg breakpoint
-  // Max index so that 4 cards are always on screen
-  const maxIndex = total - VISIBLE_LG; // e.g. 9 - 4 = 5
-
+  
+  const [visibleCount, setVisibleCount] = useState(4);
   const [index, setIndex] = useState(0);
 
-  // Wrap-around navigation — never stops, always shows 4 cards
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
+  useEffect(() => {
+    const updateVisible = () => {
+      const w = window.innerWidth;
+      if (w < 640) {
+        setVisibleCount(1);
+      } else if (w < 1024) {
+        setVisibleCount(2);
+      } else {
+        setVisibleCount(4);
+      }
+    };
+
+    updateVisible();
+    window.addEventListener("resize", updateVisible);
+    return () => window.removeEventListener("resize", updateVisible);
+  }, []);
+
+  const maxIndex = Math.max(0, total - visibleCount);
+
+  useEffect(() => {
+    setIndex((prev) => Math.min(prev, maxIndex));
+  }, [maxIndex]);
+
+  // Wrap-around navigation — never stops, always shows visible cards
   const prev = () => setIndex((i) => (i <= 0 ? maxIndex : i - 1));
   const next = () => setIndex((i) => (i >= maxIndex ? 0 : i + 1));
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const diff = touchStartX.current - touchEndX.current;
+    if (diff > 45) {
+      next();
+    } else if (diff < -45) {
+      prev();
+    }
+  };
+
+  const getTransform = () => {
+    if (visibleCount === 1) {
+      return `translateX(calc(${-index} * (100% + 16px)))`;
+    }
+    if (visibleCount === 2) {
+      return `translateX(calc(${-index} * (50% + 10px)))`;
+    }
+    return `translateX(calc(${-index} * (25% + 5px)))`;
+  };
 
   return (
     <section className="bg-white py-20 lg:py-28 overflow-hidden">
@@ -52,11 +104,16 @@ export default function WhyChooseCarousel() {
         </div>
 
         {/* Carousel track */}
-        <div className="overflow-hidden">
+        <div 
+          className="overflow-hidden touch-pan-y"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <ul
-            className="flex gap-4 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] sm:gap-5"
+            className="flex gap-4 sm:gap-5 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] w-full"
             style={{
-              transform: `translateX(calc(${-index} * (25% + 5px)))`,
+              transform: getTransform(),
             }}
           >
             {items.map((item) => {
@@ -120,6 +177,7 @@ export default function WhyChooseCarousel() {
             return (
               <button
                 key={i}
+                type="button"
                 onClick={() => setIndex(i)}
                 aria-label={`Go to card group ${i + 1}`}
                 className={`h-1.5 rounded-full transition-all duration-300 ${

@@ -260,7 +260,7 @@ export default function AboutUsPage() {
 
       {/* §10.6 Our Team – watermark device like the home reviews section */}
       <section className="relative overflow-hidden py-20 lg:py-28">
-        <span className="text-brand-blue/20 watermark top-6 lg:top-4" aria-hidden="true">
+        <span className="text-brand-blue/20 watermark top-6 lg:top-4 text-[15vw] lg:text-[160px]" aria-hidden="true">
           {team.watermark}
         </span>
         <Container className="relative">
