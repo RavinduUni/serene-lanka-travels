@@ -50,7 +50,7 @@ export default function ExperiencesPage() {
             light
           />
           <Reveal>
-            <h1 className="mt-2 sm:mt-4 max-w-4xl text-[1.5rem] sm:text-[2rem] font-bold leading-[1.07] tracking-[-0.03em] text-white lg:text-[4.5rem]">
+            <h1 className="mt-2 sm:mt-4 max-w-4xl text-[2rem] font-bold leading-[1.07] tracking-[-0.03em] text-white lg:text-[4.5rem]">
               {experiencesLanding.heading[0]}{" "} <br />
               <span className="font-light">{experiencesLanding.heading[1]}</span>
             </h1>

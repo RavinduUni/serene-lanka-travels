@@ -105,7 +105,7 @@ export default async function ExperiencePage({ params }) {
             light
           />
           <Reveal>
-            <h1 className="mt-4 max-w-4xl text-[2.5rem] font-bold leading-[1.07] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.5rem]">
+            <h1 className="mt-4 max-w-4xl text-[2rem] font-bold leading-[1.07] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.5rem]">
               Sri Lanka{" "} <br />
               <span className="font-light">Experiences</span>
             </h1>
@@ -151,7 +151,7 @@ export default async function ExperiencePage({ params }) {
                 ))}
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button href="#tours" size="lg">
+                <Button href="/sri-lanka-itineraries" size="lg">
                   Explore Tours
                 </Button>
                 <Button href="/tailor-made-tours/build" variant="outline" size="lg">

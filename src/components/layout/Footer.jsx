@@ -85,7 +85,7 @@ export default function Footer() {
 
         {/* Description */}
         <div className="flex flex-col items-center mt-8 justify-center w-full text-center">
-            <p className="text-[14px] leading-relaxed text-black tracking-wide max-w-xl">
+            <p className="text-[14px] sm:text-base leading-relaxed text-black tracking-wide max-w-xl">
               {site.tagline} {site.promise}
             </p>
         </div>
@@ -117,7 +117,7 @@ export default function Footer() {
           {footerColumns.map((col, index) => (
             <div key={index} className="flex flex-col">
               {col.title ? (
-                <h4 className="text-[14px] font-bold text-gray-900 mb-6 tracking-wide">
+                <h4 className="text-[14px] sm:text-base font-bold text-gray-900 mb-6 tracking-wide">
                   {col.title}
                 </h4>
               ) : (
@@ -126,7 +126,7 @@ export default function Footer() {
               <ul className="space-y-3.5">
                 {col.links.map((link, idx) => (
                   <li key={idx}>
-                    <Link href={link.href} className="text-[13px] text-black transition-colors hover:text-brand-blue">
+                    <Link href={link.href} className="text-[14px] text-black transition-colors hover:text-brand-blue">
                       {link.label}
                     </Link>
                   </li>
@@ -148,8 +148,11 @@ export default function Footer() {
               <div className="h-[42px] w-[150px] bg-transparent"></div>
             )}
           </div>
-          <p className="text-[12px] text-gray-700">
+          <p className="text-[12px] sm:text-[14px] text-gray-700">
             © Copyright {year}. {site.name}. All Rights Reserved
+          </p>
+          <p className="text-[12px] sm:text-[14px] text-gray-700">
+            Site by <a href="https://growdigitally.lk/" target="_blank" rel="noopener noreferrer" className="text-brand-navy transition-colors hover:underline">growdigitally.lk</a>
           </p>
         </div>
 

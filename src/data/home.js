@@ -64,17 +64,17 @@ export const tourCategories = {
     { label: "Day Tours", href: "/day-tours", image: '/TourCategory/day_new.webp' },
     { label: "Multi-Day Sri Lanka Tours", href: "/sri-lanka-itineraries", image: '/TourCategory/multi-day-tours_new.webp' },
     { label: "Tailor-Made Tours", href: "/tailor-made-tours", image: '/TourCategory/tailor_made-tours_new.webp' },
-    { label: "Honeymoon Tours", href: "/sri-lanka-tours/honeymoon", image: '/TourCategory/honeymoon-tours_new.webp' },
-    { label: "Wildlife & Safari Tours", href: "/sri-lanka-tours/wildlife-safari", image: '/TourCategory/wildlife_tour_new.webp' },
-    { label: "Cultural Tours", href: "/sri-lanka-tours/cultural-heritage", image: '/TourCategory/cultural-tours_new.webp' },
-    { label: "Luxury Tours", href: "/sri-lanka-tours/luxury", image: '/TourCategory/luxury_new.webp' },
-    { label: "Budget Tours", href: "/sri-lanka-tours/budget", image: '/TourCategory/budget_new.webp' },
+    { label: "Honeymoon Tours", href: "/sri-lanka-itineraries/honeymoon-tour", image: '/TourCategory/honeymoon-tours_new.webp' },
+    { label: "Wildlife & Safari Tours", href: "/sri-lanka-itineraries/into-the-wild-sri-lanka", image: '/TourCategory/wildlife_tour_new.webp' },
+    { label: "Cultural Tours", href: "/sri-lanka-itineraries/cultural-heritage-tour", image: '/TourCategory/cultural-tours_new.webp' },
+    { label: "Luxury Tours", href: "/sri-lanka-itineraries/luxury-tour", image: '/TourCategory/luxury_new.webp' },
+    { label: "Budget Tours", href: "/sri-lanka-itineraries/budget-tour", image: '/TourCategory/budget_new.webp' },
   ],
 };
 
 /** §9 Section 4 – Build Your Own Sri Lanka Tour */
 export const builderPromo = {
-  heading: ["Your Holiday. Your Route.", "Your Style."],
+  heading: ["Your Holiday. Your Route.", "Your Style"],
   copy:
     "Choose your travel dates, destinations, accommodation style, vehicle and activities. Our Tailor-Made Tour Builder helps you create a Sri Lanka itinerary around your interests and receive an estimated tour price before sending your request to our team.",
   steps: [

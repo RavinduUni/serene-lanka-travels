@@ -73,8 +73,9 @@ export default function BlogPage() {
           src="/destinations/kaudulla.png"
           alt="Sri Lanka travel guides – tips, planning and inspiration"
           fill
-          sizes="100vw"
-          className="object-cover object-center"
+          quality={90}
+          sizes="(max-width: 768px) 200vw, 100vw"
+          className="object-cover object-top"
           priority
         />
         {/* Dark gradient overlay — same as experiences page */}

@@ -407,7 +407,7 @@ export default function DiscoverSriLankaPage() {
             </p>
             <div className="lg:col-span-2 lg:text-right">
               <Button
-                href="/discover-sri-lanka/experiences"
+                href="/experiences"
                 variant="link"
                 className="text-[14px]"
               >
@@ -492,7 +492,7 @@ export default function DiscoverSriLankaPage() {
           </ul>
 
           <div className="mt-10 text-center">
-            <Button href="/discover-sri-lanka/experiences" variant="primary" size="lg">
+            <Button href="/experiences" variant="primary" size="lg">
               Explore All Experiences
               <ArrowRight className="size-4" aria-hidden="true" />
             </Button>
