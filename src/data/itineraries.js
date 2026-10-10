@@ -348,7 +348,7 @@ export const itineraries = [
       { q: "Can we add or remove a destination?", a: "Absolutely. Sigiriya, Bentota or a second safari are common additions; tell us what you love and we will reshape the route." },
     ],
     related: ["honeymoon-tour", "cultural-heritage-tour", "into-the-wild-sri-lanka"],
-    mapImage: "/itineraries/popular.png",
+    mapImage: "/itineraries/popular-tour.png",
     mapTitle: "Sri Lanka in One Perfect Loop",
     mapDescription: [
       "This seven-day route connects the island's most iconic regions in a single, flowing loop. Starting in Colombo, your private driver takes you up into the cool highlands through Kandy and Nuwara Eliya, then down into Ella's scenic hills, across to Yala for a leopard safari, and finally west along the south coast to Mirissa and Galle.",
@@ -393,7 +393,7 @@ export const itineraries = [
       { q: "When is the elephant gathering?", a: "Minneriya and Kaudulla host large elephant gatherings in the drier months around the reservoirs; we time your visit to the current season." },
     ],
     related: ["see-the-best-of-sri-lanka", "nature-tour", "adventure-tour"],
-    mapImage: "/itineraries/wildlife.png",
+    mapImage: "/itineraries/wildlife-tour.png",
     mapTitle: "Sri Lanka's Wild Side, Mapped",
     mapDescription: [
       "Sri Lanka's national parks are scattered across the island, each offering a distinct ecosystem and wildlife experience. This tailor-made safari itinerary is built around the parks, seasons and sightings that matter most to you — from Yala's dense scrubland in the south to Minneriya's vast reservoir plains in the north-central zone.",
@@ -522,7 +522,7 @@ export const itineraries = [
       { q: "Is temple dress code required?", a: "Yes – shoulders and knees covered, shoes removed at each temple. Your driver will remind you at each stop." },
     ],
     related: ["cultural-heritage-tour", "see-the-best-of-sri-lanka", "nature-tour"],
-    mapImage: "/itineraries/ramayana.png",
+    mapImage: "/itineraries/ramayana-tour.png",
     mapTitle: "Tracing the Ramayana Trail",
     mapDescription: [
       "This eight-day pilgrimage route follows the sacred sites connected to the Ramayana epic — from the ancient Munneswaram Temple on Sri Lanka's west coast, across to Koneswaram in Trincomalee, through the Cultural Triangle, and into the highland temples and caves of Kandy, Nuwara Eliya and Ella.",
@@ -606,7 +606,7 @@ export const itineraries = [
     pricing: { startingFrom: null, currency: "USD", per: "per person / day" },
     faqs: sharedFaqs("the Cultural & Heritage Tour").slice(0, 1),
     related: ["ramayana-tour", "see-the-best-of-sri-lanka", "nature-tour"],
-    mapImage: "/itineraries/culture.png",
+    mapImage: "/itineraries/cultural-tour.png",
     mapTitle: "Ancient Wonders Across the Island",
     mapDescription: [
       "Sri Lanka's cultural landmarks span the entire island — from the cave temples of Dambulla and the soaring Sigiriya rock fortress in the north-central Cultural Triangle, to the sacred Temple of the Tooth Relic in Kandy and the UNESCO-listed Galle Fort on the southern coast.",
@@ -626,7 +626,7 @@ export const itineraries = [
     tagline: "Sun, Sand & Tropical Paradise",
     categories: ["beach", "popular"],
     duration: "Tailor-made – you choose the length",
-    heroImage: '/itineraries/hero/beachholidays.png',
+    heroImage: '/itineraries/hero/beach.png',
     summary:
       "Golden south-coast sands, calm east-coast bays and everything in between – a beach itinerary built around relaxation, swimming, snorkelling and sunsets, with private transfers between every stop.",
     highlights: ["Mirissa", "Unawatuna", "Hikkaduwa", "Bentota", "Weligama", "Nilaveli"],
@@ -652,7 +652,7 @@ export const itineraries = [
       { q: "Which coast should we choose?", a: "The south and west coasts are best in one half of the year and the east coast (Nilaveli, Pasikuda) in the other – we match your dates to the right coast." },
     ],
     related: ["whale-watching-tour", "honeymoon-tour", "family-tour"],
-    mapImage: "/itineraries/beach-tour.png",
+    mapImage: "/itineraries/beach-tours.png",
     mapTitle: "Sri Lanka's Finest Beaches, Coast to Coast",
     mapDescription: [
       "Sri Lanka is blessed with two distinct coastlines — the south-west coast with its golden beaches at Mirissa, Unawatuna, Hikkaduwa and Bentota, and the calmer, more secluded east coast with Nilaveli and Pasikuda. The best coast to visit depends entirely on your travel dates, as the two coasts follow opposite seasons.",
@@ -694,7 +694,7 @@ export const itineraries = [
     pricing: { startingFrom: null, currency: "USD", per: "per person / day" },
     faqs: sharedFaqs("the Nature Tour").slice(0, 1),
     related: ["adventure-tour", "into-the-wild-sri-lanka", "see-the-best-of-sri-lanka"],
-    mapImage: "/itineraries/Nature.png",
+    mapImage: "/itineraries/nature-tour.png",
     mapTitle: "Tea Country, Rainforests & Waterfalls",
     mapDescription: [
       "Sri Lanka's interior is a landscape of extraordinary natural beauty — cascading waterfalls, mist-covered tea estates, ancient rainforests, and mountain peaks rising above the clouds. This nature itinerary threads through Ella's rolling hills, Nuwara Eliya's highland plateaus, the lush Sinharaja rainforest, and the adventure hub of Kitulgala.",
@@ -739,7 +739,7 @@ export const itineraries = [
       { q: "Do we need experience for rafting or surfing?", a: "No – operators offer beginner-friendly grades and lessons. Tell us your comfort level and we will match the activities." },
     ],
     related: ["nature-tour", "into-the-wild-sri-lanka", "beach-tour"],
-    mapImage: "/itineraries/Adventure.png",
+    mapImage: "/itineraries/adventure-tour.png",
     mapTitle: "Thrills Across the Island",
     mapDescription: [
       "Sri Lanka packs an extraordinary range of adventure experiences into a small island. White-water raft the Kelani River at Kitulgala, hike to the Nine Arches Bridge in Ella, track leopards on a jeep safari in Yala, learn to surf the rolling breaks at Weligama, and snorkel the coral gardens of Hikkaduwa — all connected by comfortable private transfers.",
@@ -870,7 +870,7 @@ export const itineraries = [
       { q: "Can we extend the beach stay?", a: "Yes – many couples add nights in Mirissa or Unawatuna; tell us your dates and we will re-plan." },
     ],
     related: ["see-the-best-of-sri-lanka", "beach-tour", "luxury-tour"],
-    mapImage: "/itineraries/honeymoon.png",
+    mapImage: "/itineraries/honeymoon-tour.png",
     mapTitle: "A Romantic Journey Through the Highlands & Coast",
     mapDescription: [
       "This five-day romantic escape traces a beautiful arc from the cool cultural highlands of Kandy, through the misty tea country of Nuwara Eliya and the scenic mountain town of Ella, before descending to the warm golden sands of Mirissa on the south coast. Every stage of the journey is designed to be as scenic as the destination itself.",
@@ -915,7 +915,7 @@ export const itineraries = [
       { q: "How is child pricing handled?", a: "Child pricing depends on age, hotel, transport and activity providers and is confirmed at booking. Please share children's ages when you enquire." },
     ],
     related: ["see-the-best-of-sri-lanka", "beach-tour", "into-the-wild-sri-lanka"],
-    mapImage: "/itineraries/family.png",
+    mapImage: "/itineraries/family-tour.png",
     mapTitle: "Family Adventures Across Sri Lanka",
     mapDescription: [
       "This family-friendly route connects six of Sri Lanka's most rewarding destinations in a logical, comfortable sequence. Starting in the cultural heart of Kandy with its botanical gardens and temple, the journey winds up through the tea country to Nuwara Eliya, across to Ella's Nine Arches Bridge, south to Yala's safari jeeps, and finally to the beaches of Bentota and the historic Galle Fort.",
@@ -958,7 +958,7 @@ export const itineraries = [
     pricing: { startingFrom: null, currency: "USD", per: "per person / day" },
     faqs: sharedFaqs("the Luxury Tour").slice(0, 1),
     related: ["honeymoon-tour", "see-the-best-of-sri-lanka", "cultural-heritage-tour"],
-    mapImage: "/itineraries/luxury.png",
+    mapImage: "/itineraries/luxury-tour.png",
     mapTitle: "Sri Lanka's Finest, Without Compromise",
     mapDescription: [
       "This luxury itinerary connects Sri Lanka's most prestigious destinations — from the vibrant fine-dining scene of Colombo, to the iconic Sigiriya rock fortress, the cultural richness of Kandy, the rolling tea estates of Nuwara Eliya, the wildlife of Yala, and the elegant streets of Galle Fort. Every stop is chosen for its combination of world-class experience and scenic beauty.",
@@ -1002,7 +1002,7 @@ export const itineraries = [
       { q: "When is the best time for the east coast?", a: "The east coast has a different season from the south-west – we match your travel dates to the right coast so you get calm seas." },
     ],
     related: ["beach-tour", "ramayana-tour", "adventure-tour"],
-    mapImage: "/itineraries/North & East.png",
+    mapImage: "/itineraries/north-&-east-tour.png",
     mapTitle: "The Quieter Side of the Island",
     mapDescription: [
       "While most visitors stick to Sri Lanka's western circuit, the north and east coastline offers a completely different experience — sacred temples perched on ocean cliffs in Trincomalee, pristine white-sand beaches at Nilaveli and Pasikuda, world-class surf at Arugam Bay, and the distinct Tamil culture and cuisine of Jaffna in the far north.",
@@ -1047,7 +1047,7 @@ export const itineraries = [
       { q: "Are there seasonal discounts?", a: "Yes – discounts and offers may be added depending on special seasons and situations. Ask us about current offers when you enquire." },
     ],
     related: ["see-the-best-of-sri-lanka", "beach-tour", "nature-tour"],
-    mapImage: "/itineraries/budget.png",
+    mapImage: "/itineraries/budget-tour.png",
     mapTitle: "Explore More of Sri Lanka for Less",
     mapDescription: [
       "A great Sri Lanka experience does not have to come at a luxury price. This budget-friendly route covers the island's most rewarding highlights — starting in the vibrant capital Colombo, winding up to the cultural hub of Kandy, climbing through the scenic hill country to Ella, and finishing along the south coast at Mirissa and Galle.",

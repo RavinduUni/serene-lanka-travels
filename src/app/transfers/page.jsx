@@ -108,7 +108,7 @@ export default function TransfersPage() {
       </section>
 
       {/* ── Transfer Services Grid ── */}
-      <section className="bg-white pt-20 lg:pt-28">
+      <section className="bg-white py-20 lg:py-28">
         <Container>
           <Reveal>
             <SectionHeading
@@ -167,7 +167,7 @@ export default function TransfersPage() {
 
 
       {/* ── Booking form ── */}
-      <section id="book" className="scroll-mt-24 py-20 lg:py-28">
+      {/* <section id="book" className="scroll-mt-24 py-20 lg:py-28">
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
@@ -197,7 +197,7 @@ export default function TransfersPage() {
             </div>
           </div>
         </Container>
-      </section>
+      </section> */}
 
       <FinalCta />
       <FloatingWhatsApp message={whatsappMessage} />
