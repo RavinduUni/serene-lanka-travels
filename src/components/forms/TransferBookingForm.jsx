@@ -1,14 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Send, MessageCircle, Clock } from "lucide-react";
-import { buildWhatsAppLink } from "@/lib/whatsapp";
+import { Send, CheckCircle2, LoaderCircle, AlertCircle } from "lucide-react";
 
 /**
- * Transfer booking form – all confirmed fields from Content Plan §19, plus
- * contact details so the team can reply. No backend yet: the enquiry is
- * composed into a WhatsApp message (the confirmed enquiry channel). When
- * /api/enquiry exists, POST the same payload there first.
+ * Transfer booking form – submits via POST /api/transfer-enquiry which
+ * delivers the booking request by email.
  *
  * Props: vehicles (from getVehicles()), notes (driverServiceNotes), serviceName?
  */
@@ -28,36 +25,59 @@ function Field({ id, label, required, children }) {
 }
 
 export default function TransferBookingForm({ vehicles = [], notes = [], serviceName }) {
-  const [sent, setSent] = useState(false);
+  const [phase, setPhase] = useState("idle"); // idle | sending | success | failure
 
-  function onSubmit(e) {
+  async function onSubmit(e) {
     e.preventDefault();
+    if (phase === "sending") return;
+    setPhase("sending");
+
     const d = Object.fromEntries(new FormData(e.currentTarget).entries());
-    const lines = [
-      `Hi Seren Lanka Travels, I would like a quote for a private transfer from ${d.pickup} to ${d.dropoff}.`,
-      serviceName && `Service: ${serviceName}`,
-      "",
-      `Date: ${d.date}`,
-      `Pickup time: ${d.time}`,
-      d.flight && `Flight number: ${d.flight}`,
-      `Passengers: ${d.passengers}`,
-      `Bags: ${d.bags}`,
-      `Vehicle type: ${d.vehicle}`,
-      `Child seat: ${d.childSeat ? "Yes" : "No"}`,
-      d.requests && `Special requests: ${d.requests}`,
-      "",
-      `Name: ${d.name}`,
-      d.contact && `Contact: ${d.contact}`,
-    ].filter(Boolean);
-    window.open(buildWhatsAppLink(lines.join("\n")), "_blank", "noopener,noreferrer");
-    setSent(true);
+
+    try {
+      const res = await fetch("/api/transfer-enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...d, serviceName }),
+      });
+      if (res.status === 201 || res.status === 200) {
+        setPhase("success");
+      } else {
+        setPhase("failure");
+      }
+    } catch {
+      setPhase("failure");
+    }
+  }
+
+  if (phase === "success") {
+    return (
+      <div className="flex flex-col items-center gap-5 rounded-card border border-brand-line bg-white p-8 text-center shadow-card sm:p-10">
+        <span className="grid size-16 place-items-center rounded-full bg-brand-sky">
+          <CheckCircle2 className="size-8 text-brand-blue" aria-hidden="true" />
+        </span>
+        <div>
+          <p className="text-xl font-bold text-brand-navy">Booking request sent!</p>
+          <p className="mt-2 text-[14px] leading-relaxed text-brand-muted">
+            We&apos;ll confirm the vehicle and price via email or WhatsApp – typically within 4 hours.
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={() => setPhase("idle")}
+          className="text-[13px] font-semibold text-brand-blue underline-offset-2 hover:underline"
+        >
+          Submit another booking
+        </button>
+      </div>
+    );
   }
 
   return (
     <form onSubmit={onSubmit} className="rounded-card border border-brand-line bg-white p-6 shadow-card sm:p-8">
       <h3 className="text-xl font-bold text-brand-navy">Book a transfer</h3>
       <p className="mt-2 text-[14px] leading-relaxed text-brand-muted">
-        Tell us where and when. We confirm the vehicle and price by WhatsApp or a call – typically within 4 hours.
+        Tell us where and when. We confirm the vehicle and price via email or a call – typically within 4 hours.
       </p>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -97,8 +117,8 @@ export default function TransferBookingForm({ vehicles = [], notes = [], service
         <Field id="tf-name" label="Your name" required>
           <input id="tf-name" name="name" type="text" required autoComplete="name" className={inputClass} />
         </Field>
-        <Field id="tf-contact" label="WhatsApp number or email">
-          <input id="tf-contact" name="contact" type="text" autoComplete="tel" className={inputClass} />
+        <Field id="tf-contact" label="Email or WhatsApp number">
+          <input id="tf-contact" name="contact" type="text" autoComplete="email" placeholder="your@email.com or +1 555 000 0000" className={inputClass} />
         </Field>
         <div className="sm:col-span-2">
           <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-brand-line px-4 py-3 text-[14px] font-semibold text-brand-ink">
@@ -113,7 +133,7 @@ export default function TransferBookingForm({ vehicles = [], notes = [], service
         </div>
       </div>
 
-      {/* §19 – confirmed operational notes, required on the booking form */}
+      {/* §19 – confirmed operational notes */}
       {notes.length > 0 && (
         <ul className="mt-5 space-y-1.5 rounded-xl bg-brand-sky p-4 text-[13px] leading-relaxed text-brand-navy">
           {notes.map((n) => (
@@ -124,18 +144,26 @@ export default function TransferBookingForm({ vehicles = [], notes = [], service
         </ul>
       )}
 
+      {phase === "failure" && (
+        <div className="mt-5 flex items-center gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-[13px] text-red-700">
+          <AlertCircle className="size-4 shrink-0" aria-hidden="true" />
+          Something went wrong. Please try again or contact us directly via WhatsApp.
+        </div>
+      )}
+
       <button
         type="submit"
-        className="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-brand-blue px-6 text-[15px] font-semibold text-white transition-colors hover:bg-brand-blue-dark"
+        disabled={phase === "sending"}
+        className="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-brand-blue px-6 text-[15px] font-semibold text-white transition-colors hover:bg-brand-blue-dark disabled:opacity-60"
       >
-        {sent ? <MessageCircle className="size-[18px]" aria-hidden="true" /> : <Send className="size-[18px]" aria-hidden="true" />}
-        {sent ? "Sent – continue in WhatsApp" : "Send Booking Request via WhatsApp"}
+        {phase === "sending" ? (
+          <LoaderCircle className="size-[18px] animate-spin" aria-hidden="true" />
+        ) : (
+          <Send className="size-[18px]" aria-hidden="true" />
+        )}
+        {phase === "sending" ? "Sending…" : "Send Booking Request"}
       </button>
-      {sent && (
-        <p className="mt-3 text-center text-[13px] text-brand-muted" role="status">
-          Your request opened in WhatsApp. If it didn&apos;t, allow pop-ups and press the button again.
-        </p>
-      )}
+
       <p className="mt-4 text-center text-[12px] leading-relaxed text-brand-muted">
         Vehicle rates may change monthly or by season. Your price is confirmed before booking.
       </p>

@@ -49,13 +49,17 @@ export default function TransfersPage() {
         />
         <Container className="relative">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Transfers" }]} light />
+          <Reveal>
           <h1 className="mt-6 max-w-4xl text-[2.1rem] font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
             {transfersLanding.heading[0]}{" "}
             <span className="text-white">{transfersLanding.heading[1]}</span>
           </h1>
+          </Reveal>
+          <Reveal>
           <p className="mt-5 max-w-2xl text-[15px] leading-[1.8] text-white/80 sm:text-base">
             {transfersLanding.intro}
           </p>
+          </Reveal>
         </Container>
       </section>
 

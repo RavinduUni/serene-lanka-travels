@@ -55,9 +55,11 @@ export default function DestinationsPage() {
               <span className="font-light">{destinationsLanding.heading[1]}</span>
             </h1>
           </Reveal>
+          <Reveal>
           <p className="mt-4 sm:mt-6 max-w-2xl text-[13px] leading-[1.85] text-white/80 sm:text-base">
             {destinationsLanding.intro}
           </p>
+          </Reveal>
         </Container>
       </section>
 

@@ -44,13 +44,17 @@ export default function ItinerariesPage() {
         />
         <Container className="relative">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Sri Lanka Itineraries" }]} light />
+          <Reveal>
           <h1 className="mt-6 max-w-4xl text-[2.1rem] font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Browse by Travel Style{" "}
             <span className="text-white">Find Your Perfect Tour</span>
           </h1>
+          </Reveal>
+          <Reveal>
           <p className="mt-5 max-w-2xl text-[15px] leading-[1.8] text-white/80 sm:text-base">
             From wildlife and beaches to culture and adventure, our itineraries match every travel style, budget, and pace. Start with one of our handpicked routes, and let us tailor the perfect Sri Lanka holiday just for you.
           </p>
+          </Reveal>
         </Container>
       </section>
 

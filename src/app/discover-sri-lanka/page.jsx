@@ -28,7 +28,7 @@ import FinalCta from "@/components/sections/FinalCta";
 
 const pageHero = {
   eyebrow: "Destinations · Experiences · Culture · Nature",
-  heading: "Discover Sri Lanka",
+  heading: ["Discover","Sri Lanka"],
   copy: "A teardrop island with ancient kingdoms, misty highlands, golden coastlines, thundering waterfalls and extraordinary wildlife. Every corner of Sri Lanka holds a different world waiting to be explored.",
   subCopy:
     "Use this guide to learn what makes the island so remarkable then let us turn it into the journey of a lifetime, planned precisely around your dates, interests and pace.",
@@ -236,12 +236,17 @@ export default function DiscoverSriLankaPage() {
             items={[{ label: "Home", href: "/" }, { label: "Discover Sri Lanka" }]}
             light
           />
+          <Reveal>
           <h1 className="mt-4 max-w-4xl text-[2rem] font-bold leading-[1.07] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.5rem]">
-            {pageHero.heading}
+            {pageHero.heading[0]}{" "} <br />
+            <span className="font-light">{pageHero.heading[1]}</span>
           </h1>
+          </Reveal>
+          <Reveal>
           <p className="mt-2 sm:mt-6 max-w-2xl text-[13px] leading-[1.85] text-white/80 sm:text-base">
             {pageHero.copy}
           </p>
+          </Reveal>
         </Container>
       </section>
 

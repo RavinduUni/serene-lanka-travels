@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, MessageCircle, CheckCircle2 } from "lucide-react";
-import { buildWhatsAppLink } from "@/lib/whatsapp";
+import { Send, CheckCircle2, LoaderCircle, AlertCircle } from "lucide-react";
 
 const INTERESTED_IN_OPTIONS = [
   "Day Tour",
@@ -37,55 +36,49 @@ function Field({ id, label, required, span2 = false, children }) {
 
 /**
  * Contact / general enquiry form.
- * On submit, composes a structured WhatsApp message and sends it via wa.me —
- * the confirmed enquiry channel. An email fallback is planned once the backend
- * route is ready; the payload shape is kept compatible with that future POST.
+ * Submits via POST /api/contact-enquiry which delivers the enquiry by email.
  */
 export default function ContactEnquiryForm() {
-  const [sent, setSent] = useState(false);
+  const [phase, setPhase] = useState("idle"); // idle | sending | success | failure
 
-  function onSubmit(e) {
+  async function onSubmit(e) {
     e.preventDefault();
+    if (phase === "sending") return;
+    setPhase("sending");
+
     const d = Object.fromEntries(new FormData(e.currentTarget).entries());
 
-    const lines = [
-      "Hi Seren Lanka Travels, I have a travel enquiry.",
-      "",
-      `Name: ${d.name}`,
-      `Country: ${d.country}`,
-      `Email: ${d.email}`,
-      d.whatsapp && `WhatsApp: ${d.whatsapp}`,
-      d.arrival && `Arrival date: ${d.arrival}`,
-      d.departure && `Departure date: ${d.departure}`,
-      `Travellers: ${d.travellers}`,
-      d.interested && `Interested in: ${d.interested}`,
-      d.message && `Message: ${d.message}`,
-    ].filter(Boolean);
-
-    window.open(
-      buildWhatsAppLink(lines.join("\n")),
-      "_blank",
-      "noopener,noreferrer"
-    );
-    setSent(true);
+    try {
+      const res = await fetch("/api/contact-enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(d),
+      });
+      if (res.status === 201 || res.status === 200) {
+        setPhase("success");
+      } else {
+        setPhase("failure");
+      }
+    } catch {
+      setPhase("failure");
+    }
   }
 
-  if (sent) {
+  if (phase === "success") {
     return (
       <div className="flex flex-col items-center gap-5 rounded-card border border-brand-line bg-white p-8 text-center shadow-card sm:p-10">
         <span className="grid size-16 place-items-center rounded-full bg-brand-sky">
           <CheckCircle2 className="size-8 text-brand-blue" aria-hidden="true" />
         </span>
         <div>
-          <p className="text-xl font-bold text-brand-navy">Message sent via WhatsApp!</p>
+          <p className="text-xl font-bold text-brand-navy">Enquiry sent!</p>
           <p className="mt-2 text-[14px] leading-relaxed text-brand-muted">
-            Your enquiry should now be open in WhatsApp. If it did not open
-            automatically, please allow pop-ups and try the button below.
+            Thank you for reaching out. We&apos;ll get back to you via email or WhatsApp typically within a few hours.
           </p>
         </div>
         <button
           type="button"
-          onClick={() => setSent(false)}
+          onClick={() => setPhase("idle")}
           className="text-[13px] font-semibold text-brand-blue underline-offset-2 hover:underline"
         >
           Send another enquiry
@@ -216,13 +209,24 @@ export default function ContactEnquiryForm() {
         </Field>
       </div>
 
-      {/* Submit – WhatsApp primary */}
+      {phase === "failure" && (
+        <div className="mt-5 flex items-center gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-[13px] text-red-700">
+          <AlertCircle className="size-4 shrink-0" aria-hidden="true" />
+          Something went wrong. Please try again or contact us directly via WhatsApp.
+        </div>
+      )}
+
       <button
         type="submit"
-        className="mt-6 inline-flex h-13 w-full items-center justify-center gap-2 rounded-full bg-brand-blue px-6 text-[15px] font-semibold text-white transition-colors duration-200 hover:bg-brand-blue-dark"
+        disabled={phase === "sending"}
+        className="mt-6 inline-flex h-13 w-full items-center justify-center gap-2 rounded-full bg-brand-blue px-6 text-[15px] font-semibold text-white transition-colors duration-200 hover:bg-brand-blue-dark disabled:opacity-60"
       >
-        <Send className="size-[17px]" aria-hidden="true" />
-        Send via WhatsApp
+        {phase === "sending" ? (
+          <LoaderCircle className="size-[17px] animate-spin" aria-hidden="true" />
+        ) : (
+          <Send className="size-[17px]" aria-hidden="true" />
+        )}
+        {phase === "sending" ? "Sending…" : "Send Enquiry"}
       </button>
 
       <p className="mt-4 text-center text-[12px] leading-relaxed text-brand-muted">

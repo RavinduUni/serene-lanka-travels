@@ -85,14 +85,18 @@ export default function DayToursPage() {
         />
         <Container className="relative">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Day Tours" }]} light />
+          <Reveal>
           <h1 className="mt-6 max-w-4xl text-[2.1rem] font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Seamless Cultural Journeys{" "}
             <span className="text-white">Across Sri Lanka</span>
           </h1>
+          </Reveal>
+          <Reveal>
           <p className="mt-5 max-w-2xl text-[15px] leading-[1.8] text-white/80 sm:text-base">
             Explore Sri Lanka with expert guides who bring each destination to life. From ancient
             temples to tropical coastlines, we craft day tours that give you more real stories.
           </p>
+          </Reveal>
         </Container>
       </section>
 
