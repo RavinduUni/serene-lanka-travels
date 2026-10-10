@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Plane, MapPin, Cloud } from "lucide-react";
 
 /**
- * Full-screen loading overlay with the Seren Lanka logo and a
- * creative wave + pulse animation. Renders on top of everything,
- * then fades out once the page has finished hydrating.
- *
- * Uses pure CSS keyframes – no external libs required.
+ * Full-screen loading overlay based on the provided mockup.
+ * Features a white background, a plane flying along a dotted path,
+ * and elegant typography. Fades out once the page has finished hydrating.
  */
 export default function LoadingScreen() {
   const [visible, setVisible] = useState(true);
@@ -19,7 +18,7 @@ export default function LoadingScreen() {
       setFadeOut(true);
       // After the fade animation completes, unmount completely
       setTimeout(() => setVisible(false), 700);
-    }, 800);
+    }, 1500); // slightly longer to appreciate the animation
     return () => clearTimeout(timer);
   }, []);
 
@@ -36,125 +35,138 @@ export default function LoadingScreen() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        background: "linear-gradient(160deg, #06133b 0%, #0b1f5c 50%, #0f2d7a 100%)",
+        backgroundColor: "#ffffff",
         opacity: fadeOut ? 0 : 1,
         transition: "opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1)",
         pointerEvents: fadeOut ? "none" : "auto",
+        fontFamily: 'var(--font-sans)',
       }}
     >
-      {/* Animated background particles */}
-      <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            style={{
-              position: "absolute",
-              borderRadius: "50%",
-              background: "rgba(26, 140, 255, 0.06)",
-              animation: `loadingFloat ${4 + i * 0.8}s ease-in-out infinite`,
-              animationDelay: `${i * 0.4}s`,
-              width: `${60 + i * 40}px`,
-              height: `${60 + i * 40}px`,
-              left: `${10 + i * 14}%`,
-              top: `${20 + (i % 3) * 25}%`,
-            }}
+      {/* Graphic Area (Plane, Clouds, Path) */}
+      <div style={{ position: "relative", width: "100%", maxWidth: "600px", height: "250px", marginBottom: "40px" }}>
+        
+        {/* Dotted path SVG */}
+        <svg 
+          style={{ position: "absolute", top: "50%", left: "10%", width: "80%", height: "100px", transform: "translateY(-50%)", overflow: "visible" }} 
+          viewBox="0 0 100 20" 
+          preserveAspectRatio="none"
+        >
+          <path 
+            d="M 0,15 Q 50,25 100,5" 
+            fill="none" 
+            stroke="#94a3b8" 
+            strokeWidth="0.5" 
+            strokeDasharray="1.5, 1.5" 
           />
-        ))}
-      </div>
+        </svg>
 
-      {/* Logo container with glow */}
-      <div
-        style={{
-          position: "relative",
-          animation: "loadingPulse 2s ease-in-out infinite",
-        }}
-      >
-        {/* Glow effect behind logo */}
-        <div
-          style={{
-            position: "absolute",
-            inset: "-30px",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(26, 140, 255, 0.15) 0%, transparent 70%)",
-            animation: "loadingGlow 2.5s ease-in-out infinite",
+        {/* Start Pin (Left/Blue) */}
+        <div style={{ position: "absolute", left: "10%", top: "72%", transform: "translate(-50%, -100%)", color: "#0b1f5c" }}>
+          <MapPin size={24} strokeWidth={2.5} fill="#ffffff" />
+          <div style={{ position: "absolute", top: "6px", left: "6px", width: "12px", height: "12px", backgroundColor: "#0b1f5c", borderRadius: "50%" }} />
+        </div>
+
+        {/* End Pin (Right/Red) */}
+        <div style={{ position: "absolute", right: "10%", top: "25%", transform: "translate(50%, -100%)", color: "#991b1b" }}>
+          <MapPin size={24} strokeWidth={2.5} fill="#ffffff" />
+          <div style={{ position: "absolute", top: "6px", left: "6px", width: "12px", height: "12px", backgroundColor: "#991b1b", borderRadius: "50%" }} />
+        </div>
+
+        {/* Clouds (Lucide icons with soft opacity) */}
+        <div style={{ position: "absolute", left: "20%", top: "65%", color: "#cbd5e1", opacity: 0.6, animation: "loadingCloudFloat 3s ease-in-out infinite alternate" }}>
+          <Cloud size={48} fill="currentColor" stroke="none" />
+        </div>
+        <div style={{ position: "absolute", right: "18%", top: "60%", color: "#cbd5e1", opacity: 0.5, animation: "loadingCloudFloat 4s ease-in-out infinite alternate-reverse" }}>
+          <Cloud size={56} fill="currentColor" stroke="none" />
+        </div>
+        <div style={{ position: "absolute", left: "35%", top: "20%", color: "#e2e8f0", opacity: 0.4, animation: "loadingCloudFloat 3.5s ease-in-out infinite alternate" }}>
+          <Cloud size={40} fill="currentColor" stroke="none" />
+        </div>
+
+        {/* Airplane */}
+        <div 
+          style={{ 
+            position: "absolute", 
+            left: "50%", 
+            top: "50%", 
+            transform: "translate(-50%, -50%) rotate(15deg)", 
+            color: "#0b1f5c",
+            animation: "loadingPlaneBob 2s ease-in-out infinite" 
           }}
-        />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/logo/whitelogo.png"
-          alt=""
-          width={180}
-          height={72}
-          style={{
-            position: "relative",
-            width: "180px",
-            height: "auto",
-            objectFit: "contain",
-            filter: "drop-shadow(0 0 30px rgba(26, 140, 255, 0.3))",
-          }}
-        />
+        >
+          {/* We use a stylized SVG for the plane to look closer to a real airliner silhouette */}
+          <svg width="120" height="120" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+             <path d="M21 16V14L13 9V3.5C13 2.67 12.33 2 11.5 2C10.67 2 10 2.67 10 3.5V9L2 14V16L10 13.5V19L8 20.5V22L11.5 21L15 22V20.5L13 19V13.5L21 16Z"/>
+          </svg>
+          {/* Subtle trail shadow behind the plane */}
+          <div style={{ position: "absolute", top: "50%", right: "80%", width: "40px", height: "4px", background: "linear-gradient(to right, transparent, rgba(148, 163, 184, 0.2))", transform: "translateY(-50%)", borderRadius: "2px" }} />
+        </div>
       </div>
 
-      {/* Wave loader */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "flex-end",
-          gap: "4px",
-          marginTop: "40px",
-          height: "32px",
-        }}
-      >
-        {[...Array(5)].map((_, i) => (
-          <div
-            key={i}
-            style={{
-              width: "4px",
-              borderRadius: "2px",
-              background: "linear-gradient(to top, #1a8cff, #5fb8ff)",
-              animation: "loadingWave 1.2s ease-in-out infinite",
-              animationDelay: `${i * 0.1}s`,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Tagline text */}
-      <p
-        style={{
-          marginTop: "24px",
-          fontSize: "13px",
-          fontWeight: 500,
-          letterSpacing: "0.12em",
+      {/* Typography */}
+      <h1 
+        style={{ 
+          fontFamily: 'var(--font-serif)', 
+          fontSize: "1.75rem", 
+          fontWeight: 600, 
+          letterSpacing: "0.25em", 
+          color: "#0b1f5c", 
+          margin: 0,
           textTransform: "uppercase",
-          color: "rgba(255, 255, 255, 0.5)",
-          animation: "loadingFadeIn 1.5s ease-out forwards",
+          textAlign: "center"
         }}
       >
-        Experience Sri Lanka Your Way
+        Seren Lanka Travels
+      </h1>
+      
+      <p 
+        style={{ 
+          marginTop: "12px", 
+          fontSize: "0.95rem", 
+          color: "#64748b", 
+          letterSpacing: "0.05em",
+          fontWeight: 400
+        }}
+      >
+        Loading your journey...
       </p>
+
+      {/* Loading Progress Bar */}
+      <div 
+        style={{ 
+          marginTop: "24px", 
+          width: "200px", 
+          height: "2px", 
+          backgroundColor: "#e2e8f0", 
+          position: "relative",
+          overflow: "hidden"
+        }}
+      >
+        <div 
+          style={{ 
+            position: "absolute", 
+            top: 0, 
+            left: 0, 
+            height: "100%", 
+            backgroundColor: "#0b1f5c",
+            animation: "loadingBarFill 1.5s ease-out forwards"
+          }} 
+        />
+      </div>
 
       {/* Keyframe animations */}
       <style>{`
-        @keyframes loadingWave {
-          0%, 100% { height: 8px; opacity: 0.4; }
-          50% { height: 28px; opacity: 1; }
+        @keyframes loadingPlaneBob {
+          0%, 100% { transform: translate(-50%, -50%) rotate(15deg) translateY(0); }
+          50% { transform: translate(-50%, -50%) rotate(15deg) translateY(-8px); }
         }
-        @keyframes loadingPulse {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.03); }
+        @keyframes loadingCloudFloat {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(15px); }
         }
-        @keyframes loadingGlow {
-          0%, 100% { opacity: 0.5; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.15); }
-        }
-        @keyframes loadingFloat {
-          0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
-          50% { transform: translateY(-30px) scale(1.1); opacity: 0.6; }
-        }
-        @keyframes loadingFadeIn {
-          0% { opacity: 0; transform: translateY(8px); }
-          100% { opacity: 0.5; transform: translateY(0); }
+        @keyframes loadingBarFill {
+          0% { width: 0%; }
+          100% { width: 100%; }
         }
       `}</style>
     </div>
