@@ -563,7 +563,7 @@ export const itineraries = [
       { q: "Are sightings guaranteed?", a: "No operator can guarantee wildlife, but Mirissa's season gives excellent chances of blue whales and dolphins on most mornings." },
     ],
     related: ["beach-tour", "honeymoon-tour", "into-the-wild-sri-lanka"],
-    mapImage: "/itineraries/whale watching.png",
+    mapImage: "/itineraries/mirissa-tour.png",
     mapTitle: "Into the Indian Ocean from Mirissa",
     mapDescription: [
       "Mirissa is Sri Lanka's premier whale-watching destination, sitting on the southern tip of the island where the warm Indian Ocean waters draw blue whales, sperm whales, and spinner dolphins. Your private driver collects you from your hotel and transfers you comfortably to Mirissa harbour in time for an early-morning departure.",
