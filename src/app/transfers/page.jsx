@@ -10,6 +10,7 @@ import TransferBookingForm from "@/components/forms/TransferBookingForm";
 import FinalCta from "@/components/sections/FinalCta";
 import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
 import Button from "@/components/ui/Button";
+import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import { getTransferServices, getTransferServiceBySlug, getVehicles } from "@/lib/content";
 import { transfersLanding, driverServiceNotes } from "@/data/transfers";
 import { whatsappTemplates } from "@/data/site";
@@ -32,7 +33,7 @@ export default function TransfersPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative h-[55vh] min-h-[380px] overflow-hidden bg-brand-navy-deep -mt-[76px] lg:-mt-[88px]">
+      <section className="-mt-[76px] lg:-mt-[88px] relative overflow-hidden py-24 lg:py-32">
         <Image
           src={'/transport/transfer-hero.png'}
           alt="Private transfer on an open road in Sri Lanka"
@@ -46,25 +47,24 @@ export default function TransfersPage() {
           className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.75)_100%)]"
           aria-hidden="true"
         />
+        <Container className="relative">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Transfers" }]} light />
+          <h1 className="mt-6 max-w-4xl text-[2.1rem] font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            {transfersLanding.heading[0]}{" "}
+            <span className="text-white">{transfersLanding.heading[1]}</span>
+          </h1>
+          <p className="mt-5 max-w-2xl text-[15px] leading-[1.8] text-white/80 sm:text-base">
+            {transfersLanding.intro}
+          </p>
+        </Container>
       </section>
 
       {/* ── Intro ── */}
-      <section className="py-16 lg:py-24">
+      <section className="pt-20 lg:pt-28">
         <Container>
-          <Reveal>
-            <SectionHeading
-              lines={transfersLanding.heading}
-              align="center"
-              className="mx-auto max-w-2xl"
-            />
-          </Reveal>
-          <p className="mx-auto mt-5 max-w-2xl text-center text-[15px] leading-[1.8] text-black sm:text-base">
-            {transfersLanding.intro}
-          </p>
-
           {/* Featured transfer card – image left, copy right */}
           {featured && (
-            <div className="mt-12 grid overflow-hidden rounded-card bg-white shadow-lift lg:mt-16 lg:grid-cols-12">
+            <div className="grid overflow-hidden rounded-card bg-white shadow-lift lg:grid-cols-12">
               {/* Image */}
               <div className="relative min-h-[260px] lg:col-span-7 lg:min-h-[440px]">
                 <SmartImage
@@ -108,7 +108,7 @@ export default function TransfersPage() {
       </section>
 
       {/* ── Transfer Services Grid ── */}
-      <section className="bg-white py-16 lg:py-24">
+      <section className="bg-white pt-20 lg:pt-28">
         <Container>
           <Reveal>
             <SectionHeading
@@ -167,7 +167,7 @@ export default function TransfersPage() {
 
 
       {/* ── Booking form ── */}
-      <section id="book" className="scroll-mt-24 py-16 lg:py-24">
+      <section id="book" className="scroll-mt-24 py-20 lg:py-28">
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">

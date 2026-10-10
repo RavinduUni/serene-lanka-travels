@@ -92,7 +92,7 @@ export default function BrandMeaningCarousel({ cards }) {
             type="button"
             onClick={next}
             aria-label="Next card"
-            className="grid size-10 sm:size-11 place-items-center rounded-full border border-gray-300 bg-white/90 text-brand-navy shadow-sm transition-all duration-200 hover:bg-brand-navy hover:text-white hover:border-brand-navy backdrop-blur-sm active:scale-95"
+            className="grid size-10 sm:size-11 place-items-center rounded-full border border-gray-300 bg-brand-navy text-white shadow-sm transition-all duration-200 hover:bg-brand-navy hover:text-white hover:border-brand-navy backdrop-blur-sm active:scale-95"
           >
             <ChevronRight className="size-5" />
           </button>

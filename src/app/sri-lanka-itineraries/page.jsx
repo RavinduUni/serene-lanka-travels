@@ -29,7 +29,7 @@ export default function ItinerariesPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative h-[60vh] min-h-[400px] overflow-hidden bg-brand-navy-deep -mt-[76px] lg:-mt-[88px]">
+      <section className="-mt-[76px] lg:-mt-[88px] relative overflow-hidden py-24 lg:py-32">
         <Image
           src="/itineraries/hero/popular.png"
           alt="Aerial view of Sri Lanka coastline with turquoise ocean and palm trees"
@@ -42,25 +42,23 @@ export default function ItinerariesPage() {
           className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.75)_100%)]"
           aria-hidden="true"
         />
+        <Container className="relative">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Sri Lanka Itineraries" }]} light />
+          <h1 className="mt-6 max-w-4xl text-[2.1rem] font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Browse by Travel Style{" "}
+            <span className="text-white">Find Your Perfect Tour</span>
+          </h1>
+          <p className="mt-5 max-w-2xl text-[15px] leading-[1.8] text-white/80 sm:text-base">
+            From wildlife and beaches to culture and adventure, our itineraries match every travel style, budget, and pace. Start with one of our handpicked routes, and let us tailor the perfect Sri Lanka holiday just for you.
+          </p>
+        </Container>
       </section>
-
 
       {/* ── Duration Filters + Category Grid ── */}
       <section className="bg-white py-16 lg:py-24">
         <Container>
-          <Reveal>
-            <SectionHeading
-              lines={["Browse by Travel Style", "Find Your Perfect Tour"]}
-              align="center"
-              className="mx-auto max-w-2xl"
-            />
-          </Reveal>
-          <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-black sm:text-base">
-            Explore our Sri Lanka itineraries below, or get in touch to customize your perfect holiday.
-          </p>
-
           {/* Category grid */}
-          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-14 lg:gap-5">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:gap-5">
             {itineraryCategories.map((cat) => (
               <Link
                 key={cat.slug}

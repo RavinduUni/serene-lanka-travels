@@ -7,6 +7,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
 import FinalCta from "@/components/sections/FinalCta";
 import Reveal from "@/components/motion/Reveal";
+import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
 import { whatsappTemplates } from "@/data/site";
 import Button from "@/components/ui/Button";
@@ -68,11 +69,7 @@ export default function DayToursPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative h-[55vh] min-h-[380px] overflow-hidden bg-brand-navy-deep -mt-[76px] lg:-mt-[88px]">
-         <div
-          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,19,59,0.12)_0%,rgba(6,19,59,0.18)_60%,rgba(6,19,59,0.55)_100%)]"
-          aria-hidden="true"
-        />
+      <section className="-mt-[76px] lg:-mt-[88px] relative overflow-hidden py-24 lg:py-32">
         <Image
           src="/day-tours-hero.webp"
           alt="Sri Lanka tropical beach with palm trees and colourful boats"
@@ -86,31 +83,23 @@ export default function DayToursPage() {
           className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.75)_100%)]"
           aria-hidden="true"
         />
-      </section>
-
-      {/* ── Intro ── */}
-      <section className="pt-16 lg:pt-24">
-        <Container>
-          <Reveal>
-            <SectionHeading
-              lines={["Seamless Cultural Journeys", "Across Sri Lanka"]}
-              align="center"
-              className="mx-auto max-w-2xl"
-            />
-          </Reveal>
-          <p className="mx-auto mt-5 max-w-2xl text-center text-[15px] leading-[1.8] text-black sm:text-base">
+        <Container className="relative">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Day Tours" }]} light />
+          <h1 className="mt-6 max-w-4xl text-[2.1rem] font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Seamless Cultural Journeys{" "}
+            <span className="text-white">Across Sri Lanka</span>
+          </h1>
+          <p className="mt-5 max-w-2xl text-[15px] leading-[1.8] text-white/80 sm:text-base">
             Explore Sri Lanka with expert guides who bring each destination to life. From ancient
-            temples to tropical coastlines, we craft day tours that give you more – real stories,
-            flexible timing and insights you can&apos;t find in a guidebook.
+            temples to tropical coastlines, we craft day tours that give you more real stories.
           </p>
-
         </Container>
       </section>
 
       {/* ── More Tailor-Made Tours Grid ── */}
-      <section className="bg-white pb-16 lg:pb-24">
+      <section className="bg-white py-16 lg:py-24">
         <Container>
-          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-14 lg:gap-5">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:gap-5">
             {tourCategories.map((cat) => (
               <Link
                 key={cat.label}

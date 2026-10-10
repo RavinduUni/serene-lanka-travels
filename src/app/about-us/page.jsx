@@ -263,7 +263,7 @@ export default function AboutUsPage() {
         <span className="text-brand-blue/20 watermark top-6 lg:top-4 text-[15vw] lg:text-[160px]" aria-hidden="true">
           {team.watermark}
         </span>
-        <Container className="relative">
+        <Container className="relative mt-20">
           <Reveal>
             <SectionHeading lines={team.heading} align="center" className="mx-auto" />
           </Reveal>
