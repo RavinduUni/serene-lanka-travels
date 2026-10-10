@@ -152,7 +152,7 @@ export default function Footer() {
             © Copyright {year}. {site.name}. All Rights Reserved
           </p>
           <p className="text-[12px] sm:text-[14px] text-gray-700">
-            Site by <a href="https://growdigitally.lk/" target="_blank" rel="noopener noreferrer" className="text-brand-navy transition-colors hover:underline">growdigitally.lk</a>
+            Site by <a href="https://growdigitally.lk/" target="_blank" rel="noopener noreferrer" className="text-brand-navy transition-colors hover:underline">GrowDigitally.lk</a>
           </p>
         </div>
 

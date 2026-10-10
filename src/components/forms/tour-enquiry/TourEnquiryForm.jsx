@@ -1003,7 +1003,7 @@ export default function TourEnquiryForm({ countries, prefill, privacyHref = "/le
           </p>
         )}
         <div className="flex flex-col gap-3">
-          {/* <button
+        <button
             type="submit"
             disabled={phase === "sending"}
             className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-full bg-brand-blue px-8 py-4 text-base font-semibold text-white shadow-[0_10px_24px_-10px_rgba(26,140,255,0.7)] transition-colors hover:bg-brand-blue-dark disabled:cursor-wait disabled:opacity-80 sm:w-auto sm:flex-1"
@@ -1014,8 +1014,8 @@ export default function TourEnquiryForm({ countries, prefill, privacyHref = "/le
               <Send className="size-5" aria-hidden="true" />
             )}
             {phase === "sending" ? COPY.submitting : COPY.cta}
-          </button> */}
-          <Button
+          </button>
+          {/* <Button
             type="button"
             onClick={onWhatsApp}
             disabled={phase === "sending"}
@@ -1024,10 +1024,9 @@ export default function TourEnquiryForm({ countries, prefill, privacyHref = "/le
           >
             <MessageCircle className="size-5" aria-hidden="true" />
             Send on WhatsApp
-          </Button>
+          </Button> */}
         </div>
         <p className="mt-4 text-[14px] text-center leading-relaxed text-brand-ink">{COPY.belowCta}</p>
-
       </div>
     </form>
   );

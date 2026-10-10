@@ -14,7 +14,7 @@ export const site = {
   // Official contact details are still pending in the content plan.
   // The number below is the Director's WhatsApp listed in the plan – replace when confirmed.
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "94774215943",
-  email: "hello@serenlankatravels.com", // TODO: confirm official email
+  email: "info@serenlankatravels.com",
   phones: ["+94 77 421 5943", "+94 70 285 3374"],
   social: {
     facebook: "#",
