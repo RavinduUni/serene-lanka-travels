@@ -89,15 +89,16 @@ export default function LoadingScreen() {
             position: "absolute", 
             left: "50%", 
             top: "50%", 
-            transform: "translate(-50%, -50%) rotate(15deg)", 
+            transform: "translate(-50%, -50%)", 
             color: "#0b1f5c",
             animation: "loadingPlaneBob 2s ease-in-out infinite" 
           }}
         >
-          {/* We use a stylized SVG for the plane to look closer to a real airliner silhouette */}
-          <svg width="120" height="120" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-             <path d="M21 16V14L13 9V3.5C13 2.67 12.33 2 11.5 2C10.67 2 10 2.67 10 3.5V9L2 14V16L10 13.5V19L8 20.5V22L11.5 21L15 22V20.5L13 19V13.5L21 16Z"/>
-          </svg>
+          <img 
+            src="/logo/plane.png" 
+            alt="Plane" 
+            style={{ width: "min(95vw, 1000px)", height: "auto", objectFit: "contain" }}
+          />
           {/* Subtle trail shadow behind the plane */}
           <div style={{ position: "absolute", top: "50%", right: "80%", width: "40px", height: "4px", background: "linear-gradient(to right, transparent, rgba(148, 163, 184, 0.2))", transform: "translateY(-50%)", borderRadius: "2px" }} />
         </div>
@@ -110,7 +111,7 @@ export default function LoadingScreen() {
           fontSize: "1.75rem", 
           fontWeight: 600, 
           letterSpacing: "0.25em", 
-          color: "#0b1f5c", 
+          color: "#1A8CFF", 
           margin: 0,
           textTransform: "uppercase",
           textAlign: "center"
@@ -148,7 +149,7 @@ export default function LoadingScreen() {
             top: 0, 
             left: 0, 
             height: "100%", 
-            backgroundColor: "#0b1f5c",
+            backgroundColor: "#1A8CFF",
             animation: "loadingBarFill 1.5s ease-out forwards"
           }} 
         />
@@ -157,8 +158,8 @@ export default function LoadingScreen() {
       {/* Keyframe animations */}
       <style>{`
         @keyframes loadingPlaneBob {
-          0%, 100% { transform: translate(-50%, -50%) rotate(15deg) translateY(0); }
-          50% { transform: translate(-50%, -50%) rotate(15deg) translateY(-8px); }
+          0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+          50% { transform: translate(-50%, -50%) translateY(-12px); }
         }
         @keyframes loadingCloudFloat {
           0% { transform: translateX(0); }
