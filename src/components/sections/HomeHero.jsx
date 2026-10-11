@@ -17,8 +17,8 @@ export default function HomeHero() {
         aria-hidden="true"
         poster="/popular2.jpg"
       >
-        <source src="/hero.mp4" type="video/mp4" />
-        <source src="/hero.webm" type="video/webm" />
+        <source src="/video.mp4" type="video/mp4" />
+        <source src="/video.webm" type="video/webm" />
       </video>
 
       {/* Dark gradient overlay for text legibility */}

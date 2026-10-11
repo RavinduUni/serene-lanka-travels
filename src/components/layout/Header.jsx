@@ -229,15 +229,6 @@ export default function Header() {
 
           {/* Mobile controls */}
           <div className="flex items-center gap-2 lg:hidden">
-            <a
-              href={buildWhatsAppLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="grid size-11 place-items-center rounded-full border border-white/30 text-white"
-              aria-label="Chat on WhatsApp"
-            >
-              <MessageCircle className="size-5" aria-hidden="true" />
-            </a>
             <button
               type="button"
               onClick={() => setOpen(true)}

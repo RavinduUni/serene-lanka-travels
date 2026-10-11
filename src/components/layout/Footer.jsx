@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, Send, Award, Medal } from "lucide-react";
-import { FacebookIcon, InstagramIcon, YoutubeIcon } from "@/components/shared/SocialIcons";
+import { FacebookIcon, InstagramIcon, TikTokIcon, XIcon, YoutubeIcon } from "@/components/shared/SocialIcons";
 import Container from "@/components/ui/Container";
 import { site, footerColumns } from "@/data/site";
 import { useEffect, useState } from "react";
@@ -52,14 +52,41 @@ export default function Footer() {
             
             {/* Social Icons */}
             <div className="flex items-center gap-4 mt-5">
-              <a href={site.social.facebook} aria-label="Facebook" className="grid size-8 place-items-center rounded-full border-[1.5px] border-gray-800 text-gray-800 transition-colors hover:border-brand-blue hover:text-brand-blue">
+              <a 
+                href={site.social.facebook} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Facebook" 
+                className="grid size-8 place-items-center rounded-full border-[1.5px] border-gray-800 text-gray-800 transition-colors hover:border-brand-blue hover:text-brand-blue"
+              >
                 <FacebookIcon className="size-4" />
               </a>
-              <a href={site.social.youtube} aria-label="YouTube" className="grid size-8 place-items-center rounded-full border-[1.5px] border-gray-800 text-gray-800 transition-colors hover:border-brand-blue hover:text-brand-blue">
-                <YoutubeIcon className="size-4" />
+              <a 
+                href={site.social.tiktok} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="TikTok" 
+                className="grid size-8 place-items-center rounded-full border-[1.5px] border-gray-800 text-gray-800 transition-colors hover:border-brand-blue hover:text-brand-blue"
+              >
+                <TikTokIcon className="size-4" />
               </a>
-              <a href={site.social.instagram} aria-label="Instagram" className="grid size-8 place-items-center rounded-full border-[1.5px] border-gray-800 text-gray-800 transition-colors hover:border-brand-blue hover:text-brand-blue">
+              <a 
+                href={site.social.instagram} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Instagram" 
+                className="grid size-8 place-items-center rounded-full border-[1.5px] border-gray-800 text-gray-800 transition-colors hover:border-brand-blue hover:text-brand-blue"
+              >
                 <InstagramIcon className="size-4" />
+              </a>
+              <a 
+                href={site.social.X} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="X" 
+                className="grid size-8 place-items-center rounded-full border-[1.5px] border-gray-800 text-gray-800 transition-colors hover:border-brand-blue hover:text-brand-blue"
+              >
+                <XIcon className="size-4" />
               </a>
             </div>
           </div>

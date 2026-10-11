@@ -17,10 +17,10 @@ export const site = {
   email: "info@serenlankatravels.com",
   phones: ["+94 77 421 5943", "+94 70 285 3374"],
   social: {
-    facebook: "#",
-    instagram: "#",
-    tripadvisor: "#",
-    youtube: "#",
+    facebook: "https://www.facebook.com/serenlankatravels/",
+    instagram: "https://www.instagram.com/serenlankatravels/",
+    tiktok: "https://www.tiktok.com/@serenlankatravels",
+    X: "https://x.com/serenlanka",
   },
 };
 
