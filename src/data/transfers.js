@@ -172,9 +172,12 @@ export const transferServices = [
       { q: "How do I find my driver?", a: "Your driver waits in the arrivals hall holding a name board and will message you on WhatsApp once you land." },
     ],
     related: ["hotel-pickup-drop-off", "city-to-city", "private-vehicle-hire"],
-    seoTitle: "Sri Lanka Airport Transfers – Private Pickup & Drop-off",
+    h1: "Colombo Airport Transfers",
+    openingParagraph:
+      "Airport transfers can simplify the journey between your arrival or departure point and your onward destination. Explore our Colombo airport transfer service and enquire about pickup details, routes, vehicle arrangements and availability.",
+    seoTitle: "Colombo Airport Transfers | Seren Lanka Travels",
     metaDescription:
-      "Private airport transfers in Sri Lanka: meet-and-greet at Colombo airport, flight tracking and direct transfer to any hotel with an English-speaking driver.",
+      "Arrange a Colombo airport transfer and explore pickup or drop-off transport options for your Sri Lanka trip. Enquire about routes and availability.",
   },
   {
     published: true,
@@ -213,9 +216,12 @@ export const transferServices = [
       { q: "Is waiting time included on a day trip?", a: "Yes. On a hotel-to-attraction-and-back booking your driver waits for you while you visit." },
     ],
     related: ["airport-transfers", "city-to-city", "custom"],
-    seoTitle: "Hotel Pick-up & Drop-off Sri Lanka – Private Hotel Transfers",
+    h1: "Sri Lanka Hotel Pickup & Drop-off Transfers",
+    openingParagraph:
+      "Whether you are changing accommodation or planning onward travel, a hotel transfer helps connect stages of your trip. Use this page to enquire about pickup and drop-off locations, journey details and suitable transport arrangements.",
+    seoTitle: "Sri Lanka Hotel Pickup & Drop-off Transfers",
     metaDescription:
-      "Private hotel-to-hotel transfers and hotel pick-up & drop-off across Sri Lanka, timed to your check-in and check-out with an English-speaking driver.",
+      "Explore hotel pickup and drop-off transport in Sri Lanka. Enquire about travel between accommodation and your selected destination or transport hub.",
   },
   {
     published: true,
@@ -254,9 +260,12 @@ export const transferServices = [
       { q: "Can we add sightseeing stops?", a: "Yes. Popular additions include Pinnawala, Ramboda Falls or a tea factory – mention them when booking so we plan the timing." },
     ],
     related: ["private-vehicle-hire", "airport-transfers", "custom"],
-    seoTitle: "City-to-City Transfers Sri Lanka – Private Long-Distance Transport",
+    h1: "City-to-City Transfers in Sri Lanka",
+    openingParagraph:
+      "Moving between Sri Lanka's cities and towns is an important part of any multi-stop itinerary. Our city-to-city transfer service provides a way to enquire about your route, pickup and destination details and available arrangements.",
+    seoTitle: "City-to-City Transfers in Sri Lanka | Seren Lanka",
     metaDescription:
-      "Private city-to-city transfers across Sri Lanka – Colombo, Kandy, Ella, Galle, Sigiriya and more – with scenic stops and an English-speaking driver.",
+      "Explore private city-to-city transfers in Sri Lanka for travel between destinations. Share your intended route and request transport details.",
   },
   {
     published: true,
@@ -295,9 +304,12 @@ export const transferServices = [
       { q: "Can we book a return the same day?", a: "Yes. Tell us both times when you enquire and we will confirm a single arrangement for both legs." },
     ],
     related: ["hotel-pickup-drop-off", "city-to-city", "airport-transfers"],
-    seoTitle: "Custom Transfers Sri Lanka – Any Pickup to Any Drop-off",
+    h1: "Custom Transfers in Sri Lanka",
+    openingParagraph:
+      "Travel plans do not always follow a standard route. Our custom transfers page is intended for enquiries about specific pickup locations, destinations and journey requirements that may not fit the other listed transport services.",
+    seoTitle: "Custom Transfers in Sri Lanka | Seren Lanka Travels",
     metaDescription:
-      "Custom private transfers in Sri Lanka: railway stations, ports, venues and short trips – any pickup to any drop-off at a fixed price with a local driver.",
+      "Need a transport route not listed elsewhere? Explore custom Sri Lanka transfers and enquire about pickup points, destinations and travel requirements.",
   },
   {
     published: true,
@@ -337,8 +349,11 @@ export const transferServices = [
       { q: "How is it priced?", a: "By the number of days, total kilometres and vehicle type. Rates change by season, so we confirm the current rate when you enquire." },
     ],
     related: ["city-to-city", "airport-transfers", "hotel-pickup-drop-off"],
-    seoTitle: "Vehicle Hire with Driver Sri Lanka – Private Transport for Your Tour",
+    h1: "Private Driver & Vehicle Hire in Sri Lanka",
+    openingParagraph:
+      "Hiring a private vehicle with a driver can provide a transport option between destinations in Sri Lanka. Explore this service to discuss your route, travel dates, passenger needs and the arrangements available for your trip.",
+    seoTitle: "Private Driver & Vehicle Hire in Sri Lanka",
     metaDescription:
-      "Hire a private vehicle with an English-speaking driver for your whole Sri Lanka trip – sedans to coaches, daily flexibility and full-tour transportation.",
+      "Explore private vehicle hire with a driver in Sri Lanka. Enquire about journeys, vehicle options and travel arrangements for your itinerary.",
   },
 ];

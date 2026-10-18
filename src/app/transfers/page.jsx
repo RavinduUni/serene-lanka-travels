@@ -17,9 +17,10 @@ import { whatsappTemplates } from "@/data/site";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Private Transfers Across Sri Lanka – Airport, Hotel & City Transfers",
+  title: "Sri Lanka Transfers & Private Transport | Seren Lanka",
+  rawTitle: true,
   description:
-    "Private airport transfers, hotel pick-up and drop-off, city-to-city transfers and vehicle hire with driver across Sri Lanka – comfortable vehicles, experienced drivers.",
+    "Explore Sri Lanka transfers, including airport journeys, hotel pickups, city-to-city travel and private vehicle hire with a driver.",
   path: "/transfers",
 });
 
@@ -51,13 +52,13 @@ export default function TransfersPage() {
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Transfers" }]} light />
           <Reveal>
           <h1 className="mt-6 max-w-4xl text-[2.1rem] font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            {transfersLanding.heading[0]}{" "}
-            <span className="text-white">{transfersLanding.heading[1]}</span>
+            Sri Lanka Transfers{" "}
+            <span className="text-white">& Private Transport</span>
           </h1>
           </Reveal>
           <Reveal>
           <p className="mt-5 max-w-2xl text-[15px] leading-[1.8] text-white/80 sm:text-base">
-            {transfersLanding.intro}
+            Travel between Sri Lankan destinations with transport services suited to different journey types. Browse airport transfers, hotel pickups, city-to-city travel and private vehicle hire to review the available options and request relevant details.
           </p>
           </Reveal>
         </Container>

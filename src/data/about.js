@@ -7,10 +7,9 @@ const u = (id, w = 1600) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=75`;
 
 export const aboutHero = {
-  // §10 H1 – split for the site's light/bold heading device
-  heading: ["More Than a Tour.", "A Sri Lankan Journey Built on Trust."],
+  heading: ["About", "Seren Lanka Travels"],
   copy:
-    "Seren Lanka Travels began with a simple idea: to make every journey in Sri Lanka comfortable, genuine and memorable.",
+    "Seren Lanka Travels brings together Sri Lanka day tours, island itineraries and transport options in one place. Get to know the services featured on our website and explore ways to plan a journey shaped around your travel interests.",
 };
 
 /** §10.1 – Our Story (confirmed founder story) */

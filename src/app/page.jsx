@@ -18,9 +18,10 @@ import { faq } from "@/data/home";
 import { whatsappTemplates } from "@/data/site";
 
 export const metadata = buildMetadata({
-  title: "Private & Tailor-Made Sri Lanka Tours",
+  title: "Sri Lanka Tours & Private Travel | Seren Lanka Travels",
+  rawTitle: true,
   description:
-    "Experience Sri Lanka your way. Private day tours, multi-day itineraries, tailor-made journeys and airport transfers with a trusted local travel team.",
+    "Discover Sri Lanka tours, private travel experiences, day trips and island itineraries. Explore destinations and plan a journey that suits your interests.",
   path: "/",
 });
 

@@ -19,9 +19,10 @@ import {
 } from "@/data/itineraries";
 
 export const metadata = buildMetadata({
-  title: "Sri Lanka Tours & Itineraries – Private Holidays for Every Style",
+  title: "Sri Lanka Tour Packages & Itineraries | Seren Lanka",
+  rawTitle: true,
   description:
-    "Discover private Sri Lanka holidays for different travel styles, interests, durations and budgets. Start with one of our planned itineraries and customize it to make the journey your own.",
+    "Explore Sri Lanka tour packages and themed itineraries, including cultural, wildlife, beach, family and honeymoon travel. Find a journey that fits your plans.",
   path: "/sri-lanka-itineraries",
 });
 
@@ -46,13 +47,13 @@ export default function ItinerariesPage() {
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Sri Lanka Itineraries" }]} light />
           <Reveal>
           <h1 className="mt-6 max-w-4xl text-[2.1rem] font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Browse by Travel Style{" "}
-            <span className="text-white">Find Your Perfect Tour</span>
+            Sri Lanka Tour Packages{" "}
+            <span className="text-white">& Itineraries</span>
           </h1>
           </Reveal>
           <Reveal>
           <p className="mt-5 max-w-2xl text-[15px] leading-[1.8] text-white/80 sm:text-base">
-            From wildlife and beaches to culture and adventure, our itineraries match every travel style, budget, and pace. Start with one of our handpicked routes, and let us tailor the perfect Sri Lanka holiday just for you.
+            Find a Sri Lanka itinerary that matches the experiences you want, whether you prefer heritage sites, wildlife, coastal stays or a mix of destinations. Browse our themed tours to compare routes and discover the places featured in each journey.
           </p>
           </Reveal>
         </Container>

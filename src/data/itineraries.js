@@ -355,9 +355,12 @@ export const itineraries = [
       "Every transfer is carefully timed to keep driving distances comfortable while maximising time at each destination. Whether you are a first-time visitor or returning to explore more deeply, this is the route that shows you the very best of Sri Lanka."
     ],
     cta: "Customize This Tour",
-    seoTitle: "See the Best of Sri Lanka – 7 Day Private Tour",
+    h1: "Best of Sri Lanka Tour & Island Itinerary",
+    openingParagraph:
+      "The Best of Sri Lanka itinerary brings together a selection of destinations to introduce the island's variety. Explore the actual day-by-day route on this page and review the places, activities and arrangements shown before enquiring.",
+    seoTitle: "Best of Sri Lanka Tour & Island Itinerary | Seren Lanka",
     metaDescription:
-      "A 7-day private Sri Lanka itinerary from Colombo to Galle via Kandy, Nuwara Eliya, Ella, Yala and Mirissa – culture, tea country, wildlife and beaches.",
+      "Explore our Best of Sri Lanka itinerary for a journey through the island's varied destinations. View the published route, stops and tour information.",
   },
 
   /* ------------------------------------------------------------------ 16.2 */
@@ -400,9 +403,12 @@ export const itineraries = [
       "We plan the sequence of parks around the time of year to give you the best chance of witnessing the elephant gathering, leopard sightings, and diverse birdlife. Tell us your travel dates and we will design the ideal route."
     ],
     cta: "Plan My Wildlife Tour",
-    seoTitle: "Into the Wild – Sri Lanka Wildlife & Safari Tour",
+    h1: "Into the Wild Sri Lanka",
+    openingParagraph:
+      "Sri Lanka offers opportunities to explore remarkable landscapes and wildlife habitats. Into the Wild Sri Lanka focuses on this nature-led side of the island; check the published route to see which parks, experiences and activities are included.",
+    seoTitle: "Into the Wild Sri Lanka | Wildlife Tour Itinerary",
     metaDescription:
-      "Private Sri Lanka safari tours to Yala, Udawalawe, Minneriya and Kaudulla – elephants, leopards, crocodiles and birdlife with a local driver.",
+      "Explore the Into the Wild Sri Lanka itinerary for nature and wildlife focused travel. Discover the planned destinations, trip stages and tour details.",
   },
 
   /* ------------------------------------------------------------------ 16.3 */
@@ -529,9 +535,12 @@ export const itineraries = [
       "Each stop on the map carries deep spiritual significance, and your experienced driver shares the story of each site as you travel. The route is designed for pilgrims and curious travellers alike, blending sacred heritage with Sri Lanka's most beautiful landscapes."
     ],
     cta: "Request Ramayana Tour Details",
-    seoTitle: "Ramayana Tour Sri Lanka – 8 Day Ramayana Trail",
+    h1: "Sri Lanka Ramayana Tour",
+    openingParagraph:
+      "Sri Lanka's Ramayana-linked travel routes are of interest to visitors exploring the epic's cultural and religious associations. This itinerary introduces the relevant destinations included in the tour and helps you review the journey before planning a visit.",
+    seoTitle: "Sri Lanka Ramayana Tour | Heritage Itinerary",
     metaDescription:
-      "An 8-day private Ramayana trail across Sri Lanka: Munneswaram, Koneswaram, Sita Amman, Ravana Falls and Ravana Caves, Kandy and Colombo with a local driver.",
+      "Explore a Sri Lanka Ramayana tour inspired by locations associated with the epic tradition. Review the itinerary and sites included in this cultural journey.",
   },
 
   /* ------------------------------------------------------------------ 16.4 */
@@ -570,9 +579,12 @@ export const itineraries = [
       "After the cruise, enjoy the rest of your day on the beautiful Mirissa crescent beach. Optional add-ons include a stop at the Galle Fort on the way back or an extra night along the south coast."
     ],
     cta: "Plan My Whale Watching Trip",
-    seoTitle: "Whale Watching Tour Mirissa – Blue Whales & Dolphins",
+    h1: "Sri Lanka Whale Watching Tour",
+    openingParagraph:
+      "Whale watching is a sought-after experience on selected Sri Lankan coastal routes, with timing and conditions varying by location and season. Explore this tour's published itinerary and confirm the departure area, seasonal suitability and operating arrangements before booking.",
+    seoTitle: "Sri Lanka Whale Watching Tour | Coastal Itinerary",
     metaDescription:
-      "Mirissa whale-watching package with private hotel pickup and transfer – blue whales, sperm whales and dolphins on an early-morning Indian Ocean cruise.",
+      "Explore the Sri Lanka whale watching tour itinerary and coastal destinations. Check the route, suitable season and listed trip arrangements.",
   },
 
   /* ------------------------------------------------------------------ 16.5 */
@@ -602,7 +614,7 @@ export const itineraries = [
     driverGuide: "English-speaking driver; site guides available",
     activities: ["Temple and cave visits", "Ancient city exploration", "Village experiences", "Fort walk"],
     optionalExperiences: ["Sigiriya sunrise climb", "Traditional village lunch", "Kandyan dance performance", "Batik and craft workshops"],
-    gallery: [img.sigiriya, img.kandy, img.temple, img.galle, img.pidurangala],
+    gallery: [img.sigiriya, '/hero.jpg', img.temple, img.galle, img.pidurangala],
     pricing: { startingFrom: null, currency: "USD", per: "per person / day" },
     faqs: sharedFaqs("the Cultural & Heritage Tour").slice(0, 1),
     related: ["ramayana-tour", "see-the-best-of-sri-lanka", "nature-tour"],
@@ -613,9 +625,12 @@ export const itineraries = [
       "This tailor-made cultural itinerary connects these ancient wonders in a logical, comfortable sequence. We build the route around your travel dates and interests, adding village experiences, traditional craft workshops, and optional guide services at each major site."
     ],
     cta: "Customize This Tour",
-    seoTitle: "Sri Lanka Cultural & Heritage Tours",
+    h1: "Sri Lanka Cultural & Heritage Tour",
+    openingParagraph:
+      "Sri Lanka's cultural heritage can be explored through ancient cities, monuments and longstanding traditions. Our cultural and heritage tour page introduces the destinations on its route so you can understand the planned journey and choose the sites that interest you.",
+    seoTitle: "Sri Lanka Cultural & Heritage Tour | Itinerary",
     metaDescription:
-      "Private cultural tours of Sri Lanka: the Temple of the Tooth, Dambulla caves, ancient cities, traditional villages and Galle Fort with a local driver.",
+      "Discover a Sri Lanka cultural and heritage tour featuring the island's history and historic destinations. Explore the itinerary and included stops.",
   },
 
   /* ------------------------------------------------------------------ 16.6 */
@@ -659,9 +674,12 @@ export const itineraries = [
       "We match your travel window to the right shoreline, design the sequence of beach stops around your interests, and handle all transfers between them. Whether you want surf breaks, snorkelling, sunset sunbathing or a riverside boat safari, we build the perfect coast-to-coast escape."
     ],
     cta: "Customize This Tour",
-    seoTitle: "Sri Lanka Beach Tours – South & East Coast",
+    h1: "Sri Lanka Beach Tour",
+    openingParagraph:
+      "Sri Lanka has diverse coastal regions, from lively beach towns to quieter stretches of shoreline. Explore our beach tour itinerary to learn which destinations are featured and plan a coastal journey around the season and experiences that appeal to you.",
+    seoTitle: "Sri Lanka Beach Tour | Coastal Travel Itinerary",
     metaDescription:
-      "Private Sri Lanka beach holidays: Mirissa, Unawatuna, Hikkaduwa, Bentota, Weligama and Nilaveli with transfers, snorkelling and sunset experiences.",
+      "Explore a Sri Lanka beach tour and discover coastal destinations for your island getaway. Review the published route and seaside experiences.",
   },
 
   /* ------------------------------------------------------------------ 16.7 */
@@ -701,9 +719,12 @@ export const itineraries = [
       "Every stop is chosen for its scenery and natural richness. Your experienced driver navigates the mountain roads safely while you enjoy the views, with forest guides arranged for the Sinharaja trek and tea estate hosts ready to walk you through the world of Ceylon tea."
     ],
     cta: "Customize This Tour",
-    seoTitle: "Sri Lanka Nature Tours – Tea Country, Waterfalls & Rainforest",
+    h1: "Sri Lanka Nature Tour",
+    openingParagraph:
+      "Sri Lanka's natural scenery ranges from tropical forests and hill country to rivers, coastlines and protected landscapes. This nature tour highlights the destinations on the published route and helps you explore the island's outdoor character.",
+    seoTitle: "Sri Lanka Nature Tour | Scenic Travel Itinerary",
     metaDescription:
-      "Private nature tours across Ella, Nuwara Eliya, Kandy, Sinharaja and Kitulgala – tea plantations, waterfalls, mountains and rainforest.",
+      "Explore a Sri Lanka nature tour focusing on landscapes and outdoor experiences. Discover its planned destinations and review the travel itinerary.",
   },
 
   /* ------------------------------------------------------------------ 16.8 */
@@ -746,9 +767,12 @@ export const itineraries = [
       "We build your adventure itinerary around the activities you want most, matching operators, seasons and driving days for a seamless experience. Whether you are an adrenaline seeker or simply want an active holiday, we tailor the pace and intensity to suit you."
     ],
     cta: "Build an Adventure Tour",
-    seoTitle: "Sri Lanka Adventure Tours – Rafting, Surfing, Safari & More",
+    h1: "Sri Lanka Adventure Tour",
+    openingParagraph:
+      "For visitors drawn to active travel, Sri Lanka offers mountain landscapes, waterways and outdoor destinations. Explore our adventure tour page to identify the planned activities, locations and practical requirements before choosing your trip.",
+    seoTitle: "Sri Lanka Adventure Tour | Outdoor Itinerary",
     metaDescription:
-      "Active Sri Lanka itineraries: white-water rafting, safari, snorkelling, diving, surfing, zip-lining, cycling and boat rides with private transport.",
+      "Discover our Sri Lanka adventure tour itinerary with outdoor destinations and active experiences. Review the route and the activities actually included.",
   },
 
   /* ------------------------------------------------------------------ 16.9 */
@@ -877,9 +901,12 @@ export const itineraries = [
       "Your private driver ensures every transfer is comfortable and unhurried, so the journey feels like part of the romance. Sunset moments, candlelit dinners and intimate boutique stays are woven into the route — making this much more than just a tour."
     ],
     cta: "Customize This Tour",
-    seoTitle: "Sri Lanka Honeymoon Tour – 5 Day Private Romantic Escape",
+    h1: "Sri Lanka Honeymoon Tour",
+    openingParagraph:
+      "Sri Lanka offers couples a mix of mountain scenery, cultural destinations and coastal settings. Our honeymoon tour brings these possibilities into an itinerary you can review together; check the route and included arrangements before enquiring.",
+    seoTitle: "Sri Lanka Honeymoon Tour | Romantic Itinerary",
     metaDescription:
-      "A 5-day private Sri Lanka honeymoon from Kandy to Mirissa via Nuwara Eliya and Ella – tea country, mountain views, sunsets and beach relaxation. 10% honeymoon discount.",
+      "Plan a Sri Lanka honeymoon journey with scenic destinations and time together. Explore the itinerary, planned stays and package details.",
   },
 
   /* ----------------------------------------------------------------- 16.10 */
@@ -922,9 +949,12 @@ export const itineraries = [
       "Driving days are kept short and child-friendly, with plenty of stops, flexible timing and spacious vehicles. Entrance tickets, child seats and activity arrangements are all handled for you so the whole family can simply relax and enjoy every moment."
     ],
     cta: "Customize This Tour",
-    seoTitle: "Sri Lanka Family Tours – Flexible, Child-Friendly Itineraries",
+    h1: "Sri Lanka Family Tour",
+    openingParagraph:
+      "A family trip to Sri Lanka can combine cultural places, beaches, nature and time to explore at a comfortable pace. Our family tour page sets out the published journey so you can decide whether its itinerary suits your group's ages and interests.",
+    seoTitle: "Sri Lanka Family Tour | Family Holiday Itinerary",
     metaDescription:
-      "Family-friendly private Sri Lanka tours to Kandy, Nuwara Eliya, Ella, Yala, Bentota and Galle with comfortable vehicles and flexible schedules.",
+      "Explore a Sri Lanka family tour designed around a shared island holiday. Review its destinations, activities and practical itinerary information.",
   },
 
   /* ----------------------------------------------------------------- 16.11 */
@@ -965,9 +995,12 @@ export const itineraries = [
       "Your private chauffeur handles every transfer in a luxury vehicle, while our team pre-arranges exclusive dining experiences, private guided tours, and premium accommodations at each destination. This is Sri Lanka without compromise — a journey designed around your exact preferences."
     ],
     cta: "Customize This Tour",
-    seoTitle: "Luxury Sri Lanka Tours – Private Chauffeur & Premium Hotels",
+    h1: "Luxury Sri Lanka Tour",
+    openingParagraph:
+      "A luxury-focused Sri Lanka journey is about choosing destinations and experiences that align with your travel preferences. Explore the itinerary and check the exact accommodation, transport and inclusions listed before deciding whether this tour is right for you.",
+    seoTitle: "Luxury Sri Lanka Tour | Premium Travel Itinerary",
     metaDescription:
-      "Fully customized luxury Sri Lanka tours: luxury vehicles, premium hotels, private chauffeur, fine dining and exclusive excursions.",
+      "Explore a luxury Sri Lanka tour and review its carefully planned destinations and travel arrangements. See the itinerary and package inclusions.",
   },
 
   /* ------------------------------------------------ North & East (§14 category) */
@@ -1009,9 +1042,12 @@ export const itineraries = [
       "This tailor-made itinerary takes you through Sri Lanka's lesser-explored regions, travelling comfortably in a private air-conditioned vehicle with an experienced driver who knows every back road and hidden gem along the way."
     ],
     cta: "Customize This Tour",
-    seoTitle: "North & East Sri Lanka Tours – Trincomalee, Nilaveli, Arugam Bay & Jaffna",
+    h1: "North & East Sri Lanka Tour",
+    openingParagraph:
+      "Northern and eastern Sri Lanka bring together distinct cultural settings, historic places and coastal destinations. Review our North and East Sri Lanka tour to see the route covered and understand how the journey is organized.",
+    seoTitle: "North & East Sri Lanka Tour | Regional Itinerary",
     metaDescription:
-      "Private tours of Sri Lanka's north and east: Trincomalee, Nilaveli, Pasikuda, Arugam Bay and Jaffna – quiet beaches, sacred sites and surf.",
+      "Discover Sri Lanka's north and east through a dedicated tour itinerary. Explore the featured towns, coastal landscapes and cultural destinations.",
   },
 
   /* ----------------------------------------------------------------- 16.12 */
@@ -1054,8 +1090,11 @@ export const itineraries = [
       "The same private vehicle, the same English-speaking driver, and the same flexibility — simply with accommodation and optional activities chosen to match your budget. We help you get the most out of every rupee, without cutting corners on the experience that matters."
     ],
     cta: "Customize This Tour",
-    seoTitle: "Budget Sri Lanka Tours – Explore More, Spend Less",
+    h1: "Budget Sri Lanka Tour",
+    openingParagraph:
+      "Explore Sri Lanka with a focus on managing travel costs while still seeing destinations that interest you. Our budget tour page provides a route and inclusions to review so you can understand what the package covers before enquiring.",
+    seoTitle: "Budget Sri Lanka Tour | Value-Focused Itinerary",
     metaDescription:
-      "Affordable private Sri Lanka tours for solo travellers, couples, friends and small groups – comfort, flexibility and local experience on a budget.",
+      "Explore a budget Sri Lanka tour and review the published itinerary, inclusions and travel arrangements to plan a cost-conscious island holiday.",
   },
 ];

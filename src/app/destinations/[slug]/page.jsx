@@ -38,6 +38,7 @@ export async function generateMetadata({ params }) {
   if (!d) return {};
   return buildMetadata({
     title: d.seoTitle,
+    rawTitle: true,
     description: d.metaDescription,
     path: `/destinations/${d.slug}`,
     image: d.heroImage,
@@ -105,16 +106,16 @@ export default async function DestinationPage({ params }) {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Discover Sri Lanka", href: d.parentSlug },
-              { label: "Destinations" },
+              { label: "Destinations", href: "/destinations" },
+              { label: d.name },
             ]}
             light
           />
           <Reveal>
-            <h1 className="mt-2 sm:mt-4 max-w-4xl text-[2rem] font-bold leading-[1.07] tracking-[-0.03em] text-white lg:text-[4.5rem]">
+            <p className="mt-2 sm:mt-4 max-w-4xl text-[2rem] font-bold leading-[1.07] tracking-[-0.03em] text-white lg:text-[4.5rem]">
               Sri Lanka {" "} <br />
               <span className="font-light">Destinations</span>
-            </h1>
+            </p>
           </Reveal>
           <p className="mt-4 sm:mt-6 max-w-2xl text-[13px] leading-[1.85] text-white/80 sm:text-base">
             From ancient cities and sacred temples to tea-covered mountains, national parks and tropical beaches, Sri Lanka offers a remarkable variety of experiences within one island. Explore the places our guests ask for most and where every great itinerary begins.
@@ -139,17 +140,13 @@ export default async function DestinationPage({ params }) {
               </div>
             </div>
             <div className="lg:col-span-6 lg:pl-4">
-              <Breadcrumbs
-                items={[
-                  { label: "Home", href: "/" },
-                  { label: "Destinations", href: "/destinations" },
-                  { label: d.name },
-                ]}
-              />
-              <h1 className="mt-4 text-[2.5rem] font-bold leading-[1.05] tracking-[-0.03em] text-brand-navy sm:text-5xl lg:text-6xl">
-                {d.name}
+              <h1 className="text-[2.5rem] font-bold leading-[1.05] tracking-[-0.03em] text-brand-navy sm:text-5xl lg:text-6xl">
+                {d.h1 || d.name}
               </h1>
               <div className="mt-6 space-y-4 text-[15px] leading-[1.85] text-black sm:text-base">
+                {d.openingParagraph && (
+                  <p className="font-medium text-brand-ink/90">{d.openingParagraph}</p>
+                )}
                 {d.intro.map((p) => (
                   <p key={p.slice(0, 32)}>{p}</p>
                 ))}

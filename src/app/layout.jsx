@@ -1,4 +1,5 @@
 import "./globals.css";
+import Script from "next/script";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
@@ -10,6 +11,9 @@ import SmoothScroll from "@/components/layout/SmoothScroll";
 export const metadata = {
   metadataBase: new URL(site.url),
   ...buildMetadata(),
+  verification: {
+    google: "c3YHdvmAlf9kow4ZQMzF39EJ2L8L_DHlU1gaRAW3Kvo",
+  },
 };
 
 export const viewport = {
@@ -21,6 +25,19 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full">
+      {/* Google Analytics 4 – Measurement ID: G-6TL99EK50P */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-6TL99EK50P"
+        strategy="afterInteractive"
+      />
+      <Script id="ga4-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-6TL99EK50P');
+        `}
+      </Script>
       <body className="flex min-h-full flex-col">
         <>
           <LoadingScreen />

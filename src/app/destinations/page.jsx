@@ -12,9 +12,10 @@ import { whatsappTemplates } from "@/data/site";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Sri Lanka Destinations – Where to Go",
+  title: "Places to Visit in Sri Lanka | Destination Guide",
+  rawTitle: true,
   description:
-    "Explore Sri Lanka's destinations: Sigiriya, Kandy, Ella, Yala, Galle, Mirissa, Trincomalee and more – with private tours and transfers from Seren Lanka Travels.",
+    "Explore places to visit in Sri Lanka, from cultural landmarks and hill country towns to national parks and beach destinations. Plan where to go next.",
   path: "/destinations",
 });
 
@@ -51,13 +52,13 @@ export default function DestinationsPage() {
           />
           <Reveal>
             <h1 className="mt-2 sm:mt-4 max-w-4xl text-[2rem] font-bold leading-[1.07] tracking-[-0.03em] text-white lg:text-[4.5rem]">
-              {destinationsLanding.heading[0]}{" "} <br />
-              <span className="font-light">{destinationsLanding.heading[1]}</span>
+              Places to Visit{" "} <br />
+              <span className="font-light">in Sri Lanka</span>
             </h1>
           </Reveal>
           <Reveal>
           <p className="mt-4 sm:mt-6 max-w-2xl text-[13px] leading-[1.85] text-white/80 sm:text-base">
-            {destinationsLanding.intro}
+            Sri Lanka's destinations include historic cities, mountain landscapes, wildlife areas and coastal towns. Browse our destination guides to learn what makes each place distinctive and discover which tours or itineraries connect to your preferred locations.
           </p>
           </Reveal>
         </Container>

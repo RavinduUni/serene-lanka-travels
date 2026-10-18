@@ -31,6 +31,7 @@ export async function generateMetadata({ params }) {
   if (!tour) return {};
   return buildMetadata({
     title: tour.seoTitle,
+    rawTitle: true,
     description: tour.metaDescription,
     path: `/day-tours/${tour.slug}`,
     image: tour.heroImage,
@@ -88,10 +89,10 @@ export default async function DayTourPage({ params }) {
             ]}
           />
           <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-[1.05] tracking-[-0.02em] sm:text-5xl lg:text-6xl">
-            {tour.name}
+            {tour.h1 || tour.name}
           </h1>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-white/85 sm:text-lg">
-            {tour.shortDescription}
+            {tour.openingParagraph || tour.shortDescription}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button href="#quote" size="lg">

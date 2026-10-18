@@ -29,9 +29,10 @@ import { buildMetadata } from "@/lib/seo";
 import FinalCta from "@/components/sections/FinalCta";
 
 export const metadata = buildMetadata({
-  title: "About Us – A Sri Lankan Journey Built on Trust",
+  title: "About Seren Lanka Travels | Sri Lanka Tour Planning",
+  rawTitle: true,
   description:
-    "The story of Seren Lanka Travels: two friends who grew a trusted, professional Sri Lankan travel company from personally helping international travellers. Come as a guest. Leave as a friend.",
+    "Learn about Seren Lanka Travels, our Sri Lanka tour options and how to explore day trips, island itineraries and private transportation.",
   path: "/about-us",
 });
 

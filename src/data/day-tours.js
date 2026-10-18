@@ -124,9 +124,12 @@ export const dayTours = [
       },
     ],
     related: ["bentota-day-tour", "galle-unawatuna-day-tour", "kandy-day-tour"],
-    seoTitle: "Colombo City Tour – Private Day Tour",
+    h1: "Colombo City Tour",
+    openingParagraph:
+      "A Colombo city tour introduces you to Sri Lanka's busy commercial capital, where historic neighborhoods, markets and coastal views share the urban landscape. Explore the tour details to see which places are included and plan time in the city.",
+    seoTitle: "Colombo City Tour | Sri Lanka Day Trips",
     metaDescription:
-      "Explore Sri Lanka's capital on a private Colombo city tour: Galle Face Green, Gangaramaya Temple, the Fort district and Pettah Market with an English-speaking driver.",
+      "Discover the Colombo City Tour and explore the capital's landmarks, local culture and city experiences. View the tour details and plan your visit.",
   },
   {
     published: true,
@@ -218,9 +221,12 @@ export const dayTours = [
       },
     ],
     related: ["sigiriya-dambulla-day-tour", "nuwara-eliya-day-tour", "ella-day-tour"],
-    seoTitle: "Kandy Day Tour – Temple of the Tooth & Hill Country",
+    h1: "Kandy Day Tour",
+    openingParagraph:
+      "Kandy is known for its lakeside setting, cultural heritage and surrounding green hills. Our Kandy day tour page helps you explore the planned experience and decide how the city could fit into your Sri Lanka trip.",
+    seoTitle: "Kandy Day Tour | Explore Sri Lanka's Hill Capital",
     metaDescription:
-      "Private Kandy day tour: the Temple of the Sacred Tooth Relic, Kandy Lake, Peradeniya Botanical Gardens and hill-country viewpoints with an English-speaking driver.",
+      "Explore a Kandy day tour focused on the city's cultural setting and scenic surroundings. Review the planned route and discover Kandy in a day.",
   },
   {
     published: true,
@@ -306,9 +312,12 @@ export const dayTours = [
       },
     ],
     related: ["kandy-day-tour", "nuwara-eliya-day-tour", "colombo-city-tour"],
-    seoTitle: "Sigiriya & Dambulla Day Tour – Cultural Triangle",
+    h1: "Sigiriya & Dambulla Day Tour",
+    openingParagraph:
+      "Sigiriya and Dambulla are among Sri Lanka's most recognizable cultural destinations, combining ancient history with remarkable landscapes. Review our Sigiriya and Dambulla day tour to understand the proposed route and see which sites the package covers.",
+    seoTitle: "Sigiriya & Dambulla Day Tour | Sri Lanka",
     metaDescription:
-      "Climb Sigiriya Rock Fortress and explore the Dambulla Golden Cave Temple on a private Cultural Triangle day tour with an English-speaking driver.",
+      "Explore Sigiriya and Dambulla in a day tour combining renowned heritage landmarks. Review the available itinerary and practical trip information.",
   },
   {
     published: true,
@@ -394,9 +403,12 @@ export const dayTours = [
       },
     ],
     related: ["bentota-day-tour", "colombo-city-tour", "ella-day-tour"],
-    seoTitle: "Galle & Unawatuna Day Tour – Fort & Beach",
+    h1: "Galle & Unawatuna Day Tour",
+    openingParagraph:
+      "Galle and Unawatuna offer two different sides of Sri Lanka's southern coast: historic streets and a relaxed seaside setting. Explore this day tour to find out how the stops are arranged and whether it suits your travel plans.",
+    seoTitle: "Galle & Unawatuna Day Tour | Southern Sri Lanka",
     metaDescription:
-      "Private Galle and Unawatuna day tour: walk the UNESCO Galle Fort ramparts, see the lighthouse and relax on Unawatuna Beach with an English-speaking driver.",
+      "Explore a Galle and Unawatuna day tour combining a historic coastal town with southern Sri Lanka's seaside atmosphere. See the itinerary and trip details.",
   },
   {
     published: true,
@@ -482,9 +494,12 @@ export const dayTours = [
       },
     ],
     related: ["galle-unawatuna-day-tour", "colombo-city-tour", "kandy-day-tour"],
-    seoTitle: "Bentota Day Tour – Beach, Madu River & Turtles",
+    h1: "Bentota Day Tour",
+    openingParagraph:
+      "Bentota is a coastal destination known for its beach setting and nearby river landscapes. Our Bentota day tour page outlines the planned experience so you can evaluate the stops and activities before making an enquiry.",
+    seoTitle: "Bentota Day Tour | Sri Lanka Coastal Excursion",
     metaDescription:
-      "Private Bentota day tour: golden beaches, a Madu River mangrove boat safari and a sea-turtle hatchery visit with an English-speaking driver.",
+      "Discover a Bentota day tour and explore one of Sri Lanka's well-known coastal destinations. Check the itinerary, activities and travel information.",
   },
   {
     published: true,
@@ -570,9 +585,12 @@ export const dayTours = [
       },
     ],
     related: ["nuwara-eliya-day-tour", "kandy-day-tour", "sigiriya-dambulla-day-tour"],
-    seoTitle: "Ella Day Tour – Nine Arches Bridge & Little Adam's Peak",
+    h1: "Ella Day Tour",
+    openingParagraph:
+      "Ella is a popular hill-country stop with mountain scenery, viewpoints and walking opportunities. Discover the Ella day tour and review its specific route to see how this destination fits into your Sri Lanka journey.",
+    seoTitle: "Ella Day Tour | Hill Country Sightseeing",
     metaDescription:
-      "Private Ella day tour: the Nine Arches Bridge, Little Adam's Peak, Ravana Falls and tea-country viewpoints with an English-speaking driver.",
+      "Discover an Ella day tour with scenic hill-country experiences and views. Explore the itinerary and plan your visit to one of Sri Lanka's mountain towns.",
   },
   {
     published: true,
@@ -658,8 +676,11 @@ export const dayTours = [
       },
     ],
     related: ["ella-day-tour", "kandy-day-tour", "sigiriya-dambulla-day-tour"],
-    seoTitle: "Nuwara Eliya Day Tour – Tea Country & Little England",
+    h1: "Nuwara Eliya Day Tour",
+    openingParagraph:
+      "Nuwara Eliya sits in Sri Lanka's highlands and is associated with tea-growing landscapes, gardens and a cooler climate. Explore our day https://serenlankatravels.com/day-tours/nuwara-eliya-day-tour tour page for its actual planned stops and essential information before arranging your visit.",
+    seoTitle: "Nuwara Eliya Day Tour | Sri Lanka Hill Country",
     metaDescription:
-      "Private Nuwara Eliya day tour: tea plantations and factory tastings, Ramboda Falls, Gregory Lake and colonial 'Little England' with an English-speaking driver.",
+      "Explore the Nuwara Eliya day tour and discover the tea-country landscape and cooler highland atmosphere. Review stops and practical tour details.",
   },
 ];

@@ -105,8 +105,12 @@ export const destinations = [
       { q: "Is Colombo close to the airport?", a: "Very – the airport is at Katunayake, roughly 45–60 minutes from the city centre by expressway." },
     ],
     gallery: [img.colombo, img.galleFace, img.gangaramaya, img.city, img.market],
-    seoTitle: "Colombo – Sri Lanka's Commercial Capital",
-    metaDescription: "Plan your Colombo visit: Galle Face Green, Gangaramaya Temple, the Fort district and Pettah Market – with private tours and transfers from Seren Lanka Travels.",
+    h1: "Things to Do in Colombo",
+    openingParagraph:
+      "Colombo combines busy city life with historic buildings, commercial districts and waterfront spaces. Explore what to see and do in the city, then browse related tours or transfer options when planning your visit.",
+    seoTitle: "Things to Do in Colombo | Sri Lanka Destination Guide",
+    metaDescription:
+      "Explore things to do in Colombo, from city landmarks and historic neighborhoods to markets and coastal views. Find travel ideas and related tours.",
   },
   {
     published: true,
@@ -141,8 +145,12 @@ export const destinations = [
       { q: "When is the Esala Perahera?", a: "It runs for around ten nights each July or August, on dates set by the lunar calendar – ask us for the current year's dates." },
     ],
     gallery: [img.kandy, img.lake, img.gardens, img.buddha, img.tea],
-    seoTitle: "Kandy – Temple of the Tooth & Hill Country Culture",
-    metaDescription: "Visit Kandy: the Temple of the Sacred Tooth Relic, Kandy Lake, Peradeniya Botanical Gardens and Kandyan dance – private tours with Seren Lanka Travels.",
+    h1: "Things to Do in Kandy",
+    openingParagraph:
+      "Kandy is a significant cultural destination in Sri Lanka's central hills, with a lakeside city center and historic landmarks. Use this guide to explore its attractions and understand how a visit could fit into your island itinerary.",
+    seoTitle: "Things to Do in Kandy | Sri Lanka Travel Guide",
+    metaDescription:
+      "Discover things to do in Kandy, including cultural landmarks, the city's scenic setting and nearby attractions. Explore trip ideas and related tours.",
   },
   {
     published: true,
@@ -177,8 +185,12 @@ export const destinations = [
       { q: "Sigiriya or Pidurangala?", a: "Both if you can – Sigiriya for the history and frescoes, Pidurangala for the view of the rock at sunrise or sunset." },
     ],
     gallery: [img.sigiriya, img.pidurangala, img.waterGardens, img.sunrise, img.elephant],
-    seoTitle: "Sigiriya – Lion Rock Fortress, Cultural Triangle",
-    metaDescription: "Visit Sigiriya Rock Fortress: the frescoes, water gardens and Pidurangala views – private Cultural Triangle tours with Seren Lanka Travels.",
+    h1: "Things to Do in Sigiriya",
+    openingParagraph:
+      "Sigiriya is best known for its dramatic rock fortress and its place in Sri Lanka's cultural heritage. Explore the area's attractions and travel-planning considerations before looking at tours that include Sigiriya and nearby destinations.",
+    seoTitle: "Things to Do in Sigiriya | Sri Lanka Destination Guide",
+    metaDescription:
+      "Explore things to do in Sigiriya, known for its historic rock fortress and surrounding landscapes. Discover local highlights and related tour options.",
   },
   {
     published: true,
@@ -213,8 +225,12 @@ export const destinations = [
       { q: "Is there a dress code?", a: "Yes – cover shoulders and knees and remove shoes at the cave entrance." },
     ],
     gallery: [img.dambulla, img.temple, img.sigiriya, img.market, img.sunrise],
-    seoTitle: "Dambulla – Golden Cave Temple, Cultural Triangle",
-    metaDescription: "Visit Dambulla's Golden Cave Temple and use it as your Cultural Triangle base – private tours with Seren Lanka Travels.",
+    h1: "Things to Do in Dambulla",
+    openingParagraph:
+      "Dambulla is an important stop for visitors exploring Sri Lanka's cultural heartland, particularly its celebrated cave temple complex. Learn about the destination and consider how to combine it with nearby heritage sites on your journey.",
+    seoTitle: "Things to Do in Dambulla | Sri Lanka Travel Guide",
+    metaDescription:
+      "Discover things to do in Dambulla, including the famous cave temple and nearby cultural attractions. Explore the area and relevant Sri Lanka tours.",
   },
   {
     published: true,
@@ -249,8 +265,12 @@ export const destinations = [
       { q: "How early is the Horton Plains walk?", a: "Leave before dawn – World's End is clearest in the early morning before the mist rolls in." },
     ],
     gallery: [img.tea, img.mountains, img.lake, img.waterfall, img.gardens],
-    seoTitle: "Nuwara Eliya – Tea Country & Little England",
-    metaDescription: "Visit Nuwara Eliya: tea plantations and tastings, Horton Plains, Gregory Lake and colonial charm – private hill-country tours with Seren Lanka Travels.",
+    h1: "Things to Do in Nuwara Eliya",
+    openingParagraph:
+      "Nuwara Eliya is set in Sri Lanka's cool central highlands and surrounded by tea-growing landscapes. Explore its gardens, scenery and local points of interest to decide how long to spend in this part of the hill country.",
+    seoTitle: "Things to Do in Nuwara Eliya | Hill Country Guide",
+    metaDescription:
+      "Explore things to do in Nuwara Eliya, including tea-country scenery, gardens and highland attractions. Plan your visit and discover related tours.",
   },
   {
     published: true,
@@ -285,8 +305,12 @@ export const destinations = [
       { q: "Is Ella Rock harder than Little Adam's Peak?", a: "Yes – Ella Rock is a 3–4 hour hike with steeper sections; Little Adam's Peak is an easy 45-minute walk." },
     ],
     gallery: [img.ella, img.peak, img.waterfall, img.tea, img.mountains],
-    seoTitle: "Ella – Nine Arches Bridge & Little Adam's Peak",
-    metaDescription: "Visit Ella: the Nine Arches Bridge, Little Adam's Peak, Ravana Falls and tea-country viewpoints – private hill-country tours with Seren Lanka Travels.",
+    h1: "Things to Do in Ella, Sri Lanka",
+    openingParagraph:
+      "Ella draws visitors for its green hills, elevated viewpoints and relaxed mountain-town atmosphere. Learn about places to explore around Ella and https://serenlankatravels.com/destinations/ella use the related tour information to plan the hill-country portion of your trip.",
+    seoTitle: "Things to Do in Ella, Sri Lanka | Travel Guide",
+    metaDescription:
+      "Discover things to do in Ella, from mountain views and walking routes to well-known hill-country attractions. Find travel inspiration and tour options.",
   },
   {
     published: true,
@@ -321,8 +345,12 @@ export const destinations = [
       { q: "Morning or afternoon safari?", a: "Both have their moments – mornings are cooler with more activity; afternoons give golden light. Two safaris are ideal." },
     ],
     gallery: [img.leopard, img.elephant, img.aerialBeach, img.lagoon, img.sunrise],
-    seoTitle: "Yala National Park – Leopard Safaris",
-    metaDescription: "Plan a Yala safari: leopards, elephants, sloth bears and crocodiles on private jeep safaris – wildlife tours with Seren Lanka Travels.",
+    h1: "Yala National Park",
+    openingParagraph:
+      "Yala National Park is one of Sri Lanka's best-known wildlife destinations, with habitats that attract visitors interested in safari experiences. Explore the park's setting and trip-planning information before reviewing any available wildlife itineraries.",
+    seoTitle: "Yala National Park | Safari & Visitor Guide",
+    metaDescription:
+      "Explore Yala National Park in Sri Lanka, known for its wildlife habitats and safari experiences. Read destination guidance and discover relevant tours.",
   },
   {
     published: true,
@@ -357,8 +385,12 @@ export const destinations = [
       { q: "Is the boat trip suitable for children?", a: "Yes for most families, though the sea can be choppy – motion-sickness tablets are a sensible precaution." },
     ],
     gallery: [img.whale, img.beach, img.aerialBeach, img.coast, img.couple],
-    seoTitle: "Mirissa – Whale Watching & South-Coast Beaches",
-    metaDescription: "Visit Mirissa: blue-whale watching, golden beaches and Coconut Tree Hill sunsets – whale-watching packages and beach tours with Seren Lanka Travels.",
+    h1: "Things to Do in Mirissa",
+    openingParagraph:
+      "Mirissa is a southern coastal destination known for its beach atmosphere and access to seasonal marine experiences. Find ideas for your visit and check the time of year and local conditions when planning activities such as whale watching.",
+    seoTitle: "Things to Do in Mirissa | Sri Lanka Beach Guide",
+    metaDescription:
+      "Explore things to do in Mirissa, from beaches and coastal scenery to seasonal whale-watching opportunities. Discover trip ideas and tour options.",
   },
   {
     published: true,
@@ -393,8 +425,12 @@ export const destinations = [
       { q: "Can we stay inside the fort?", a: "Yes – there are boutique hotels and guesthouses in restored colonial houses inside the walls." },
     ],
     gallery: [img.galle, img.lighthouse, img.city, img.beach, img.coast],
-    seoTitle: "Galle – UNESCO Fort on the South Coast",
-    metaDescription: "Visit Galle Fort: ramparts, lighthouse, colonial lanes and nearby beaches – private south-coast tours with Seren Lanka Travels.",
+    h1: "Things to Do in Galle",
+    openingParagraph:
+      "Galle is a southern Sri Lankan city celebrated for its historic fort and distinctive coastal streets. Explore the area's heritage and other visitor highlights, and consider a nearby beach stop as part of your travel plans.",
+    seoTitle: "Things to Do in Galle | Sri Lanka Travel Guide",
+    metaDescription:
+      "Discover things to do in Galle, including its historic fort, coastal setting and nearby attractions. Explore travel ideas and related day tours.",
   },
   {
     published: true,
@@ -429,8 +465,12 @@ export const destinations = [
       { q: "Which is better, Bentota or the south coast?", a: "Bentota for convenience and gardens; Mirissa and Unawatuna for whale watching and a livelier scene. Many trips include both." },
     ],
     gallery: [img.aerialBeach, img.river, img.turtle, img.gardens, img.lagoon],
-    seoTitle: "Bentota – Beach, Madu River & Turtles",
-    metaDescription: "Visit Bentota: golden beaches, Madu River mangroves, turtle hatcheries and Bawa gardens – beach tours and transfers with Seren Lanka Travels.",
+    h1: "Things to Do in Bentota",
+    openingParagraph:
+      "Bentota combines a beach destination with access to river landscapes and activities in the surrounding area. Browse ideas for what to see and do, then check the dedicated Bentota day tour for its actual planned stops.",
+    seoTitle: "Things to Do in Bentota | Sri Lanka Beach Guide",
+    metaDescription:
+      "Explore things to do in Bentota, including its coastal scenery and nearby river experiences. Discover visitor information and related day tours.",
   },
   {
     published: true,
@@ -465,8 +505,12 @@ export const destinations = [
       { q: "Is Pigeon Island worth it?", a: "Yes – it is one of the island's two marine national parks, with easy snorkelling over shallow reef." },
     ],
     gallery: [img.coast, img.temple, img.beach, img.aerialBeach, img.whale],
-    seoTitle: "Trincomalee – East Coast Beaches & Koneswaram Temple",
-    metaDescription: "Visit Trincomalee: Koneswaram Temple, Nilaveli beach and Pigeon Island snorkelling – east-coast tours with Seren Lanka Travels.",
+    h1: "Things to Do in Trincomalee",
+    openingParagraph:
+      "Trincomalee is an east-coast destination with beaches, historical associations and access to the surrounding coastal region. Use this guide to explore the local highlights and consider how the destination fits into a northern or eastern Sri Lanka route. https://serenlankatravels.com/destinations/trincomalee",
+    seoTitle: "Things to Do in Trincomalee | East Coast Guide",
+    metaDescription:
+      "Discover things to do in Trincomalee, from its east-coast beaches to cultural attractions. Explore travel ideas and related Sri Lanka itineraries.",
   },
   {
     published: true,
@@ -500,8 +544,12 @@ export const destinations = [
       { q: "Do I need experience to surf here?", a: "No – Weligama's soft, rolling waves are made for beginners, and lessons run every morning." },
     ],
     gallery: [img.surf, img.coast, img.aerialBeach, img.beach, img.couple],
-    seoTitle: "Weligama – Learn to Surf on the South Coast",
-    metaDescription: "Visit Weligama: beginner surf lessons, stilt fishermen and Taprobane Island – south-coast beach tours with Seren Lanka Travels.",
+    h1: "Things to Do in Weligama",
+    openingParagraph:
+      "Weligama is a south-coast town widely associated with its long bay and surfing scene. Explore the local attractions and use nearby destination guides to build a broader southern-coast travel plan.",
+    seoTitle: "Things to Do in Weligama | Sri Lanka Beach Guide",
+    metaDescription:
+      "Explore things to do in Weligama, including its beach setting and surfing atmosphere. Find destination information and nearby coastal travel ideas.",
   },
   {
     published: true,
@@ -535,8 +583,12 @@ export const destinations = [
       { q: "Can I snorkel from the beach?", a: "Yes – the coral sanctuary is a short swim from the sand, with glass-bottom boats for non-swimmers." },
     ],
     gallery: [img.aerialBeach, img.turtle, img.surf, img.galle, img.beach],
-    seoTitle: "Hikkaduwa – Coral Reef, Turtles & Surf",
-    metaDescription: "Visit Hikkaduwa: coral-sanctuary snorkelling, sea turtles and surf on the south-west coast – beach tours with Seren Lanka Travels.",
+    h1: "Things to Do in Hikkaduwa",
+    openingParagraph:
+      "Hikkaduwa is a popular southwest-coast destination known for its beach environment and marine activities. Learn about the area and consider the relevant weather and sea conditions before planning activities on the water.",
+    seoTitle: "Things to Do in Hikkaduwa | Sri Lanka Beach Guide",
+    metaDescription:
+      "Discover things to do in Hikkaduwa, from its beaches and coastal setting to snorkeling opportunities. Explore local sights and travel ideas.",
   },
   {
     published: true,
@@ -571,8 +623,12 @@ export const destinations = [
       { q: "Are there leeches?", a: "Yes, especially after rain – leech socks are provided or available at the entrance." },
     ],
     gallery: [img.forest, img.mountains, img.waterfall, img.tea, img.river],
-    seoTitle: "Sinharaja Rainforest – UNESCO Forest Reserve",
-    metaDescription: "Visit Sinharaja: guided rainforest treks, endemic birds and waterfalls in Sri Lanka's UNESCO forest – nature tours with Seren Lanka Travels.",
+    h1: "Sinharaja Forest Reserve",
+    openingParagraph:
+      "Sinharaja is an important rainforest destination in Sri Lanka, known for its biodiversity and dense tropical forest environment. Explore what makes the reserve distinctive and review access and visitor guidance when planning a nature-focused trip.",
+    seoTitle: "Sinharaja Forest Reserve | Sri Lanka Nature Guide",
+    metaDescription:
+      "Explore Sinharaja Forest Reserve, its rainforest setting and nature focused travel opportunities. Discover visitor information and related itineraries.",
   },
   {
     published: true,
@@ -606,8 +662,12 @@ export const destinations = [
       { q: "Is rafting safe for beginners?", a: "Yes – the rapids are grade 2–3 with professional guides, helmets and life jackets; children usually join from around age 10." },
     ],
     gallery: [img.rafting, img.river, img.mountains, img.forest, img.waterfall],
-    seoTitle: "Kitulgala – White-Water Rafting & Adventure",
-    metaDescription: "Visit Kitulgala: white-water rafting on the Kelani River, canyoning and rainforest trails – adventure tours with Seren Lanka Travels.",
+    h1: "Kitulgala Travel Guide",
+    openingParagraph:
+      "Kitulgala offers a river-and-forest setting associated with outdoor activities such as white-water rafting. Learn about the destination and check seasonal conditions, operator availability and activity suitability before building it into an itinerary.",
+    seoTitle: "Kitulgala Travel Guide | Rafting & Adventure",
+    metaDescription:
+      "Explore Kitulgala in Sri Lanka, known for river scenery and outdoor adventures including rafting. Discover travel tips and itinerary connections.",
   },
   {
     published: true,
@@ -641,8 +701,12 @@ export const destinations = [
       { q: "Udawalawe or Yala?", a: "Udawalawe for elephants and open views; Yala for leopards. Many itineraries include both." },
     ],
     gallery: [img.elephant, img.forest, img.lake, img.waterfall, img.sunrise],
-    seoTitle: "Udawalawe National Park – Elephant Safaris",
-    metaDescription: "Visit Udawalawe: near-guaranteed elephant sightings on private safaris and the Elephant Transit Home – wildlife tours with Seren Lanka Travels.",
+    h1: "Udawalawe National Park",
+    openingParagraph:
+      "Udawalawe National Park is a well-known wildlife destination where visitors travel to experience Sri Lanka's natural habitats. Explore what makes the park distinctive and plan practical details before choosing an appropriate safari experience. https://serenlankatravels.com/destinations/udawalawe",
+    seoTitle: "Udawalawe National Park | Safari Visitor Guide",
+    metaDescription:
+      "Explore Udawalawe National Park, a Sri Lankan wildlife destination associated with elephant viewing and safari travel. Find planning information.",
   },
   {
     published: true,
@@ -676,8 +740,12 @@ export const destinations = [
       { q: "When is The Gathering?", a: "It builds through July and August and peaks around September, depending on the rains." },
     ],
     gallery: [img.elephant, img.lake, img.forest, img.sigiriya, img.sunrise],
-    seoTitle: "Minneriya – The Elephant Gathering",
-    metaDescription: "Visit Minneriya for The Gathering: hundreds of elephants on the reservoir each dry season, minutes from Sigiriya – safaris with Seren Lanka Travels.",
+    h1: "Minneriya National Park",
+    openingParagraph:
+      "Minneriya National Park is known for its landscape and opportunities to observe wildlife in a protected setting. Explore the destination and check the relevant seasonal conditions when planning a visit or comparing safari options.",
+    seoTitle: "Minneriya National Park | Wildlife Travel Guide",
+    metaDescription:
+      "Explore Minneriya National Park, Sri Lanka, including its wildlife setting and safari travel opportunities. Discover visitor guidance and tour ideas.",
   },
   {
     published: true,
@@ -711,8 +779,12 @@ export const destinations = [
       { q: "How much time do the ruins need?", a: "A full day covers the main sites; the area is large, so a vehicle or bicycle is essential." },
     ],
     gallery: [img.temple, img.gardens, img.dambulla, img.buddha, img.sunrise],
-    seoTitle: "Anuradhapura – Sri Lanka's Ancient Sacred City",
-    metaDescription: "Visit Anuradhapura: the Sri Maha Bodhi, Ruwanwelisaya and the ancient sacred city – Cultural Triangle tours with Seren Lanka Travels.",
+    h1: "Things to Do in Anuradhapura",
+    openingParagraph:
+      "Anuradhapura is an ancient Sri Lankan city with extensive archaeological remains and longstanding religious significance. Explore its historic sites and practical travel considerations when preparing a visit to the island's cultural region.",
+    seoTitle: "Things to Do in Anuradhapura | Heritage Guide",
+    metaDescription:
+      "Explore things to do in Anuradhapura, an ancient Sri Lankan city with important archaeological and religious heritage. Find travel ideas and tour links.",
   },
   {
     published: true,
@@ -746,8 +818,12 @@ export const destinations = [
       { q: "Is Polonnaruwa better than Anuradhapura?", a: "They are different: Polonnaruwa is compact and sculptural, Anuradhapura vast and sacred. See both if you have time." },
     ],
     gallery: [img.buddha, img.temple, img.dambulla, img.lake, img.sunrise],
-    seoTitle: "Polonnaruwa – Medieval Capital & Gal Vihara",
-    metaDescription: "Visit Polonnaruwa: Gal Vihara Buddhas, the Quadrangle and the royal city by bicycle – Cultural Triangle tours with Seren Lanka Travels.",
+    h1: "Things to Do in Polonnaruwa",
+    openingParagraph:
+      "Polonnaruwa preserves an important chapter of Sri Lankan history through its ancient urban remains and archaeological sites. Use this destination guide to discover its key attractions and plan the time needed for a heritage visit.",
+    seoTitle: "Things to Do in Polonnaruwa | Ancient City Guide",
+    metaDescription:
+      "Explore things to do in Polonnaruwa, including the ancient city's monuments and heritage sites. Discover travel information and related itineraries.",
   },
   {
     published: true,
@@ -781,8 +857,12 @@ export const destinations = [
       { q: "Can beginners surf at Arugam Bay?", a: "Yes – Whiskey Point and Peanut Farm have gentle waves and surf schools; Main Point is for experienced surfers." },
     ],
     gallery: [img.surf, img.coast, img.lagoon, img.elephant, img.aerialBeach],
-    seoTitle: "Arugam Bay – East Coast Surf & Lagoons",
-    metaDescription: "Visit Arugam Bay: world-class surf, Elephant Rock sunsets and lagoon safaris on the east coast – surf and adventure tours with Seren Lanka Travels.",
+    h1: "Things to Do in Arugam Bay",
+    openingParagraph:
+      "Arugam Bay is a popular eastern Sri Lankan coastal destination, especially among visitors interested in surfing and beach life. Explore the area and check seasonal surf and weather conditions when planning your stay.",
+    seoTitle: "Things to Do in Arugam Bay | East Coast Guide",
+    metaDescription:
+      "Discover things to do in Arugam Bay, known for its east-coast beach setting and surfing culture. Explore travel ideas and nearby destinations.",
   },
   {
     published: true,
@@ -816,7 +896,11 @@ export const destinations = [
       { q: "Wilpattu or Yala?", a: "Wilpattu for solitude and bears, Yala for the highest leopard density. Wilpattu suits the Cultural Triangle route; Yala suits the south." },
     ],
     gallery: [img.leopard, img.lake, img.forest, img.temple, img.elephant],
-    seoTitle: "Wilpattu National Park – Leopards & Villus",
-    metaDescription: "Visit Wilpattu: quiet leopard and sloth-bear safaris around natural lakes in Sri Lanka's largest park – wildlife tours with Seren Lanka Travels.",
+    h1: "Wilpattu National Park",
+    openingParagraph:
+      "Wilpattu National Park is a protected wildlife area in northwestern Sri Lanka, known for its natural habitats and distinctive landscape. Use this guide to learn about the destination and plan a wildlife-focused visit based on current access conditions.",
+    seoTitle: "Wilpattu National Park | Safari Travel Guide",
+    metaDescription:
+      "Explore Wilpattu National Park in Sri Lanka, including its protected landscapes and safari opportunities. Find visitor information and travel ideas.",
   },
 ];

@@ -105,7 +105,7 @@ export default function LoadingScreen() {
       </div>
 
       {/* Typography */}
-      <h1 
+      <div 
         style={{ 
           fontFamily: 'var(--font-serif)', 
           fontSize: "1.75rem", 
@@ -118,7 +118,7 @@ export default function LoadingScreen() {
         }}
       >
         Seren Lanka Travels
-      </h1>
+      </div>
       
       <p 
         style={{ 

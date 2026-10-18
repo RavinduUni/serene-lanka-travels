@@ -35,6 +35,7 @@ export async function generateMetadata({ params }) {
   if (!service) return {};
   return buildMetadata({
     title: service.seoTitle,
+    rawTitle: true,
     description: service.metaDescription,
     path: `/transfers/${service.slug}`,
     image: service.heroImage,
@@ -121,10 +122,10 @@ export default async function TransferServicePage({ params }) {
             ]}
           />
           <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-[1.05] tracking-[-0.02em] sm:text-5xl lg:text-6xl">
-            {service.name}
+            {service.h1 || service.name}
           </h1>
           <p className="mt-4 max-w-2xl text-[14px] leading-relaxed text-white/85 sm:text-lg">
-            {service.shortDescription}
+            {service.openingParagraph || service.shortDescription}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button href="#book" size="lg">

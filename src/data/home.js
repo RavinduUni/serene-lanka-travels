@@ -6,10 +6,10 @@ import { images } from "./images";
 
 export const hero = {
   eyebrow: "Private tours · Tailor-made itineraries · Transfers",
-  title: "Experience Sri Lanka Your Way",
+  title: "Sri Lanka Tours & Private Travel",
   lead: "Private, flexible and unforgettable journeys across Sri Lanka.",
   copy:
-    "Explore Sri Lanka with a local travel team that puts your comfort, interests and travel style first. Choose one of our ready-made tours or build a completely tailor-made journey around your dates, budget and favourite experiences.",
+    "Explore Sri Lanka with Seren Lanka Travels, from cultural landmarks and scenic hill country to beaches and wildlife destinations. Browse our day tours, themed itineraries and transfer services to plan a trip around the places and experiences that interest you.",
   image: images.hero,
   ctas: [
     { label: "Plan My Trip", href: "/tailor-made-tours", variant: "primary" },

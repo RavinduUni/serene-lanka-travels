@@ -13,9 +13,10 @@ import { whatsappTemplates } from "@/data/site";
 import Button from "@/components/ui/Button";
 
 export const metadata = buildMetadata({
-  title: "Sri Lanka Day Tours – Private One-Day Experiences",
+  title: "Sri Lanka Day Tours & Excursions | Seren Lanka Travels",
+  rawTitle: true,
   description:
-    "Private Sri Lanka day tours to Colombo, Kandy, Sigiriya & Dambulla, Galle, Bentota, Ella and Nuwara Eliya – flexible one-day experiences with an English-speaking driver.",
+    "Explore Sri Lanka day tours covering Colombo, Kandy, Sigiriya, Galle, Bentota, Ella and Nuwara Eliya. Compare destinations and choose your next excursion.",
   path: "/day-tours",
 });
 
@@ -87,14 +88,15 @@ export default function DayToursPage() {
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Day Tours" }]} light />
           <Reveal>
           <h1 className="mt-6 max-w-4xl text-[2.1rem] font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Seamless Cultural Journeys{" "}
-            <span className="text-white">Across Sri Lanka</span>
+            Sri Lanka Day Tours{" "}
+            <span className="text-white">& Excursions</span>
           </h1>
           </Reveal>
           <Reveal>
           <p className="mt-5 max-w-2xl text-[15px] leading-[1.8] text-white/80 sm:text-base">
-            Explore Sri Lanka with expert guides who bring each destination to life. From ancient
-            temples to tropical coastlines, we craft day tours that give you more real stories.
+            Explore places across Sri Lanka through our day tour collection, from Colombo city
+            attractions to historic landmarks, beaches and hill-country scenery. Browse the
+            individual tour pages for their planned stops, practical details and enquiry options.
           </p>
           </Reveal>
         </Container>

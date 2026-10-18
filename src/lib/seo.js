@@ -2,10 +2,16 @@ import { site } from "@/data/site";
 
 /**
  * Builds a Next.js Metadata object with sensible defaults.
- * @param {{title?: string, description?: string, path?: string, image?: string}} opts
+ * @param {{title?: string, description?: string, path?: string, image?: string, rawTitle?: boolean}} opts
+ * When `rawTitle` is true the title is used verbatim (for SEO-spec titles
+ * that already include the brand suffix). Otherwise `| Site Name` is appended.
  */
-export function buildMetadata({ title, description, path = "/", image } = {}) {
-  const fullTitle = title ? `${title} | ${site.name}` : `${site.name} – Private & Tailor-Made Sri Lanka Tours`;
+export function buildMetadata({ title, description, path = "/", image, rawTitle } = {}) {
+  const fullTitle = rawTitle && title
+    ? title
+    : title
+      ? `${title} | ${site.name}`
+      : `${site.name} – Private & Tailor-Made Sri Lanka Tours`;
   const desc =
     description ||
     "Private and tailor-made Sri Lanka tours, day trips, transfers and authentic local travel experiences designed around your time, interests and budget.";
