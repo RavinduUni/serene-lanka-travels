@@ -1035,7 +1035,7 @@ export const itineraries = [
       { q: "When is the best time for the east coast?", a: "The east coast has a different season from the south-west – we match your travel dates to the right coast so you get calm seas." },
     ],
     related: ["beach-tour", "ramayana-tour", "adventure-tour"],
-    mapImage: "/itineraries/north & east final.png",
+    mapImage: "/itineraries/north.png",
     mapTitle: "The Quieter Side of the Island",
     mapDescription: [
       "While most visitors stick to Sri Lanka's western circuit, the north and east coastline offers a completely different experience — sacred temples perched on ocean cliffs in Trincomalee, pristine white-sand beaches at Nilaveli and Pasikuda, world-class surf at Arugam Bay, and the distinct Tamil culture and cuisine of Jaffna in the far north.",
