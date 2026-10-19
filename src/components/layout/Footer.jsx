@@ -6,14 +6,19 @@ import { Phone, Mail, Send, Award, Medal } from "lucide-react";
 import { FacebookIcon, InstagramIcon, TikTokIcon, XIcon, YoutubeIcon } from "@/components/shared/SocialIcons";
 import Container from "@/components/ui/Container";
 import { site, footerColumns } from "@/data/site";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
+
+const emptySubscribe = () => () => {};
 
 export default function Footer() {
   const [time, setTime] = useState(new Date());
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
 
   useEffect(() => {
-    setMounted(true);
     const timer = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);

@@ -99,16 +99,16 @@ export default async function ExperiencePage({ params }) {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Discover Sri Lanka", href: "/discover-sri-lanka" },
               { label: "Experiences", href: "/experiences" },
+              { label: e.name },
             ]}
             light
           />
           <Reveal>
-            <h1 className="mt-4 max-w-4xl text-[2rem] font-bold leading-[1.07] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.5rem]">
+            <p className="mt-4 max-w-4xl text-[2rem] font-bold leading-[1.07] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.5rem]">
               Sri Lanka{" "} <br />
               <span className="font-light">Experiences</span>
-            </h1>
+            </p>
           </Reveal>
           <p className="mt-2 sm:mt-6 max-w-2xl text-[12px] leading-[1.85] text-white/80 sm:text-base">
             From leopard safaris and ancient temples to beach escapes, hill-country hikes and Ayurvedic
@@ -135,16 +135,9 @@ export default async function ExperiencePage({ params }) {
               </div>
             </div>
             <div className="lg:col-span-6 lg:pl-4">
-              <Breadcrumbs
-                items={[
-                  { label: "Home", href: "/" },
-                  { label: "Experiences", href: "/experiences" },
-                  { label: e.name },
-                ]}
-              />
-              <h2 className="mt-4 text-[2.5rem] font-bold leading-[1.05] tracking-[-0.03em] text-brand-navy sm:text-5xl lg:text-6xl">
+              <h1 className="text-[2.5rem] font-bold leading-[1.05] tracking-[-0.03em] text-brand-navy sm:text-5xl lg:text-6xl">
                 {e.name}
-              </h2>
+              </h1>
               <div className="mt-6 space-y-4 text-[15px] leading-[1.85] text-black sm:text-base">
                 {e.intro.map((p) => (
                   <p key={p.slice(0, 32)}>{p}</p>

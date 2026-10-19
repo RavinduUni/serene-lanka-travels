@@ -21,8 +21,17 @@ import Reveal from "@/components/motion/Reveal";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
 import { whatsappTemplates } from "@/data/site";
+import { buildMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 import FinalCta from "@/components/sections/FinalCta";
+
+export const metadata = buildMetadata({
+  title: "Discover Sri Lanka – Destinations, Culture & Nature Guide",
+  rawTitle: true,
+  description:
+    "Explore Sri Lanka's ancient kingdoms, highland landscapes, golden coastlines, national parks and cultural experiences. Use this guide to plan your journey.",
+  path: "/discover-sri-lanka",
+});
 
 // ─── Page-level data ────────────────────────────────────────────────
 

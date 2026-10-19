@@ -36,14 +36,11 @@ export default function WhyChooseCarousel() {
   }, []);
 
   const maxIndex = Math.max(0, total - visibleCount);
-
-  useEffect(() => {
-    setIndex((prev) => Math.min(prev, maxIndex));
-  }, [maxIndex]);
+  const currentIndex = Math.min(index, maxIndex);
 
   // Wrap-around navigation — never stops, always shows visible cards
-  const prev = () => setIndex((i) => (i <= 0 ? maxIndex : i - 1));
-  const next = () => setIndex((i) => (i >= maxIndex ? 0 : i + 1));
+  const prev = () => setIndex(currentIndex <= 0 ? maxIndex : currentIndex - 1);
+  const next = () => setIndex(currentIndex >= maxIndex ? 0 : currentIndex + 1);
 
   const handleTouchStart = (e) => {
     touchStartX.current = e.targetTouches[0].clientX;
@@ -65,12 +62,12 @@ export default function WhyChooseCarousel() {
 
   const getTransform = () => {
     if (visibleCount === 1) {
-      return `translateX(calc(${-index} * (100% + 16px)))`;
+      return `translateX(calc(${-currentIndex} * (100% + 16px)))`;
     }
     if (visibleCount === 2) {
-      return `translateX(calc(${-index} * (50% + 10px)))`;
+      return `translateX(calc(${-currentIndex} * (50% + 10px)))`;
     }
-    return `translateX(calc(${-index} * (25% + 5px)))`;
+    return `translateX(calc(${-currentIndex} * (25% + 5px)))`;
   };
 
   return (

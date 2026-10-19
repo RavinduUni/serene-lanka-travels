@@ -78,7 +78,7 @@ export default function ReviewsSlider() {
 
           {/* Active Review Content */}
           <div className="max-w-4xl px-4 text-center md:px-16" aria-live="polite">
-            <h3 className="text-sm lg:text-[18px] font-bold text-black mb-6">"{r.tour}"</h3>
+            <h3 className="text-sm lg:text-[18px] font-bold text-black mb-6">&ldquo;{r.tour}&rdquo;</h3>
             <p className="mx-auto max-w-3xl text-[14px] leading-relaxed text-black/80 sm:text-base lg:text-[17px] font-medium transition-opacity duration-300">
               {r.text}
             </p>

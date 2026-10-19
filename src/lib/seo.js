@@ -1,5 +1,9 @@
 import { site } from "@/data/site";
 
+/** Default social-share image used when no page-specific heroImage is available. */
+const DEFAULT_OG_IMAGE =
+  "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=75";
+
 /**
  * Builds a Next.js Metadata object with sensible defaults.
  * @param {{title?: string, description?: string, path?: string, image?: string, rawTitle?: boolean}} opts
@@ -16,6 +20,7 @@ export function buildMetadata({ title, description, path = "/", image, rawTitle 
     description ||
     "Private and tailor-made Sri Lanka tours, day trips, transfers and authentic local travel experiences designed around your time, interests and budget.";
   const url = new URL(path, site.url).toString();
+  const ogImage = image || DEFAULT_OG_IMAGE;
   return {
     title: fullTitle,
     description: desc,
@@ -26,9 +31,9 @@ export function buildMetadata({ title, description, path = "/", image, rawTitle 
       url,
       siteName: site.name,
       type: "website",
-      ...(image ? { images: [{ url: image }] } : {}),
+      images: [{ url: ogImage, width: 1200, height: 630, alt: fullTitle }],
     },
-    twitter: { card: "summary_large_image", title: fullTitle, description: desc },
+    twitter: { card: "summary_large_image", title: fullTitle, description: desc, images: [ogImage] },
   };
 }
 

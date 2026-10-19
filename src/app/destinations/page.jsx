@@ -58,7 +58,7 @@ export default function DestinationsPage() {
           </Reveal>
           <Reveal>
           <p className="mt-4 sm:mt-6 max-w-2xl text-[13px] leading-[1.85] text-white/80 sm:text-base">
-            Sri Lanka's destinations include historic cities, mountain landscapes, wildlife areas and coastal towns. Browse our destination guides to learn what makes each place distinctive and discover which tours or itineraries connect to your preferred locations.
+            Sri Lanka&apos;s destinations include historic cities, mountain landscapes, wildlife areas and coastal towns. Browse our destination guides to learn what makes each place distinctive and discover which tours or itineraries connect to your preferred locations.
           </p>
           </Reveal>
         </Container>

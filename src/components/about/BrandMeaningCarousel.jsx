@@ -6,9 +6,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import SmartImage from "@/components/ui/SmartImage";
 
 export default function BrandMeaningCarousel({ cards }) {
-  if (!cards || cards.length === 0) return null;
-
-  const total = cards.length;
   const [visibleCount, setVisibleCount] = useState(3);
   const [index, setIndex] = useState(0);
 
@@ -32,15 +29,14 @@ export default function BrandMeaningCarousel({ cards }) {
     return () => window.removeEventListener("resize", updateVisible);
   }, []);
 
+  if (!cards || cards.length === 0) return null;
+
+  const total = cards.length;
   const maxIndex = Math.max(0, total - visibleCount);
+  const currentIndex = Math.min(index, maxIndex);
 
-  // Clamp index if viewport resize decreases maxIndex
-  useEffect(() => {
-    setIndex((prev) => Math.min(prev, maxIndex));
-  }, [maxIndex]);
-
-  const prev = () => setIndex((i) => (i <= 0 ? maxIndex : i - 1));
-  const next = () => setIndex((i) => (i >= maxIndex ? 0 : i + 1));
+  const prev = () => setIndex(currentIndex <= 0 ? maxIndex : currentIndex - 1);
+  const next = () => setIndex(currentIndex >= maxIndex ? 0 : currentIndex + 1);
 
   const handleTouchStart = (e) => {
     touchStartX.current = e.targetTouches[0].clientX;
@@ -62,12 +58,12 @@ export default function BrandMeaningCarousel({ cards }) {
 
   const getTransform = () => {
     if (visibleCount === 1) {
-      return `translateX(calc(${-index} * (100% + 20px)))`;
+      return `translateX(calc(${-currentIndex} * (100% + 20px)))`;
     }
     if (visibleCount === 2) {
-      return `translateX(calc(${-index} * (50% + 10px)))`;
+      return `translateX(calc(${-currentIndex} * (50% + 10px)))`;
     }
-    return `translateX(calc(${-index} * (100% / 3 + 20px / 3)))`;
+    return `translateX(calc(${-currentIndex} * (100% / 3 + 20px / 3)))`;
   };
 
   return (
@@ -75,7 +71,7 @@ export default function BrandMeaningCarousel({ cards }) {
       {/* Navigation Controls */}
       <div className="flex items-center justify-between sm:justify-end gap-3 mb-4 lg:absolute lg:right-0 lg:-top-16 lg:mb-0 pr-1 lg:pr-4 z-20">
         <div className="flex items-center gap-1.5 text-xs font-semibold tracking-wider text-brand-navy/80 sm:hidden">
-          <span className="font-bold text-brand-blue">{index + 1}</span>
+          <span className="font-bold text-brand-blue">{currentIndex + 1}</span>
           <span>/</span>
           <span>{total}</span>
         </div>
