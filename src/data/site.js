@@ -133,7 +133,6 @@ export const footerColumns = [
       { label: "Custom Transfers", href: "/transfers/custom" },
       { label: "Private Transport", href: "/transfers/private-vehicle-hire" },
       { label: "Build Your Tour", href: "/tailor-made-tours/build" },
-      { label: "Estimated Tour Calculator", href: "/tailor-made-tours/calculator" },
       { label: "Request a Quote", href: "/contact-us" },
     ],
   },

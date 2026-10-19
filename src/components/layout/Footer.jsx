@@ -8,7 +8,7 @@ import Container from "@/components/ui/Container";
 import { site, footerColumns } from "@/data/site";
 import { useEffect, useState, useSyncExternalStore } from "react";
 
-const emptySubscribe = () => () => {};
+const emptySubscribe = () => () => { };
 
 export default function Footer() {
   const [time, setTime] = useState(new Date());
@@ -24,12 +24,12 @@ export default function Footer() {
   }, []);
 
   const year = time.getFullYear();
-  
+
   const formattedTime = time.toLocaleTimeString("en-US", {
     hour: "2-digit",
     minute: "2-digit",
   });
-  
+
   const formattedDate = time.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
@@ -39,56 +39,56 @@ export default function Footer() {
   return (
     <footer className="bg-white text-gray-800 font-sans pb-6">
       <Container className="pt-16 lg:pt-20">
-        
+
         {/* --- TOP SECTION --- */}
         <div className="flex flex-col md:flex-row justify-center items-center gap-12 lg:gap-32">
-          
+
           {/* Logo, Description & Social */}
           <div className="flex flex-col items-center max-w-sm text-center">
             <div className="inline-flex">
-              <Image 
-                src="/logo/seren-lanka-travels.png" 
-                alt={site.name} 
-                width={250} 
-                height={250} 
-                className="h-25 w-auto object-contain" 
+              <Image
+                src="/logo/seren-lanka-travels.png"
+                alt={site.name}
+                width={250}
+                height={250}
+                className="h-25 w-auto object-contain"
               />
             </div>
-            
+
             {/* Social Icons */}
             <div className="flex items-center gap-4 mt-5">
-              <a 
-                href={site.social.facebook} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="Facebook" 
+              <a
+                href={site.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
                 className="grid size-8 place-items-center rounded-full border-[1.5px] border-gray-800 text-gray-800 transition-colors hover:border-brand-blue hover:text-brand-blue"
               >
                 <FacebookIcon className="size-4" />
               </a>
-              <a 
-                href={site.social.tiktok} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="TikTok" 
+              <a
+                href={site.social.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
                 className="grid size-8 place-items-center rounded-full border-[1.5px] border-gray-800 text-gray-800 transition-colors hover:border-brand-blue hover:text-brand-blue"
               >
                 <TikTokIcon className="size-4" />
               </a>
-              <a 
-                href={site.social.instagram} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="Instagram" 
+              <a
+                href={site.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
                 className="grid size-8 place-items-center rounded-full border-[1.5px] border-gray-800 text-gray-800 transition-colors hover:border-brand-blue hover:text-brand-blue"
               >
                 <InstagramIcon className="size-4" />
               </a>
-              <a 
-                href={site.social.X} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="X" 
+              <a
+                href={site.social.X}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
                 className="grid size-8 place-items-center rounded-full border-[1.5px] border-gray-800 text-gray-800 transition-colors hover:border-brand-blue hover:text-brand-blue"
               >
                 <XIcon className="size-4" />
@@ -102,13 +102,13 @@ export default function Footer() {
               Receive Travel Inspirations
             </h3>
             <div className="flex items-center border-b-[1.5px] border-gray-400 pb-2 max-w-sm w-full lg:w-[350px]">
-              <input 
-                type="email" 
-                placeholder="Your email address *" 
-                className="outline-none bg-transparent text-[14px] w-full placeholder-gray-500 text-gray-800" 
+              <input
+                type="email"
+                placeholder="Your email address *"
+                className="outline-none bg-transparent text-[14px] w-full placeholder-gray-500 text-gray-800"
               />
               <button type="button" aria-label="Subscribe" className="text-gray-800 hover:text-brand-blue transition-colors ml-2">
-                 <Send className="size-5" />
+                <Send className="size-5" />
               </button>
             </div>
           </div>
@@ -117,29 +117,29 @@ export default function Footer() {
 
         {/* Description */}
         <div className="flex flex-col items-center mt-8 justify-center w-full text-center">
-            <p className="text-[14px] sm:text-base leading-relaxed text-black tracking-wide max-w-xl">
-              {site.tagline} {site.promise}
-            </p>
+          <p className="text-[14px] sm:text-base leading-relaxed text-black tracking-wide max-w-xl">
+            {site.tagline} {site.promise}
+          </p>
         </div>
 
         {/* --- CONTACT SECTION --- */}
         <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 mt-16 text-[13px] font-bold text-gray-800 tracking-wide">
           <div className="flex items-center gap-3">
             <div className="bg-[#4CAF50] rounded-full p-2 text-white">
-               <Phone className="size-4" fill="currentColor" />
+              <Phone className="size-4" fill="currentColor" />
             </div>
             <a href={`tel:${site.whatsappNumber}`} className="hover:text-brand-blue transition-colors text-[15px]">{site.phones[0]}</a>
           </div>
           <div className="flex items-center gap-3">
             <div className="bg-[#2196F3] rounded-full p-2 text-white">
-               <Phone className="size-4" fill="currentColor" />
+              <Phone className="size-4" fill="currentColor" />
             </div>
             <a href={`tel:${site.phones[1].replace(/\s/g, "")}`} className="hover:text-brand-blue transition-colors text-[15px]">{site.phones[1]}</a>
           </div>
           <div className="flex items-center gap-3">
-            <div className="bg-[#F44336] rounded-full p-2 text-white">
-               <Mail className="size-4" fill="currentColor" />
-            </div>
+
+            <img src="/mail.svg" className="size-8" alt="" />
+
             <a href={`mailto:${site.email}`} className="hover:text-brand-blue transition-colors text-[15px]">{site.email}</a>
           </div>
         </div>
