@@ -11,6 +11,20 @@ import SmoothScroll from "@/components/layout/SmoothScroll";
 export const metadata = {
   metadataBase: new URL(site.url),
   ...buildMetadata(),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: "/site.webmanifest",
   verification: {
     google: "c3YHdvmAlf9kow4ZQMzF39EJ2L8L_DHlU1gaRAW3Kvo",
   },

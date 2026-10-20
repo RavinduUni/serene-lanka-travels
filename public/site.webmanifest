@@ -1,0 +1,23 @@
+{
+  "name": "Seren Lanka Travels",
+  "short_name": "Seren Lanka",
+  "description": "Private and tailor-made Sri Lanka tours, day trips, transfers and authentic local travel experiences.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b1f5c",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
