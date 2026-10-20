@@ -220,8 +220,7 @@ export const reviewFaqs = [
 /* ------------------------------------------------------------- visibility */
 
 /** Samples are visible in development, or on a preview with the env switch on. */
-export const SHOW_SAMPLES =
-  process.env.NODE_ENV !== "production" || process.env.NEXT_PUBLIC_SHOW_SAMPLE_REVIEWS === "true";
+export const SHOW_SAMPLES ="true";
 
 export const getVisibleReviews = () => reviews.filter((r) => !r.isSample || SHOW_SAMPLES);
 export const getVisiblePhotos = () => travellerPhotos.filter((p) => !p.isSample || SHOW_SAMPLES);
