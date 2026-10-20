@@ -128,7 +128,7 @@ export default function Footer() {
             <div className="bg-[#4CAF50] rounded-full p-2 text-white">
               <Phone className="size-4" fill="currentColor" />
             </div>
-            <a href={`tel:${site.whatsappNumber}`} className="hover:text-brand-blue transition-colors text-[15px]">{site.phones[0]}</a>
+            <a href={`tel:${site.phones[0].replace(/\s/g, "")}`} className="hover:text-brand-blue transition-colors text-[15px]">{site.phones[0]}</a>
           </div>
           <div className="flex items-center gap-3">
             <div className="bg-[#2196F3] rounded-full p-2 text-white">

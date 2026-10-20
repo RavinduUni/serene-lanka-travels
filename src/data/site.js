@@ -11,11 +11,10 @@ export const site = {
   founded: 2022,
   registered: 2026,
   logo: "/logo/whitelogo.png",
-  // Official contact details are still pending in the content plan.
-  // The number below is the Director's WhatsApp listed in the plan – replace when confirmed.
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "94774215943",
+  // Official contact details:
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "94775972777",
   email: "info@serenlankatravels.com",
-  phones: ["+94 77 421 5943", "+94 70 285 3374"],
+  phones: ["+94 77 597 2777", "+94 70 285 3374"],
   social: {
     facebook: "https://www.facebook.com/serenlankatravels/",
     instagram: "https://www.instagram.com/serenlankatravels/",

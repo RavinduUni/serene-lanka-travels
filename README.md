@@ -55,6 +55,6 @@ the client's own approved media before launch (Content Plan §24). Allowed remot
 
 ## Pending content (do not invent – see "Additional Requirements" doc)
 
-- Official contact email / WhatsApp business number (`src/data/site.js`)
+- Official contact email (`src/data/site.js`) – WhatsApp number configured (+94 77 597 2777)
 - Real guest reviews (`reviews` in `src/data/home.js` – currently clearly-marked samples)
 - Social media URLs

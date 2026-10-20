@@ -5,5 +5,6 @@ import { site, whatsappTemplates } from "@/data/site";
  * @param {string} [message]
  */
 export function buildWhatsAppLink(message = whatsappTemplates.generic) {
-  return `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(message)}`;
+  const cleanNumber = String(site.whatsappNumber || "94775972777").replace(/[^0-9]/g, "");
+  return `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
 }
