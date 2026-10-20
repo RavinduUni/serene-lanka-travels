@@ -44,9 +44,9 @@ export function getRecipient() {
   return process.env.NODE_ENV !== "production" ? site.email : null;
 }
 
-export async function sendMail({ subject, text, html, replyTo }) {
+export async function sendMail({ subject, text, html, replyTo, attachments, to: toOverride }) {
   const mailer = getMailer();
-  const to = getRecipient();
+  const to = toOverride || getRecipient();
   if (!mailer || !to) throw new Error("Email delivery is not configured (SMTP_* / ENQUIRY_TO_EMAIL).");
   const from = process.env.ENQUIRY_FROM_EMAIL || process.env.SMTP_USER || `no-reply@${new URL(site.url).hostname}`;
   const info = await mailer.transport.sendMail({
@@ -56,6 +56,7 @@ export async function sendMail({ subject, text, html, replyTo }) {
     text,
     html,
     ...(replyTo ? { replyTo } : {}),
+    ...(attachments?.length ? { attachments } : {}),
   });
   if (mailer.mode === "dev-log") {
     console.info(`\n[dev] Enquiry email (not sent – no SMTP configured) → ${to}\n${subject}\n\n${text}\n`);

@@ -45,7 +45,7 @@ export default function Accordion({ items, defaultOpen = 0 }) {
               role="region"
               aria-labelledby={buttonId}
               hidden={!isOpen}
-              className="pb-6 pr-10 text-[15px] leading-relaxed text-brand-muted"
+              className="pb-6 pr-10 text-[14px] lg:text-base leading-relaxed text-brand-muted"
             >
               {item.a}
             </div>
