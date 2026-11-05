@@ -11,7 +11,7 @@ import { formatDate } from "@/lib/utils";
 export default function LatestArticles() {
   const { featured, items } = inspiration;
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-white pb-20 pt-12 lg:pb-28 lg:pt-20">
       <Container>
         <div className="grid items-end gap-6 lg:grid-cols-12">
           <Reveal className="lg:col-span-4">

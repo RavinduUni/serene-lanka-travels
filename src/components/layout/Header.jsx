@@ -10,6 +10,7 @@ import Button from "@/components/ui/Button";
 import { mainNav, site } from "@/data/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
+import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 
 /* ─── Desktop Dropdown Item ────────────────────────────────────────────── */
 function NavDropdown({ item, active, scrolled }) {
@@ -195,7 +196,7 @@ export default function Header() {
           />
         )}
 
-        <Container className="relative flex h-[76px] items-center justify-between gap-6 lg:h-[88px]">
+        <Container className="relative flex h-[76px] items-center justify-center gap-6 lg:h-[88px] max-w-screen-2xl">
           {/* Logo */}
           <Link href="/" className="flex shrink-0 items-center" aria-label={`${site.name} home`}>
             <Image
@@ -222,6 +223,7 @@ export default function Header() {
 
           {/* Desktop CTAs */}
           <div className="hidden items-center gap-3 lg:flex">
+            <LanguageSwitcher />
             <Button href="/tailor-made-tours" size="sm" className="h-11 px-5">
               Plan My Trip
             </Button>
@@ -295,6 +297,7 @@ export default function Header() {
 
           {/* Drawer footer CTAs */}
           <div className="grid gap-3 border-t border-brand-line p-5">
+            <LanguageSwitcher mobile />
             <Button href="/tailor-made-tours" className="w-full">
               Plan My Trip
             </Button>

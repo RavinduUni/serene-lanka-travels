@@ -54,6 +54,19 @@ export default function RootLayout({ children }) {
       </Script>
       <body className="flex min-h-full flex-col">
         <>
+          {/* Google Translate – hidden widget container */}
+          <Script
+            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+            strategy="afterInteractive"
+          />
+          <Script id="gt-init" strategy="afterInteractive">{`
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement(
+                { pageLanguage: 'en', includedLanguages: 'de,fr,it,ru,zh-CN,ar', autoDisplay: false },
+                'google_translate_element'
+              );
+            }
+          `}</Script>
           <LoadingScreen />
           <a
             href="#main"
@@ -61,6 +74,7 @@ export default function RootLayout({ children }) {
           >
             Skip to content
           </a>
+          <div id="google_translate_element" style={{ display: 'none' }} aria-hidden="true" />
           <Header />
           <main id="main" className="flex-1 pt-[76px] lg:pt-[88px]">
             {children}
