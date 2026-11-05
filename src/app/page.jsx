@@ -16,6 +16,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import { buildMetadata, faqJsonLd } from "@/lib/seo";
 import { faq } from "@/data/home";
 import { whatsappTemplates } from "@/data/site";
+import ReviewsSection from "@/components/sections/ReviewsSection";
 
 export const metadata = buildMetadata({
   title: "Sri Lanka Tours & Private Travel | Seren Lanka Travels",
@@ -41,6 +42,7 @@ export default function HomePage() {
       <ExperienceGrid />
       <PopularDestinations />
       <TransfersBanner />
+      <ReviewsSection />
       {/* <ReviewsSlider /> */}
       <LatestArticles />
       <FaqSection />

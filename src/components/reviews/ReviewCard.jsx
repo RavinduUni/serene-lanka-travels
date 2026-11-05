@@ -64,6 +64,32 @@ function GoogleBadge({ className }) {
   );
 }
 
+/** Tripadvisor owl logo badge overlapping bottom right of avatar */
+function TripadvisorBadge({ className }) {
+  return (
+    <span
+      className={cn(
+        "absolute -bottom-1 -right-1 size-5 rounded-full shadow-sm ring-[1.5px] ring-white select-none overflow-hidden",
+        className
+      )}
+      aria-hidden="true"
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/reviews/platforms/tripadvisor-icon.png"
+        alt=""
+        className="size-full object-cover"
+      />
+    </span>
+  );
+}
+
+/** Renders the correct platform badge for a given source */
+function SourceBadge({ source, className }) {
+  if (source === "tripadvisor") return <TripadvisorBadge className={className} />;
+  return <GoogleBadge className={className} />;
+}
+
 /** 12-point scalloped blue verified checkmark badge */
 function VerifiedBadge({ className }) {
   return (
@@ -84,7 +110,7 @@ export default function ReviewCard({ review, className }) {
   return (
     <article
       className={cn(
-        "flex h-full flex-col rounded-2xl border border-gray-100 bg-slate-100 p-6 shadow-[0_2px_14px_rgba(0,0,0,0.06)] sm:p-7",
+        "flex h-full flex-col rounded-2xl border border-gray-100 bg-slate-100 p-6 sm:p-7",
         className
       )}
     >
@@ -97,7 +123,7 @@ export default function ReviewCard({ review, className }) {
           >
             {getInitial(review.name)}
           </span>
-          <GoogleBadge />
+          <SourceBadge source={review.source} />
         </div>
 
         <div className="min-w-0 flex-1">

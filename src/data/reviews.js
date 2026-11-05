@@ -1,16 +1,12 @@
 /**
  * Reviews page data – Content Plan §23.
  *
- * ⚠️ SAMPLE CONTENT. Every review and photo below is marked `isSample: true`.
- * Presenting invented reviews or stock photos as real guests is deceptive and
- * can breach consumer-protection rules, so sample items:
- *   • always show a visible "Sample" badge, and
- *   • are HIDDEN on the live site unless NEXT_PUBLIC_SHOW_SAMPLE_REVIEWS=true
- *     (use that only on a private preview for the client).
- * Replace them with real, approved reviews (isSample: false) before launch.
+ * Real reviews from Google and Tripadvisor are marked `isSample: false`.
+ * Any remaining placeholder items are marked `isSample: true` and are hidden
+ * on the live site unless NEXT_PUBLIC_SHOW_SAMPLE_REVIEWS=true.
  *
- * Review fields (§23 "Review Card Fields"): name, country, rating, text, tour,
- * photo, source, date. `source` is one of the ids in REVIEW_SOURCES.
+ * Review fields: name, rating, text, title (Tripadvisor only), source, date,
+ * tour. `source` is one of the ids in REVIEW_SOURCES.
  */
 
 const u = (id, w = 900) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=75`;
@@ -30,114 +26,123 @@ export const reviewsHero = {
 };
 
 export const reviews = [
+  // ── Tripadvisor Reviews ───────────────────────────────────────────────────
   {
-    id: "r-001",
-    isSample: true,
-    name: "Emma W.",
-    country: "United Kingdom",
+    id: "r-t-001",
+    isSample: false,
+    name: "Lubika H",
     rating: 5,
-    date: "2026-08",
-    source: "google",
-    tour: { name: "See the Best of Sri Lanka", href: "/sri-lanka-itineraries/see-the-best-of-sri-lanka" },
-    text:
-      "Seven days that felt like three weeks in the best possible way. Our driver collected us at the airport, and from that moment everything was calm and easy. He knew exactly when to stop for photos, which tea factory to visit and where to find the best rice and curry on the road to Ella. The Yala safari was the highlight – two leopards in one morning! Every change we asked for was handled by WhatsApp within minutes.",
-  },
-  {
-    id: "r-002",
-    isSample: true,
-    name: "Jonas & Lena",
-    country: "Germany",
-    rating: 5,
-    date: "2026-07",
     source: "tripadvisor",
-    tour: { name: "Honeymoon Tour", href: "/sri-lanka-itineraries/honeymoon-tour" },
-    text:
-      "We booked the honeymoon tour and it was perfect from Kandy to Mirissa. The hotels were beautiful, the pace was relaxed and nothing ever felt rushed. A small surprise in our room in Ella made us both smile. Thank you for making our first trip together so special.",
+    title: "Professional, Reliable & Outstanding Service!",
+    text: "Seren Lanka Travels provides excellent service with a friendly, professional, and dedicated team. Everything is handled smoothly and efficiently, with great attention to detail and customer satisfaction. A reliable choice for anyone looking for quality travel services. Highly recommended!",
   },
   {
-    id: "r-003",
-    isSample: true,
-    name: "Priya S.",
-    country: "India",
+    id: "r-t-002",
+    isSample: false,
+    name: "Piyumi M",
     rating: 5,
-    date: "2026-06",
-    source: "google",
-    tour: { name: "Ramayana Tour", href: "/sri-lanka-itineraries/ramayana-tour" },
-    text:
-      "As a family we wanted to visit the Ramayana temples with someone who understood the meaning of each place. Our driver was respectful, patient with my parents and always on time. Ravana Falls and the Sita Amman Temple were unforgettable.",
-  },
-  {
-    id: "r-004",
-    isSample: true,
-    name: "Michael R.",
-    country: "Australia",
-    rating: 5,
-    date: "2026-05",
-    source: "website",
-    tour: { name: "Kandy Day Tour", href: "/day-tours/kandy-day-tour" },
-    text:
-      "Only had one free day before a work trip, and this was the perfect way to use it. Comfortable car, cold water waiting, and a driver who explained the history of the Temple of the Tooth on the way. Great value.",
-  },
-  {
-    id: "r-005",
-    isSample: true,
-    name: "Sophie L.",
-    country: "France",
-    rating: 5,
-    date: "2026-04",
-    source: "google",
-    tour: { name: "Into the Wild Sri Lanka", href: "/sri-lanka-itineraries/into-the-wild-sri-lanka" },
-    text:
-      "We saw elephants at Udawalawe, a leopard in Yala and so many birds I lost count. The team planned the safaris around the best times of day and found us lovely lodges near each park. Highly recommended for wildlife lovers.",
-  },
-  {
-    id: "r-006",
-    isSample: true,
-    name: "The Martins",
-    country: "Canada",
-    rating: 5,
-    date: "2026-03",
     source: "tripadvisor",
-    tour: { name: "Family Tour", href: "/sri-lanka-itineraries/family-tour" },
-    text:
-      "Travelling with two kids (7 and 10) can be stressful, but not here. Child seats were ready, drives were broken up with fun stops and our driver became the kids' favourite person on the trip. They still talk about the turtle hatchery in Bentota.",
+    title: "Excellent Service and an Unforgettable Travel Experience!",
+    text: "My experience with Seren Lanka Travels was truly wonderful and memorable. From beginning to end, their service was exceptional, professional, and very friendly. The team was incredibly helpful, welcoming, and attentive to every detail. Their commitment, kindness, and dedication made the entire experience smooth, comfortable, and enjoyable. I truly appreciate their excellent customer service and the effort they put into ensuring a great experience. I highly recommend Seren Lanka Travels to anyone looking for reliable, professional, and high-quality travel services in Sri Lanka. Thank you for making the experience so special. Looking forward to travelling with you again!",
   },
   {
-    id: "r-007",
-    isSample: true,
-    name: "Daan V.",
-    country: "Netherlands",
-    rating: 4,
-    date: "2026-02",
+    id: "r-t-003",
+    isSample: false,
+    name: "Sajith P",
+    rating: 5,
+    source: "tripadvisor",
+    title: "An excellent travel experience with friendly professional service",
+    text: "We had an excellent experience with Seren Lanka Travels. The service was very professional, friendly, and well organized. The staff were helpful and welcoming throughout our journey. Everything was arranged smoothly, and we really enjoyed the experience with our friends. The transportation and overall service were great. Highly recommended for anyone looking for a reliable and enjoyable travel experience in Sri Lanka. Thank you, Seren Lanka Travels, for making our trip memorable!",
+  },
+  {
+    id: "r-t-004",
+    isSample: false,
+    name: "Isuru C",
+    rating: 5,
+    source: "tripadvisor",
+    title: "Beautiful Mirissa Beach – A Wonderful Experience",
+    text: "Mirissa Beach is a beautiful and peaceful place with golden sand, clear blue water and amazing ocean views. I really enjoyed the natural beauty and relaxing atmosphere. It is a wonderful place to visit and enjoy the beach.",
+  },
+  {
+    id: "r-t-005",
+    isSample: false,
+    name: "Yala Park Safari",
+    rating: 5,
+    source: "tripadvisor",
+    title: "Excellent Taxi Service – Highly Recommended!",
+    text: "I had a wonderful experience with Serani. The overall service was excellent, and everything was well organised. The vehicle was clean, comfortable, and well maintained. The driver was friendly, professional, and punctual. I really appreciated the quality of the service throughout the journey. Highly recommended for anyone looking for a safe, comfortable, and reliable taxi service in Sri Lanka!",
+  },
+
+  // ── Google Reviews ────────────────────────────────────────────────────────
+  {
+    id: "r-g-001",
+    isSample: false,
+    name: "Kusal Chamod",
+    rating: 5,
     source: "google",
-    tour: { name: "Airport Transfers", href: "/transfers/airport-transfers" },
-    text:
-      "Our flight was two hours late but the driver was still waiting with a name sign and a smile. Clean van, safe driving to Kandy. Only wish we had booked them for the whole trip from the start!",
+    text: "I had a wonderful experience with Seren Lanka Travels! Their service was excellent, professional, and reliable from start to finish. The team was friendly, helpful, and very supportive throughout the journey. Everything was well organised, and the overall experience was smooth, comfortable, and enjoyable. Highly recommended for anyone looking for quality travel services in Sri Lanka. Looking forward to travelling with them again!",
   },
   {
-    id: "r-008",
-    isSample: true,
-    name: "Anna K.",
-    country: "Switzerland",
+    id: "r-g-002",
+    isSample: false,
+    name: "Pramod Singh",
     rating: 5,
-    date: "2026-01",
-    source: "whatsapp",
-    tour: { name: "Ella Day Tour", href: "/day-tours/ella-day-tour" },
-    text:
-      "We timed the Nine Arches Bridge perfectly to catch the train, climbed Little Adam's Peak at sunrise and still had time for Ravana Falls. Brilliant planning and a really friendly driver.",
+    source: "google",
+    text: "Best travel company to visit Shrilanka.",
   },
   {
-    id: "r-009",
-    isSample: true,
-    name: "Robert & Jane",
-    country: "United States",
+    id: "r-g-003",
+    isSample: false,
+    name: "Pooja Goyal",
     rating: 5,
-    date: "2025-12",
-    source: "website",
-    tour: { name: "Tailor-made tour", href: "/tailor-made-tours" },
-    text:
-      "We sent a rough idea of what we wanted and got back an itinerary that fitted us exactly – culture first, then a slow finish on the beach. Clear pricing, no surprises, and help whenever we needed it.",
+    source: "google",
+    text: "We had a wonderful time in Sri Lanka all because of Sithun. Itinerary was well planned and executed. Sithun is very humble and makes the trip comfortable.",
   },
+  {
+    id: "r-g-004",
+    isSample: false,
+    name: "Vibhashana Wickramasinghe",
+    rating: 5,
+    source: "google",
+    text: "Had a great experience with Sithum! Sithum was very friendly, helpful, and professional. Everything went smoothly, and we really enjoyed the experience. Highly recommended!",
+  },
+  {
+    id: "r-g-005",
+    isSample: false,
+    name: "Prithvi Raj",
+    rating: 5,
+    source: "google",
+  },
+  {
+    id: "r-g-006",
+    isSample: false,
+    name: "Abhay Vijayvargiya",
+    rating: 5,
+    source: "google",
+  },
+  {
+    id: "r-g-007",
+    isSample: false,
+    name: "K Palani Kumar",
+    rating: 5,
+    source: "google",
+  },
+  {
+    id: "r-g-008",
+    isSample: false,
+    name: "Nathan Biquard",
+    rating: 5,
+    source: "google",
+  },
+  {
+    id: "r-g-009",
+    isSample: false,
+    name: "Iman Iman",
+    rating: 5,
+    source: "google",
+  },
+
+  
 ];
 
 /** Traveller photo wall (§23 "Customer photos"). Replace with real, approved guest photos. */
