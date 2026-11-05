@@ -196,7 +196,7 @@ export default function Header() {
           />
         )}
 
-        <Container className="relative flex h-[76px] items-center justify-center gap-6 lg:h-[88px] max-w-screen-2xl">
+        <Container className="relative flex h-[76px] items-center justify-between lg:justify-center gap-6 lg:h-[88px] max-w-screen-2xl">
           {/* Logo */}
           <Link href="/" className="flex shrink-0 items-center" aria-label={`${site.name} home`}>
             <Image
