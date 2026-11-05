@@ -82,6 +82,7 @@ export const mainNav = [
       { label: "Experiences", href: "/experiences" },
     ],
   },
+  { label: "Gallery", href: "/gallery" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact-us" },
 ];
@@ -97,6 +98,7 @@ export const footerColumns = [
       { label: "Tailor-Made Tours", href: "/tailor-made-tours" },
       { label: "Destinations", href: "/destinations" },
       { label: "Experiences", href: "/experiences" },
+      { label: "Gallery", href: "/gallery" },
     ],
   },
   {
@@ -140,6 +142,7 @@ export const footerColumns = [
     links: [
       { label: "About Us", href: "/about-us" },
       { label: "Reviews", href: "/reviews" },
+      { label: "Gallery", href: "/gallery" },
       { label: "Blog", href: "/blog" },
       { label: "Contact Us", href: "/contact-us" },
       { label: "FAQs", href: "/#faq" },
