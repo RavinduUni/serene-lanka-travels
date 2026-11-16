@@ -15,7 +15,7 @@ export default function HomeHero() {
         playsInline
         className="absolute inset-0 h-full w-full object-cover"
         aria-hidden="true"
-        poster="/popular2.jpg"
+        poster="/destinations/kaudulla.png"
       >
         <source src="/video.mp4" type="video/mp4" />
         <source src="/video.webm" type="video/webm" />

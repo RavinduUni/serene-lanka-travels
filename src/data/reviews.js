@@ -167,15 +167,15 @@ export const reviewPlatforms = [
     id: "google",
     name: "Google",
     description: "Reviews left on our Google Business Profile.",
-    readUrl: null, // TODO: Google Business Profile reviews link
-    writeUrl: null, // TODO: Google "write a review" link
+    readUrl: "https://www.google.com/search?q=Seren+Lanka+Travels",
+    writeUrl: "https://www.google.com/search?q=Seren+Lanka+Travels#lrd=0x0:0x0,3",
   },
   {
     id: "tripadvisor",
     name: "Tripadvisor",
     description: "Reviews from travellers on Tripadvisor.",
-    readUrl: null, // TODO: Tripadvisor listing link
-    writeUrl: null,
+    readUrl: "https://www.tripadvisor.com/Search?q=Seren+Lanka+Travels",
+    writeUrl: "https://www.tripadvisor.com/UserReview",
   },
   {
     id: "website",

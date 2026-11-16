@@ -25,21 +25,7 @@ export const site = {
 
 /** Primary navigation (Content Plan §8) */
 export const mainNav = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about-us" },
-  {
-    label: "Day Tours",
-    href: "/day-tours",
-    children: [
-      { label: "Colombo City Tour", href: "/day-tours/colombo-city-tour" },
-      { label: "Kandy Day Tour", href: "/day-tours/kandy-day-tour" },
-      { label: "Sigiriya & Dambulla Day Tour", href: "/day-tours/sigiriya-dambulla-day-tour" },
-      { label: "Galle & Unawatuna Day Tour", href: "/day-tours/galle-unawatuna-day-tour" },
-      { label: "Bentota Day Tour", href: "/day-tours/bentota-day-tour" },
-      { label: "Ella Day Tour", href: "/day-tours/ella-day-tour" },
-      { label: "Nuwara Eliya Day Tour", href: "/day-tours/nuwara-eliya-day-tour" },
-    ],
-  },
+  { label: "Tour Packages", href: "/tour-packages" },
   {
     label: "Itineraries",
     href: "/sri-lanka-itineraries",
@@ -60,10 +46,34 @@ export const mainNav = [
     ],
   },
   {
+    label: "Day Tours",
+    href: "/day-tours",
+    children: [
+      { label: "Colombo City Tour", href: "/day-tours/colombo-city-tour" },
+      { label: "Kandy Day Tour", href: "/day-tours/kandy-day-tour" },
+      { label: "Sigiriya & Dambulla Day Tour", href: "/day-tours/sigiriya-dambulla-day-tour" },
+      { label: "Galle & Unawatuna Day Tour", href: "/day-tours/galle-unawatuna-day-tour" },
+      { label: "Bentota Day Tour", href: "/day-tours/bentota-day-tour" },
+      { label: "Ella Day Tour", href: "/day-tours/ella-day-tour" },
+      { label: "Nuwara Eliya Day Tour", href: "/day-tours/nuwara-eliya-day-tour" },
+    ],
+  },
+
+  {
     label: "Tailor-Made",
     href: "/tailor-made-tours",
   },
+ 
   {
+    label: "Discover",
+    href: "/discover-sri-lanka",
+    children: [
+      { label: "Destinations", href: "/destinations" },
+      { label: "Experiences", href: "/experiences" },
+    ],
+  },
+  { label: "Reviews", href: "/reviews" },
+   {
     label: "Transfers",
     href: "/transfers",
     children: [
@@ -74,17 +84,7 @@ export const mainNav = [
       { label: "Private Transport / Vehicle Hire with Driver", href: "/transfers/private-vehicle-hire" },
     ],
   },
-  {
-    label: "Discover",
-    href: "/discover-sri-lanka",
-    children: [
-      { label: "Destinations", href: "/destinations" },
-      { label: "Experiences", href: "/experiences" },
-    ],
-  },
-  { label: "Tour Packages", href: "/tour-packages"},
-  { label: "Gallery", href: "/gallery" },
-  { label: "Blog", href: "/blog" },
+  { label: "Guide", href: "/blog" },
   { label: "Contact", href: "/contact-us" },
 ];
 
