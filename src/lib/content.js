@@ -8,6 +8,7 @@ import { itineraries, itineraryCategoryLabels } from "@/data/itineraries";
 import { transferServices, vehicles } from "@/data/transfers";
 import { destinations } from "@/data/destinations";
 import { experiences } from "@/data/experiences";
+import { tourPackages } from "@/data/tour-packages";
 
 export function getDayTours() {
   return dayTours.filter((t) => t.published);
@@ -115,4 +116,20 @@ export function getExperienceDestinations(experience, limit = 3) {
     .map((s) => bySlug.get(s))
     .filter(Boolean)
     .slice(0, limit);
+}
+
+/* ------------------------------------------------------------- Tour Packages */
+
+export function getTourPackages() {
+  return tourPackages.filter((p) => p.published).sort((a, b) => a.order - b.order);
+}
+
+export function getTourPackageBySlug(slug) {
+  return getTourPackages().find((p) => p.slug === slug) || null;
+}
+
+/** Guide §05: the related block shows only the other existing package(s). */
+export function getRelatedTourPackages(pkg, limit = 2) {
+  const bySlug = new Map(getTourPackages().map((p) => [p.slug, p]));
+  return (pkg.related || []).map((s) => bySlug.get(s)).filter(Boolean).slice(0, limit);
 }

@@ -82,6 +82,7 @@ export const mainNav = [
       { label: "Experiences", href: "/experiences" },
     ],
   },
+  { label: "Tour Packages", href: "/tour-packages"},
   { label: "Gallery", href: "/gallery" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact-us" },

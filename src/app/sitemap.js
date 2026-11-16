@@ -1,5 +1,5 @@
 import { site } from "@/data/site";
-import { getDayTours, getItineraries, getTransferServices, getDestinations, getExperiences } from "@/lib/content";
+import { getDayTours, getItineraries, getTransferServices, getDestinations, getExperiences, getTourPackages } from "@/lib/content";
 import { getBlogPosts } from "@/data/blog";
 import { legalDocuments } from "@/data/legal";
 
@@ -29,6 +29,14 @@ export default function sitemap() {
     { url: `${site.url}/sri-lanka-itineraries`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.9 },
     ...getItineraries().map((t) => ({
       url: `${site.url}/sri-lanka-itineraries/${t.slug}`,
+      lastModified: lastMod,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    })),
+    // ── Tour Packages ─────────────────────────────────────────────────
+    { url: `${site.url}/tour-packages`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.9 },
+    ...getTourPackages().map((p) => ({
+      url: `${site.url}/tour-packages/${p.slug}`,
       lastModified: lastMod,
       changeFrequency: "monthly",
       priority: 0.8,
